@@ -29,15 +29,19 @@ const App = () => {
     <div className="app">
       <div classname="grid">
         {!isButtonSelected("video") && !isButtonSelected("audio") && (
+          // eslint-disable-next-line
           <img src={imageNormal} width="800" height="700" />
         )}
         {!isButtonSelected("video") && isButtonSelected("audio") && (
+          // eslint-disable-next-line
           <img src={imageAudio} width="800" height="700" />
         )}
         {isButtonSelected("video") && !isButtonSelected("audio") && (
+          // eslint-disable-next-line
           <img src={imageVideo} width="800" height="700" />
         )}
         {isButtonSelected("video") && isButtonSelected("audio") && (
+          // eslint-disable-next-line
           <img src={imageAudioVideo} width="800" height="700" />
         )}
       </div>

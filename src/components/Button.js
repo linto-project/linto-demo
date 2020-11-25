@@ -1,6 +1,6 @@
 import { Button as MuiButton } from "@material-ui/core";
 import "./Button.css";
-import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
+import { makeStyles, createStyles } from "@material-ui/core/styles";
 import clsx from "clsx";
 
 const useStyles = makeStyles(() =>
@@ -8,10 +8,6 @@ const useStyles = makeStyles(() =>
     root: {
       width: "300px",
       border: "2px solid black",
-
-      // "&:focus": {
-      //   boxShadow: "0 0 0 0.2rem rgba(0,123,255,.5)",
-      // },
     },
 
     selected: {
