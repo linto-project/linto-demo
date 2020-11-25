@@ -2,10 +2,10 @@ import { useState, useEffect } from "react";
 import Button from "../components/Button";
 import "./Demo.css";
 
-import imageVideo from "./../images/video.png";
-import imageAudioVideo from "./../images/audiovideo.png";
-import imageAudio from "./../images/audio.png";
-import imageNormal from "./../images/normal.png";
+import video1 from "./../video/Is1002b.Closeup1-1.webm";
+import video2 from "./../video/Is1002b.Closeup2-2.webm";
+import video3 from "./../video/Is1002b.Closeup3-3.webm";
+import video4 from "./../video/Is1002b.Closeup4-4.webm";
 
 const Demo = () => {
   const [button, setButton] = useState([]);
@@ -30,49 +30,25 @@ const Demo = () => {
       <div classname="grid">
         {!isButtonSelected("video") && !isButtonSelected("audio") && (
           // eslint-disable-next-line
-          <video
-            src="Is1002b.Closeup1-1.m4v"
-            width="640"
-            height="360"
-            preload
-            autoplay
-          >
+          <video src={video1} width="640" height="360" preload autoplay>
             {" "}
           </video>
         )}
         {!isButtonSelected("video") && isButtonSelected("audio") && (
           // eslint-disable-next-line
-          <video
-            src="Is1002b.Closeup1-1.m4v"
-            width="640"
-            height="360"
-            preload
-            autoplay
-          >
+          <video src={video2} width="640" height="360" preload autoplay>
             {" "}
           </video>
         )}
         {isButtonSelected("video") && !isButtonSelected("audio") && (
           // eslint-disable-next-line
-          <video
-            src="Is1002b.Closeup1-1.m4v"
-            width="640"
-            height="360"
-            preload
-            autoplay
-          >
+          <video src={video3} width="640" height="360" preload autoplay>
             {" "}
           </video>
         )}
         {isButtonSelected("video") && isButtonSelected("audio") && (
           // eslint-disable-next-line
-          <video
-            src="Is1002b.Closeup1-1.m4v"
-            width="640"
-            height="360"
-            preload
-            autoplay
-          >
+          <video src={video4} width="640" height="360" preload autoplay>
             {" "}
           </video>
         )}
