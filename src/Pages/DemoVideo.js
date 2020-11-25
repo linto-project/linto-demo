@@ -36,20 +36,20 @@ const Demo = () => {
         )}
         {!isButtonSelected("video") && isButtonSelected("audio") && (
           // eslint-disable-next-line
-          <video src={video2} width="640" height="360" preload autoplay>
-            {" "}
+          <video width="100%" controls autoplay muted>
+            <source src={video2} type="videos/mp4"></source>
           </video>
         )}
         {isButtonSelected("video") && !isButtonSelected("audio") && (
           // eslint-disable-next-line
-          <video src={video3} width="640" height="360" preload autoplay>
-            {" "}
+          <video width="100%" controls autoplay muted>
+            <source src={video3} type="videos/mp4"></source>
           </video>
         )}
         {isButtonSelected("video") && isButtonSelected("audio") && (
           // eslint-disable-next-line
-          <video src={video4} width="640" height="360" preload autoplay>
-            {" "}
+          <video width="100%" controls autoplay muted>
+            <source src={video4} type="videos/mp4"></source>
           </video>
         )}
       </div>
