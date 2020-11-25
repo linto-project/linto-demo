@@ -1,6 +1,7 @@
 import "./App.css";
 
-import Demo from "./Pages/Demo";
+import Demo from "./pages/Demo";
+import DemoVideo from "./pages/DemoVideo";
 
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
@@ -14,7 +15,7 @@ const App = () => {
               <Link to="/demo1">Demo1</Link>
             </li>
             <li>
-              <Link to="/about">Demo2</Link>
+              <Link to="/demo2">Demo2</Link>
             </li>
           </ul>
         </nav>
@@ -25,7 +26,9 @@ const App = () => {
           <Route path="/demo1">
             <Demo />
           </Route>
-          <Route path="/about"></Route>
+          <Route path="/demo2">
+            <DemoVideo />
+          </Route>
         </Switch>
       </div>
     </Router>
