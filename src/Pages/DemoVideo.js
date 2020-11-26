@@ -1,14 +1,18 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+
 import Button from "../components/Button";
+import Rectangle from "../components/Rectangle";
+
 import "./Demo.css";
 
 import video1 from "./../video/Is1002b.Closeup1-1.webm";
-import video2 from "./../video/Is1002b.Closeup2-2.webm";
-import video3 from "./../video/Is1002b.Closeup3-3.webm";
-import video4 from "./../video/Is1002b.Closeup4-4.webm";
 
 const Demo = () => {
   const [button, setButton] = useState([]);
+  const [frame, setFrame] = useState([]);
+
+  let ref = useRef(null);
+  let numFrame = 0;
 
   const toggleFilter = (filter) => {
     if (button.includes(filter)) {
@@ -25,35 +29,44 @@ const Demo = () => {
     // eslint-disable-next-line
   }, [button]);
 
+  const onSetVideoTimestamp = (event) => {
+    const timestamp = event.currentTarget.currentTime;
+    numFrame = Math.round(event.currentTarget.currentTime * 30);
+    setFrame(numFrame);
+    console.log(timestamp);
+  };
+
   return (
     <div className="demo">
-      <div classname="grid">
-        {!isButtonSelected("video") && !isButtonSelected("audio") && (
-          // eslint-disable-next-line
-          <video src={video1} width="640" height="360" preload autoplay>
-            {" "}
-          </video>
-        )}
-        {!isButtonSelected("video") && isButtonSelected("audio") && (
-          // eslint-disable-next-line
-          <video width="100%" controls autoplay muted>
-            <source src={video2} type="videos/mp4"></source>
-          </video>
-        )}
-        {isButtonSelected("video") && !isButtonSelected("audio") && (
-          // eslint-disable-next-line
-          <video width="100%" controls autoplay muted>
-            <source src={video3} type="videos/mp4"></source>
-          </video>
-        )}
-        {isButtonSelected("video") && isButtonSelected("audio") && (
-          // eslint-disable-next-line
-          <video width="100%" controls autoplay muted>
-            <source src={video4} type="videos/mp4"></source>
-          </video>
-        )}
+      {/* <div
+        className="position overlay"
+        style={{
+          position: "absolute",
+          left: String(680 / 2 - 100) + "px",
+          top: String(400 / 2 - 100) + "px",
+        }}
+      /> */}
+      <div>
+        <Rectangle top="100" left="100" width="50" height="50" />
       </div>
-      <div className="grid">
+      <div className="position">
+        {
+          // eslint-disable-next-line
+          <video
+            controls
+            ref={ref}
+            src={video1}
+            width="640"
+            height="360"
+            onTimeUpdate={onSetVideoTimestamp}
+          />
+        }
+      </div>
+      <div>
+        <p style={{ fontSize: "40px" }}>{frame}</p>
+      </div>
+
+      {/* <div className="grid">
         <Button
           variant="contained"
           color="primary"
@@ -70,7 +83,7 @@ const Demo = () => {
         >
           Détection de locuteur vidéo
         </Button>
-      </div>
+      </div> */}
     </div>
   );
 };

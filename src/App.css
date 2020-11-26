@@ -17,6 +17,15 @@
   flex-wrap: wrap;
 }
 
+.overlay {
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+
+  z-index: 1;
+  background: black;
+}
+
 .grid:not(:last-child) {
   margin-bottom: 32px;
 }
