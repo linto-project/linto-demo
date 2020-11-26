@@ -34,11 +34,11 @@ const Demo = () => {
         )}
         {!isButtonSelected("video") && isButtonSelected("audio") && (
           // eslint-disable-next-line
-          <img src={imageAudio} width="800" height="665" />
+          <img src={imageVideo} width="800" height="665" />
         )}
         {isButtonSelected("video") && !isButtonSelected("audio") && (
           // eslint-disable-next-line
-          <img src={imageVideo} width="800" height="665" />
+          <img src={imageAudio} width="800" height="665" />
         )}
         {isButtonSelected("video") && isButtonSelected("audio") && (
           // eslint-disable-next-line
