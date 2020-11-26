@@ -3,6 +3,6 @@
   display: inline-block;
   border: 2px solid black;
 
-  background: black;
+  background:none;
   z-index: 2;
 }

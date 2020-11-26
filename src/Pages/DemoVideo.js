@@ -9,10 +9,15 @@ import video1 from "./../video/Is1002b.Closeup1-1.webm";
 
 const Demo = () => {
   const [button, setButton] = useState([]);
+
   const [frame, setFrame] = useState([]);
+  const [frameLastRefresh, setFrameLastRefresh] = useState([]);
+
+  const [posX, setPosX] = useState([]);
+  const [posY, setPosY] = useState([]);
 
   let ref = useRef(null);
-  let numFrame = 0;
+  let lastTimes;
 
   const toggleFilter = (filter) => {
     if (button.includes(filter)) {
@@ -29,10 +34,18 @@ const Demo = () => {
     // eslint-disable-next-line
   }, [button]);
 
+  useEffect(() => {
+    if (Math.abs(frame - frameLastRefresh) >= 1) {
+      setFrameLastRefresh(frame);
+      // Just a random
+      setPosX(380 + Math.floor(Math.random() * Math.floor(50)) - 25);
+      setPosY(250 + Math.floor(Math.random() * Math.floor(50)) - 25);
+    }
+  }, [frame]);
+
   const onSetVideoTimestamp = (event) => {
     const timestamp = event.currentTarget.currentTime;
-    numFrame = Math.round(event.currentTarget.currentTime * 30);
-    setFrame(numFrame);
+    setFrame(Math.round(event.currentTarget.currentTime * 30));
     console.log(timestamp);
   };
 
@@ -47,7 +60,7 @@ const Demo = () => {
         }}
       /> */}
       <div>
-        <Rectangle top="100" left="100" width="50" height="50" />
+        <Rectangle top={posY} left={posX} width="100" height="180" />
       </div>
       <div className="position">
         {
