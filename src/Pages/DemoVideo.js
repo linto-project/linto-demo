@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 
-import Button from "../components/Button";
+// import Button from "../components/Button";
 import Rectangle from "../components/Rectangle";
 
 import "./Demo.css";
@@ -8,7 +8,7 @@ import "./Demo.css";
 import video1 from "./../video/Is1002b.Closeup1-1.webm";
 
 const Demo = () => {
-  const [button, setButton] = useState([]);
+  // const [button, setButton] = useState([]);
 
   const [frame, setFrame] = useState([]);
   const [frameLastRefresh, setFrameLastRefresh] = useState([]);
@@ -17,22 +17,21 @@ const Demo = () => {
   const [posY, setPosY] = useState([]);
 
   let ref = useRef(null);
-  let lastTimes;
 
-  const toggleFilter = (filter) => {
-    if (button.includes(filter)) {
-      setButton(button.filter((t) => t !== filter));
-    } else {
-      setButton([...button, filter]);
-    }
-  };
+  // const toggleFilter = (filter) => {
+  //   if (button.includes(filter)) {
+  //     setButton(button.filter((t) => t !== filter));
+  //   } else {
+  //     setButton([...button, filter]);
+  //   }
+  // };
+  //
+  // const isButtonSelected = (p) => button.includes(p);
 
-  const isButtonSelected = (p) => button.includes(p);
-
-  useEffect(() => {
-    console.log("button: ", button);
-    // eslint-disable-next-line
-  }, [button]);
+  // useEffect(() => {
+  //   console.log("button: ", button);
+  //   // eslint-disable-next-line
+  // }, [button]);
 
   useEffect(() => {
     if (Math.abs(frame - frameLastRefresh) >= 1) {
@@ -40,7 +39,7 @@ const Demo = () => {
       // Just a random
       setPosX(380 + Math.floor(Math.random() * Math.floor(50)) - 25);
       setPosY(250 + Math.floor(Math.random() * Math.floor(50)) - 25);
-    }
+    } // eslint-disable-next-line
   }, [frame]);
 
   const onSetVideoTimestamp = (event) => {
