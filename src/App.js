@@ -1,7 +1,8 @@
 import "./App.css";
 
-import Demo from "./Pages/Demo";
-import DemoVideo from "./Pages/DemoVideo";
+import Demo from "./pages/Demo";
+import DemoVideo from "./pages/DemoVideo";
+import DemoVideoAudio from "./pages/DemoVideoAudio";
 
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
@@ -12,10 +13,13 @@ const App = () => {
         <nav>
           <ul>
             <li>
-              <Link to="/demo1">Demo1</Link>
+              <Link to="/demo1">Demo 1</Link>
             </li>
             <li>
-              <Link to="/about">Demo2</Link>
+              <Link to="/demo2">Demo 2</Link>
+            </li>
+            <li>
+              <Link to="/demo3">Demo 3</Link>
             </li>
           </ul>
         </nav>
@@ -26,8 +30,11 @@ const App = () => {
           <Route path="/demo1">
             <Demo />
           </Route>
-          <Route path="/about">
+          <Route path="/demo2">
             <DemoVideo />
+          </Route>
+          <Route path="/demo3">
+            <DemoVideoAudio />
           </Route>
         </Switch>
       </div>
