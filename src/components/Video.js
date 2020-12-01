@@ -1,8 +1,28 @@
-const Video = (props) => {
+import { useEffect, useRef } from "react";
+
+const Video = ({
+  url,
+  isPlaying,
+  setIsPlaying,
+  durationSec,
+  setDurationSec,
+}) => {
+  const video = useRef(null);
+
+  useEffect(() => {
+    video.current.currentTime = durationSec;
+  }, [durationSec]);
+
+  useEffect(() => {
+    isPlaying ? video.current.play() : video.current.pause();
+  }, [isPlaying]);
+
   return (
     <video
+      preload
       //   ref={ref}
-      src="/video/Is1002b.Closeup1-1.webm"
+      ref={video}
+      src={url}
       width="640"
       height="360"
       //   onTimeUpda te={onSetVideoTimestamp}

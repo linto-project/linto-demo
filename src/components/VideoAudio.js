@@ -1,3 +1,4 @@
+import { duration } from "@material-ui/core";
 import { useState, useEffect, useRef } from "react";
 
 import Video from "./Video";
@@ -18,10 +19,19 @@ const VideoAudio = () => {
 
   return (
     <div className="demo">
-      <Video />
+      {/* @todo: make sure that video plays only when preloaded */}
+      <Video
+        url="/video/IS1002b.Closeup1-1-5min.webm"
+        durationSec={durationSec}
+        isPlaying={isPlaying}
+        setIsPlaying={setIsPlaying}
+        setDurationSec={setDurationSec}
+      />
       <div id="waveform">
         <WaveSurfer
-          url="/audio/IS1002b.Array1-01.wav"
+          url="/audio/IS1002b.Array1-01-5min.wav"
+          durationSec={durationSec}
+          isPlaying={isPlaying}
           setIsPlaying={setIsPlaying}
           setDurationSec={setDurationSec}
         />

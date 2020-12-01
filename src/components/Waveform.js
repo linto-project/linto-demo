@@ -3,8 +3,6 @@ import React, { useEffect, useRef, useState } from "react";
 import WaveSurfer from "wavesurfer.js";
 import TimelinePlugin from "wavesurfer.js/dist/plugin/wavesurfer.timeline.min.js";
 
-import Video from "./Video.js";
-
 const formWaveSurferOptions = (ref, timelineRef) => ({
   container: ref,
   waveColor: "#eee",
@@ -30,14 +28,20 @@ const formWaveSurferOptions = (ref, timelineRef) => ({
   partialRender: true,
 });
 
-export default function Waveform({ url, setIsPlaying, setDurationSec }) {
+export default function Waveform({
+  url,
+  isPlaying,
+  setIsPlaying,
+  durationSec,
+  setDurationSec,
+}) {
   const waveformRef = useRef(null);
   const timelineRef = useRef(null);
 
   const wavesurfer = useRef(null);
 
   const [playing, setPlay] = useState(false);
-
+  const [synch, setSynch] = useState(false);
   const [volume, setVolume] = useState(0.5);
   const [zoom, setZoom] = useState(1);
 
@@ -75,9 +79,19 @@ export default function Waveform({ url, setIsPlaying, setDurationSec }) {
       setDurationSec(wavesurfer.current.getCurrentTime());
     });
 
+    wavesurfer.current.on("interaction", function () {
+      console.log("Interaction");
+      setDurationSec(wavesurfer.current.getCurrentTime());
+    });
+
     return () => wavesurfer.current.destroy();
     // eslint-disable-next-line
   }, [url]);
+
+  useEffect(() => {
+    console.log("synch" + synch);
+    setDurationSec(wavesurfer.current.getCurrentTime());
+  }, [synch]);
 
   const handlePlayPause = () => {
     if (!playDisabled) {
