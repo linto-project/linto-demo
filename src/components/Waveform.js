@@ -81,7 +81,7 @@ export default function Waveform({
 
     wavesurfer.current.on("interaction", function () {
       console.log("Interaction");
-      setDurationSec(wavesurfer.current.getCurrentTime());
+      setSynch(true);
     });
 
     return () => wavesurfer.current.destroy();
@@ -91,6 +91,7 @@ export default function Waveform({
   useEffect(() => {
     console.log("synch" + synch);
     setDurationSec(wavesurfer.current.getCurrentTime());
+    setSynch(false);
   }, [synch]);
 
   const handlePlayPause = () => {
