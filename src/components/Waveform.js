@@ -92,6 +92,7 @@ export default function Waveform({
     console.log("synch" + synch);
     setDurationSec(wavesurfer.current.getCurrentTime());
     setSynch(false);
+    // eslint-disable-next-line
   }, [synch]);
 
   const handlePlayPause = () => {

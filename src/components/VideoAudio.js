@@ -1,5 +1,5 @@
-import { duration } from "@material-ui/core";
-import { useState, useEffect, useRef } from "react";
+// import { duration } from "@material-ui/core";
+import { useState, useEffect } from "react";
 
 import Video from "./Video";
 import WaveSurfer from "./Waveform";
@@ -7,6 +7,7 @@ import WaveSurfer from "./Waveform";
 const VideoAudio = () => {
   const [durationSec, setDurationSec] = useState([]);
   const [isPlaying, setIsPlaying] = useState([]);
+  // const [frame, setFrame] = useState([]);
   const [frame, setFrame] = useState([]);
 
   useEffect(() => {
@@ -15,6 +16,7 @@ const VideoAudio = () => {
 
   useEffect(() => {
     console.log("current timestamp : " + durationSec);
+    setFrame(durationSec * 25);
   }, [durationSec]);
 
   return (
