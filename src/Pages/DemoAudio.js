@@ -1,13 +1,13 @@
 import { useState, useEffect, useRef } from "react";
 
-// import Button from "../components/Button";
 import Rectangle from "../components/Rectangle";
-
 import "./Demo.css";
 
-import video1 from "./../video/Is1002b.Closeup1-1.webm";
+import WaveSurfer from "../components/Waveform";
 
 const Demo = () => {
+  // const [button, setButton] = useState([]);
+
   const [frame, setFrame] = useState([]);
   const [frameLastRefresh, setFrameLastRefresh] = useState([]);
 
@@ -34,11 +34,10 @@ const Demo = () => {
   return (
     <div className="demo">
       <div>
-        <Rectangle top={posY} left={posX} width="100" height="180" />
+        {/* <Rectangle top={posY} left={posX} width="100" height="180" /> */}
       </div>
       <div className="position">
-        {
-          // eslint-disable-next-line
+        {/* {
           <video
             controls
             ref={ref}
@@ -47,7 +46,11 @@ const Demo = () => {
             height="360"
             onTimeUpdate={onSetVideoTimestamp}
           />
-        }
+        } */}
+      </div>
+
+      <div id="waveform">
+        <WaveSurfer url="audio/IS1002b.Array1-01.wav" />
       </div>
       <div>
         <p style={{ fontSize: "40px" }}>{frame}</p>

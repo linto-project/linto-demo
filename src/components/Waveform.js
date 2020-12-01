@@ -1,33 +1,41 @@
 import React, { useEffect, useRef, useState } from "react";
 
 import WaveSurfer from "wavesurfer.js";
+import TimelinePlugin from "wavesurfer.js/dist/plugin/wavesurfer.timeline.min.js";
 
-const formWaveSurferOptions = (ref) => ({
+import Video from "./Video.js";
+
+const formWaveSurferOptions = (ref, timelineRef) => ({
   container: ref,
   waveColor: "#eee",
   progressColor: "#e1bee7",
   cursorColor: "#ce93d8",
+  backend: "MediaElement",
   barWidth: 3,
   barRadius: 3,
+  responsive: true,
+  hideScrollbar: true,
 
-  //   backend: "MediaElement",
-  //   renderer: "MultiCanvas",
-  //   pixelRatio: 1,
-  //   timeInterval: 30,
+  plugins: [
+    TimelinePlugin.create({
+      container: timelineRef,
+    }),
+  ],
 
   autoCenter: true,
-  //   minPxPerSec: 1,
-
   height: 100,
-  // If true, normalize by the maximum peak instead of 1.0.
   normalize: true,
+
   // Use the PeakCache to improve rendering speed of large waveforms.
   partialRender: true,
 });
 
-export default function Waveform({ url }) {
+export default function Waveform({ url, setIsPlaying, setDurationSec }) {
   const waveformRef = useRef(null);
+  const timelineRef = useRef(null);
+
   const wavesurfer = useRef(null);
+
   const [playing, setPlay] = useState(false);
 
   const [volume, setVolume] = useState(0.5);
@@ -37,8 +45,10 @@ export default function Waveform({ url }) {
 
   useEffect(() => {
     setPlay(false);
-
-    const options = formWaveSurferOptions(waveformRef.current);
+    const options = formWaveSurferOptions(
+      waveformRef.current,
+      timelineRef.current
+    );
     wavesurfer.current = WaveSurfer.create(options);
     wavesurfer.current.load(url);
 
@@ -46,7 +56,6 @@ export default function Waveform({ url }) {
       // https://wavesurfer-js.org/docs/methods.html
       // wavesurfer.current.play();
       // setPlay(true);
-
       if (wavesurfer.current) {
         wavesurfer.current.setVolume(volume);
         setVolume(volume);
@@ -55,7 +64,19 @@ export default function Waveform({ url }) {
       setPlayDisabled(false);
     });
 
+    wavesurfer.current.on("pause", function () {
+      console.log("Pause");
+      setIsPlaying(false);
+    });
+
+    wavesurfer.current.on("play", function () {
+      console.log("Play");
+      setIsPlaying(true);
+      setDurationSec(wavesurfer.current.getCurrentTime());
+    });
+
     return () => wavesurfer.current.destroy();
+    // eslint-disable-next-line
   }, [url]);
 
   const handlePlayPause = () => {
@@ -83,19 +104,10 @@ export default function Waveform({ url }) {
     }
   };
 
-  //   const zoomLess = () => {
-  //     setZoom(zoom / 10);
-  //     onZoomChange();
-  //   };
-
-  //   const zoomMore = () => {
-  //     setZoom(zoom * 10);
-  //     onZoomChange();
-  //   };
-
   return (
     <div>
       <div id="waveform" ref={waveformRef} />
+      <div id="timelineRef" ref={timelineRef} />
       <div className="controls">
         <button onClick={handlePlayPause} disabled={playDisabled}>
           {!playing ? "Play" : "Pause"}
@@ -115,20 +127,14 @@ export default function Waveform({ url }) {
         <label htmlFor="volume">Volume</label>
         <input
           type="range"
-          id="timeline"
-          name="timeline"
+          id="timelineRef"
+          name="timelineRef"
           min="1"
           max="20"
           step=".01"
           onChange={onZoomChange}
           defaultValue={zoom}
         />
-        {/* <button onClick={zoomLess} disabled={playDisabled}>
-          Zoom -
-        </button>
-        <button onClick={zoomMore} disabled={playDisabled}>
-          Zoom +
-        </button> */}
       </div>
     </div>
   );
