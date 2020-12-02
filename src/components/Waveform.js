@@ -25,7 +25,7 @@ const formWaveSurferOptions = (ref, timelineRef) => ({
   normalize: true,
 
   // Use the PeakCache to improve rendering speed of large waveforms.
-  partialRender: true,
+  // partialRender: true,
 });
 
 export default function Waveform({
@@ -34,6 +34,8 @@ export default function Waveform({
   setIsPlaying,
   durationSec,
   setDurationSec,
+  frame,
+  setFrame,
 }) {
   const waveformRef = useRef(null);
   const timelineRef = useRef(null);
@@ -43,7 +45,7 @@ export default function Waveform({
   const [playing, setPlay] = useState(false);
   const [synch, setSynch] = useState(false);
   const [volume, setVolume] = useState(0.5);
-  const [zoom, setZoom] = useState(1);
+  const [zoom, setZoom] = useState(5);
 
   const [playDisabled, setPlayDisabled] = useState(true);
 
@@ -68,20 +70,29 @@ export default function Waveform({
       setPlayDisabled(false);
     });
 
+    // Pausing audio
     wavesurfer.current.on("pause", function () {
       console.log("Pause");
       setIsPlaying(false);
     });
 
+    // Playing audio
     wavesurfer.current.on("play", function () {
       console.log("Play");
       setIsPlaying(true);
       setDurationSec(wavesurfer.current.getCurrentTime());
     });
 
+    // Interaction with audio
     wavesurfer.current.on("interaction", function () {
       console.log("Interaction");
       setSynch(true);
+    });
+
+    // Audioprocess: fire continously when audio is playing
+    wavesurfer.current.on("audioprocess", function () {
+      console.log("hey");
+      calculateFrame();
     });
 
     return () => wavesurfer.current.destroy();
@@ -94,6 +105,10 @@ export default function Waveform({
     setSynch(false);
     // eslint-disable-next-line
   }, [synch]);
+
+  const calculateFrame = () => {
+    setFrame(Math.round(wavesurfer.current.getCurrentTime() * 25));
+  };
 
   const handlePlayPause = () => {
     if (!playDisabled) {
@@ -128,6 +143,7 @@ export default function Waveform({
         <button onClick={handlePlayPause} disabled={playDisabled}>
           {!playing ? "Play" : "Pause"}
         </button>
+        <label htmlFor="volume">Volume</label>
         <input
           type="range"
           id="volume"
@@ -140,13 +156,13 @@ export default function Waveform({
           onChange={onVolumeChange}
           defaultValue={volume}
         />
-        <label htmlFor="volume">Volume</label>
+        <label htmlFor="timelineRef">Timeline Zoom</label>
         <input
           type="range"
           id="timelineRef"
           name="timelineRef"
-          min="1"
-          max="20"
+          min="5"
+          max="10"
           step=".01"
           onChange={onZoomChange}
           defaultValue={zoom}

@@ -11,7 +11,7 @@ const App = () => {
   return (
     <Router>
       <div>
-        <nav>
+        {/* <nav>
           <ul>
             <li>
               <Link to="/demo1">Demo 1</Link>
@@ -26,11 +26,11 @@ const App = () => {
               <Link to="/demo4">Demo 4</Link>
             </li>
           </ul>
-        </nav>
+        </nav> */}
 
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
-        <Switch>
+        {/* <Switch>
           <Route path="/demo1">
             <Demo />
           </Route>
@@ -43,7 +43,8 @@ const App = () => {
           <Route path="/demo4">
             <DemoVideoAudio />
           </Route>
-        </Switch>
+        </Switch> */}
+        <DemoVideoAudio />
       </div>
     </Router>
   );

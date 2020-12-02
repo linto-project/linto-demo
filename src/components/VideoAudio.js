@@ -16,12 +16,15 @@ const VideoAudio = () => {
 
   useEffect(() => {
     console.log("current timestamp : " + durationSec);
-    setFrame(durationSec * 25);
+    setFrame(Math.round(durationSec * 25));
   }, [durationSec]);
 
   return (
     <div className="demo">
       {/* @todo: make sure that video plays only when preloaded */}
+      <div>
+        <p style={{ fontSize: "40px" }}>Current frame: {frame}</p>
+      </div>
       <Video
         url="/video/IS1002b.Closeup1-1-5min.webm"
         durationSec={durationSec}
@@ -36,11 +39,9 @@ const VideoAudio = () => {
           isPlaying={isPlaying}
           setIsPlaying={setIsPlaying}
           setDurationSec={setDurationSec}
+          frame={frame}
+          setFrame={setFrame}
         />
-      </div>
-      []
-      <div>
-        <p style={{ fontSize: "40px" }}>{frame}</p>
       </div>
     </div>
   );
