@@ -1,7 +1,8 @@
-# Dépandances:
+# Dépendances:
 
     React
     Material ui
+    Wavesurfer.js
 
 # Getting Started with Create React App
 
