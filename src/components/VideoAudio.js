@@ -4,7 +4,6 @@ import Video from "./Video";
 import WaveSurfer from "./Waveform";
 
 import Grid from "@material-ui/core/Grid";
-import Container from "@material-ui/core/Container";
 import CustomeSlider from "./CustomeSlider";
 import Button from "./Button";
 
@@ -13,7 +12,9 @@ import ZoomOut from "@material-ui/icons/ZoomOut";
 import PlayArrowSharpIcon from "@material-ui/icons/PlayArrowSharp";
 import StopSharpIcon from "@material-ui/icons/StopSharp";
 
-const VideoAudio = () => {
+const VideoAudio = ({ framerate }) => {
+  console.log("framerate  : " + framerate);
+
   const [durationSec, setDurationSec] = useState([]);
   const [isPlaying, setIsPlaying] = useState([]);
   const [frame, setFrame] = useState([]);
@@ -83,9 +84,9 @@ const VideoAudio = () => {
               playDisabled={playDisabled}
               setPlayDisabled={setPlayDisabled}
               setIsPlaying={setIsPlaying}
-              durationSec={durationSec}
               setDurationSec={setDurationSec}
               setFrame={setFrame}
+              framerate={framerate}
             />
           </div>
         </Grid>

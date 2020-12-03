@@ -44,8 +44,8 @@ export default function Waveform({
   volume,
   setAudioLoaded,
   setIsPlaying,
-  durationSec,
   setDurationSec,
+  framerate,
   setFrame,
 }) {
   const waveformRef = useRef(null);
@@ -120,7 +120,7 @@ export default function Waveform({
   }, [play]);
 
   const calculateFrame = () => {
-    setFrame(Math.round(wavesurfer.current.getCurrentTime() * 25));
+    setFrame(Math.round(wavesurfer.current.getCurrentTime() * framerate));
   };
 
   // const handlePlayPause = () => {

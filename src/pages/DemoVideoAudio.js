@@ -4,7 +4,7 @@ import "./Demo.css";
 const DemoVideoAudio = () => {
   return (
     <div className="demo">
-      <VideoAudio />
+      <VideoAudio framerate={25} />
     </div>
   );
 };
