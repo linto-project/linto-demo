@@ -6,6 +6,8 @@ import WaveSurfer from "./Waveform";
 import Grid from "@material-ui/core/Grid";
 import CustomeSlider from "./CustomeSlider";
 import Button from "./Button";
+import CircularProgress from "@material-ui/core/CircularProgress";
+import Backdrop from "@material-ui/core/Backdrop";
 
 import VolumeUp from "@material-ui/icons/VolumeUp";
 import ZoomOut from "@material-ui/icons/ZoomOut";
@@ -27,6 +29,12 @@ const VideoAudio = ({ framerate }) => {
   const [videoLoaded, setVideoLoaded] = useState(false);
   const [playDisabled, setPlayDisabled] = useState(true);
 
+  const [open, setOpen] = useState(false);
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   useEffect(() => {
     console.log("current State : " + isPlaying);
   }, [isPlaying]);
@@ -38,6 +46,7 @@ const VideoAudio = ({ framerate }) => {
 
   useEffect(() => {
     audioLoaded && videoLoaded ? setPlayDisabled(false) : setPlayDisabled(true);
+    audioLoaded && videoLoaded ? setOpen(false) : setOpen(true);
   }, [audioLoaded, videoLoaded]);
 
   const handlePlayPause = () => {
@@ -60,8 +69,15 @@ const VideoAudio = ({ framerate }) => {
 
   return (
     <div className="demo">
+      <Backdrop className="backdrop" open={open} onClick={handleClose}>
+        <CircularProgress color="inherit" />
+      </Backdrop>
       <Grid container direction="column" spacing={2}>
         <Grid item justify="center">
+          <Backdrop className="backdrop" open={open} onClick={handleClose}>
+            <CircularProgress color="inherit" />
+            <p>Video & Audio loading, please wait </p>
+          </Backdrop>
           <Video
             url="/video/IS1002b.Closeup1-1-5min.webm"
             durationSec={durationSec}
@@ -108,9 +124,6 @@ const VideoAudio = ({ framerate }) => {
                   >
                     {!play ? "Play" : "Pause"}
                   </Button>
-                  {/* <button onClick={handlePlayPause} disabled={playDisabled}>
-                    {!play ? "Play" : "Pause"}
-                  </button> */}
                 </div>
               </Grid>
               <Grid xs item>
