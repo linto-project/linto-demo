@@ -1,15 +1,13 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 
 import WaveSurfer from "wavesurfer.js";
 import TimelinePlugin from "wavesurfer.js/dist/plugin/wavesurfer.timeline.min.js";
 
-import Slider from "@material-ui/core/Slider";
 import Grid from "@material-ui/core/Grid";
-import Typography from "@material-ui/core/Typography";
-import CustomeSlider from "./CustomeSlider";
+// import CustomeSlider from "./ CustomeSlider";
 
-import VolumeUp from "@material-ui/icons/VolumeUp";
-import ZoomOut from "@material-ui/icons/ZoomOut";
+// import VolumeUp from "@material-ui/icons/VolumeUp";
+// import ZoomOut from "@material-ui/icons/ZoomOut";
 
 const formWaveSurferOptions = (ref, timelineRef) => ({
   container: ref,
@@ -32,12 +30,22 @@ const formWaveSurferOptions = (ref, timelineRef) => ({
   height: 100,
   normalize: true,
 
-  // Use the PeakCache to improve rendering speed of large waveforms.
+  // Use the PeakCac he to improve rendering speed of large waveforms.
   // partialRender: true,
 });
 
 export default function Waveform({
   url,
+  zoom,
+  setZoom,
+  synch,
+  setSynch,
+  play,
+  setPlay,
+  volume,
+  setVolume,
+  playDisabled,
+  setPlayDisabled,
   isPlaying,
   setIsPlaying,
   durationSec,
@@ -49,13 +57,6 @@ export default function Waveform({
   const timelineRef = useRef(null);
 
   const wavesurfer = useRef(null);
-
-  const [playing, setPlay] = useState(false);
-  const [synch, setSynch] = useState(false);
-  const [volume, setVolume] = useState(0.5);
-  const [zoom, setZoom] = useState(5);
-
-  const [playDisabled, setPlayDisabled] = useState(true);
 
   useEffect(() => {
     setPlay(false);
@@ -114,32 +115,44 @@ export default function Waveform({
     // eslint-disable-next-line
   }, [synch]);
 
+  useEffect(() => {
+    wavesurfer.current.zoom(zoom || 1);
+  }, [zoom]);
+
+  useEffect(() => {
+    wavesurfer.current.setVolume(volume || 1);
+  }, [volume]);
+
+  useEffect(() => {
+    wavesurfer.current.playPause();
+  }, [play]);
+
   const calculateFrame = () => {
     setFrame(Math.round(wavesurfer.current.getCurrentTime() * 25));
   };
 
-  const handlePlayPause = () => {
-    if (!playDisabled) {
-      setPlay(!playing);
-      wavesurfer.current.playPause();
-    }
-  };
+  // const handlePlayPause = () => {
+  //   if (!playDisabled) {
+  //     setPlay(!playing);
+  //     wavesurfer.current.playPause();
+  //   }
+  // };
 
-  const onVolumeChange = (e, newValue) => {
-    if (newValue) {
-      setVolume(newValue);
-      wavesurfer.current.setVolume(newValue || 1);
-      console.log("volume : " + newValue);
-    }
-  };
+  // const onVolumeChange = (e, newValue) => {
+  //   if (newValue) {
+  //     setVolume(newValue);
+  //     wavesurfer.current.setVolume(newValue || 1 ;
+  //     console.log("volume : " + newValue);
+  //   }
+  // };
 
-  const onZoomChange = (e, newValue) => {
-    if (newValue) {
-      setZoom(newValue);
-      wavesurfer.current.zoom(newValue || 1);
-      console.log("Zoom : " + newValue);
-    }
-  };
+  // const onZoomChange = (e, newValue) => {
+  //   if (newValue) {
+  //     setZoom(newValue);
+  //     wavesurfer.current.zoom(newValue || 1);
+  //     console.log("Zoom : " + newValue);
+  //   }
+  // };
 
   return (
     <div className="root">
@@ -148,13 +161,17 @@ export default function Waveform({
           <div id="waveform" ref={waveformRef} />
           <div id="timelineRef" ref={timelineRef} />
         </Grid>
-        {/* <div className="controls">
-          <button onClick={handlePlayPause} disabled={playDisabled}>
-            {!playing ? "Play" : "Pause"}
-          </button>
-        </div> */}
-        <Grid item>
-          <Grid spacing={1} container>
+      </Grid>
+
+      {/* <Grid item>
+          <Grid container spacing={1} alignItems="center">
+            <Grid item align="center">
+              <div className="controls">
+                <button onClick={handlePlayPause} disabled={playDisabled}>
+                  {!playing ? "Play" : "Pause"}
+                </button>
+              </div>
+            </Grid>
             <Grid xs item>
               <CustomeSlider
                 id="volume"
@@ -185,24 +202,11 @@ export default function Waveform({
                 valueLabelDisplay="auto"
               >
                 Zoom
-              </CustomeSlider>
+              </CustomeSlider> 
             </Grid>
           </Grid>
         </Grid>
-      </Grid>
+      </Grid>  */}
     </div>
-    // {/* <grid itemxs>
-    //   <label htmlFor="timelineRef">Timeline Zoom</label>
-    //   <input
-    //     type="range"
-    //     id="timelineRef"
-    //     name="timelineRef"
-    //     min="5"
-    //     max="10"
-    //     step=".01"
-    //     onChange={onZoomChange}
-    //     defaultValue={zoom}
-    //   />
-    // </grid> */}
   );
 }
