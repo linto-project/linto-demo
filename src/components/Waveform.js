@@ -37,20 +37,15 @@ const formWaveSurferOptions = (ref, timelineRef) => ({
 export default function Waveform({
   url,
   zoom,
-  setZoom,
   synch,
   setSynch,
   play,
   setPlay,
   volume,
-  setVolume,
-  playDisabled,
-  setPlayDisabled,
-  isPlaying,
+  setAudioLoaded,
   setIsPlaying,
   durationSec,
   setDurationSec,
-  frame,
   setFrame,
 }) {
   const waveformRef = useRef(null);
@@ -59,6 +54,7 @@ export default function Waveform({
   const wavesurfer = useRef(null);
 
   useEffect(() => {
+    setAudioLoaded(false);
     setPlay(false);
     const options = formWaveSurferOptions(
       waveformRef.current,
@@ -66,18 +62,6 @@ export default function Waveform({
     );
     wavesurfer.current = WaveSurfer.create(options);
     wavesurfer.current.load(url);
-
-    wavesurfer.current.on("ready", function () {
-      // https://wavesurfer-js.org/docs/methods.html
-      // wavesurfer.current.play();
-      // setPlay(true);
-      if (wavesurfer.current) {
-        wavesurfer.current.setVolume(volume);
-        setVolume(volume);
-        setZoom(zoom);
-      }
-      setPlayDisabled(false);
-    });
 
     // Pausing audio
     wavesurfer.current.on("pause", function () {
@@ -102,6 +86,14 @@ export default function Waveform({
     wavesurfer.current.on("audioprocess", function () {
       console.log("hey");
       calculateFrame();
+    });
+
+    wavesurfer.current.on("waveform-ready", function () {
+      console.log("ready");
+      if (wavesurfer.current) {
+        wavesurfer.current.setVolume(volume);
+      }
+      setAudioLoaded(true);
     });
 
     return () => wavesurfer.current.destroy();

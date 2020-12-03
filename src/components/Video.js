@@ -1,12 +1,7 @@
 import { useEffect, useRef } from "react";
+import "./Video.css";
 
-const Video = ({
-  url,
-  isPlaying,
-  setIsPlaying,
-  durationSec,
-  setDurationSec,
-}) => {
+const Video = ({ url, isPlaying, durationSec, setVideoLoaded }) => {
   const video = useRef(null);
 
   useEffect(() => {
@@ -17,16 +12,23 @@ const Video = ({
     isPlaying ? video.current.play() : video.current.pause();
   }, [isPlaying]);
 
+  const videoReady = () => {
+    setVideoLoaded(true);
+  };
+
   return (
-    <video
-      preload
-      //   ref={ref}
-      ref={video}
-      src={url}
-      width="640"
-      height="360"
-      //   onTimeUpda te={onSetVideoTimestamp}
-    />
+    <div className="video">
+      <video
+        preload
+        //   ref={ref}
+        ref={video}
+        src={url}
+        width="640"
+        height="360"
+        onCanPlayThrough={videoReady}
+        //   onTimeUpda te={onSetVideoTimestamp}
+      />
+    </div>
   );
 };
 
