@@ -1,8 +1,9 @@
 import VideoAudio from "../components/VideoAudio";
+import "./Demo.css";
 
 const DemoVideoAudio = () => {
   return (
-    <div>
+    <div className="demo">
       <VideoAudio />
     </div>
   );

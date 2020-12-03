@@ -3,6 +3,14 @@ import React, { useEffect, useRef, useState } from "react";
 import WaveSurfer from "wavesurfer.js";
 import TimelinePlugin from "wavesurfer.js/dist/plugin/wavesurfer.timeline.min.js";
 
+import Slider from "@material-ui/core/Slider";
+import Grid from "@material-ui/core/Grid";
+import Typography from "@material-ui/core/Typography";
+import CustomeSlider from "./CustomeSlider";
+
+import VolumeUp from "@material-ui/icons/VolumeUp";
+import ZoomOut from "@material-ui/icons/ZoomOut";
+
 const formWaveSurferOptions = (ref, timelineRef) => ({
   container: ref,
   waveColor: "#eee",
@@ -117,57 +125,84 @@ export default function Waveform({
     }
   };
 
-  const onVolumeChange = (e) => {
-    const newVolume = e.target.value;
-    if (newVolume) {
-      setVolume(newVolume);
-      wavesurfer.current.setVolume(newVolume || 1);
-      console.log("volume : " + newVolume);
+  const onVolumeChange = (e, newValue) => {
+    if (newValue) {
+      setVolume(newValue);
+      wavesurfer.current.setVolume(newValue || 1);
+      console.log("volume : " + newValue);
     }
   };
 
-  const onZoomChange = (e) => {
-    const newZoom = e.target.value;
-    if (newZoom) {
-      setZoom(newZoom);
-      wavesurfer.current.zoom(zoom || 1);
-      console.log("Zoom : " + zoom);
+  const onZoomChange = (e, newValue) => {
+    if (newValue) {
+      setZoom(newValue);
+      wavesurfer.current.zoom(newValue || 1);
+      console.log("Zoom : " + newValue);
     }
   };
 
   return (
-    <div>
-      <div id="waveform" ref={waveformRef} />
-      <div id="timelineRef" ref={timelineRef} />
-      <div className="controls">
-        <button onClick={handlePlayPause} disabled={playDisabled}>
-          {!playing ? "Play" : "Pause"}
-        </button>
-        <label htmlFor="volume">Volume</label>
-        <input
-          type="range"
-          id="volume"
-          name="volume"
-          // waveSurfer recognize value of `0` same as `1`
-          //  so we need to set some zero-ish value for silence
-          min="0.01"
-          max="1"
-          step=".025"
-          onChange={onVolumeChange}
-          defaultValue={volume}
-        />
-        <label htmlFor="timelineRef">Timeline Zoom</label>
-        <input
-          type="range"
-          id="timelineRef"
-          name="timelineRef"
-          min="5"
-          max="10"
-          step=".01"
-          onChange={onZoomChange}
-          defaultValue={zoom}
-        />
-      </div>
+    <div className="root">
+      <Grid container direction="column" spacing={3}>
+        <Grid item>
+          <div id="waveform" ref={waveformRef} />
+          <div id="timelineRef" ref={timelineRef} />
+        </Grid>
+        {/* <div className="controls">
+          <button onClick={handlePlayPause} disabled={playDisabled}>
+            {!playing ? "Play" : "Pause"}
+          </button>
+        </div> */}
+        <Grid item>
+          <Grid spacing={1} container>
+            <Grid xs item>
+              <CustomeSlider
+                id="volume"
+                name="volume"
+                value={volume}
+                onChange={onVolumeChange}
+                aria-labelledby="continuous-slider"
+                min={0}
+                max={1}
+                step={0.01}
+                icon={<VolumeUp />}
+                valueLabelDisplay="auto"
+              >
+                Volume
+              </CustomeSlider>
+            </Grid>
+            <Grid xs item>
+              <CustomeSlider
+                id="zoom"
+                name="zoom"
+                value={zoom}
+                onChange={onZoomChange}
+                aria-labelledby="continuous-slider"
+                min={1}
+                max={10}
+                step={0.1}
+                icon={<ZoomOut />}
+                valueLabelDisplay="auto"
+              >
+                Zoom
+              </CustomeSlider>
+            </Grid>
+          </Grid>
+        </Grid>
+      </Grid>
     </div>
+    // {/* <grid itemxs>
+    //   <label htmlFor="timelineRef">Timeline Zoom</label>
+    //   <input
+    //     type="range"
+    //     id="timelineRef"
+    //     name="timelineRef"
+    //     min="5"
+    //     max="10"
+    //     step=".01"
+    //     onChange={onZoomChange}
+    //     defaultValue={zoom}
+    //   />
+    // </grid> */}
   );
 }
