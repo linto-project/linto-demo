@@ -5,9 +5,11 @@ import TimelinePlugin from "wavesurfer.js/dist/plugin/wavesurfer.timeline.min.js
 
 import Slider from "@material-ui/core/Slider";
 import Grid from "@material-ui/core/Grid";
+import Typography from "@material-ui/core/Typography";
+import CustomeSlider from "./CustomeSlider";
 
 import VolumeUp from "@material-ui/icons/VolumeUp";
-import Typography from "@material-ui/core/Typography";
+import ZoomOut from "@material-ui/icons/ZoomOut";
 
 const formWaveSurferOptions = (ref, timelineRef) => ({
   container: ref,
@@ -131,12 +133,11 @@ export default function Waveform({
     }
   };
 
-  const onZoomChange = (e) => {
-    const newZoom = e.target.value;
-    if (newZoom) {
-      setZoom(newZoom);
-      wavesurfer.current.zoom(zoom || 1);
-      console.log("Zoom : " + zoom);
+  const onZoomChange = (e, newValue) => {
+    if (newValue) {
+      setZoom(newValue);
+      wavesurfer.current.zoom(newValue || 1);
+      console.log("Zoom : " + newValue);
     }
   };
 
@@ -153,53 +154,40 @@ export default function Waveform({
           </button>
         </div> */}
         <Grid item>
-          <div>
-            <Typography id="input-slider" gutterBottom>
-              Volume
-            </Typography>
-            <Grid container spacing={2}>
-              <Grid item>
-                <VolumeUp />
-              </Grid>
-              <Grid xs item>
-                <Slider
-                  id="volume"
-                  name="volume"
-                  value={volume}
-                  onChange={onVolumeChange}
-                  aria-labelledby="continuous-slider"
-                  min={0}
-                  max={1}
-                  step={0.01}
-                  valueLabelDisplay="auto"
-                />
-              </Grid>
+          <Grid spacing={1} container>
+            <Grid xs item>
+              <CustomeSlider
+                id="volume"
+                name="volume"
+                value={volume}
+                onChange={onVolumeChange}
+                aria-labelledby="continuous-slider"
+                min={0}
+                max={1}
+                step={0.01}
+                icon={<VolumeUp />}
+                valueLabelDisplay="auto"
+              >
+                Volume
+              </CustomeSlider>
             </Grid>
-          </div>
-
-          <div>
-            <Typography id="input-slider" gutterBottom>
-              Volume
-            </Typography>
-            <Grid container spacing={2}>
-              <Grid item>
-                <VolumeUp />
-              </Grid>
-              <Grid xs item>
-                <Slider
-                  id="volume"
-                  name="volume"
-                  value={volume}
-                  onChange={onVolumeChange}
-                  aria-labelledby="continuous-slider"
-                  min={0}
-                  max={1}
-                  step={0.01}
-                  valueLabelDisplay="auto"
-                />
-              </Grid>
+            <Grid xs item>
+              <CustomeSlider
+                id="zoom"
+                name="zoom"
+                value={zoom}
+                onChange={onZoomChange}
+                aria-labelledby="continuous-slider"
+                min={1}
+                max={10}
+                step={0.1}
+                icon={<ZoomOut />}
+                valueLabelDisplay="auto"
+              >
+                Zoom
+              </CustomeSlider>
             </Grid>
-          </div>
+          </Grid>
         </Grid>
       </Grid>
     </div>
