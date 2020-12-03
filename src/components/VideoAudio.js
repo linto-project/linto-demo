@@ -71,13 +71,10 @@ const VideoAudio = ({ framerate }) => {
     <div className="demo">
       <Backdrop className="backdrop" open={open} onClick={handleClose}>
         <CircularProgress color="inherit" />
+        <p>Video & Audio loading, please wait </p>
       </Backdrop>
       <Grid container direction="column" spacing={2}>
         <Grid item justify="center">
-          <Backdrop className="backdrop" open={open} onClick={handleClose}>
-            <CircularProgress color="inherit" />
-            <p>Video & Audio loading, please wait </p>
-          </Backdrop>
           <Video
             url="/video/IS1002b.Closeup1-1-5min.webm"
             durationSec={durationSec}
