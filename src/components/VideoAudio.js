@@ -4,7 +4,7 @@ import Video from "./Video";
 import WaveSurfer from "./Waveform";
 
 import Grid from "@material-ui/core/Grid";
-import CustomeSlider from "./CustomeSlider";
+import CustomeSlider from "./CustomSlider";
 import Button from "./Button";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import Backdrop from "@material-ui/core/Backdrop";

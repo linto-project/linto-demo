@@ -6,43 +6,90 @@ import Switch from "@material-ui/core/Switch";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import Button from "@material-ui/core/Button";
+
+import CustomeSlider from "./CustomSlider";
+import Slider from "@material-ui/core/Slider";
+
+import CropFree from "@material-ui/icons/CropFree";
+import FolderOpenOutlined from "@material-ui/icons/FolderOpenOutlined";
 
 import { useEffect, useRef, useState } from "react";
+import { Grid } from "@material-ui/core";
 
 const IHM = ({}) => {
-  const [checked1, setChecked1] = useState(false);
+  const [checkLocuteurActif, setCheckLocuteurActif] = useState(false);
+  const [seuilLocuteurActif, setSeuilLocuteurActif] = useState();
+
   const [checked2, setChecked2] = useState(false);
   const [checked3, setChecked3] = useState(false);
-
-  const toggleSwitch = (v, setV) => {
-    setV(!v);
-  };
-
-  const toggleSwitch1 = () => {
-    setChecked1(false);
-  };
 
   return (
     <div style={{ width: "100%" }}>
       <Accordion>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-label="Expand"
-          aria-controls="additional-actions1-content"
-          id="additional-actions1-header"
-        >
+        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+          <Grid spacing={2} container>
+            <Grid item>
+              <FolderOpenOutlined />
+            </Grid>
+            <Grid item>
+              <Typography>Chargement</Typography>
+            </Grid>
+          </Grid>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Grid
+            spacing={2}
+            container
+            direction="column"
+            justify="center"
+            alignItems="center"
+          >
+            <Grid item>
+              <Button style={{ width: "200px" }} variant="outlined">
+                Ouverture
+              </Button>
+            </Grid>
+            <Grid item>
+              <Button style={{ width: "200px" }} variant="outlined">
+                Tour de Table
+              </Button>
+            </Grid>
+            <Grid item>
+              <Button style={{ width: "200px" }} variant="outlined">
+                Default
+              </Button>
+            </Grid>
+          </Grid>
+        </AccordionDetails>
+      </Accordion>
+      <Accordion>
+        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
           <FormControlLabel
-            aria-label="Acknowledge"
             onClick={(event) => event.stopPropagation()}
             onFocus={(event) => event.stopPropagation()}
-            checked={checked1}
-            onChange={(e) => setChecked1(!checked1)}
+            checked={checkLocuteurActif}
+            onChange={(e) => setCheckLocuteurActif(!checkLocuteurActif)}
             control={<Switch />}
-            label="Option 1"
+            label="Locuteur actif"
           />
         </AccordionSummary>
         <AccordionDetails>
-          <Switch />
+          <CustomeSlider
+            id="Seuil d'affichage"
+            name="Seuil d'affichage"
+            disabled={!checkLocuteurActif}
+            value={seuilLocuteurActif}
+            onChange={setSeuilLocuteurActif}
+            aria-labelledby="continuous-slider"
+            min={0}
+            max={1}
+            step={0.01}
+            icon={<CropFree />}
+            valueLabelDisplay="auto"
+          >
+            Seuil d'affichage
+          </CustomeSlider>
         </AccordionDetails>
       </Accordion>
       <Accordion>
@@ -64,29 +111,6 @@ const IHM = ({}) => {
           <Typography color="textSecondary">
             The focus event of the nested action will propagate up and also
             focus the accordion unless you explicitly stop it.
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
-      <Accordion>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-label="Expand"
-          aria-controls="additional-actions3-content"
-          id="additional-actions3-header"
-        >
-          <FormControlLabel
-            aria-label="Acknowledge"
-            onClick={(event) => event.stopPropagation()}
-            onFocus={(event) => event.stopPropagation()}
-            control={<Checkbox />}
-            label="Option 3"
-          />
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography color="textSecondary">
-            If you forget to put an aria-label on the nested action, the label
-            of the action will also be included in the label of the parent
-            button that controls the accordion expansion.
           </Typography>
         </AccordionDetails>
       </Accordion>
