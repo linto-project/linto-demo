@@ -1,3 +1,4 @@
+import "./Waveform.css";
 import React, { useEffect, useRef } from "react";
 
 import WaveSurfer from "wavesurfer.js";
@@ -150,7 +151,7 @@ export default function Waveform({
     <div className="root">
       <Grid container direction="column" spacing={3}>
         <Grid item>
-          <div id="waveform" ref={waveformRef} />
+          <div className="waveform" id="waveform" ref={waveformRef} />
           <div id="timelineRef" ref={timelineRef} />
         </Grid>
       </Grid>

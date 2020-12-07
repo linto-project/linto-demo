@@ -69,6 +69,9 @@ const VideoAudio = ({ framerate }) => {
 
   return (
     <div className="demo">
+      {/* @to do:
+        Modifiy backdrop for skeleton (material)
+      */}
       <Backdrop className="backdrop" open={open} onClick={handleClose}>
         <CircularProgress color="inherit" />
         <p> Video & Audio loading, please wait </p>

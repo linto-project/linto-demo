@@ -1,3 +1,7 @@
+.waveform {
+  cursor: pointer;
+}
+
 .WaveformContianer {
   display: flex;
   flex-direction: row;
