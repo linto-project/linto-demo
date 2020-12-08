@@ -31,7 +31,7 @@ const CustomeSlider = ({
             id={id}
             name={name}
             value={value}
-            onChange={onChange}
+            onChange={(e, v) => onChange(v)}
             aria-labelledby="continuous-slider"
             min={min}
             max={max}
