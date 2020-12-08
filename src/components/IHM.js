@@ -9,20 +9,16 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import Button from "@material-ui/core/Button";
 
 import CustomeSlider from "./CustomSlider";
-import Slider from "@material-ui/core/Slider";
 
 import CropFree from "@material-ui/icons/CropFree";
 import FolderOpenOutlined from "@material-ui/icons/FolderOpenOutlined";
 
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { Grid } from "@material-ui/core";
 
-const IHM = ({}) => {
+const IHM = () => {
   const [checkLocuteurActif, setCheckLocuteurActif] = useState(false);
   const [seuilLocuteurActif, setSeuilLocuteurActif] = useState();
-
-  const [checked2, setChecked2] = useState(false);
-  const [checked3, setChecked3] = useState(false);
 
   return (
     <div style={{ width: "100%" }}>
