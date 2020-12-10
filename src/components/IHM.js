@@ -100,7 +100,7 @@ const IHM = () => {
             onChange={setSeuilLocuteurActif}
             aria-labelledby="continuous-slider"
             min={0}
-            max={10}
+            max={1}
             step={0.01}
             icon={<CropFree />}
             valueLabelDisplay="auto"

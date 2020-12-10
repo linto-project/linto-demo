@@ -2,3 +2,7 @@
   display: flex;
   justify-content: center;
 }
+
+.video video {
+  object-fit: fill;
+}

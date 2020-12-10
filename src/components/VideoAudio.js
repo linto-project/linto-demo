@@ -89,7 +89,8 @@ const VideoAudio = ({ framerate }) => {
       <Grid container direction="column" spacing={2}>
         <Grid item justify="center">
           <Video
-            url={"/video/" + File.getName() + ".webm"}
+            url={"/video-ignore/MeetingRap1.webm"}
+            // url={"/video/" + File.getName() + ".webm"}
             durationSec={durationSec}
             isPlaying={isPlaying}
             setVideoLoaded={setVideoLoaded}
