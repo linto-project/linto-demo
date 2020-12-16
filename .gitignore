@@ -5,7 +5,7 @@ feature/add_waveform_js
 /public/video-ignore
 /public/annotation-ignore
 /src/data
-
+**/.eslintcache
 
 # dependencies
 /node_modules
