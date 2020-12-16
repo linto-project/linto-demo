@@ -3,7 +3,7 @@ import "./App.css";
 // import Demo from "./pages/Demo";
 // import DemoVideo from "./pages/DemoVideo";
 // import DemoAudio from "./pages/DemoAudio";
-import DemoVideoAudio from "./pages/DemoVideoAudio";
+import DemoVideoAudio from "./Pages/DemoVideoAudio";
 
 // import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { BrowserRouter as Router } from "react-router-dom";
