@@ -24,7 +24,8 @@ const IHM = () => {
 
   const { File } = useGlobalContext();
   const { setName, getName } = File;
-
+  
+  
   useEffect(() => {
     console.log(seuilLocuteurActif);
   }, [seuilLocuteurActif]);
