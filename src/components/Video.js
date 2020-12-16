@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import "./Video.css";
-import data from "../data/detect_meeting_RAP_1_b.json";
+// import data from "../data/detect_meeting_RAP_1_b.json";
 
 const Video = ({ url, isPlaying, durationSec, setVideoLoaded }) => {
   const videoRef = useRef(null);
@@ -28,8 +28,8 @@ const Video = ({ url, isPlaying, durationSec, setVideoLoaded }) => {
   // https://www.robinwieruch.de/react-function-component
 
   const canva = useRef(null);
-  const fps = 0.5;
-  const fps2 = 12;
+  const fps = 30;
+  // const fps2  = 30;
   const width = 1280;
   const height = 720;
 
@@ -41,17 +41,17 @@ const Video = ({ url, isPlaying, durationSec, setVideoLoaded }) => {
     console.log(" ");
   };
 
-  const drawRectangle = (x, y, w, h) => {
-    canva.current.getContext("2d", { alpha: false }).strokeRect(y, x, h, w);
-  };
+  // const drawRectangle = (x, y, w, h) => {
+  //   canva.current.getContext("2d", { alpha: false }).strokeRect(y, x, h, w);
+  // };
 
   useEffect(() => {
     const interval = setInterval(() => {
       drawImage();
 
-      data[Math.round(videoRef.current.currentTime * fps2)].map((o) =>
-        drawRectangle(o.x, o.y, o.width, o.height)
-      );
+      // data[Math.round(videoRef.current.currentTime * fps2)].map((o) =>
+      //   drawRectangle(o.x, o.y, o.width, o.height)
+      // );
     }, 1000 / fps);
     return () => clearInterval(interval);
   }, []);

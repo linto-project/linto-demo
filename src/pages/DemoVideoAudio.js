@@ -14,7 +14,7 @@ const DemoVideoAudio = () => {
             <IHM />
           </Grid>
           <Grid item xs={10}>
-            <VideoAudio framerate={25} />
+            <VideoAudio framerate={10} />
           </Grid>
         </Grid>
       </ContextProvider>

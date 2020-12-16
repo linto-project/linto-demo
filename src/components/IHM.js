@@ -23,7 +23,7 @@ const IHM = () => {
   const [seuilLocuteurActif, setSeuilLocuteurActif] = useState(0.5);
 
   const { File } = useGlobalContext();
-  const { setName } = File;
+  const { setName, getName } = File;
 
   useEffect(() => {
     console.log(seuilLocuteurActif);
@@ -50,6 +50,9 @@ const IHM = () => {
             justify="center"
             alignItems="center"
           >
+            <Grid item>
+              <Typography>Current File: {getName()}</Typography>
+            </Grid>
             <Grid item>
               <Button
                 style={{ width: "200px" }}

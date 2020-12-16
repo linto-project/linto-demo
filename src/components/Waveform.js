@@ -129,17 +129,17 @@ export default function Waveform({
     // Add region
 
     if (analyse.start < wavesurfer.current.getCurrentTime()) {
-      let end;
+      // let end;
       if (analyse.end > wavesurfer.current.getCurrentTime()) {
-        end = wavesurfer.current.getCurrentTime();
+        // end = wavesurfer.current.getCurrentTime();
       } else {
-        end = analyse.end;
+        // end = analyse.end;
       }
-      wavesurfer.current.addRegion({
-        start: analyse.start,
-        end: end,
-        color: analyse.color,
-      });
+      // wavesurfer.current.addRegion({
+      //   sta rt: analyse.start,
+      //   end: end,
+      //   color: analyse.color,
+      // });
     }
   };
 
