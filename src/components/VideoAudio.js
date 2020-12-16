@@ -4,6 +4,7 @@ import Video from "./Video";
 import WaveSurfer from "./Waveform";
 
 import Grid from "@material-ui/core/Grid";
+import Typography from "@material-ui/core/Typography";
 import CustomeSlider from "./CustomSlider";
 import Button from "./Button";
 import CircularProgress from "@material-ui/core/CircularProgress";
@@ -15,6 +16,16 @@ import PlayArrowSharpIcon from "@material-ui/icons/PlayArrowSharp";
 import StopSharpIcon from "@material-ui/icons/StopSharp";
 
 import { useGlobalContext } from "./Provider";
+
+import { makeStyles, createStyles } from "@material-ui/core/styles";
+
+const useStyles = makeStyles(() =>
+  createStyles({
+    root: {
+      zIndex: 1000000,
+    },
+  })
+);
 
 const VideoAudio = ({ framerate }) => {
   console.log("framerate  : " + framerate);
@@ -77,14 +88,35 @@ const VideoAudio = ({ framerate }) => {
   //   }
   // };
 
+  const classes = useStyles();
   return (
     <div className="demo">
       {/* @to do:
-        Modifiy backdrop for skeleton (material)
+        Modifiy  d backdrop for skeleton (material)
       */}
-      <Backdrop className="backdrop" open={open} onClick={handleClose}>
-        <CircularProgress color="inherit" />
-        <p> Video & Audio loading, please wait </p>
+      <Backdrop className={classes.root} open={open} onClick={handleClose}>
+        <Grid
+          container
+          direction="row"
+          justify="center"
+          alignItems="center"
+          spacing={2}
+        >
+          <Grid item>
+            <CircularProgress color="primary" size={60} thickness={5.4} />
+          </Grid>
+          <Grid item>
+            <Typography
+              style={{
+                color: "white",
+                textShadow:
+                  "-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000",
+              }}
+            >
+              Video & Audio loading, please wait
+            </Typography>
+          </Grid>
+        </Grid>
       </Backdrop>
       <Grid container direction="column" spacing={2}>
         <Grid item justify="center">

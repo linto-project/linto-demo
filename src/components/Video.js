@@ -58,7 +58,12 @@ const Video = ({ url, isPlaying, durationSec, setVideoLoaded }) => {
 
   return (
     <div className="video">
-      <canvas ref={canva} width="1280" height="720"></canvas>
+      <canvas
+        style={{ zindex: "0" }}
+        ref={canva}
+        width="1280"
+        height="720"
+      ></canvas>
       <video
         key={url}
         preload
