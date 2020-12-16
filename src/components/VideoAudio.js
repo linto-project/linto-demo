@@ -14,6 +14,8 @@ import ZoomOut from "@material-ui/icons/ZoomOut";
 import PlayArrowSharpIcon from "@material-ui/icons/PlayArrowSharp";
 import StopSharpIcon from "@material-ui/icons/StopSharp";
 
+import { useGlobalContext } from "./Provider";
+
 const VideoAudio = ({ framerate }) => {
   console.log("framerate  : " + framerate);
 
@@ -31,9 +33,17 @@ const VideoAudio = ({ framerate }) => {
 
   const [open, setOpen] = useState(false);
 
+  const { File } = useGlobalContext();
+
   const handleClose = () => {
     setOpen(false);
   };
+
+  const nameFile = File.getName();
+  useEffect(() => {
+    setVideoLoaded(false);
+    setPlay(false);
+  }, [nameFile]);
 
   useEffect(() => {
     console.log("current State : " + isPlaying);
@@ -55,17 +65,17 @@ const VideoAudio = ({ framerate }) => {
     }
   };
 
-  const onVolumeChange = (e, newValue) => {
-    if (newValue) {
-      setVolume(newValue);
-    }
-  };
+  // const onVolumeChange = (e, newValue) => {
+  //   if (newValue) {
+  //     setVolume(newValue);
+  //   }
+  // };
 
-  const onZoomChange = (e, newValue) => {
-    if (newValue) {
-      setZoom(newValue);
-    }
-  };
+  // const onZoomChange = (e, newValue) => {
+  //   if (newValue) {
+  //     setZoom(newValue);
+  //   }
+  // };
 
   return (
     <div className="demo">
@@ -79,7 +89,8 @@ const VideoAudio = ({ framerate }) => {
       <Grid container direction="column" spacing={2}>
         <Grid item justify="center">
           <Video
-            url="/video/IS1002b.Closeup1-1-5min.webm"
+            //url={"/video-ignore/MeetingRap1.webm"}
+            url={"/video/" + File.getName() + ".webm"}
             durationSec={durationSec}
             isPlaying={isPlaying}
             setVideoLoaded={setVideoLoaded}
@@ -88,7 +99,7 @@ const VideoAudio = ({ framerate }) => {
         <Grid item>
           <div id="waveform">
             <WaveSurfer
-              url="/audio/IS1002b.Array1-01-5min.wav"
+              url={"/audio/" + File.getName() + ".wav"}
               zoom={zoom}
               synch={synch}
               setSynch={setSynch}
@@ -131,7 +142,7 @@ const VideoAudio = ({ framerate }) => {
                   id="volume"
                   name="volume"
                   value={volume}
-                  onChange={onVolumeChange}
+                  onChange={setVolume}
                   aria-labelledby="continuous-slider"
                   min={0}
                   max={1}
@@ -147,7 +158,7 @@ const VideoAudio = ({ framerate }) => {
                   id="zoom"
                   name="zoom"
                   value={zoom}
-                  onChange={onZoomChange}
+                  onChange={setZoom}
                   aria-labelledby="continuous-slider"
                   min={1}
                   max={10}
@@ -164,6 +175,7 @@ const VideoAudio = ({ framerate }) => {
         <Grid item>
           <div>
             <p style={{ fontSize: "40px" }}>Current frame: {frame}</p>
+            <p>Test selected file: {File.getName()}</p>
           </div>
         </Grid>
       </Grid>

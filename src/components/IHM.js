@@ -13,12 +13,22 @@ import CustomeSlider from "./CustomSlider";
 import CropFree from "@material-ui/icons/CropFree";
 import FolderOpenOutlined from "@material-ui/icons/FolderOpenOutlined";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Grid } from "@material-ui/core";
+
+import { useGlobalContext } from "./Provider";
 
 const IHM = () => {
   const [checkLocuteurActif, setCheckLocuteurActif] = useState(false);
-  const [seuilLocuteurActif, setSeuilLocuteurActif] = useState();
+  const [seuilLocuteurActif, setSeuilLocuteurActif] = useState(0.5);
+
+  const { File } = useGlobalContext();
+  const { setName, getName } = File;
+  
+  
+  useEffect(() => {
+    console.log(seuilLocuteurActif);
+  }, [seuilLocuteurActif]);
 
   return (
     <div style={{ width: "100%" }}>
@@ -42,20 +52,35 @@ const IHM = () => {
             alignItems="center"
           >
             <Grid item>
-              <Button style={{ width: "200px" }} variant="outlined">
+              <Typography>Current File: {getName()}</Typography>
+            </Grid>
+            <Grid item>
+              <Button
+                style={{ width: "200px" }}
+                onClick={() => setName("0-5min")}
+                variant="outlined"
+              >
                 Ouverture
               </Button>
             </Grid>
             <Grid item>
-              <Button style={{ width: "200px" }} variant="outlined">
+              <Button
+                style={{ width: "200px" }}
+                onClick={() => setName("20-25min")}
+                variant="outlined"
+              >
                 Tour de Table
               </Button>
             </Grid>
-            <Grid item>
-              <Button style={{ width: "200px" }} variant="outlined">
+            {/* <Grid item>
+              <Button
+                style={{ width: "200px" }}
+                onClick={() => setName("Default")}
+                variant="outlined"
+              >
                 Default
               </Button>
-            </Grid>
+            </Grid> */}
           </Grid>
         </AccordionDetails>
       </Accordion>
@@ -72,8 +97,8 @@ const IHM = () => {
         </AccordionSummary>
         <AccordionDetails>
           <CustomeSlider
-            id="Seuil d'affichage"
-            name="Seuil d'affichage"
+            id="Seuil-affichage"
+            name="Seuil-affichage"
             disabled={!checkLocuteurActif}
             value={seuilLocuteurActif}
             onChange={setSeuilLocuteurActif}

@@ -3,12 +3,11 @@ import React, { useEffect, useRef } from "react";
 
 import WaveSurfer from "wavesurfer.js";
 import TimelinePlugin from "wavesurfer.js/dist/plugin/wavesurfer.timeline.min.js";
+import RegionPlugin from "wavesurfer.js/dist/plugin/wavesurfer.regions.min.js";
 
 import Grid from "@material-ui/core/Grid";
-// import CustomeSlider from "./ CustomeSlider";
 
-// import VolumeUp from "@material-ui/icons/VolumeUp";
-// import ZoomOut from "@material-ui/icons/ZoomOut";
+import jsonInfo from "./test.json";
 
 const formWaveSurferOptions = (ref, timelineRef) => ({
   container: ref,
@@ -22,6 +21,7 @@ const formWaveSurferOptions = (ref, timelineRef) => ({
   hideScrollbar: true,
 
   plugins: [
+    RegionPlugin.create(),
     TimelinePlugin.create({
       container: timelineRef,
     }),
@@ -51,7 +51,6 @@ export default function Waveform({
 }) {
   const waveformRef = useRef(null);
   const timelineRef = useRef(null);
-
   const wavesurfer = useRef(null);
 
   useEffect(() => {
@@ -85,8 +84,10 @@ export default function Waveform({
 
     // Audioprocess: fire continously when audio is playing
     wavesurfer.current.on("audioprocess", function () {
+      wavesurfer.current.clearRegions();
       console.log("hey");
       calculateFrame();
+      jsonInfo.map((o) => handleAddRegion(o));
     });
 
     wavesurfer.current.on("waveform-ready", function () {
@@ -124,28 +125,23 @@ export default function Waveform({
     setFrame(Math.round(wavesurfer.current.getCurrentTime() * framerate));
   };
 
-  // const handlePlayPause = () => {
-  //   if (!playDisabled) {
-  //     setPlay(!playing);
-  //     wavesurfer.current.playPause();
-  //   }
-  // };
+  const handleAddRegion = (analyse) => {
+    // Add region
 
-  // const onVolumeChange = (e, newValue) => {
-  //   if (newValue) {
-  //     setVolume(newValue);
-  //     wavesurfer.current.setVolume(newValue || 1 ;
-  //     console.log("volume : " + newValue);
-  //   }
-  // };
-
-  // const onZoomChange = (e, newValue) => {
-  //   if (newValue) {
-  //     setZoom(newValue);
-  //     wavesurfer.current.zoom(newValue || 1);
-  //     console.log("Zoom : " + newValue);
-  //   }
-  // };
+    if (analyse.start < wavesurfer.current.getCurrentTime()) {
+      // let end;
+      if (analyse.end > wavesurfer.current.getCurrentTime()) {
+        // end = wavesurfer.current.getCurrentTime();
+      } else {
+        // end = analyse.end;
+      }
+      // wavesurfer.current.addRegion({
+      //   sta rt: analyse.start,
+      //   end: end,
+      //   color: analyse.color,
+      // });
+    }
+  };
 
   return (
     <div className="root">
