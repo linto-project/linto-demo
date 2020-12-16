@@ -1,6 +1,6 @@
 import "./App.css";
 
-import DemoVideoAudio from "./pages/DemoVideoAudio";
+import DemoVideoAudio from "./page/DemoVideoAudio";
 
 // import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { BrowserRouter as Router } from "react-router-dom";
