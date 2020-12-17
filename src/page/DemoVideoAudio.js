@@ -6,7 +6,7 @@ import IHM from "../components/IHM";
 import { Grid } from "@material-ui/core";
 
 // import { useTheme } from "@material-ui/core/styles";
-// import useMediaQuery from "@material-ui/core/useMediaQuery";
+// import useMediaQuery from  "@material-ui/core/useMediaQuery";
 
 const DemoVideoAudio = () => {
   // const theme = useTheme();
@@ -15,10 +15,10 @@ const DemoVideoAudio = () => {
     <div className="demo">
       <ContextProvider>
         <Grid container>
-          <Grid item xs={6} sm={4} md={3} lg={2}>
+          <Grid item xs={7} sm={4} md={3} lg={2}>
             <IHM />
           </Grid>
-          <Grid item xs={6} sm={8} md={9} lg={10}>
+          <Grid item xs={5} sm={8} md={9} lg={10}>
             <VideoAudio framerate={10} />
           </Grid>
         </Grid>
