@@ -13,6 +13,10 @@ import CustomeSlider from "./CustomSlider";
 import CropFree from "@material-ui/icons/CropFree";
 import FolderOpenOutlined from "@material-ui/icons/FolderOpenOutlined";
 
+import InputLabel from "@material-ui/core/InputLabel";
+import FormControl from "@material-ui/core/FormControl";
+import NativeSelect from "@material-ui/core/NativeSelect";
+
 import { useEffect, useState } from "react";
 import { Grid } from "@material-ui/core";
 
@@ -23,23 +27,39 @@ const IHM = () => {
   const [seuilLocuteurActif, setSeuilLocuteurActif] = useState(0.5);
 
   const { File } = useGlobalContext();
-  const { setName, getName } = File;
-  
-  
+  const { setName, getName, setReunionName, getReunionName } = File;
+
   useEffect(() => {
     console.log(seuilLocuteurActif);
   }, [seuilLocuteurActif]);
 
   return (
-    <div style={{ width: "100%" }}>
+    <div>
       <Accordion>
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-          <Grid spacing={2} container>
+          <Grid spacing={3} alignItems="center" container>
             <Grid item>
               <FolderOpenOutlined />
             </Grid>
-            <Grid item>
-              <Typography>Chargement</Typography>
+            <Grid style={{ width: "80%" }} item>
+              <FormControl
+                style={{ width: "65%" }}
+                onChange={(e) => e.stopPropagation()}
+                onClick={(e) => e.stopPropagation()}
+              >
+                <InputLabel shrink>Corpus</InputLabel>
+                <NativeSelect
+                  value={getReunionName()}
+                  onChange={(e) => {
+                    setReunionName(e.value);
+                  }}
+                >
+                  <option value="AMI">AMI</option>
+                  <option value="Linto">Linto</option>
+                  <option value="cp3">3</option>
+                </NativeSelect>
+                {/* <FormHelperText>Label + placeholder</FormHelperText> */}
+              </FormControl>
             </Grid>
           </Grid>
         </AccordionSummary>
