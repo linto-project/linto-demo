@@ -15,10 +15,10 @@ const DemoVideoAudio = () => {
     <div className="demo">
       <ContextProvider>
         <Grid container>
-          <Grid item xs={7} sm={4} md={3} lg={2}>
+          <Grid item xs={7} sm={5} md={3} lg={2}>
             <IHM />
           </Grid>
-          <Grid item xs={5} sm={8} md={9} lg={10}>
+          <Grid item xs={5} sm={7} md={9} lg={10}>
             <VideoAudio framerate={10} />
           </Grid>
         </Grid>
