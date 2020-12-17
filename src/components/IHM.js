@@ -41,7 +41,7 @@ const IHM = () => {
             <Grid item>
               <FolderOpenOutlined />
             </Grid>
-            <Grid style={{ width: "80%" }} item>
+            <Grid style={{ width: "70%" }} item>
               <FormControl
                 style={{ width: "65%" }}
                 onChange={(e) => e.stopPropagation()}
