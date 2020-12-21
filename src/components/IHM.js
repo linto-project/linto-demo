@@ -26,8 +26,9 @@ const IHM = () => {
   const [checkLocuteurActif, setCheckLocuteurActif] = useState(false);
   const [seuilLocuteurActif, setSeuilLocuteurActif] = useState(0.5);
 
-  const { File } = useGlobalContext();
+  const { File, confDemo } = useGlobalContext();
   const { setName, getName, setReunionName, getReunionName } = File;
+  const { setConf, getConf } = confDemo;
 
   useEffect(() => {
     console.log(seuilLocuteurActif);
@@ -109,28 +110,42 @@ const IHM = () => {
           <FormControlLabel
             onClick={(event) => event.stopPropagation()}
             onFocus={(event) => event.stopPropagation()}
-            checked={checkLocuteurActif}
-            onChange={(e) => setCheckLocuteurActif(!checkLocuteurActif)}
+            checked={getConf().locuteurActif}
+            name="locuteurActif"
+            onChange={(e) => setConf(e)}
             control={<Switch />}
             label="Locuteur actif"
           />
         </AccordionSummary>
         <AccordionDetails>
-          <CustomeSlider
-            id="Seuil-affichage"
-            name="Seuil-affichage"
-            disabled={!checkLocuteurActif}
-            value={seuilLocuteurActif}
-            onChange={setSeuilLocuteurActif}
-            aria-labelledby="continuous-slider"
-            min={0}
-            max={1}
-            step={0.01}
-            icon={<CropFree />}
-            valueLabelDisplay="auto"
-          >
-            Seuil d'affichage
-          </CustomeSlider>
+          <Grid container direction="column" spacing={2}>
+            <Grid item>
+              <CustomeSlider
+                id="Seuil-affichage"
+                name="Seuil-affichage"
+                disabled={!getConf().locuteurActif}
+                value={seuilLocuteurActif}
+                onChange={(e) => setSeuilLocuteurActif(e)}
+                aria-labelledby="continuous-slider"
+                min={0}
+                max={1}
+                step={0.01}
+                icon={<CropFree />}
+                valueLabelDisplay="auto"
+              >
+                Seuil d'affichage
+              </CustomeSlider>
+            </Grid>
+            <Grid item>
+              <Switch
+                disabled={!getConf().locuteurActif}
+                checked={getConf().map}
+                name="map"
+                onChange={(e) => setConf(e)}
+                valueLabelDisplay="auto"
+              ></Switch>
+            </Grid>
+          </Grid>
         </AccordionDetails>
       </Accordion>
       <Accordion>

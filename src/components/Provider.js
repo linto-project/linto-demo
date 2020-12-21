@@ -5,7 +5,12 @@ export const useGlobalContext = () => useContext(GlobalContext);
 
 export const ContextProvider = ({ children }) => {
   const [fileName, setfilename] = useState("0-5min");
-  const [reunionName, setReunionName] = useState("AMI");
+  const [reunionName, setreunionName] = useState("AMI");
+
+  const [conf, setconf] = useState({
+    locuteurActif: false,
+    map: false,
+  });
 
   const File = {
     getName: () => fileName,
@@ -14,12 +19,20 @@ export const ContextProvider = ({ children }) => {
     },
     getReunionName: () => reunionName,
     setReunionName: (name) => {
-      setReunionName(name);
+      setreunionName(name);
+    },
+  };
+
+  const confDemo = {
+    getConf: () => conf,
+    setConf: (event) => {
+      setconf({ ...conf, [event.target.name]: event.target.checked });
     },
   };
 
   const state = {
     File,
+    confDemo,
   };
 
   return (

@@ -121,7 +121,6 @@ const VideoAudio = ({ framerate }) => {
       </Backdrop>
       <Grid container direction="column" spacing={2}>
         <Grid item justify="center">
-          <p>Réunion: {File.getReunionName()}</p>
           {File.getReunionName() === "Linto" && (
             <Video
               url={"/video/" + File.getName() + ".webm"}

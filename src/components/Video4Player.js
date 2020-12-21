@@ -10,10 +10,17 @@ import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles({
   root: (props) => ({
     zIndex: 10,
-    boxShadow: `0 0 100px 10px ${props.color} inset`,
-    // border: `10px solid ${props.color}`,
+    webkitTransition: "border 0.4s linear, box-shadow 0.1s linear",
+    mozTransition: "border 0.4s linear, box-shadow 0.1s linear",
+    transition: "border 0.4s linear, box-shadow 0.1s linear",
+    //
     lineHeight: 0,
     outline: "none",
+  }),
+
+  selected: (props) => ({
+    // border: `5px solid ${props.color}`,
+    boxShadow: `0 0 100px 10px ${props.color} inset`,
   }),
 });
 
@@ -23,6 +30,8 @@ const Video4Player = ({ url, isPlaying, durationSec, setVideoLoaded }) => {
   const videoRef3 = useRef(null);
   const videoRef4 = useRef(null);
   const [state, setState] = useState(0);
+  const [selection, setSelection] = useState([false, false, false, false]);
+  const [indice, setIndice] = useState(0);
 
   useEffect(() => {
     videoRef1.current.currentTime = durationSec;
@@ -42,6 +51,22 @@ const Video4Player = ({ url, isPlaying, durationSec, setVideoLoaded }) => {
     setVideoLoaded(true);
   };
 
+  const doIntervalle = () => {
+    let tempo = selection;
+    tempo[0] = !tempo[0];
+    tempo[1] = !tempo[1];
+    tempo[2] = !tempo[2];
+    tempo[3] = !tempo[3];
+    setSelection(tempo);
+  };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      doIntervalle();
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
+
   useEffect(() => {
     //Dummy to force reload
     setState(state + 1);
@@ -49,12 +74,22 @@ const Video4Player = ({ url, isPlaying, durationSec, setVideoLoaded }) => {
     // eslint-disable-next-line
   }, [url]);
 
+  const selection1 = useStyles({ color: colors[0] }).selected;
+  const selection2 = useStyles({ color: colors[1] }).selected;
+  const selection3 = useStyles({ color: colors[2] }).selected;
+  const selection4 = useStyles({ color: colors[3] }).selected;
+
   return (
     <div className="video">
-      <Grid container direction="column" spacing={1}>
+      <Grid container direction="column" spacing={2}>
         <Grid item>
-          <Grid container spacing={1}>
-            <Grid item className={useStyles({ color: colors[0] }).root}>
+          <Grid container spacing={2}>
+            <Grid
+              item
+              className={`${useStyles({ color: colors[0] }).root} 
+              ${selection[0] ? selection1 : ""}
+            `}
+            >
               <video
                 key={url}
                 preload
@@ -66,7 +101,12 @@ const Video4Player = ({ url, isPlaying, durationSec, setVideoLoaded }) => {
                 <source src={url + "Closeup1.m4v"} />
               </video>
             </Grid>
-            <Grid item className={useStyles({ color: colors[1] }).root}>
+            <Grid
+              item
+              className={`${useStyles({ color: colors[0] }).root} 
+              ${selection[1] ? selection2 : ""}
+            `}
+            >
               <video
                 key={url}
                 preload
@@ -82,8 +122,13 @@ const Video4Player = ({ url, isPlaying, durationSec, setVideoLoaded }) => {
         </Grid>
 
         <Grid item>
-          <Grid container spacing={1}>
-            <Grid item className={useStyles({ color: colors[2] }).root}>
+          <Grid container spacing={2}>
+            <Grid
+              item
+              className={`${useStyles({ color: colors[0] }).root} 
+              ${selection[2] ? selection3 : ""}
+            `}
+            >
               <video
                 key={url}
                 preload
@@ -95,7 +140,12 @@ const Video4Player = ({ url, isPlaying, durationSec, setVideoLoaded }) => {
                 <source src={url + "Closeup4.m4v"} />
               </video>
             </Grid>
-            <Grid item className={useStyles({ color: colors[3] }).root}>
+            <Grid
+              item
+              className={`${useStyles({ color: colors[0] }).root} 
+              ${selection[3] ? selection4 : ""}
+            `}
+            >
               <video
                 key={url}
                 preload
