@@ -1,6 +1,7 @@
 import "./VideoAudio.css";
 import { useState, useEffect } from "react";
 import Video from "./Video";
+import VideoAMI from "./VideoAmi";
 import WaveSurfer from "./Waveform";
 
 import Grid from "@material-ui/core/Grid";
@@ -120,13 +121,23 @@ const VideoAudio = ({ framerate }) => {
       </Backdrop>
       <Grid container direction="column" spacing={2}>
         <Grid item justify="center">
-          <Video
-            //url={"/video-ignore/MeetingRap1.webm"}
-            url={"/video/" + File.getName() + ".webm"}
-            durationSec={durationSec}
-            isPlaying={isPlaying}
-            setVideoLoaded={setVideoLoaded}
-          />
+          <p>Réunion: {File.getReunionName()}</p>
+          {File.getReunionName() === "Linto" && (
+            <Video
+              url={"/video/" + File.getName() + ".webm"}
+              durationSec={durationSec}
+              isPlaying={isPlaying}
+              setVideoLoaded={setVideoLoaded}
+            />
+          )}
+          {File.getReunionName() === "AMI" && (
+            <VideoAMI
+              url={"/video/AMI/1/"}
+              durationSec={durationSec}
+              isPlaying={isPlaying}
+              setVideoLoaded={setVideoLoaded}
+            />
+          )}
         </Grid>
         <Grid item>
           <div id="waveform">

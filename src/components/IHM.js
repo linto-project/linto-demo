@@ -51,7 +51,7 @@ const IHM = () => {
                 <NativeSelect
                   value={getReunionName()}
                   onChange={(e) => {
-                    setReunionName(e.value);
+                    setReunionName(e.target.value);
                   }}
                 >
                   <option value="AMI">AMI</option>

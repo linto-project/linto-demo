@@ -1,0 +1,21 @@
+.video {
+  display: flex;
+  justify-content: center;
+  border: 5px solid white;
+  line-height: 0;
+  outline: none;
+}
+
+.loading {
+  opacity: 0.5;
+  /* transition stack for all browsers */
+  -webkit-transition: opacity 2s linear;
+  -moz-transition: opacity 2s linear;
+  -o-transition: opacity 2s linear;
+  -ms-transition: opacity 2s linear;
+  transition: opacity 2s linear;
+}
+
+.video video {
+  object-fit: fill;
+}
