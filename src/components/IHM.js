@@ -6,9 +6,13 @@ import Switch from "@material-ui/core/Switch";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import ExploreIcon from "@material-ui/icons/ExploreOutlined";
+import GraphicEqOutlinedIcon from "@material-ui/icons/GraphicEqOutlined";
+
 import Button from "@material-ui/core/Button";
 
 import CustomeSlider from "./CustomSlider";
+import CustomSwitch from "./CustomSwitch";
 
 import CropFree from "@material-ui/icons/CropFree";
 import FolderOpenOutlined from "@material-ui/icons/FolderOpenOutlined";
@@ -17,23 +21,17 @@ import InputLabel from "@material-ui/core/InputLabel";
 import FormControl from "@material-ui/core/FormControl";
 import NativeSelect from "@material-ui/core/NativeSelect";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Grid } from "@material-ui/core";
 
 import { useGlobalContext } from "./Provider";
 
 const IHM = () => {
-  const [checkLocuteurActif, setCheckLocuteurActif] = useState(false);
-  const [seuilLocuteurActif, setSeuilLocuteurActif] = useState(0.5);
-
   const { File, confDemo } = useGlobalContext();
   const { setName, getName, setReunionName, getReunionName } = File;
-  const { setConf, getConf } = confDemo;
+  const { setConf, getSetterConf, getConf } = confDemo;
 
-  useEffect(() => {
-    console.log(seuilLocuteurActif);
-  }, [seuilLocuteurActif]);
-
+  const setterConf = getSetterConf("seuilLocuteur");
   return (
     <div>
       <Accordion>
@@ -93,15 +91,6 @@ const IHM = () => {
                 Tour de Table
               </Button>
             </Grid>
-            {/* <Grid item>
-              <Button
-                style={{ width: "200px" }}
-                onClick={() => setName("Default")}
-                variant="outlined"
-              >
-                Default
-              </Button>
-            </Grid> */}
           </Grid>
         </AccordionDetails>
       </Accordion>
@@ -122,10 +111,10 @@ const IHM = () => {
             <Grid item>
               <CustomeSlider
                 id="Seuil-affichage"
-                name="Seuil-affichage"
+                name="seuilLocuteur"
                 disabled={!getConf().locuteurActif}
-                value={seuilLocuteurActif}
-                onChange={(e) => setSeuilLocuteurActif(e)}
+                value={getConf().seuilLocuteur}
+                onChange={setterConf}
                 aria-labelledby="continuous-slider"
                 min={0}
                 max={1}
@@ -137,13 +126,26 @@ const IHM = () => {
               </CustomeSlider>
             </Grid>
             <Grid item>
-              <Switch
+              <CustomSwitch
                 disabled={!getConf().locuteurActif}
                 checked={getConf().map}
                 name="map"
                 onChange={(e) => setConf(e)}
-                valueLabelDisplay="auto"
-              ></Switch>
+                icon={<ExploreIcon />}
+              >
+                Map
+              </CustomSwitch>
+            </Grid>
+            <Grid item>
+              <CustomSwitch
+                disabled={!getConf().locuteurActif}
+                checked={getConf().annotation}
+                name="annotation"
+                onChange={(e) => setConf(e)}
+                icon={<GraphicEqOutlinedIcon />}
+              >
+                Annotations Timeline
+              </CustomSwitch>
             </Grid>
           </Grid>
         </AccordionDetails>

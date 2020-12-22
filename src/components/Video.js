@@ -29,7 +29,6 @@ const Video = ({ url, isPlaying, durationSec, setVideoLoaded }) => {
 
   const canva = useRef(null);
   const fps = 30;
-  // const fps2  = 30;
   const width = 1280;
   const height = 720;
 

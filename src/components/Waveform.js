@@ -1,13 +1,14 @@
 import "./Waveform.css";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
 
 import WaveSurfer from "wavesurfer.js";
 import TimelinePlugin from "wavesurfer.js/dist/plugin/wavesurfer.timeline.min.js";
 import RegionPlugin from "wavesurfer.js/dist/plugin/wavesurfer.regions.min.js";
 
 import Grid from "@material-ui/core/Grid";
+import colors from "../data/colors";
 
-import jsonInfo from "./test.json";
+import { useGlobalContext } from "./Provider";
 
 const formWaveSurferOptions = (ref, timelineRef) => ({
   container: ref,
@@ -53,6 +54,10 @@ export default function Waveform({
   const timelineRef = useRef(null);
   const wavesurfer = useRef(null);
 
+  const { confDemo, annotation } = useGlobalContext();
+  const { setConf, getSetterConf, getConf } = confDemo;
+  const { setAnnot, getAnnot } = annotation;
+
   useEffect(() => {
     setAudioLoaded(false);
     setPlay(false);
@@ -65,36 +70,37 @@ export default function Waveform({
 
     // Pausing audio
     wavesurfer.current.on("pause", function () {
-      console.log("Pause");
+      // console.log("Pause");
       setIsPlaying(false);
     });
 
     // Playing audio
     wavesurfer.current.on("play", function () {
-      console.log("Play");
+      // console.log("Play");
       setIsPlaying(true);
       setDurationSec(wavesurfer.current.getCurrentTime());
     });
 
     // Interaction with audio
     wavesurfer.current.on("interaction", function () {
-      console.log("Interaction");
+      // console.log("Interaction");
       setSynch(true);
     });
 
     // Audioprocess: fire continously when audio is playing
     wavesurfer.current.on("audioprocess", function () {
-      wavesurfer.current.clearRegions();
-      console.log("hey");
+      // wavesurfer.current.clearRegions();
+      // console.log("hey");
       calculateFrame();
-      jsonInfo.map((o) => handleAddRegion(o));
+      // jsonInfo.map((o) => handleAddRegion(o));
     });
 
     wavesurfer.current.on("waveform-ready", function () {
-      console.log("ready");
+      // console.log("ready");
       if (wavesurfer.current) {
         wavesurfer.current.setVolume(volume);
       }
+      fakeRegion();
       setAudioLoaded(true);
     });
 
@@ -103,7 +109,7 @@ export default function Waveform({
   }, [url]);
 
   useEffect(() => {
-    console.log("synch" + synch);
+    // console.log("synch" + synch);
     setDurationSec(wavesurfer.current.getCurrentTime());
     setSynch(false);
     // eslint-disable-next-line
@@ -121,27 +127,95 @@ export default function Waveform({
     wavesurfer.current.playPause();
   }, [play]);
 
+  const changeTimeline = getConf().annotation && getConf().locuteurActif;
+  useEffect(() => {
+    if (changeTimeline) {
+      getAnnot().map((o) => handleAddRegionSimple(o));
+    } else {
+      wavesurfer.current.clearRegions();
+    }
+  }, [changeTimeline]);
+
+  const valueLocuteur = getConf().seuilLocuteur;
+  useEffect(() => {
+    wavesurfer.current.clearRegions();
+    getAnnot().map((o) => handleAddRegionSimple(o));
+  }, [valueLocuteur]);
+
   const calculateFrame = () => {
     setFrame(Math.round(wavesurfer.current.getCurrentTime() * framerate));
   };
 
-  const handleAddRegion = (analyse) => {
-    // Add region
+  const fakeRegion = () => {
+    console.log("Duration of clip : " + wavesurfer.current.getDuration());
+    let list = [];
+    let increment = 1;
+    for (var i = 0; i <= wavesurfer.current.getDuration(); i = i + increment) {
+      increment = Math.random() * (5 - 1) + 1;
+      let listItem = {};
+      listItem["start"] = i;
+      listItem["end"] = i + increment;
+      const cosCalculate = Math.abs(Math.cos(i));
+      listItem["confidence"] = cosCalculate;
+      listItem["label"] = (Math.floor(Math.random() * (6 - 0)) + 0).toString();
+      list.push(listItem);
+    }
+    setAnnot(list);
+    if (getConf().map) {
+      list.map((o) => handleAddRegionSimple(o));
+    }
+    console.log(list);
+  };
 
-    if (analyse.start < wavesurfer.current.getCurrentTime()) {
-      // let end;
-      if (analyse.end > wavesurfer.current.getCurrentTime()) {
-        // end = wavesurfer.current.getCurrentTime();
-      } else {
-        // end = analyse.end;
+  const handleAddRegionSimple = (analyse) => {
+    if (analyse.label < 4) {
+      if (analyse.confidence > valueLocuteur) {
+        wavesurfer.current.addRegion({
+          start: analyse.start,
+          end: analyse.end,
+          color: colors[analyse.label],
+          drag: false,
+          resize: false,
+        });
       }
-      // wavesurfer.current.addRegion({
-      //   sta rt: analyse.start,
-      //   end: end,
-      //   color: analyse.color,
-      // });
     }
   };
+
+  // const handleAddRegion = (analyse) => {
+  //   // Add region
+
+  //   if (analyse.start < wavesurfer.current.getCurrentTime()) {
+  //     let end;
+  //     if (analyse.end > wavesurfer.current.getCurrentTime()) {
+  //       end = wavesurfer.current.getCurrentTime();
+  //     } else {
+  //       end = analyse.end;
+  //     }
+  //     wavesurfer.current.addRegion({
+  //       start: analyse.start,
+  //       end: analyse.end,
+  //       color: colors[analyse.label],
+  //     });
+  //   }
+  // };
+
+  // const handleAddRegion = (analyse) => {
+  //   // Add region
+
+  //   if (analyse.start < wavesurfer.current.getCurrentTime()) {
+  //     // let end;
+  //     if (analyse.end > wavesurfer.current.getCurrentTime()) {
+  //       // end = wavesurfer.current.getCurrentTime();
+  //     } else {
+  //       // end = analyse.end;
+  //     }
+  //     // wavesurfer.current.addRegion({
+  //     //   sta rt: analyse.start,
+  //     //   end: end,
+  //     //   color: analyse.color,
+  //     // });
+  //   }
+  // };
 
   return (
     <div className="root">
@@ -151,51 +225,6 @@ export default function Waveform({
           <div id="timelineRef" ref={timelineRef} />
         </Grid>
       </Grid>
-
-      {/* <Grid item>
-          <Grid container spacing={1} alignItems="center">
-            <Grid item align="center">
-              <div className="controls">
-                <button onClick={handlePlayPause} disabled={playDisabled}>
-                  {!playing ? "Play" : "Pause"}
-                </button>
-              </div>
-            </Grid>
-            <Grid xs item>
-              <CustomeSlider
-                id="volume"
-                name="volume"
-                value={volume}
-                onChange={onVolumeChange}
-                aria-labelledby="continuous-slider"
-                min={0}
-                max={1}
-                step={0.01}
-                icon={<VolumeUp />}
-                valueLabelDisplay="auto"
-              >
-                Volume
-              </CustomeSlider>
-            </Grid>
-            <Grid xs item>
-              <CustomeSlider
-                id="zoom"
-                name="zoom"
-                value={zoom}
-                onChange={onZoomChange}
-                aria-labelledby="continuous-slider"
-                min={1}
-                max={10}
-                step={0.1}
-                icon={<ZoomOut />}
-                valueLabelDisplay="auto"
-              >
-                Zoom
-              </CustomeSlider> 
-            </Grid>
-          </Grid>
-        </Grid>
-      </Grid>  */}
     </div>
   );
 }

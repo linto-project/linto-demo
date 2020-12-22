@@ -29,7 +29,7 @@ const useStyles = makeStyles(() =>
 );
 
 const VideoAudio = ({ framerate }) => {
-  console.log("framerate  : " + framerate);
+  // console.log("framerate  : " + framerate);
 
   const [durationSec, setDurationSec] = useState([]);
   const [isPlaying, setIsPlaying] = useState([]);
@@ -58,11 +58,11 @@ const VideoAudio = ({ framerate }) => {
   }, [nameFile]);
 
   useEffect(() => {
-    console.log("current State : " + isPlaying);
+    // console.log("current State : " + isPlaying);
   }, [isPlaying]);
 
   useEffect(() => {
-    console.log("current timestamp : " + durationSec);
+    // console.log("current timestamp : " + durationSec);
     setFrame(Math.round(durationSec * 25));
   }, [durationSec]);
 
@@ -76,18 +76,6 @@ const VideoAudio = ({ framerate }) => {
       setPlay(!play);
     }
   };
-
-  // const onVolumeChange = (e, newValue) => {
-  //   if (newValue) {
-  //     setVolume(newValue);
-  //   }
-  // };
-
-  // const onZoomChange = (e, newValue) => {
-  //   if (newValue) {
-  //     setZoom(newValue);
-  //   }
-  // };
 
   const classes = useStyles();
   return (

@@ -8,14 +8,14 @@ import colors from "../data/colors";
 import { makeStyles } from "@material-ui/core/styles";
 import clsx from "clsx";
 
-import styled, { css, keyframes } from "styled-components";
+import styled, { keyframes } from "styled-components";
 
-const getAnimation = (color) => keyframes`
+const getAnimation = (color, speaking) => keyframes`
   0% {
     box-shadow: 0px 0px 9px 4px ${color};
   }
   100% {
-    box-shadow: 0px 0px 30px 20px ${color};
+    box-shadow: 0px 0px ${speaking ? "30px 20px " : "9px 6px "} ${color};
   }
 `;
 
@@ -26,49 +26,12 @@ const Circle = styled.div`
   border-style: solid;
   border-width: 5px;
   border-radius: 50%;
-  animation: ${(props) => getAnimation(props.color)} 1.5s linear infinite
-    alternate;
+  animation: ${(props) => getAnimation(props.color, props.speaking)} 1.5s linear
+    infinite alternate;
 `;
 
-// working
-
-// const useStyles = makeStyles((props) => ({
-//   root: {
-//     margin: "30px",
-//     borderRadius: "50%",
-//     boxShadow: `0px 0px 9px 4px ${props.color}`,
-//     animation: `$myEffect 1500ms linear infinite alternate`,
-//   },
-//   "@keyframes myEffect": (props) => ({
-//     "0%": {
-//       boxShadow: `0px 0px 9px 4px ${props.color}`,
-//     },
-//     "100%": {
-//       boxShadow: `0px 0px 30px 20px ${props.color}`,
-//     },
-//   }),
-// }));
-
-// const useStyles = makeStyles((props) => ({
-//   root: {
-//     animation: `$myEffect 3000ms linear infinite alternate`,
-//     opacity: 0,
-//     transform: "translateY(-200%)",
-//   },
-//   "@keyframes myEffect": {
-//     "0%": {
-//       opacity: 0,
-//       transform: "translateY(-200%)",
-//     },
-//     "100%": {
-//       opacity: 1,
-//       transform: "translateY(0)",
-//     },
-//   },
-// }));
-
-const Map = ({ url, isPlaying, durationSec, setVideoLoaded }) => {
-  console.log("color : " + colors[0]);
+const Map = ({ selection }) => {
+  const grey = "#757575";
 
   return (
     <div
@@ -88,30 +51,42 @@ const Map = ({ url, isPlaying, durationSec, setVideoLoaded }) => {
         <Grid item>
           <Grid
             container
-            spacing={8}
+            spacing={10}
             justify="space-evenly"
             alignItems="center"
           >
             <Grid item>
-              <Circle color={colors[0]}></Circle>
+              <Circle
+                speaking={selection[0]}
+                color={selection[0] ? colors[0] : grey}
+              ></Circle>
             </Grid>
             <Grid item>
-              <Circle color={colors[1]}></Circle>
+              <Circle
+                speaking={selection[1]}
+                color={selection[1] ? colors[1] : grey}
+              ></Circle>
             </Grid>
           </Grid>
         </Grid>
         <Grid item>
           <Grid
             container
-            spacing={8}
+            spacing={10}
             justify="space-evenly"
             alignItems="center"
           >
             <Grid item>
-              <Circle color={colors[2]}></Circle>
+              <Circle
+                speaking={selection[2]}
+                color={selection[2] ? colors[2] : grey}
+              ></Circle>
             </Grid>
             <Grid item>
-              <Circle color={colors[3]}></Circle>
+              <Circle
+                speaking={selection[3]}
+                color={selection[3] ? colors[3] : grey}
+              ></Circle>
             </Grid>
           </Grid>
         </Grid>

@@ -6,10 +6,12 @@ export const useGlobalContext = () => useContext(GlobalContext);
 export const ContextProvider = ({ children }) => {
   const [fileName, setfilename] = useState("0-5min");
   const [reunionName, setreunionName] = useState("AMI");
-
+  const [annot, setannot] = useState([]);
   const [conf, setconf] = useState({
     locuteurActif: false,
     map: false,
+    annotation: false,
+    seuilLocuteur: 0.0,
   });
 
   const File = {
@@ -25,14 +27,28 @@ export const ContextProvider = ({ children }) => {
 
   const confDemo = {
     getConf: () => conf,
+    // Default: switch
     setConf: (event) => {
       setconf({ ...conf, [event.target.name]: event.target.checked });
+    },
+    getSetterConf: (name) => {
+      const test = (v) => setconf({ ...conf, [name]: v });
+      return test;
+    },
+  };
+
+  const annotation = {
+    getAnnot: () => annot,
+    // Default: switch
+    setAnnot: (e) => {
+      setannot(e);
     },
   };
 
   const state = {
     File,
     confDemo,
+    annotation,
   };
 
   return (

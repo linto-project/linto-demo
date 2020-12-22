@@ -24,14 +24,18 @@ const useStyles = makeStyles({
   }),
 });
 
-const Video4Player = ({ url, isPlaying, durationSec, setVideoLoaded }) => {
+const Video4Player = ({
+  url,
+  isPlaying,
+  durationSec,
+  setVideoLoaded,
+  selection,
+}) => {
   const videoRef1 = useRef(null);
   const videoRef2 = useRef(null);
   const videoRef3 = useRef(null);
   const videoRef4 = useRef(null);
   const [state, setState] = useState(0);
-  const [selection, setSelection] = useState([false, false, false, false]);
-  const [indice, setIndice] = useState(0);
 
   useEffect(() => {
     videoRef1.current.currentTime = durationSec;
@@ -50,22 +54,6 @@ const Video4Player = ({ url, isPlaying, durationSec, setVideoLoaded }) => {
   const videoReady = () => {
     setVideoLoaded(true);
   };
-
-  const doIntervalle = () => {
-    let tempo = selection;
-    tempo[0] = !tempo[0];
-    tempo[1] = !tempo[1];
-    tempo[2] = !tempo[2];
-    tempo[3] = !tempo[3];
-    setSelection(tempo);
-  };
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      doIntervalle();
-    }, 4000);
-    return () => clearInterval(interval);
-  }, []);
 
   useEffect(() => {
     //Dummy to force reload
