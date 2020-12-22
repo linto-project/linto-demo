@@ -1,5 +1,4 @@
 import React, { createContext, useState, useContext } from "react";
-import { timeline } from "wavesurfer.js/dist/plugin/wavesurfer.timeline.min";
 
 export const GlobalContext = createContext();
 export const useGlobalContext = () => useContext(GlobalContext);

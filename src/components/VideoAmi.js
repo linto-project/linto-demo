@@ -1,5 +1,5 @@
 import Grid from "@material-ui/core/Grid";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import Video4Player from "./Video4Player";
 import "./Video.css";
 import Map from "./Map";
@@ -7,14 +7,12 @@ import { useGlobalContext } from "./Provider";
 // import data from "../data/detect_meeting_RAP_1_b.json";
 
 const VideoAMI = ({ url, isPlaying, durationSec, setVideoLoaded }) => {
-  const { File, confDemo, Annotation, Player } = useGlobalContext();
-  const { setName, getName, setReunionName, getReunionName } = File;
+  const { confDemo, Annotation, Player } = useGlobalContext();
   const { getAnnot } = Annotation;
   const { getTime } = Player;
   const { getConf } = confDemo;
 
   const [selection, setSelection] = useState([true, false, false, false]);
-  const [cpt, setCpt] = useState(0);
 
   const valueLocuteur = getConf().seuilLocuteur;
   const checkElement = (e) => {
@@ -36,6 +34,8 @@ const VideoAMI = ({ url, isPlaying, durationSec, setVideoLoaded }) => {
     console.log("hey");
     setSelection([false, false, false, false]);
     getAnnot().map((e) => checkElement(e));
+
+    // eslint-disable-next-line
   }, [time]);
 
   const returnMap = (

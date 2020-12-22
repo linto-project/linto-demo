@@ -1,5 +1,5 @@
 import "./Waveform.css";
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 
 import WaveSurfer from "wavesurfer.js";
 import TimelinePlugin from "wavesurfer.js/dist/plugin/wavesurfer.timeline.min.js";
@@ -12,9 +12,12 @@ import { useGlobalContext } from "./Provider";
 
 const formWaveSurferOptions = (ref, timelineRef) => ({
   container: ref,
-  waveColor: "#eee",
-  progressColor: "#e1bee7",
-  cursorColor: "#ce93d8",
+  // waveColor: "#eee",
+  // progressColor: "#e1bee7",
+  // cursorColor: "#ce93d8",
+  waveColor: "#757575",
+  progressColor: "#424242",
+  cursorColor: "#e040fb",
   backend: "MediaElement",
   barWidth: 3,
   barRadius: 3,
@@ -109,6 +112,7 @@ export default function Waveform({
 
   useEffect(() => {
     setDurationSec(wavesurfer.current.getCurrentTime());
+    setTime(wavesurfer.current.getCurrentTime());
     setSynch(false);
     // eslint-disable-next-line
   }, [synch]);
@@ -132,6 +136,7 @@ export default function Waveform({
     } else {
       wavesurfer.current.clearRegions();
     }
+    // eslint-disable-next-line
   }, [changeTimeline]);
 
   const valueLocuteur = getConf().seuilLocuteur;
@@ -140,6 +145,7 @@ export default function Waveform({
       wavesurfer.current.clearRegions();
       getAnnot().map((o) => handleAddRegionSimple(o));
     }
+    // eslint-disable-next-line
   }, [valueLocuteur]);
 
   const calculateFrame = () => {

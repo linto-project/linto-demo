@@ -21,7 +21,6 @@ import InputLabel from "@material-ui/core/InputLabel";
 import FormControl from "@material-ui/core/FormControl";
 import NativeSelect from "@material-ui/core/NativeSelect";
 
-import { useState } from "react";
 import { Grid } from "@material-ui/core";
 
 import { useGlobalContext } from "./Provider";

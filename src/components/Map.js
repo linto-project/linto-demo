@@ -1,12 +1,8 @@
-import { useEffect, useState, useRef } from "react";
 import Grid from "@material-ui/core/Grid";
 import "./Map.css";
 
 import backgroundImage from "../data/map2.svg";
 import colors from "../data/colors";
-
-import { makeStyles } from "@material-ui/core/styles";
-import clsx from "clsx";
 
 import styled, { keyframes } from "styled-components";
 

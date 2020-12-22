@@ -2,6 +2,9 @@
   cursor: pointer;
 }
 
+.wavesurfer-region {
+  cursor: pointer !important;
+}
 .WaveformContianer {
   display: flex;
   flex-direction: row;
