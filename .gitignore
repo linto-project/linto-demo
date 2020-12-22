@@ -4,7 +4,7 @@
 feature/add_waveform_js
 /public/video-ignore
 /public/annotation-ignore
-/src/data
+/src/data/detect_meeting_RAP_1_b.json
 **/.eslintcache
 
 # dependencies
