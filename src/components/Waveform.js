@@ -54,9 +54,10 @@ export default function Waveform({
   const timelineRef = useRef(null);
   const wavesurfer = useRef(null);
 
-  const { confDemo, annotation } = useGlobalContext();
-  const { setConf, getSetterConf, getConf } = confDemo;
-  const { setAnnot, getAnnot } = annotation;
+  const { confDemo, Annotation, Player } = useGlobalContext();
+  const { getConf } = confDemo;
+  const { setAnnot, getAnnot } = Annotation;
+  const { setTime } = Player;
 
   useEffect(() => {
     setAudioLoaded(false);
@@ -89,10 +90,8 @@ export default function Waveform({
 
     // Audioprocess: fire continously when audio is playing
     wavesurfer.current.on("audioprocess", function () {
-      // wavesurfer.current.clearRegions();
-      // console.log("hey");
+      setTime(wavesurfer.current.getCurrentTime());
       calculateFrame();
-      // jsonInfo.map((o) => handleAddRegion(o));
     });
 
     wavesurfer.current.on("waveform-ready", function () {
@@ -109,7 +108,6 @@ export default function Waveform({
   }, [url]);
 
   useEffect(() => {
-    // console.log("synch" + synch);
     setDurationSec(wavesurfer.current.getCurrentTime());
     setSynch(false);
     // eslint-disable-next-line
@@ -138,8 +136,10 @@ export default function Waveform({
 
   const valueLocuteur = getConf().seuilLocuteur;
   useEffect(() => {
-    wavesurfer.current.clearRegions();
-    getAnnot().map((o) => handleAddRegionSimple(o));
+    if (changeTimeline) {
+      wavesurfer.current.clearRegions();
+      getAnnot().map((o) => handleAddRegionSimple(o));
+    }
   }, [valueLocuteur]);
 
   const calculateFrame = () => {

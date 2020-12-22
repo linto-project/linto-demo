@@ -190,8 +190,8 @@ const VideoAudio = ({ framerate }) => {
                   value={zoom}
                   onChange={setZoom}
                   aria-labelledby="continuous-slider"
-                  min={1}
-                  max={10}
+                  min={5}
+                  max={20}
                   step={0.1}
                   icon={<ZoomOut />}
                   valueLabelDisplay="auto"

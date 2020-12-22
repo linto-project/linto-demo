@@ -7,34 +7,36 @@ import { useGlobalContext } from "./Provider";
 // import data from "../data/detect_meeting_RAP_1_b.json";
 
 const VideoAMI = ({ url, isPlaying, durationSec, setVideoLoaded }) => {
-  const { File, confDemo } = useGlobalContext();
+  const { File, confDemo, Annotation, Player } = useGlobalContext();
   const { setName, getName, setReunionName, getReunionName } = File;
+  const { getAnnot } = Annotation;
+  const { getTime } = Player;
   const { getConf } = confDemo;
 
   const [selection, setSelection] = useState([true, false, false, false]);
   const [cpt, setCpt] = useState(0);
 
-  const doCos = () => {
-    let test = [];
-    const loc = getConf().seuilLocuteur;
-    Math.cos(cpt + 0 * 1.57) > loc ? test.push(true) : test.push(false);
-    Math.cos(cpt + 1 * 1.57) > loc ? test.push(true) : test.push(false);
-    Math.cos(cpt + 2 * 1.57) > loc ? test.push(true) : test.push(false);
-    Math.cos(cpt + 3 * 1.57) > loc ? test.push(true) : test.push(false);
-    setSelection(test);
-    // console.log("selection : " + selection);
-    // console.log("cpt : " + cpt);
-    // console.log("Math.cos : " + Math.cos(cpt));
-    // console.log("seuil : " + loc);
+  const valueLocuteur = getConf().seuilLocuteur;
+  const checkElement = (e) => {
+    if (time > e.start && time < e.end && e.label < 4) {
+      console.log(
+        "time : " + time + ", start : " + e.start + ", end : " + e.end
+      );
+
+      if (e.confidence > valueLocuteur) {
+        let arraytempo = [false, false, false, false];
+        arraytempo[e.label] = true;
+        setSelection([...arraytempo]);
+      }
+    }
   };
 
+  const time = getTime();
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCpt(cpt - 0.1);
-      doCos();
-    }, 200);
-    return () => clearInterval(interval);
-  }, [cpt]);
+    console.log("hey");
+    setSelection([false, false, false, false]);
+    getAnnot().map((e) => checkElement(e));
+  }, [time]);
 
   const returnMap = (
     <Grid item>

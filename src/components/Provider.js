@@ -1,4 +1,5 @@
 import React, { createContext, useState, useContext } from "react";
+import { timeline } from "wavesurfer.js/dist/plugin/wavesurfer.timeline.min";
 
 export const GlobalContext = createContext();
 export const useGlobalContext = () => useContext(GlobalContext);
@@ -7,6 +8,7 @@ export const ContextProvider = ({ children }) => {
   const [fileName, setfilename] = useState("0-5min");
   const [reunionName, setreunionName] = useState("AMI");
   const [annot, setannot] = useState([]);
+  const [time, settime] = useState();
   const [conf, setconf] = useState({
     locuteurActif: false,
     map: false,
@@ -37,9 +39,15 @@ export const ContextProvider = ({ children }) => {
     },
   };
 
-  const annotation = {
+  const Player = {
+    getTime: () => time,
+    setTime: (e) => {
+      settime(e);
+    },
+  };
+
+  const Annotation = {
     getAnnot: () => annot,
-    // Default: switch
     setAnnot: (e) => {
       setannot(e);
     },
@@ -48,7 +56,8 @@ export const ContextProvider = ({ children }) => {
   const state = {
     File,
     confDemo,
-    annotation,
+    Player,
+    Annotation,
   };
 
   return (
