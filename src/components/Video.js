@@ -2,9 +2,9 @@ import { useEffect, useState, useRef } from "react";
 import "./Video.css";
 
 // import dataML from "../data/finalAnnoted.json";
-import dataML from "../data/finalML.json";
-import dataCorrected from "../data/finalAnnoted.json";
-import colors from "../data/colors";
+// import dataML from "../data/finalML.json";
+// import dataCorrected from "../data/finalAnnoted.json";
+// import colors from "../data/colors";
 
 import { useGlobalContext } from "./Provider";
 
@@ -49,33 +49,33 @@ const Video = ({ url, isPlaying, durationSec, setVideoLoaded }) => {
       .drawImage(videoRef.current, 0, 0, width, height);
   };
 
-  const drawRectangleML = (x, y, w, h, label, typeAnnot) => {
-    canva.current.getContext("2d", { alpha: false }).lineWidth = 2;
-    if (typeAnnot === "MLVT") {
-      canva.current.getContext("2d", { alpha: false }).strokeStyle = "red";
-      canva.current.getContext("2d", { alpha: false }).setLineDash([5, 5]);
-    } else {
-      canva.current.getContext("2d", { alpha: false }).strokeStyle =
-        colors[label];
-      canva.current.getContext("2d", { alpha: false }).setLineDash([]);
-    }
-    canva.current.getContext("2d", { alpha: false }).strokeRect(x, y, w, h);
-  };
+  // const drawRectangleML = (x, y, w, h, label, typeAnnot) => {
+  //   canva.current.getContext("2d", { alpha: false }).lineWidth = 2;
+  //   if (typeAnnot === "MLVT") {
+  //     canva.current.getContext("2d", { alpha: false }).strokeStyle = "red";
+  //     canva.current.getContext("2d", { alpha: false }).setLineDash([5, 5]);
+  //   } else {
+  //     canva.current.getContext("2d", { alpha: false }).strokeStyle =
+  //       colors[label];
+  //     canva.current.getContext("2d", { alpha: false }).setLineDash([]);
+  //   }
+  //   canva.current.getContext("2d", { alpha: false }).strokeRect(x, y, w, h);
+  // };
 
-  const drawRectangleCorrected = (x, y, w, h, label) => {
-    canva.current.getContext("2d", { alpha: false }).lineWidth = 2;
-    if (typeAnnot === "MLVT") {
-      canva.current.getContext("2d", { alpha: false }).strokeStyle = "green";
-      canva.current
-        .getContext("2d", { alpha: false })
-        .setLineDash([0, 5, 5, 0]);
-    } else {
-      canva.current.getContext("2d", { alpha: false }).strokeStyle =
-        colors[label];
-      canva.current.getContext("2d", { alpha: false }).setLineDash([]);
-    }
-    canva.current.getContext("2d", { alpha: false }).strokeRect(x, y, w, h);
-  };
+  // const drawRectangleCorrected = (x, y, w, h, label) => {
+  //   canva.current.getContext("2d", { alpha: false }).lineWidth = 2;
+  //   if (typeAnnot === "MLVT") {
+  //     canva.current.getContext("2d", { alpha: false }).strokeStyle = "green";
+  //     canva.current
+  //       .getContext("2d", { alpha: false })
+  //       .setLineDash([0, 5, 5, 0]);
+  //   } else {
+  //     canva.current.getContext("2d", { alpha: false }).strokeStyle =
+  //       colors[label];
+  //     canva.current.getContext("2d", { alpha: false }).setLineDash([]);
+  //   }
+  //   canva.current.getContext("2d", { alpha: false }).strokeRect(x, y, w, h);
+  // };
 
   const drawFPS = (timeVideo) => {
     canva.current.getContext("2d", { alpha: false }).font = "40px Arial";
@@ -89,27 +89,28 @@ const Video = ({ url, isPlaying, durationSec, setVideoLoaded }) => {
   useEffect(() => {
     const interval = setInterval(() => {
       drawImage();
-      const frame = Math.round(videoRef.current.currentTime * fpsVideo);
+      // const frame = Math.round(videoRef.current.currentTime * fpsVideo);
       drawFPS(videoRef.current.currentTime);
-      if (locuteurActif) {
-        if (typeAnnot === "ML" || typeAnnot === "MLVT") {
-          dataML[frame].map((o) =>
-            drawRectangleML(o.x, o.y, o.width, o.height, o.label, typeAnnot)
-          );
-        }
-        if (frame > 1428 && (typeAnnot === "VT" || typeAnnot === "MLVT")) {
-          dataCorrected[frame].map((o) =>
-            drawRectangleCorrected(
-              o.x,
-              o.y,
-              o.width,
-              o.height,
-              o.label,
-              typeAnnot
-            )
-          );
-        }
-      }
+
+      // if (locuteurActif) {
+      //   if (typeAnnot === "ML" || typeAnnot === "MLVT") {
+      //     dataML[frame].map((o) =>
+      //       drawRectangleML(o.x, o.y, o.width, o.height, o.label, typeAnnot)
+      //     );
+      //   }
+      //   if (frame > 1428 && (typeAnnot === "VT" || typeAnnot === "MLVT")) {
+      //     dataCorrected[frame].map((o) =>
+      //       drawRectangleCorrected(
+      //         o.x,
+      //         o.y,
+      //         o.width,
+      //         o.height,
+      //         o.label,
+      //         typeAnnot
+      //       )
+      //     );
+      //   }
+      // }
     }, 1000 / fpsAct);
     return () => clearInterval(interval);
     // eslint-disable-next-line
