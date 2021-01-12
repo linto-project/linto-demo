@@ -80,7 +80,7 @@ const Video4Player = ({
             >
               <video
                 key={url}
-                preload
+                preload="true"
                 ref={videoRef1}
                 width="352"
                 height="288"
@@ -97,7 +97,7 @@ const Video4Player = ({
             >
               <video
                 key={url}
-                preload
+                preload="true"
                 ref={videoRef2}
                 width="352"
                 height="288"
@@ -119,7 +119,7 @@ const Video4Player = ({
             >
               <video
                 key={url}
-                preload
+                preload="true"
                 ref={videoRef3}
                 width="352"
                 height="288"
@@ -136,7 +136,7 @@ const Video4Player = ({
             >
               <video
                 key={url}
-                preload
+                preload="true"
                 ref={videoRef4}
                 width="352"
                 height="288"

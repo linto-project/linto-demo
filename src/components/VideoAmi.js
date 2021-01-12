@@ -31,7 +31,6 @@ const VideoAMI = ({ url, isPlaying, durationSec, setVideoLoaded }) => {
 
   const time = getTime();
   useEffect(() => {
-    console.log("hey");
     setSelection([false, false, false, false]);
     getAnnot().map((e) => checkElement(e));
 

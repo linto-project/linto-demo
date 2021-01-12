@@ -1,0 +1,11 @@
+.active {
+  border: 3px solid black;
+}
+
+.unactive {
+  border: 3px solid white;
+}
+
+.selected {
+  background-color: rgb(255, 255, 107);
+}

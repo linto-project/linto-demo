@@ -1,4 +1,4 @@
-import React, { createContext, useState, useContext } from "react";
+import React, { createContext, useState, useContext, useEffect } from "react";
 
 export const GlobalContext = createContext();
 export const useGlobalContext = () => useContext(GlobalContext);
@@ -7,14 +7,21 @@ export const ContextProvider = ({ children }) => {
   const [fileName, setfilename] = useState("0-5min");
   const [reunionName, setreunionName] = useState("AMI");
   const [annot, setannot] = useState([]);
-  const [time, settime] = useState();
+  const [playing, setplaying] = useState(false);
+
+  const [player, setplayer] = useState({
+    time: 0,
+  });
+
   const [conf, setconf] = useState({
     locuteurActif: false,
     map: false,
     annotation: false,
+    typeannotation: "ML",
     seuilLocuteur: 0.0,
   });
 
+  // Rename: file
   const File = {
     getName: () => fileName,
     setName: (name) => {
@@ -38,14 +45,27 @@ export const ContextProvider = ({ children }) => {
     },
   };
 
+  // Rename: player
   const Player = {
-    getTime: () => time,
+    getTime: () => player.time,
     setTime: (e) => {
-      settime(e);
+      const tempo = { ...player, time: e };
+      setplayer(tempo);
     },
+
+    getPlaying: () => playing,
+
+    togglePlaying: () => {
+      const temp = !playing;
+      console.log(temp);
+      setplaying(temp);
+    },
+    getSetterPlaying: () => setplayer,
   };
 
+  // Rename: annotation
   const Annotation = {
+    // Rename: getAnnotation
     getAnnot: () => annot,
     setAnnot: (e) => {
       setannot(e);
@@ -58,6 +78,26 @@ export const ContextProvider = ({ children }) => {
     Player,
     Annotation,
   };
+
+  // Reset state when changing corpus / file
+  useEffect(() => {
+    setplaying(false);
+    setplayer({
+      time: 0,
+    });
+    setconf({
+      locuteurActif: false,
+      map: false,
+      annotation: false,
+      seuilLocuteur: 0.0,
+      typeannotation: "ML",
+    });
+  }, [fileName, reunionName]);
+
+  useEffect(() => {
+    console.log("conf : ");
+    console.log(conf);
+  }, [conf]);
 
   return (
     <GlobalContext.Provider value={state}>{children}</GlobalContext.Provider>

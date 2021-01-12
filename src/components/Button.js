@@ -7,23 +7,23 @@ const useStyles = makeStyles(() =>
   createStyles({
     root: {
       width: "300px",
-      border: "2px solid black",
+      border: "1px solid #c4c4c4",
     },
 
     selected: {
-      border: "2px solid white",
+      border: "1px solid black",
     },
   })
 );
 
-const Button = ({ description, selected, children, ...rest }) => {
+const Button = ({ description, selected, children, IHM, variant, ...rest }) => {
   const classes = useStyles();
   return (
     <div>
       <MuiButton
-        variant="contained"
+        variant={variant}
         className={
-          selected ? clsx(classes.root, classes.selected) : classes.root
+          selected && IHM ? clsx(classes.root, classes.selected) : classes.root
         }
         {...rest}
       >

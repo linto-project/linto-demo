@@ -10,6 +10,7 @@ const CustomeSlider = ({
   id,
   name,
   onChange,
+  checked,
   children,
   icon,
   disabled,
@@ -28,8 +29,10 @@ const CustomeSlider = ({
             id={id}
             value={seuilLocuteurActif}
             name={name}
+            checked={checked}
             onChange={(e) => onChange(e)}
             aria-labelledby="switch"
+            color="primary"
           />
         </Grid>
       </Grid>

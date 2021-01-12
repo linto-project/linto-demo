@@ -4,6 +4,7 @@ import "./index.css";
 import App from "./App";
 
 ReactDOM.render(
+  // Strict mode bug with material ui backdrop
   <React.StrictMode>
     <App />
   </React.StrictMode>,

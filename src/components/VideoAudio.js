@@ -32,9 +32,9 @@ const VideoAudio = ({ framerate }) => {
   // console.log("framerate  : " + framerate);
 
   const [durationSec, setDurationSec] = useState([]);
-  const [isPlaying, setIsPlaying] = useState([]);
-  const [frame, setFrame] = useState([]);
-  const [play, setPlay] = useState(false);
+  // const [isPlaying, setIsPlaying] = useState([]);
+  // const [frame, setFrame] = useState([]);
+  // const [play, setPlay] = useState(false);
   const [synch, setSynch] = useState(false);
   const [volume, setVolume] = useState(0.5);
   const [zoom, setZoom] = useState(5);
@@ -45,7 +45,7 @@ const VideoAudio = ({ framerate }) => {
 
   const [open, setOpen] = useState(false);
 
-  const { File } = useGlobalContext();
+  const { File, Player } = useGlobalContext();
 
   const handleClose = () => {
     setOpen(false);
@@ -54,30 +54,41 @@ const VideoAudio = ({ framerate }) => {
   const nameFile = File.getName();
   useEffect(() => {
     setVideoLoaded(false);
-    setPlay(false);
+    // setPlay(false);
   }, [nameFile]);
 
-  useEffect(() => {
-    // console.log("current State : " + isPlaying);
-  }, [isPlaying]);
+  // useEffect(() => {
+  //   // console.log("current State : " + isPlaying);
+  // }, [isPlaying]);
 
-  useEffect(() => {
-    // console.log("current timestamp : " + durationSec);
-    setFrame(Math.round(durationSec * 25));
-  }, [durationSec]);
+  // useEffect(() => {
+  //   // console.log("current timestamp : " + durationSec);
+  //   setFrame(Math.round(durationSec * 25));
+  // }, [durationSec]);
 
   useEffect(() => {
     audioLoaded && videoLoaded ? setPlayDisabled(false) : setPlayDisabled(true);
     audioLoaded && videoLoaded ? setOpen(false) : setOpen(true);
   }, [audioLoaded, videoLoaded]);
 
+  // useEffect(() => {
+  //   console.log("change to is Playing : ");
+  //   console.log(Player.getPlaying());
+  // }, [Player.getPlaying()]);
+
+  // Rename: toggle play/pause
   const handlePlayPause = () => {
     if (!playDisabled) {
-      setPlay(!play);
+      Player.togglePlaying();
     }
   };
 
+  // const test = () => {
+  //   console.log("triggered once ");
+  // };
+
   const classes = useStyles();
+
   return (
     <div className="demo">
       {/* @to do:
@@ -107,13 +118,14 @@ const VideoAudio = ({ framerate }) => {
           </Grid>
         </Grid>
       </Backdrop>
-      <Grid container direction="column" spacing={2}>
-        <Grid item justify="center">
+      <Grid container direction="column" justify="center" spacing={2}>
+        <Grid item>
           {File.getReunionName() === "Linto" && (
             <Video
-              url={"/video/" + File.getName() + ".webm"}
+              // url={"/video/" + File.getName() + ".webm"}
+              url={"/video-ignore/Meeting_Rap_1.webm"}
               durationSec={durationSec}
-              isPlaying={isPlaying}
+              isPlaying={Player.getPlaying()}
               setVideoLoaded={setVideoLoaded}
             />
           )}
@@ -121,11 +133,12 @@ const VideoAudio = ({ framerate }) => {
             <VideoAMI
               url={"/video/AMI/1/"}
               durationSec={durationSec}
-              isPlaying={isPlaying}
+              isPlaying={Player.getPlaying()}
               setVideoLoaded={setVideoLoaded}
             />
           )}
         </Grid>
+
         <Grid item>
           <div id="waveform">
             <WaveSurfer
@@ -133,16 +146,16 @@ const VideoAudio = ({ framerate }) => {
               zoom={zoom}
               synch={synch}
               setSynch={setSynch}
-              play={play}
-              setPlay={setPlay}
+              play={Player.getPlaying()}
+              // setPlay={setPlay}
               volume={volume}
               audioLoaded={audioLoaded}
               setAudioLoaded={setAudioLoaded}
               playDisabled={playDisabled}
               setPlayDisabled={setPlayDisabled}
-              setIsPlaying={setIsPlaying}
+              // setIsPlaying={Player.getSetterPlaying()}
               setDurationSec={setDurationSec}
-              setFrame={setFrame}
+              // setFrame={setFrame}
               framerate={framerate}
             />
           </div>
@@ -156,14 +169,17 @@ const VideoAudio = ({ framerate }) => {
                     style={{ maxWidth: "100px", minWidth: "100px" }}
                     variant="contained"
                     color="primary"
-                    onClick={handlePlayPause}
-                    fullWidth="false"
+                    onClick={(e) => handlePlayPause()}
                     disabled={playDisabled}
                     startIcon={
-                      !play ? <PlayArrowSharpIcon /> : <StopSharpIcon />
+                      !Player.getPlaying() ? (
+                        <PlayArrowSharpIcon />
+                      ) : (
+                        <StopSharpIcon />
+                      )
                     }
                   >
-                    {!play ? "Play" : "Pause"}
+                    {!Player.getPlaying() ? "Play" : "Pause"}
                   </Button>
                 </div>
               </Grid>
@@ -202,12 +218,12 @@ const VideoAudio = ({ framerate }) => {
             </Grid>
           </div>
         </Grid>
-        <Grid item>
+        {/* <Grid item>
           <div>
             <p style={{ fontSize: "40px" }}>Current frame: {frame}</p>
             <p>Test selected file: {File.getName()}</p>
           </div>
-        </Grid>
+        </Grid> */}
       </Grid>
     </div>
   );

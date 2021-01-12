@@ -17,7 +17,7 @@ const formWaveSurferOptions = (ref, timelineRef) => ({
   // cursorColor: "#ce93d8",
   waveColor: "#757575",
   progressColor: "#424242",
-  cursorColor: "#e040fb",
+  cursorColor: "#424242",
   backend: "MediaElement",
   barWidth: 3,
   barRadius: 3,
@@ -45,13 +45,9 @@ export default function Waveform({
   synch,
   setSynch,
   play,
-  setPlay,
   volume,
   setAudioLoaded,
-  setIsPlaying,
   setDurationSec,
-  framerate,
-  setFrame,
 }) {
   const waveformRef = useRef(null);
   const timelineRef = useRef(null);
@@ -63,8 +59,9 @@ export default function Waveform({
   const { setTime } = Player;
 
   useEffect(() => {
+    console.log("new isntance");
     setAudioLoaded(false);
-    setPlay(false);
+    // setPlay(false);
     const options = formWaveSurferOptions(
       waveformRef.current,
       timelineRef.current
@@ -74,14 +71,14 @@ export default function Waveform({
 
     // Pausing audio
     wavesurfer.current.on("pause", function () {
-      // console.log("Pause");
-      setIsPlaying(false);
+      console.log("Pause");
+      // setIsPlaying(false);
     });
 
     // Playing audio
     wavesurfer.current.on("play", function () {
-      // console.log("Play");
-      setIsPlaying(true);
+      console.log("Play");
+      // setIsPlaying(true);
       setDurationSec(wavesurfer.current.getCurrentTime());
     });
 
@@ -94,7 +91,6 @@ export default function Waveform({
     // Audioprocess: fire continously when audio is playing
     wavesurfer.current.on("audioprocess", function () {
       setTime(wavesurfer.current.getCurrentTime());
-      calculateFrame();
     });
 
     wavesurfer.current.on("waveform-ready", function () {
@@ -126,7 +122,13 @@ export default function Waveform({
   }, [volume]);
 
   useEffect(() => {
-    wavesurfer.current.playPause();
+    if (play !== wavesurfer.current.isPlaying()) {
+      console.log("Play and after IsPlaying");
+      console.log(play);
+
+      console.log(wavesurfer.current.isPlaying());
+      wavesurfer.current.playPause();
+    }
   }, [play]);
 
   const changeTimeline = getConf().annotation && getConf().locuteurActif;
@@ -147,10 +149,6 @@ export default function Waveform({
     }
     // eslint-disable-next-line
   }, [valueLocuteur]);
-
-  const calculateFrame = () => {
-    setFrame(Math.round(wavesurfer.current.getCurrentTime() * framerate));
-  };
 
   const fakeRegion = () => {
     console.log("Duration of clip : " + wavesurfer.current.getDuration());
