@@ -4,7 +4,7 @@ import "./Video.css";
 // import dataML from "../data/finalAnnoted.json";
 // import dataML from "../data/finalML.json";
 // import dataCorrected from "../data/finalAnnoted.json";
-// import colors from "../data/colors";
+import colors from "../data/colors";
 
 import { useGlobalContext } from "./Provider";
 
@@ -49,19 +49,33 @@ const Video = ({ url, isPlaying, durationSec, setVideoLoaded }) => {
       .drawImage(videoRef.current, 0, 0, width, height);
   };
 
+  // eslint-disable-next-line
   const drawRectangleML = (x, y, w, h, label, typeAnnot) => {
     canva.current.getContext("2d", { alpha: false }).lineWidth = 2;
-    canva.current.getContext("2d", { alpha: false }).strokeStyle =
-      colors[label];
-    canva.current.getContext("2d", { alpha: false }).setLineDash([]);
+    if (typeAnnot === "MLVT") {
+      canva.current.getContext("2d", { alpha: false }).strokeStyle = "red";
+      canva.current.getContext("2d", { alpha: false }).setLineDash([5, 5]);
+    } else {
+      canva.current.getContext("2d", { alpha: false }).strokeStyle =
+        colors[label];
+      canva.current.getContext("2d", { alpha: false }).setLineDash([]);
+    }
     canva.current.getContext("2d", { alpha: false }).strokeRect(x, y, w, h);
   };
 
+  // eslint-disable-next-line
   const drawRectangleCorrected = (x, y, w, h, label) => {
     canva.current.getContext("2d", { alpha: false }).lineWidth = 2;
-    canva.current.getContext("2d", { alpha: false }).strokeStyle =
-      colors[label];
-    canva.current.getContext("2d", { alpha: false }).setLineDash([]);
+    if (typeAnnot === "MLVT") {
+      canva.current.getContext("2d", { alpha: false }).strokeStyle = "green";
+      canva.current
+        .getContext("2d", { alpha: false })
+        .setLineDash([0, 5, 5, 0]);
+    } else {
+      canva.current.getContext("2d", { alpha: false }).strokeStyle =
+        colors[label];
+      canva.current.getContext("2d", { alpha: false }).setLineDash([]);
+    }
     canva.current.getContext("2d", { alpha: false }).strokeRect(x, y, w, h);
   };
 
