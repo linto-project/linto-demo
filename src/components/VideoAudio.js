@@ -20,6 +20,10 @@ import { useGlobalContext } from "./Provider";
 
 import { makeStyles, createStyles } from "@material-ui/core/styles";
 
+import { TranscriptReadOnly } from "./Transcript";
+// you need to import bootstrap separatly
+import "bootstrap-css-only";
+
 const useStyles = makeStyles(() =>
   createStyles({
     root: {
@@ -137,6 +141,8 @@ const VideoAudio = ({ framerate }) => {
               setVideoLoaded={setVideoLoaded}
             />
           )}
+          {File.getReunionName() === "AMI" && <TranscriptReadOnly />}
+          {File.getReunionName() === "Gestes" && <TranscriptReadOnly />}
         </Grid>
 
         <Grid item>

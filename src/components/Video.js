@@ -2,8 +2,8 @@ import { useEffect, useState, useRef } from "react";
 import "./Video.css";
 
 // import dataML from "../data/finalAnnoted.json";
-// import dataML from "../data/finalML.json";
-// import dataCorrected from "../data/finalAnnoted.json";
+import dataML from "../data/finalML.json";
+import dataCorrected from "../data/finalAnnoted.json";
 import colors from "../data/colors";
 
 import { useGlobalContext } from "./Provider";
@@ -91,28 +91,28 @@ const Video = ({ url, isPlaying, durationSec, setVideoLoaded }) => {
   useEffect(() => {
     const interval = setInterval(() => {
       drawImage();
-      // const frame = Math.round(videoRef.current.currentTime * fpsVideo);
+      const frame = Math.round(videoRef.current.currentTime * fpsVideo);
       drawFPS(videoRef.current.currentTime);
 
-      // if (locuteurActif) {
-      //   if (typeAnnot === "ML" || typeAnnot === "MLVT") {
-      //     dataML[frame].map((o) =>
-      //       drawRectangleML(o.x, o.y, o.width, o.height, o.label, typeAnnot)
-      //     );
-      //   }
-      //   if (frame > 1428 && (typeAnnot === "VT" || typeAnnot === "MLVT")) {
-      //     dataCorrected[frame].map((o) =>
-      //       drawRectangleCorrected(
-      //         o.x,
-      //         o.y,
-      //         o.width,
-      //         o.height,
-      //         o.label,
-      //         typeAnnot
-      //       )
-      //     );
-      //   }
-      // }
+      if (locuteurActif) {
+        if (typeAnnot === "ML" || typeAnnot === "MLVT") {
+          dataML[frame].map((o) =>
+            drawRectangleML(o.x, o.y, o.width, o.height, o.label, typeAnnot)
+          );
+        }
+        if (frame > 1428 && (typeAnnot === "VT" || typeAnnot === "MLVT")) {
+          dataCorrected[frame].map((o) =>
+            drawRectangleCorrected(
+              o.x,
+              o.y,
+              o.width,
+              o.height,
+              o.label,
+              typeAnnot
+            )
+          );
+        }
+      }
     }, 1000 / fpsAct);
     return () => clearInterval(interval);
     // eslint-disable-next-line
