@@ -1,4 +1,4 @@
-import { shortTimecode } from '../timecode-converter';
+import { shortTimecode } from "../timecode-converter";
 
 /**
  *
@@ -18,7 +18,7 @@ import { shortTimecode } from '../timecode-converter';
  * eg if `time` is 6, the list would be [0, 1, 2, 3, 4, 5]
  * @param {Number} time - float, time in seconds
  */
-const generatePreviousTimings = time => {
+const generatePreviousTimings = (time) => {
   // https://stackoverflow.com/questions/3746725/how-to-create-an-array-containing-1-n
   return [...Array(parseInt(time)).keys()];
 };
@@ -32,25 +32,25 @@ const generatePreviousTimings = time => {
  * @returns {String}
  */
 const generatePreviousTimingsUpToCurrent = (totalTimingsInt, time) => {
-  return totalTimingsInt.splice(0, time, 0).join(' ');
+  return totalTimingsInt.splice(0, time, 0).join(" ");
 };
 
 function isEmpty(obj) {
   return Object.keys(obj).length === 0;
 }
 
-const convertDpeToSlate = transcript => {
+const convertDpeToSlate = (transcript) => {
   if (isEmpty(transcript)) {
     return [
       {
-        speaker: 'U_UKN',
+        speaker: "U_UKN",
         start: 0,
-        previousTimings: '0',
-        startTimecode: '00:00:00',
-        type: 'timedText',
+        previousTimings: "0",
+        startTimecode: "00:00:00",
+        type: "timedText",
         children: [
           {
-            text: 'Text',
+            text: "Text",
           },
         ],
       },
@@ -58,8 +58,9 @@ const convertDpeToSlate = transcript => {
   }
 
   const { words, paragraphs } = transcript;
-  return paragraphs.map(paragraph => {
-    const wordsFiltered = words.filter(word => {
+  return paragraphs.map((paragraph) => {
+    //eslint-disable-next-line
+    const wordsFiltered = words.filter((word) => {
       if (word.start >= paragraph.start && word.end <= paragraph.end) {
         return word;
       }
@@ -69,18 +70,21 @@ const convertDpeToSlate = transcript => {
     const lastWordStartTime = words[lastWordIndex].start;
     const totalTimingsInt = generatePreviousTimings(lastWordStartTime);
     const text = wordsFiltered
-      .map(w => {
+      .map((w) => {
         return w.text;
       })
-      .join(' ');
+      .join(" ");
 
     return {
       speaker: paragraph.speaker,
       start: paragraph.start,
-      previousTimings: generatePreviousTimingsUpToCurrent(totalTimingsInt, paragraph.start),
+      previousTimings: generatePreviousTimingsUpToCurrent(
+        totalTimingsInt,
+        paragraph.start
+      ),
       // pre-computing the display of the formatting here so that it doesn't need to convert it in leaf render
       startTimecode: shortTimecode(paragraph.start),
-      type: 'timedText',
+      type: "timedText",
       children: [{ text }],
     };
   });
