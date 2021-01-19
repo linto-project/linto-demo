@@ -4,6 +4,7 @@ import Grid from "@material-ui/core/Grid";
 import SlateTranscriptEditor from "../dependencies/slate-transcript-editor/index.js";
 import "bootstrap-css-only";
 import DEMO_TRANSCRIPT_KATE from "../sample-data/KateDarling-dpe.json";
+// import DEMO_TRANSCRIPT_KATE from "../sample-data/converted.json";
 
 // const DEMO_MEDIA_URL_KATE =
 //   "https://download.ted.com/talks/KateDarling_2018S-950k.mp4";
