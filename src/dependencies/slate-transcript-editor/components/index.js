@@ -25,7 +25,7 @@ export default function SlateTranscriptEditor(props) {
   const { Player, confDemo } = useGlobalContext();
   const { getTime } = Player;
 
-  const typeAnnot = confDemo.getConf().typeAnnotationDialogue;
+  // const typeAnnot = confDemo.getConf().typeAnnotationDialogue;
   const actLanguage = confDemo.getConf().actLanguage;
 
   const timeTemp = getTime();
