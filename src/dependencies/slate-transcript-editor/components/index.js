@@ -22,13 +22,16 @@ function isEmpty(obj) {
 }
 
 export default function SlateTranscriptEditor(props) {
-  const { Player } = useGlobalContext();
+  const { Player, confDemo } = useGlobalContext();
   const { getTime } = Player;
+
+  const typeAnnot = confDemo.getConf().typeAnnotationDialogue;
+  const actLanguage = confDemo.getConf().actLanguage;
 
   const timeTemp = getTime();
   useEffect(() => {
-    handleTimeUpdated(timeTemp);
-    console.log("Hey");
+    // Add little offset to componsate react hook delay
+    handleTimeUpdated(timeTemp + 1);
   }, [timeTemp]);
 
   const [currentTime, setCurrentTime] = useState(0);
@@ -129,20 +132,28 @@ export default function SlateTranscriptEditor(props) {
     }
   }, []);
 
-  const renderLeaf = useCallback(({ attributes, children, leaf }) => {
-    return (
-      <span
-        onDoubleClick={handleTimedTextClick}
-        className={"timecode text"}
-        data-start={children.props.parent.start}
-        data-previous-timings={children.props.parent.previousTimings}
-        title={children.props.parent.start}
-        {...attributes}
-      >
-        {children}
-      </span>
-    );
-  }, []);
+  const renderLeaf = useCallback(
+    ({ attributes, children, leaf }) => {
+      return (
+        <span
+          onDoubleClick={handleTimedTextClick}
+          className={"timecode text"}
+          data-start={children.props.parent.start}
+          data-previous-timings={children.props.parent.previousTimings}
+          title={children.props.parent.start}
+          {...attributes}
+        >
+          {/* {children} */}
+
+          <Row>
+            <Col xs={actLanguage ? 7 : 12}>{children}</Col>
+            {actLanguage && <Col xs={4}>{children.props.parent.actDialog}</Col>}
+          </Row>
+        </span>
+      );
+    },
+    [actLanguage]
+  );
 
   //
 
@@ -185,16 +196,17 @@ export default function SlateTranscriptEditor(props) {
   const TimedTextElement = (props) => {
     let textLg = 12;
     let textXl = 12;
-    if (!showSpeakers && !showTimecodes) {
-      textLg = 12;
-      textXl = 12;
-    } else if (showSpeakers && !showTimecodes) {
-      textLg = 9;
-      textXl = 9;
-    } else if (!showSpeakers && showTimecodes) {
-      textLg = 9;
-      textXl = 10;
-    } else if (showSpeakers && showTimecodes) {
+    // if (!showSpeakers && !showTimecodes) {
+    //   textLg = 12;
+    //   textXl = 12;
+    // } else if (showSpeakers && !showTimecodes) {
+    //   textLg = 9;
+    //   textXl = 9;
+    // } else if (!showSpeakers && showTimecodes) {
+    //   textLg = 9;
+    //   textXl = 10;
+    // } else
+    if (showSpeakers && showTimecodes) {
       textLg = 6;
       textXl = 7;
     }
@@ -249,26 +261,17 @@ export default function SlateTranscriptEditor(props) {
             </span>
           </Col>
         )}
+
         <Col
           xs={12}
           sm={12}
           md={12}
           lg={textLg}
           xl={textXl}
-          // className={"p-b-1 mx-auto"}
+          className={"p-t-2 mx-auto"}
         >
           {props.children}
         </Col>
-        {/* <Col
-          xs={12}
-          sm={12}
-          md={12}
-          lg={textLg}
-          xl={textXl}
-          // className={"p-b-1 mx-auto"}
-        >
-          lol
-        </Col> */}
       </Row>
     );
   };
@@ -354,14 +357,15 @@ export default function SlateTranscriptEditor(props) {
       }}
     >
       <style scoped>
-        {`
-            /* Next words */
-            .timecode[data-previous-timings*="${generatePreviousTimingsUpToCurrent(
-              parseInt(currentTime)
-            )}"]{
+        {`  .timecode[data-previous-timings*="${generatePreviousTimingsUpToCurrent(
+          parseInt(currentTime)
+        )}"]{
                 color:  #c8c8c8;
-            }
-        `}
+            }`}
+
+        {`span.Word[data-start="${parseInt(
+          currentTime
+        )}"] { background-color: #a2ffa2 }`}
       </style>
       <style scoped>
         {`.editor-wrapper-container{

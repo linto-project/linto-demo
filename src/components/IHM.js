@@ -1,14 +1,13 @@
 import Accordion from "@material-ui/core/Accordion";
 import AccordionSummary from "@material-ui/core/AccordionSummary";
 import AccordionDetails from "@material-ui/core/AccordionDetails";
-import Checkbox from "@material-ui/core/Checkbox";
 import Switch from "@material-ui/core/Switch";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
-import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import ExploreIcon from "@material-ui/icons/ExploreOutlined";
 import GraphicEqOutlinedIcon from "@material-ui/icons/GraphicEqOutlined";
-import PersonOutlineIcon from "@material-ui/icons/PersonOutline";
+import PersonOutlineIcon from "@material-ui/icons/RecentActorsOutlined";
+import RecordVoiceOverIcon from "@material-ui/icons/RecordVoiceOverOutlined";
 
 import Button from "./Button";
 
@@ -47,6 +46,9 @@ const IHM = () => {
   //   // eslint-disable-next-line
   // }, [getConf()]);
 
+  const colorIconsSP2 = getConf().locuteurActif ? "" : "disabled";
+  const colorIconsSP5 = getConf().transcript ? "" : "disabled";
+
   return (
     <div>
       <Accordion defaultExpanded={true}>
@@ -76,43 +78,41 @@ const IHM = () => {
             </Grid>
           </Grid>
         </AccordionSummary>
-        {
-          /* AMI */
-          File.getReunionName() === "AMI" && (
-            <AccordionDetails>
-              <Grid
-                spacing={2}
-                container
-                direction="column"
-                justify="center"
-                alignItems="center"
-              >
-                <Grid item>
-                  <Button
-                    style={{ width: "200px" }}
-                    onClick={() => setName("0-5min")}
-                    selected={File.getName() === "0-5min"}
-                    IHM={true}
-                    variant="outlined"
-                  >
-                    Ouverture
-                  </Button>
-                </Grid>
-                <Grid item>
-                  <Button
-                    style={{ width: "200px" }}
-                    onClick={() => setName("20-25min")}
-                    selected={File.getName() === "20-25min"}
-                    IHM={true}
-                    variant="outlined"
-                  >
-                    Tour de Table
-                  </Button>
-                </Grid>
+        {/* AMI */
+        File.getReunionName() === "AMI" && (
+          <AccordionDetails>
+            <Grid
+              spacing={2}
+              container
+              direction="column"
+              justify="center"
+              alignItems="center"
+            >
+              <Grid item>
+                <Button
+                  style={{ width: "200px" }}
+                  onClick={() => setName("0-5min")}
+                  selected={File.getName() === "0-5min"}
+                  IHM={true}
+                  variant="outlined"
+                >
+                  Ouverture
+                </Button>
               </Grid>
-            </AccordionDetails>
-          )
-        }
+              <Grid item>
+                <Button
+                  style={{ width: "200px" }}
+                  onClick={() => setName("20-25min")}
+                  selected={File.getName() === "20-25min"}
+                  IHM={true}
+                  variant="outlined"
+                >
+                  Tour de Table
+                </Button>
+              </Grid>
+            </Grid>
+          </AccordionDetails>
+        )}
       </Accordion>
       <Accordion defaultExpanded={true}>
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
@@ -131,14 +131,14 @@ const IHM = () => {
             {File.getReunionName() === "Linto" && (
               <Grid item>
                 <CustomSelect
-                  icon={<PersonOutlineIcon />}
+                  icon={<PersonOutlineIcon color={colorIconsSP2} />}
                   disabled={!getConf().locuteurActif}
-                  value={getConf().typeannotation}
+                  value={getConf().typeAnnotationLocuteur}
                   onChange={(e) => {
-                    getSetterConf("typeannotation")(e.target.value);
+                    getSetterConf("typeAnnotationLocuteur")(e.target.value);
                   }}
                   id="Type d'annotatione"
-                  name="typeannotation"
+                  name="typeAnnotationLocuteur"
                   // aria-labelledby="select"
                   title={"Type d'annotations"}
                 >
@@ -160,7 +160,7 @@ const IHM = () => {
                 min={0}
                 max={1}
                 step={0.01}
-                icon={<CropFree />}
+                icon={<CropFree color={colorIconsSP2} />}
                 valueLabelDisplay="auto"
               >
                 Seuil de confiance
@@ -173,7 +173,7 @@ const IHM = () => {
                   checked={getConf().map}
                   name="map"
                   onChange={(e) => setConf(e)}
-                  icon={<ExploreIcon />}
+                  icon={<ExploreIcon color={colorIconsSP2} />}
                 >
                   Map
                 </CustomSwitch>
@@ -185,7 +185,7 @@ const IHM = () => {
                 checked={getConf().annotation}
                 name="annotation"
                 onChange={(e) => setConf(e)}
-                icon={<GraphicEqOutlinedIcon />}
+                icon={<GraphicEqOutlinedIcon color={colorIconsSP2} />}
               >
                 Annotations Timeline
               </CustomSwitch>
@@ -194,25 +194,48 @@ const IHM = () => {
         </AccordionDetails>
       </Accordion>
       <Accordion defaultExpanded={true}>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-label="Expand"
-          aria-controls="additional-actions2-content"
-          id="additional-actions2-header"
-        >
+        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
           <FormControlLabel
-            aria-label="Acknowledge"
             onClick={(event) => event.stopPropagation()}
             onFocus={(event) => event.stopPropagation()}
-            control={<Checkbox />}
-            label="SP 5"
+            checked={getConf().transcript}
+            name="transcript"
+            onChange={(e) => setConf(e)}
+            control={<Switch color="primary" />}
+            label="Transcription"
           />
         </AccordionSummary>
         <AccordionDetails>
-          <Typography color="textSecondary">
-            The focus event of the nested action will propagate up and also
-            focus the accordion unless you explicitly stop it.
-          </Typography>
+          <Grid container direction="column" spacing={2}>
+            <Grid item>
+              <CustomSelect
+                icon={<PersonOutlineIcon color={colorIconsSP5} />}
+                disabled={!getConf().transcript}
+                value={getConf().typeannotation}
+                onChange={(e) => {
+                  getSetterConf("typeAnnotationDialogue")(e.target.value);
+                }}
+                id="Type d'annotatione"
+                name="typeAnnotationDialogue"
+                // aria-labelledby="select"
+                title={"Type d'annotations"}
+              >
+                <option value="ML">Machine Learning</option>
+                <option value="VT">Vérité Terrain</option>
+              </CustomSelect>
+            </Grid>
+            <Grid item>
+              <CustomSwitch
+                disabled={!getConf().transcript}
+                checked={getConf().actLanguage}
+                name="actLanguage"
+                onChange={(e) => setConf(e)}
+                icon={<RecordVoiceOverIcon color={colorIconsSP5} />}
+              >
+                Actes de language
+              </CustomSwitch>
+            </Grid>
+          </Grid>
         </AccordionDetails>
       </Accordion>
     </div>

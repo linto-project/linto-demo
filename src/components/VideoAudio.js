@@ -127,7 +127,7 @@ const VideoAudio = ({ framerate }) => {
           {File.getReunionName() === "Linto" && (
             <Video
               // url={"/video/" + File.getName() + ".webm"}
-              url={"/video-ignore/Meeting_Rap_1.webm"}
+              url={"/video-ignore/Meeting4.webm"}
               durationSec={durationSec}
               isPlaying={Player.getPlaying()}
               setVideoLoaded={setVideoLoaded}
@@ -141,14 +141,14 @@ const VideoAudio = ({ framerate }) => {
               setVideoLoaded={setVideoLoaded}
             />
           )}
-          {File.getReunionName() === "AMI" && <TranscriptReadOnly />}
-          {File.getReunionName() === "Gestes" && <TranscriptReadOnly />}
+          {File.getReunionName() === "Linto" && <TranscriptReadOnly />}
         </Grid>
 
         <Grid item>
           <div id="waveform">
             <WaveSurfer
-              url={"/audio/" + File.getName() + ".wav"}
+              // url={"/audio/" + File.getName() + ".wav"}
+              url={"/video-ignore/meeting_RAP_4.wav"}
               zoom={zoom}
               synch={synch}
               setSynch={setSynch}

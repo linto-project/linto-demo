@@ -44,6 +44,7 @@ const convertDpeToSlate = (transcript) => {
     return [
       {
         speaker: "U_UKN",
+        actDialog: "Pas d'acte de language",
         start: 0,
         previousTimings: "0",
         startTimecode: "00:00:00",
@@ -58,36 +59,34 @@ const convertDpeToSlate = (transcript) => {
   }
 
   const { words, paragraphs } = transcript;
-  return paragraphs.map((paragraph) => {
-    //eslint-disable-next-line
-    const wordsFiltered = words.filter((word) => {
-      if (word.start >= paragraph.start && word.end <= paragraph.end) {
-        return word;
-      }
-    });
 
-    const lastWordIndex = words.length - 1;
-    const lastWordStartTime = words[lastWordIndex].start;
-    const totalTimingsInt = generatePreviousTimings(lastWordStartTime);
-    const text = wordsFiltered
-      .map((w) => {
-        return w.text;
-      })
+  const generateText = (paragraph, words) =>
+    words
+      .filter(
+        (word) => word.start >= paragraph.start && word.end <= paragraph.end
+      )
+      .map((w) => w.text)
       .join(" ");
 
-    return {
-      speaker: paragraph.speaker,
-      start: paragraph.start,
-      previousTimings: generatePreviousTimingsUpToCurrent(
-        totalTimingsInt,
-        paragraph.start
-      ),
-      // pre-computing the display of the formatting here so that it doesn't need to convert it in leaf render
-      startTimecode: shortTimecode(paragraph.start),
-      type: "timedText",
-      children: [{ text }],
-    };
-  });
+  const generateTotalTimings = (words) =>
+    generatePreviousTimings(words[words.length - 1].start);
+
+  const checkActOfDialog = (actOfDialog) => (actOfDialog ? actOfDialog : " ");
+
+  return paragraphs.map((paragraph) => ({
+    speaker: paragraph.speaker,
+    actDialog: checkActOfDialog(paragraph.actdialog),
+
+    start: paragraph.start,
+    previousTimings: generatePreviousTimingsUpToCurrent(
+      generateTotalTimings(words),
+      paragraph.start
+    ),
+    // pre-computing the display of the formatting here so that it doesn't need to convert it in leaf render
+    startTimecode: shortTimecode(paragraph.start),
+    type: "timedText",
+    children: [{ text: generateText(paragraph, words) }],
+  }));
 };
 
 export default convertDpeToSlate;

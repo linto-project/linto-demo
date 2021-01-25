@@ -17,8 +17,11 @@ export const ContextProvider = ({ children }) => {
     locuteurActif: false,
     map: false,
     annotation: false,
-    typeannotation: "ML",
+    typeAnnotationLocuteur: "ML",
     seuilLocuteur: 0.0,
+    transcript: false,
+    actLanguage: false,
+    typeAnnotationDialogue: "ML",
   });
 
   // Rename: file
@@ -90,7 +93,8 @@ export const ContextProvider = ({ children }) => {
       map: false,
       annotation: false,
       seuilLocuteur: 0.0,
-      typeannotation: "ML",
+      typeAnnotationLocuteur: "ML",
+      typeAnnotationDialogue: "ML",
     });
   }, [fileName, reunionName]);
 
