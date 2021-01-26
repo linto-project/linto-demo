@@ -147,8 +147,8 @@ const VideoAudio = ({ framerate }) => {
         <Grid item>
           <div id="waveform">
             <WaveSurfer
-              url={"/audio/" + File.getName() + ".wav"}
-              // url={"/video-ignore/meeting_RAP_4.wav"}
+              // url={"/audio/" + File.getName() + ".wav"}
+              url={"/video-ignore/meeting_RAP_4.wav"}
               zoom={zoom}
               synch={synch}
               setSynch={setSynch}
