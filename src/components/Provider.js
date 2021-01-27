@@ -5,7 +5,7 @@ export const useGlobalContext = () => useContext(GlobalContext);
 
 export const ContextProvider = ({ children }) => {
   const [fileName, setfilename] = useState("0-5min");
-  const [reunionName, setreunionName] = useState("AMI");
+  const [reunionName, setreunionName] = useState("Linto");
   const [annot, setannot] = useState([]);
   const [playing, setplaying] = useState(false);
 
@@ -19,7 +19,7 @@ export const ContextProvider = ({ children }) => {
     annotation: false,
     typeAnnotationLocuteur: "ML",
     seuilLocuteur: 0.0,
-    transcript: false,
+    transcript: true,
     actLanguage: false,
     typeAnnotationDialogue: "ML",
   });
@@ -95,6 +95,7 @@ export const ContextProvider = ({ children }) => {
       seuilLocuteur: 0.0,
       typeAnnotationLocuteur: "ML",
       typeAnnotationDialogue: "ML",
+      transcript: true,
     });
   }, [fileName, reunionName]);
 

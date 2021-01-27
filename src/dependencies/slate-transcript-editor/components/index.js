@@ -12,6 +12,32 @@ import { createEditor, Editor, Transforms } from "slate";
 import { Slate, Editable, withReact, ReactEditor } from "slate-react";
 import { withHistory } from "slate-history";
 import convertDpeToSlate from "../util/dpe-to-slate";
+// import { Slate, Editable, withReact, ReactEditor } from 'slate-react';
+// import { withHistory } from 'slate-history';
+// import {
+//   faSave,
+//   faShare,
+//   faUndo,
+//   faSync,
+//   faInfoCircle,
+//   faICursor,
+//   faMehBlank,
+//   faPause,
+//   faMusic,
+//   faClosedCaptioning,
+// } from '@fortawesome/free-solid-svg-icons';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { shortTimecode } from '../util/timecode-converter';
+// import slateToText from '../util/export-adapters/txt';
+// import download from '../util/downlaod/index.js';
+// import convertDpeToSlate from '../util/dpe-to-slate';
+// import slateToDocx from '../util/export-adapters/docx';
+// // TODO: This should be moved in export utils
+// import insertTimecodesInline from '../util/inline-interval-timecodes';
+// import pluck from '../util/pluk';
+// import subtitlesGenerator from '../util/export-adapters/subtitles-generator/index.js';
+// import subtitlesExportOptionsList from '../util/export-adapters/subtitles-generator/list.js';
+import updateTimestamps, { converSlateToDpe } from "../util/update-timestamps";
 
 import { useGlobalContext } from "../../../components/Provider";
 
@@ -50,11 +76,33 @@ export default function SlateTranscriptEditor(props) {
 
   const [showSpeakers] = useState(defaultShowSpeakersPreference);
   const [showTimecodes] = useState(defaultShowTimecodesPreference);
+  // const defaultShowSpeakersPreference = typeof props.showSpeakers === 'boolean' ? props.showSpeakers : true;
+  // const defaultShowTimecodesPreference = typeof props.showTimecodes === 'boolean' ? props.showTimecodes : true;
+  // const [showSpeakers, setShowSpeakers] = useState(defaultShowSpeakersPreference);
+  // const [showTimecodes, setShowTimecodes] = useState(defaultShowTimecodesPreference);
+  // const [speakerOptions, setSpeakerOptions] = useState([]);
+  // const [showSpeakersCheatShet, setShowSpeakersCheatShet] = useState(false);
+  // const [saveTimer, setSaveTimer] = useState(null);
+  // const [isPauseWhiletyping, setIsPauseWhiletyping] = useState(false);
+  // const [isProcessing, setIsProcessing] = useState(false);
+  // // used isContentModified to avoid unecessarily run alignment if the slate value contnet has not been modified by the user since
+  // // last save or alignment
+  // const [isContentModified, setIsContentIsModified] = useState(false);
+
+  // useEffect(() => {
+  //   if (isProcessing) {
+  //     document.body.style.cursor = 'wait';
+  //   } else {
+  //     document.body.style.cursor = 'default';
+  //   }
+  // }, [isProcessing]);
 
   useEffect(() => {
     if (props.transcriptData) {
       const res = convertDpeToSlate(props.transcriptData);
       setValue(res);
+      console.log("hey, cc: ");
+      console.log(res);
     }
     // eslint-disable-next-line
   }, []);
@@ -143,55 +191,17 @@ export default function SlateTranscriptEditor(props) {
           title={children.props.parent.start}
           {...attributes}
         >
-          {/* {children} */}
+          {children}
 
-          <Row>
-            <Col xs={actLanguage ? 7 : 12}>{children}</Col>
+          {/* <Row>
+            <Col xs={actLanguage ? 7 : 12}> {children}</Col>
             {actLanguage && <Col xs={4}>{children.props.parent.actDialog}</Col>}
-          </Row>
+          </Row> */}
         </span>
       );
     },
     [actLanguage]
   );
-
-  //
-
-  /**
-   * `handleSetSpeakerName` is outside of TimedTextElement
-   * to improve the overall performance of the editor,
-   * especially on long transcripts
-   * @param {*} element - props.element, from `renderElement` function
-   */
-  const handleSetSpeakerName = (element) => {
-    const pathToCurrentNode = ReactEditor.findPath(editor, element);
-    const oldSpeakerName = element.speaker.toUpperCase();
-    const newSpeakerName = prompt("Change speaker name", oldSpeakerName);
-    if (newSpeakerName) {
-      // const isUpdateAllSpeakerInstances = confirm(`Would you like to replace all occurrences of ${oldSpeakerName} with ${newSpeakerName}?`);
-      const isUpdateAllSpeakerInstances = true;
-      if (isUpdateAllSpeakerInstances) {
-        const rangeForTheWholeEditor = Editor.range(editor, []);
-        // Apply transformation to the whole doc, where speaker matches old spekaer name, and set it to new one
-        Transforms.setNodes(
-          editor,
-          { type: "timedText", speaker: newSpeakerName },
-          {
-            at: rangeForTheWholeEditor,
-            match: (node) =>
-              node.type === "timedText" && node.speaker === oldSpeakerName,
-          }
-        );
-      } else {
-        // only apply speaker name transformation to current element
-        Transforms.setNodes(
-          editor,
-          { type: "timedText", speaker: newSpeakerName },
-          { at: pathToCurrentNode }
-        );
-      }
-    }
-  };
 
   const TimedTextElement = (props) => {
     let textLg = 12;
@@ -251,13 +261,14 @@ export default function SlateTranscriptEditor(props) {
               style={{
                 cursor: "pointer",
                 width: "100%",
-                fontColor: "red",
+                textTransform: "uppercase",
               }}
-              title={props.element.speaker.toUpperCase()}
-              onClick={handleSetSpeakerName.bind(this, props.element)}
+              // title={props.element.speaker.toUpperCase()}
+              title={props.element.speaker}
+              // onClick={handleSetSpeakerName.bind(this, props.element)}
             >
               {" "}
-              {props.element.speaker.toUpperCase()}
+              {props.element.speaker}
             </span>
           </Col>
         )}
@@ -268,6 +279,7 @@ export default function SlateTranscriptEditor(props) {
           md={12}
           lg={textLg}
           xl={textXl}
+          // xs={2}
           className={"p-t-2 mx-auto"}
         >
           {props.children}
@@ -297,6 +309,22 @@ export default function SlateTranscriptEditor(props) {
         //   mediaRef.current.play();
         // }
       }
+    }
+  };
+
+  const renderMark = (props, editor, next) => {
+    const { children, mark, attributes } = props;
+    console.log("hello : ");
+    console.log(mark.type);
+    switch (mark.type) {
+      case "bold":
+        return <strong {...attributes}>{children}</strong>;
+      case "italic":
+        return <em {...attributes}>{children}</em>;
+      case "underline":
+        return <u {...attributes}>{children}</u>;
+      default:
+        return next();
     }
   };
 
@@ -356,16 +384,22 @@ export default function SlateTranscriptEditor(props) {
         justifyContent: "center",
       }}
     >
+      {/* <style scoped>
+        {`
+              .timecode[data-previous-timings*="${mediaRef &&
+                mediaRef.current &&
+                mediaRef.current.duration &&
+                generatePreviousTimingsUpToCurrent(parseInt(currentTime))}"]{
+                color:  #c8c8c8 !important;
+              }
+          `}
+          </style> */}
       <style scoped>
         {`  .timecode[data-previous-timings*="${generatePreviousTimingsUpToCurrent(
           parseInt(currentTime)
         )}"]{
-                color:  #c8c8c8;
+                color:  #c8c8c8 !important;
             }`}
-
-        {`span.Word[data-start="${parseInt(
-          currentTime
-        )}"] { background-color: #a2ffa2 }`}
       </style>
       <style scoped>
         {`.editor-wrapper-container{
@@ -453,6 +487,7 @@ export default function SlateTranscriptEditor(props) {
                     readOnly={true}
                     renderElement={renderElement}
                     renderLeaf={renderLeaf}
+                    renderMark={renderMark}
                   />
                 </Slate>
               </section>

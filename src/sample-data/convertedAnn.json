@@ -10,7 +10,12 @@
       "id": 1,
       "start": 37.77,
       "end": 37.79,
-      "text": "est"
+      "text": "<strong>",
+      "marks": [
+        {
+          "type": "bold"
+        }
+      ]
     },
     {
       "id": 2,
@@ -28,7 +33,7 @@
       "id": 4,
       "start": 38.03,
       "end": 38.09,
-      "text": "se"
+      "text": "</strong>"
     },
     {
       "id": 5,
