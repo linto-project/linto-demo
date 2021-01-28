@@ -35,16 +35,7 @@ const IHM = () => {
   const { setName, setReunionName, getReunionName } = File;
   const { setConf, getSetterConf, getConf } = confDemo;
 
-  // const [state, setState] = useState(0);
-
   const setterConf = getSetterConf("seuilLocuteur");
-
-  // useEffect(() => {
-  //   //Dummy to force reload
-  //   // setState(state + 1);
-  //   console.log(state);
-  //   // eslint-disable-next-line
-  // }, [getConf()]);
 
   const colorIconsSP2 = getConf().locuteurActif ? "" : "disabled";
   const colorIconsSP5 = getConf().transcript ? "" : "disabled";
@@ -232,7 +223,7 @@ const IHM = () => {
                 onChange={(e) => setConf(e)}
                 icon={<RecordVoiceOverIcon color={colorIconsSP5} />}
               >
-                Actes de language
+                Étiquettes actes de langage
               </CustomSwitch>
             </Grid>
           </Grid>
