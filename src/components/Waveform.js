@@ -5,23 +5,22 @@ import WaveSurfer from "wavesurfer.js";
 import TimelinePlugin from "wavesurfer.js/dist/plugin/wavesurfer.timeline.min.js";
 import RegionPlugin from "wavesurfer.js/dist/plugin/wavesurfer.regions.min.js";
 
-import Grid from "@material-ui/core/Grid";
 import colors from "../data/colors";
 
 import { useGlobalContext } from "./Provider";
 
 const formWaveSurferOptions = (ref, timelineRef) => ({
   container: ref,
-  // waveColor: "#eee",
-  // progressColor: "#e1bee7",
-  // cursorColor: "#ce93d8",
+  waveColor: "#eee",
+  progressColor: "#e1bee7",
+  cursorColor: "#ce93d8",
   waveColor: "#757575",
   progressColor: "#424242",
   cursorColor: "#424242",
   backend: "MediaElement",
   barWidth: 3,
   barRadius: 3,
-  responsive: true,
+  responsive: false,
   hideScrollbar: true,
 
   plugins: [
@@ -36,7 +35,7 @@ const formWaveSurferOptions = (ref, timelineRef) => ({
   normalize: true,
 
   // Use the PeakCac he to improve rendering speed of large waveforms.
-  // partialRender: true,
+  partialRender: true,
 });
 
 export default function Waveform({
@@ -58,6 +57,8 @@ export default function Waveform({
   const { setAnnot, getAnnot } = Annotation;
   const { setTime } = Player;
 
+  setAudioLoaded(true);
+
   useEffect(() => {
     console.log("new isntance");
     setAudioLoaded(false);
@@ -70,30 +71,30 @@ export default function Waveform({
     wavesurfer.current.load(url);
 
     // Pausing audio
-    wavesurfer.current.on("pause", function () {
+    wavesurfer.current.on("pause", function() {
       console.log("Pause");
       // setIsPlaying(false);
     });
 
     // Playing audio
-    wavesurfer.current.on("play", function () {
+    wavesurfer.current.on("play", function() {
       console.log("Play");
       // setIsPlaying(true);
       setDurationSec(wavesurfer.current.getCurrentTime());
     });
 
     // Interaction with audio
-    wavesurfer.current.on("interaction", function () {
+    wavesurfer.current.on("interaction", function() {
       // console.log("Interaction");
       setSynch(true);
     });
 
     // Audioprocess: fire continously when audio is playing
-    wavesurfer.current.on("audioprocess", function () {
+    wavesurfer.current.on("audioprocess", function() {
       setTime(wavesurfer.current.getCurrentTime());
     });
 
-    wavesurfer.current.on("waveform-ready", function () {
+    wavesurfer.current.on("waveform-ready", function() {
       // console.log("ready");
       if (wavesurfer.current) {
         wavesurfer.current.setVolume(volume);
@@ -185,50 +186,10 @@ export default function Waveform({
     }
   };
 
-  // const handleAddRegion = (analyse) => {
-  //   // Add region
-
-  //   if (analyse.start < wavesurfer.current.getCurrentTime()) {
-  //     let end;
-  //     if (analyse.end > wavesurfer.current.getCurrentTime()) {
-  //       end = wavesurfer.current.getCurrentTime();
-  //     } else {
-  //       end = analyse.end;
-  //     }
-  //     wavesurfer.current.addRegion({
-  //       start: analyse.start,
-  //       end: analyse.end,
-  //       color: colors[analyse.label],
-  //     });
-  //   }
-  // };
-
-  // const handleAddRegion = (analyse) => {
-  //   // Add region
-
-  //   if (analyse.start < wavesurfer.current.getCurrentTime()) {
-  //     // let end;
-  //     if (analyse.end > wavesurfer.current.getCurrentTime()) {
-  //       // end = wavesurfer.current.getCurrentTime();
-  //     } else {
-  //       // end = analyse.end;
-  //     }
-  //     // wavesurfer.current.addRegion({
-  //     //   sta rt: analyse.start,
-  //     //   end: end,
-  //     //   color: analyse.color,
-  //     // });
-  //   }
-  // };
-
   return (
     <div className="root">
-      <Grid container direction="column" spacing={3}>
-        <Grid item>
-          <div className="waveform" id="waveform" ref={waveformRef} />
-          <div id="timelineRef" ref={timelineRef} />
-        </Grid>
-      </Grid>
+      <div className="waveform" id="waveform" ref={waveformRef} />
+      <div id="timelineRef" ref={timelineRef} />
     </div>
   );
 }

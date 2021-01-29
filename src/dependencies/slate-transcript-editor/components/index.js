@@ -21,7 +21,8 @@ export default function SlateTranscriptEditor(props) {
 
   const actLanguage = confDemo.getConf().actLanguage;
 
-  const timeTemp = getTime();
+  const timeTemp = 1000000;
+  // const timeTemp = getTime();
   useEffect(() => {
     // Add little offset to componsate react hook delay
     handleTimeUpdated(timeTemp + 1);
@@ -42,36 +43,34 @@ export default function SlateTranscriptEditor(props) {
     if (props.transcriptData) {
       const res = convertDpeToSlate(props.transcriptData);
       setValue(res);
-      console.log("hey, cc: ");
-      console.log(res);
     }
     // eslint-disable-next-line
   }, []);
 
   // handles interim results for worrking with a Live STT
-  useEffect(() => {
-    if (props.transcriptDataLive) {
-      const nodes = convertDpeToSlate(props.transcriptDataLive);
-      // if the user is selecting the / typing the text
-      // Transforms.insertNodes would insert the node at seleciton point
-      // instead we check if they are in the editor
-      if (editor.selection) {
-        // get the position of the last node
-        const positionLastNode = [editor.children.length];
-        // insert the new nodes at the end of the document
-        Transforms.insertNodes(editor, nodes, {
-          at: positionLastNode,
-        });
-      }
-      // use not having selection in the editor allows us to also handle the initial use case
-      // where the might be no initial results
-      else {
-        // if there is no selection the default for insertNodes is to add the nodes at the end
-        Transforms.insertNodes(editor, nodes);
-      }
-    }
-    // eslint-disable-next-line
-  }, [props.transcriptDataLive]);
+  // useEffect(() => {
+  //   if (props.transcriptDataLive) {
+  //     const nodes = convertDpeToSlate(props.transcriptDataLive);
+  //     // if the user is selecting the / typing the text
+  //     // Transforms.insertNodes would insert the node at seleciton point
+  //     // instead we check if they are in the editor
+  //     if (editor.selection) {
+  //       // get the position of the last node
+  //       const positionLastNode = [editor.children.length];
+  //       // insert the new nodes at the end of the document
+  //       Transforms.insertNodes(editor, nodes, {
+  //         at: positionLastNode,
+  //       });
+  //     }
+  //     // use not having selection in the editor allows us to also handle the initial use case
+  //     // where the might be no initial results
+  //     else {
+  //       // if there is no selection the default for insertNodes is to add the nodes at the end
+  //       Transforms.insertNodes(editor, nodes);
+  //     }
+  //   }
+  //   // eslint-disable-next-line
+  // }, [props.transcriptDataLive]);
 
   const handleTimeUpdated = (time) => {
     setCurrentTime(time);
@@ -101,6 +100,7 @@ export default function SlateTranscriptEditor(props) {
       text += " ";
     }
     // return <span style={{ color: colorRandom }}>{text}</span>;
+
     return <span style={{ color: leaf.color }}>{text}</span>;
   };
 

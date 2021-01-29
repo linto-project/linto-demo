@@ -27,6 +27,7 @@ export const TranscriptReadOnly = () => {
   }, [setState, typeAnnot, actLanguage]);
 
   useEffect(() => {
+    console.log("re render : ");
     console.log(state);
   }, [state]);
 
