@@ -4,8 +4,9 @@ import Grid from "@material-ui/core/Grid";
 import SlateTranscriptEditor from "../dependencies/slate-transcript-editor/index.js";
 import "bootstrap-css-only";
 // import DEMO_TRANSCRIPT_KATE from "../sample-data/KateDarling-dpe.json";
-import ML from "../sample-data/convertedAnn.json";
-import VT from "../sample-data/KateDarling-dpe.json";
+import ML from "../sample-data/converted.json";
+// import ML from "../sample-data/KateDarling-dpe.json";
+import VT from "../sample-data/KateDarling-dpe2.json";
 import { useGlobalContext } from "./Provider";
 // const DEMO_MEDIA_URL_KATE =
 //   "https://download.ted.com/talks/KateDarling_2018S-950k.mp4";
@@ -30,8 +31,7 @@ export const TranscriptReadOnly = () => {
   }, [state]);
 
   const getTranscriptData = (boolvar) => {
-    const test = boolvar ? ML : VT;
-    return test;
+    return boolvar ? ML : VT;
   };
 
   return (

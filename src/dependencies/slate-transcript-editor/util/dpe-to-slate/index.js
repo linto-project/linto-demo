@@ -40,6 +40,13 @@ function isEmpty(obj) {
   return Object.keys(obj).length === 0;
 }
 
+//Take complematory circle
+const offset = 360 / 8 + 15 / 8;
+const generateColor = (id) => {
+  const h = Math.round((id * offset) % 360);
+  return `hsl(${h}, 35%, 50%)`;
+};
+
 const generatePreviousTimingsUpToCurrent = (totalTimingsInt, time) => {
   return totalTimingsInt.splice(0, time, 0).join(" ");
 };
@@ -76,22 +83,37 @@ const convertDpeToSlate = (transcript) => {
     ];
   }
 
-  const { words, paragraphs } = transcript;
+  const { words, paragraphs, acte } = transcript;
 
-  const generateText = (paragraph, words) =>
+  const checkActe = (word, actes) => {
+    console.log("test Acte : ");
+    const t = actes.filter(
+      (acte) => acte.start <= word.start && acte.end >= word.end
+    );
+    console.log(t);
+    console.log(parseInt(t[0].id, 10));
+    console.log(typeof parseInt(t[0].id, 10));
+    console.log(generateColor(parseInt(t[0].id, 10)));
+    return t.length === 1 ? generateColor(t[0].id) : "#ffff00";
+    // return t.length == 1 ? "#00ff00" : "#ffff00";
+  };
+
+  const generateText = (paragraph, words, acte) =>
     words
       .filter(
         (word) => word.start >= paragraph.start && word.end <= paragraph.end
       )
       .map((w) => ({
         text: w.text,
+        color: checkActe(w, acte),
+        // color: "#00ff00",
       }));
 
-  const checkActOfDialog = (actOfDialog) => (actOfDialog ? actOfDialog : " ");
+  // const checkActOfDialog = (actOfDialog) => (actOfDialog ? actOfDialog : " ");
 
   return paragraphs.map((paragraph) => ({
     speaker: paragraph.speaker,
-    actDialog: checkActOfDialog(paragraph.actdialog),
+    // actDialog: checkActOfDialog(paragraph.actdialog),
 
     start: paragraph.start,
     previousTimings: generatePreviousTimingsUpToCurrent(
@@ -101,7 +123,7 @@ const convertDpeToSlate = (transcript) => {
     // pre-computing the display of the formatting here so that it doesn't need to convert it in leaf render
     startTimecode: shortTimecode(paragraph.start),
     type: "timedText",
-    children: generateText(paragraph, words),
+    children: generateText(paragraph, words, acte),
   }));
 };
 

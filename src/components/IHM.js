@@ -39,13 +39,6 @@ const IHM = () => {
 
   const setterConf = getSetterConf("seuilLocuteur");
 
-  // useEffect(() => {
-  //   //Dummy to force reload
-  //   // setState(state + 1);
-  //   console.log(state);
-  //   // eslint-disable-next-line
-  // }, [getConf()]);
-
   const colorIconsSP2 = getConf().locuteurActif ? "" : "disabled";
   const colorIconsSP5 = getConf().transcript ? "" : "disabled";
 

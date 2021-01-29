@@ -1,0 +1,1998 @@
+{
+	"words": [
+	  {
+		"id": 0,
+		"start": 13.02,
+		"end": 13.17,
+		"text": "There"
+	  },
+	  {
+		"id": 1,
+		"start": 13.17,
+		"end": 13.38,
+		"text": "is"
+	  },
+	  {
+		"id": 2,
+		"start": 13.38,
+		"end": 13.44,
+		"text": "a"
+	  },
+	  {
+		"id": 3,
+		"start": 13.44,
+		"end": 13.86,
+		"text": "day."
+	  },
+	  {
+		"id": 4,
+		"start": 13.86,
+		"end": 14.13,
+		"text": "About"
+	  },
+	  {
+		"id": 5,
+		"start": 14.13,
+		"end": 14.38,
+		"text": "ten"
+	  },
+	  {
+		"id": 6,
+		"start": 14.38,
+		"end": 14.61,
+		"text": "years"
+	  },
+	  {
+		"id": 7,
+		"start": 14.61,
+		"end": 15.47,
+		"text": "ago"
+	  },
+	  {
+		"id": 8,
+		"start": 15.47,
+		"end": 15.68,
+		"text": "when"
+	  },
+	  {
+		"id": 9,
+		"start": 15.68,
+		"end": 15.86,
+		"text": "I"
+	  },
+	  {
+		"id": 10,
+		"start": 15.86,
+		"end": 16.19,
+		"text": "asked"
+	  },
+	  {
+		"id": 11,
+		"start": 16.19,
+		"end": 16.28,
+		"text": "a"
+	  },
+	  {
+		"id": 12,
+		"start": 16.28,
+		"end": 16.65,
+		"text": "friend"
+	  },
+	  {
+		"id": 13,
+		"start": 16.65,
+		"end": 16.74,
+		"text": "to"
+	  },
+	  {
+		"id": 14,
+		"start": 16.74,
+		"end": 17.23,
+		"text": "hold"
+	  },
+	  {
+		"id": 15,
+		"start": 17.23,
+		"end": 17.33,
+		"text": "a"
+	  },
+	  {
+		"id": 16,
+		"start": 17.33,
+		"end": 17.63,
+		"text": "baby"
+	  },
+	  {
+		"id": 17,
+		"start": 17.63,
+		"end": 18.14,
+		"text": "dinosaur"
+	  },
+	  {
+		"id": 18,
+		"start": 18.14,
+		"end": 18.72,
+		"text": "robot"
+	  },
+	  {
+		"id": 19,
+		"start": 18.72,
+		"end": 19.17,
+		"text": "upside"
+	  },
+	  {
+		"id": 20,
+		"start": 19.17,
+		"end": 21.83,
+		"text": "down."
+	  },
+	  {
+		"id": 21,
+		"start": 21.83,
+		"end": 21.95,
+		"text": "It"
+	  },
+	  {
+		"id": 22,
+		"start": 21.95,
+		"end": 22.1,
+		"text": "was"
+	  },
+	  {
+		"id": 23,
+		"start": 22.1,
+		"end": 22.23,
+		"text": "a"
+	  },
+	  {
+		"id": 24,
+		"start": 22.23,
+		"end": 22.72,
+		"text": "toy"
+	  },
+	  {
+		"id": 25,
+		"start": 22.72,
+		"end": 23.03,
+		"text": "called"
+	  },
+	  {
+		"id": 26,
+		"start": 23.03,
+		"end": 23.45,
+		"text": "plea."
+	  },
+	  {
+		"id": 27,
+		"start": 23.45,
+		"end": 24.2,
+		"text": "All"
+	  },
+	  {
+		"id": 28,
+		"start": 24.2,
+		"end": 24.65,
+		"text": "that"
+	  },
+	  {
+		"id": 29,
+		"start": 24.65,
+		"end": 24.86,
+		"text": "he'd"
+	  },
+	  {
+		"id": 30,
+		"start": 24.86,
+		"end": 25.3,
+		"text": "ordered"
+	  },
+	  {
+		"id": 31,
+		"start": 25.3,
+		"end": 25.42,
+		"text": "and"
+	  },
+	  {
+		"id": 32,
+		"start": 25.42,
+		"end": 25.49,
+		"text": "I"
+	  },
+	  {
+		"id": 33,
+		"start": 25.49,
+		"end": 25.66,
+		"text": "was"
+	  },
+	  {
+		"id": 34,
+		"start": 25.66,
+		"end": 25.88,
+		"text": "really"
+	  },
+	  {
+		"id": 35,
+		"start": 25.88,
+		"end": 26.49,
+		"text": "excited"
+	  },
+	  {
+		"id": 36,
+		"start": 26.49,
+		"end": 26.82,
+		"text": "about"
+	  },
+	  {
+		"id": 37,
+		"start": 26.82,
+		"end": 27.04,
+		"text": "it"
+	  },
+	  {
+		"id": 38,
+		"start": 27.04,
+		"end": 28.35,
+		"text": "because"
+	  },
+	  {
+		"id": 39,
+		"start": 28.35,
+		"end": 28.59,
+		"text": "I've"
+	  },
+	  {
+		"id": 40,
+		"start": 28.59,
+		"end": 28.79,
+		"text": "always"
+	  },
+	  {
+		"id": 41,
+		"start": 28.79,
+		"end": 29.09,
+		"text": "loved"
+	  },
+	  {
+		"id": 42,
+		"start": 29.09,
+		"end": 29.8,
+		"text": "about"
+	  },
+	  {
+		"id": 43,
+		"start": 29.8,
+		"end": 30.04,
+		"text": "this"
+	  },
+	  {
+		"id": 44,
+		"start": 30.04,
+		"end": 30.2,
+		"text": "one"
+	  },
+	  {
+		"id": 45,
+		"start": 30.2,
+		"end": 30.46,
+		"text": "has"
+	  },
+	  {
+		"id": 46,
+		"start": 30.46,
+		"end": 30.76,
+		"text": "really"
+	  },
+	  {
+		"id": 47,
+		"start": 30.76,
+		"end": 30.96,
+		"text": "caught"
+	  },
+	  {
+		"id": 48,
+		"start": 30.96,
+		"end": 31.34,
+		"text": "technical"
+	  },
+	  {
+		"id": 49,
+		"start": 31.34,
+		"end": 31.8,
+		"text": "features."
+	  },
+	  {
+		"id": 50,
+		"start": 31.8,
+		"end": 31.93,
+		"text": "It"
+	  },
+	  {
+		"id": 51,
+		"start": 31.93,
+		"end": 32.12,
+		"text": "had"
+	  },
+	  {
+		"id": 52,
+		"start": 32.12,
+		"end": 32.45,
+		"text": "more"
+	  },
+	  {
+		"id": 53,
+		"start": 32.45,
+		"end": 32.76,
+		"text": "orders"
+	  },
+	  {
+		"id": 54,
+		"start": 32.76,
+		"end": 32.92,
+		"text": "and"
+	  },
+	  {
+		"id": 55,
+		"start": 32.92,
+		"end": 33.18,
+		"text": "touch"
+	  },
+	  {
+		"id": 56,
+		"start": 33.18,
+		"end": 34.27,
+		"text": "sensors."
+	  },
+	  {
+		"id": 57,
+		"start": 34.27,
+		"end": 34.51,
+		"text": "It"
+	  },
+	  {
+		"id": 58,
+		"start": 34.51,
+		"end": 34.7,
+		"text": "had"
+	  },
+	  {
+		"id": 59,
+		"start": 34.7,
+		"end": 34.81,
+		"text": "an"
+	  },
+	  {
+		"id": 60,
+		"start": 34.81,
+		"end": 34.97,
+		"text": "infra"
+	  },
+	  {
+		"id": 61,
+		"start": 34.97,
+		"end": 35.31,
+		"text": "red"
+	  },
+	  {
+		"id": 62,
+		"start": 35.31,
+		"end": 36.45,
+		"text": "camera"
+	  },
+	  {
+		"id": 63,
+		"start": 36.45,
+		"end": 36.64,
+		"text": "and"
+	  },
+	  {
+		"id": 64,
+		"start": 36.64,
+		"end": 36.79,
+		"text": "one"
+	  },
+	  {
+		"id": 65,
+		"start": 36.79,
+		"end": 36.87,
+		"text": "of"
+	  },
+	  {
+		"id": 66,
+		"start": 36.87,
+		"end": 36.98,
+		"text": "the"
+	  },
+	  {
+		"id": 67,
+		"start": 36.98,
+		"end": 37.22,
+		"text": "things"
+	  },
+	  {
+		"id": 68,
+		"start": 37.22,
+		"end": 37.33,
+		"text": "that"
+	  },
+	  {
+		"id": 69,
+		"start": 37.33,
+		"end": 37.53,
+		"text": "had"
+	  },
+	  {
+		"id": 70,
+		"start": 37.53,
+		"end": 37.69,
+		"text": "was"
+	  },
+	  {
+		"id": 71,
+		"start": 37.69,
+		"end": 37.95,
+		"text": "a"
+	  },
+	  {
+		"id": 72,
+		"start": 37.95,
+		"end": 38.39,
+		"text": "tilt"
+	  },
+	  {
+		"id": 73,
+		"start": 38.39,
+		"end": 39.24,
+		"text": "sensor"
+	  },
+	  {
+		"id": 74,
+		"start": 39.24,
+		"end": 39.51,
+		"text": "so"
+	  },
+	  {
+		"id": 75,
+		"start": 39.51,
+		"end": 39.62,
+		"text": "it."
+	  },
+	  {
+		"id": 76,
+		"start": 39.62,
+		"end": 39.82,
+		"text": "Knew"
+	  },
+	  {
+		"id": 77,
+		"start": 39.82,
+		"end": 39.96,
+		"text": "what"
+	  },
+	  {
+		"id": 78,
+		"start": 39.96,
+		"end": 40.54,
+		"text": "direction."
+	  },
+	  {
+		"id": 79,
+		"start": 40.54,
+		"end": 40.65,
+		"text": "It"
+	  },
+	  {
+		"id": 80,
+		"start": 40.65,
+		"end": 40.97,
+		"text": "was"
+	  },
+	  {
+		"id": 81,
+		"start": 40.97,
+		"end": 41.68,
+		"text": "facing."
+	  },
+	  {
+		"id": 82,
+		"start": 41.68,
+		"end": 42.04,
+		"text": "If"
+	  },
+	  {
+		"id": 83,
+		"start": 42.04,
+		"end": 42.14,
+		"text": "and"
+	  },
+	  {
+		"id": 84,
+		"start": 42.14,
+		"end": 42.27,
+		"text": "when"
+	  },
+	  {
+		"id": 85,
+		"start": 42.27,
+		"end": 42.42,
+		"text": "you"
+	  },
+	  {
+		"id": 86,
+		"start": 42.42,
+		"end": 42.63,
+		"text": "held"
+	  },
+	  {
+		"id": 87,
+		"start": 42.63,
+		"end": 42.73,
+		"text": "it"
+	  },
+	  {
+		"id": 88,
+		"start": 42.73,
+		"end": 43.05,
+		"text": "upside"
+	  },
+	  {
+		"id": 89,
+		"start": 43.05,
+		"end": 46.53,
+		"text": "down."
+	  },
+	  {
+		"id": 90,
+		"start": 46.53,
+		"end": 46.69,
+		"text": "I"
+	  },
+	  {
+		"id": 91,
+		"start": 46.69,
+		"end": 46.9,
+		"text": "thought."
+	  },
+	  {
+		"id": 92,
+		"start": 46.9,
+		"end": 47.12,
+		"text": "It's"
+	  },
+	  {
+		"id": 93,
+		"start": 47.12,
+		"end": 47.21,
+		"text": "a"
+	  },
+	  {
+		"id": 94,
+		"start": 47.21,
+		"end": 47.65,
+		"text": "super"
+	  },
+	  {
+		"id": 95,
+		"start": 47.65,
+		"end": 48.11,
+		"text": "courts"
+	  },
+	  {
+		"id": 96,
+		"start": 48.11,
+		"end": 48.28,
+		"text": "are"
+	  },
+	  {
+		"id": 97,
+		"start": 48.28,
+		"end": 48.66,
+		"text": "showing"
+	  },
+	  {
+		"id": 98,
+		"start": 48.66,
+		"end": 48.79,
+		"text": "off"
+	  },
+	  {
+		"id": 99,
+		"start": 48.79,
+		"end": 48.94,
+		"text": "to"
+	  },
+	  {
+		"id": 100,
+		"start": 48.94,
+		"end": 49.04,
+		"text": "my"
+	  },
+	  {
+		"id": 101,
+		"start": 49.04,
+		"end": 50,
+		"text": "friend"
+	  },
+	  {
+		"id": 102,
+		"start": 50,
+		"end": 50.15,
+		"text": "and"
+	  },
+	  {
+		"id": 103,
+		"start": 50.15,
+		"end": 50.21,
+		"text": "I"
+	  },
+	  {
+		"id": 104,
+		"start": 50.21,
+		"end": 50.42,
+		"text": "said"
+	  },
+	  {
+		"id": 105,
+		"start": 50.42,
+		"end": 50.58,
+		"text": "to"
+	  },
+	  {
+		"id": 106,
+		"start": 50.58,
+		"end": 50.83,
+		"text": "hold"
+	  },
+	  {
+		"id": 107,
+		"start": 50.83,
+		"end": 50.97,
+		"text": "it,"
+	  },
+	  {
+		"id": 108,
+		"start": 50.97,
+		"end": 51.22,
+		"text": "but"
+	  },
+	  {
+		"id": 109,
+		"start": 51.22,
+		"end": 51.48,
+		"text": "he'll"
+	  },
+	  {
+		"id": 110,
+		"start": 51.48,
+		"end": 51.66,
+		"text": "see"
+	  },
+	  {
+		"id": 111,
+		"start": 51.66,
+		"end": 51.82,
+		"text": "what"
+	  },
+	  {
+		"id": 112,
+		"start": 51.82,
+		"end": 55.22,
+		"text": "debts."
+	  },
+	  {
+		"id": 113,
+		"start": 55.22,
+		"end": 55.36,
+		"text": "We"
+	  },
+	  {
+		"id": 114,
+		"start": 55.36,
+		"end": 55.51,
+		"text": "were"
+	  },
+	  {
+		"id": 115,
+		"start": 55.51,
+		"end": 55.93,
+		"text": "watching"
+	  },
+	  {
+		"id": 116,
+		"start": 55.93,
+		"end": 56.01,
+		"text": "the"
+	  },
+	  {
+		"id": 117,
+		"start": 56.01,
+		"end": 56.92,
+		"text": "theatrics"
+	  },
+	  {
+		"id": 118,
+		"start": 56.92,
+		"end": 57.01,
+		"text": "of"
+	  },
+	  {
+		"id": 119,
+		"start": 57.01,
+		"end": 57.25,
+		"text": "this"
+	  },
+	  {
+		"id": 120,
+		"start": 57.25,
+		"end": 57.53,
+		"text": "robe"
+	  },
+	  {
+		"id": 121,
+		"start": 57.53,
+		"end": 58.88,
+		"text": "that"
+	  },
+	  {
+		"id": 122,
+		"start": 58.88,
+		"end": 59.89,
+		"text": "struggle"
+	  },
+	  {
+		"id": 123,
+		"start": 59.89,
+		"end": 60.08,
+		"text": "and"
+	  },
+	  {
+		"id": 124,
+		"start": 60.08,
+		"end": 60.71,
+		"text": "cry"
+	  },
+	  {
+		"id": 125,
+		"start": 60.71,
+		"end": 61.86,
+		"text": "out"
+	  },
+	  {
+		"id": 126,
+		"start": 61.86,
+		"end": 62.77,
+		"text": "and"
+	  },
+	  {
+		"id": 127,
+		"start": 62.77,
+		"end": 63.25,
+		"text": "and"
+	  },
+	  {
+		"id": 128,
+		"start": 63.25,
+		"end": 63.53,
+		"text": "after"
+	  },
+	  {
+		"id": 129,
+		"start": 63.53,
+		"end": 63.57,
+		"text": "a"
+	  },
+	  {
+		"id": 130,
+		"start": 63.57,
+		"end": 63.73,
+		"text": "few"
+	  },
+	  {
+		"id": 131,
+		"start": 63.73,
+		"end": 64.73,
+		"text": "seconds."
+	  },
+	  {
+		"id": 132,
+		"start": 64.73,
+		"end": 64.94,
+		"text": "The"
+	  },
+	  {
+		"id": 133,
+		"start": 64.94,
+		"end": 65.42,
+		"text": "first."
+	  },
+	  {
+		"id": 134,
+		"start": 65.42,
+		"end": 65.79,
+		"text": "After"
+	  },
+	  {
+		"id": 135,
+		"start": 65.79,
+		"end": 66.01,
+		"text": "my"
+	  },
+	  {
+		"id": 136,
+		"start": 66.01,
+		"end": 67.66,
+		"text": "little"
+	  },
+	  {
+		"id": 137,
+		"start": 67.66,
+		"end": 67.87,
+		"text": "and"
+	  },
+	  {
+		"id": 138,
+		"start": 67.87,
+		"end": 67.96,
+		"text": "I"
+	  },
+	  {
+		"id": 139,
+		"start": 67.96,
+		"end": 68.22,
+		"text": "said"
+	  },
+	  {
+		"id": 140,
+		"start": 68.22,
+		"end": 69.99,
+		"text": "o.k."
+	  },
+	  {
+		"id": 141,
+		"start": 69.99,
+		"end": 70.22,
+		"text": "That's"
+	  },
+	  {
+		"id": 142,
+		"start": 70.22,
+		"end": 70.58,
+		"text": "enough."
+	  },
+	  {
+		"id": 143,
+		"start": 70.58,
+		"end": 71.81,
+		"text": "Now,"
+	  },
+	  {
+		"id": 144,
+		"start": 71.81,
+		"end": 72.12,
+		"text": "let's"
+	  },
+	  {
+		"id": 145,
+		"start": 72.12,
+		"end": 72.25,
+		"text": "put"
+	  },
+	  {
+		"id": 146,
+		"start": 72.25,
+		"end": 72.33,
+		"text": "him"
+	  },
+	  {
+		"id": 147,
+		"start": 72.33,
+		"end": 72.55,
+		"text": "back"
+	  },
+	  {
+		"id": 148,
+		"start": 72.55,
+		"end": 74.27,
+		"text": "down"
+	  },
+	  {
+		"id": 149,
+		"start": 74.27,
+		"end": 74.64,
+		"text": "and"
+	  },
+	  {
+		"id": 150,
+		"start": 74.64,
+		"end": 75.04,
+		"text": "pepper,"
+	  },
+	  {
+		"id": 151,
+		"start": 75.04,
+		"end": 75.34,
+		"text": "about"
+	  },
+	  {
+		"id": 152,
+		"start": 75.34,
+		"end": 75.44,
+		"text": "to"
+	  },
+	  {
+		"id": 153,
+		"start": 75.44,
+		"end": 75.57,
+		"text": "make"
+	  },
+	  {
+		"id": 154,
+		"start": 75.57,
+		"end": 75.67,
+		"text": "it."
+	  },
+	  {
+		"id": 155,
+		"start": 75.67,
+		"end": 75.92,
+		"text": "Stop"
+	  },
+	  {
+		"id": 156,
+		"start": 75.92,
+		"end": 76.75,
+		"text": "crying"
+	  },
+	  {
+		"id": 157,
+		"start": 76.75,
+		"end": 77.75,
+		"text": "and"
+	  },
+	  {
+		"id": 158,
+		"start": 77.75,
+		"end": 79.1,
+		"text": "I"
+	  },
+	  {
+		"id": 159,
+		"start": 79.1,
+		"end": 79.29,
+		"text": "was"
+	  },
+	  {
+		"id": 160,
+		"start": 79.29,
+		"end": 79.44,
+		"text": "kind"
+	  },
+	  {
+		"id": 161,
+		"start": 79.44,
+		"end": 79.51,
+		"text": "of"
+	  },
+	  {
+		"id": 162,
+		"start": 79.51,
+		"end": 79.65,
+		"text": "a"
+	  },
+	  {
+		"id": 163,
+		"start": 79.65,
+		"end": 79.93,
+		"text": "weird"
+	  },
+	  {
+		"id": 164,
+		"start": 79.93,
+		"end": 80.65,
+		"text": "experience"
+	  },
+	  {
+		"id": 165,
+		"start": 80.65,
+		"end": 80.78,
+		"text": "for"
+	  },
+	  {
+		"id": 166,
+		"start": 80.78,
+		"end": 82.09,
+		"text": "me"
+	  },
+	  {
+		"id": 167,
+		"start": 82.09,
+		"end": 82.35,
+		"text": "one"
+	  },
+	  {
+		"id": 168,
+		"start": 82.35,
+		"end": 83.02,
+		"text": "thing,"
+	  },
+	  {
+		"id": 169,
+		"start": 83.02,
+		"end": 83.31,
+		"text": "wasn't"
+	  },
+	  {
+		"id": 170,
+		"start": 83.31,
+		"end": 83.38,
+		"text": "the"
+	  },
+	  {
+		"id": 171,
+		"start": 83.38,
+		"end": 83.78,
+		"text": "most"
+	  },
+	  {
+		"id": 172,
+		"start": 83.78,
+		"end": 84.39,
+		"text": "maternal"
+	  },
+	  {
+		"id": 173,
+		"start": 84.39,
+		"end": 84.94,
+		"text": "person"
+	  },
+	  {
+		"id": 174,
+		"start": 84.94,
+		"end": 85.08,
+		"text": "at"
+	  },
+	  {
+		"id": 175,
+		"start": 85.08,
+		"end": 85.15,
+		"text": "the"
+	  },
+	  {
+		"id": 176,
+		"start": 85.15,
+		"end": 86.66,
+		"text": "time."
+	  },
+	  {
+		"id": 177,
+		"start": 86.66,
+		"end": 86.94,
+		"text": "Although,"
+	  },
+	  {
+		"id": 178,
+		"start": 86.94,
+		"end": 87.16,
+		"text": "since"
+	  },
+	  {
+		"id": 179,
+		"start": 87.16,
+		"end": 87.27,
+		"text": "then"
+	  },
+	  {
+		"id": 180,
+		"start": 87.27,
+		"end": 87.38,
+		"text": "I've"
+	  },
+	  {
+		"id": 181,
+		"start": 87.38,
+		"end": 87.61,
+		"text": "become"
+	  },
+	  {
+		"id": 182,
+		"start": 87.61,
+		"end": 87.67,
+		"text": "a"
+	  },
+	  {
+		"id": 183,
+		"start": 87.67,
+		"end": 87.96,
+		"text": "mother"
+	  },
+	  {
+		"id": 184,
+		"start": 87.96,
+		"end": 88.05,
+		"text": "and"
+	  },
+	  {
+		"id": 185,
+		"start": 88.05,
+		"end": 88.26,
+		"text": "nine"
+	  },
+	  {
+		"id": 186,
+		"start": 88.26,
+		"end": 88.49,
+		"text": "months"
+	  },
+	  {
+		"id": 187,
+		"start": 88.49,
+		"end": 89.46,
+		"text": "ago."
+	  },
+	  {
+		"id": 188,
+		"start": 89.46,
+		"end": 89.86,
+		"text": "And"
+	  },
+	  {
+		"id": 189,
+		"start": 89.86,
+		"end": 90.14,
+		"text": "that"
+	  },
+	  {
+		"id": 190,
+		"start": 90.14,
+		"end": 90.49,
+		"text": "is"
+	  },
+	  {
+		"id": 191,
+		"start": 90.49,
+		"end": 90.71,
+		"text": "a"
+	  },
+	  {
+		"id": 192,
+		"start": 90.71,
+		"end": 91.05,
+		"text": "score"
+	  },
+	  {
+		"id": 193,
+		"start": 91.05,
+		"end": 91.24,
+		"text": "when"
+	  },
+	  {
+		"id": 194,
+		"start": 91.24,
+		"end": 91.41,
+		"text": "hold"
+	  },
+	  {
+		"id": 195,
+		"start": 91.41,
+		"end": 91.53,
+		"text": "them"
+	  },
+	  {
+		"id": 196,
+		"start": 91.53,
+		"end": 91.65,
+		"text": "up"
+	  },
+	  {
+		"id": 197,
+		"start": 91.65,
+		"end": 91.8,
+		"text": "to"
+	  },
+	  {
+		"id": 198,
+		"start": 91.8,
+		"end": 95.03,
+		"text": "now,"
+	  },
+	  {
+		"id": 199,
+		"start": 95.03,
+		"end": 95.27,
+		"text": "but"
+	  },
+	  {
+		"id": 200,
+		"start": 95.27,
+		"end": 95.49,
+		"text": "my"
+	  },
+	  {
+		"id": 201,
+		"start": 95.49,
+		"end": 95.88,
+		"text": "response"
+	  },
+	  {
+		"id": 202,
+		"start": 95.88,
+		"end": 95.92,
+		"text": "to"
+	  },
+	  {
+		"id": 203,
+		"start": 95.92,
+		"end": 96.12,
+		"text": "this"
+	  },
+	  {
+		"id": 204,
+		"start": 96.12,
+		"end": 96.43,
+		"text": "robot"
+	  },
+	  {
+		"id": 205,
+		"start": 96.43,
+		"end": 96.57,
+		"text": "was"
+	  },
+	  {
+		"id": 206,
+		"start": 96.57,
+		"end": 96.85,
+		"text": "also"
+	  },
+	  {
+		"id": 207,
+		"start": 96.85,
+		"end": 97.26,
+		"text": "interesting"
+	  },
+	  {
+		"id": 208,
+		"start": 97.26,
+		"end": 97.87,
+		"text": "because"
+	  },
+	  {
+		"id": 209,
+		"start": 97.87,
+		"end": 98.01,
+		"text": "I"
+	  },
+	  {
+		"id": 210,
+		"start": 98.01,
+		"end": 98.17,
+		"text": "knew"
+	  },
+	  {
+		"id": 211,
+		"start": 98.17,
+		"end": 98.91,
+		"text": "exactly"
+	  },
+	  {
+		"id": 212,
+		"start": 98.91,
+		"end": 99.18,
+		"text": "how"
+	  },
+	  {
+		"id": 213,
+		"start": 99.18,
+		"end": 99.4,
+		"text": "this"
+	  },
+	  {
+		"id": 214,
+		"start": 99.4,
+		"end": 100.07,
+		"text": "machine"
+	  },
+	  {
+		"id": 215,
+		"start": 100.07,
+		"end": 100.57,
+		"text": "work"
+	  },
+	  {
+		"id": 216,
+		"start": 100.57,
+		"end": 101.49,
+		"text": "it."
+	  },
+	  {
+		"id": 217,
+		"start": 101.49,
+		"end": 101.67,
+		"text": "And"
+	  },
+	  {
+		"id": 218,
+		"start": 101.67,
+		"end": 101.87,
+		"text": "yet."
+	  },
+	  {
+		"id": 219,
+		"start": 101.87,
+		"end": 101.97,
+		"text": "I"
+	  },
+	  {
+		"id": 220,
+		"start": 101.97,
+		"end": 102.37,
+		"text": "still"
+	  },
+	  {
+		"id": 221,
+		"start": 102.37,
+		"end": 102.65,
+		"text": "felt"
+	  },
+	  {
+		"id": 222,
+		"start": 102.65,
+		"end": 103.39,
+		"text": "compelled"
+	  },
+	  {
+		"id": 223,
+		"start": 103.39,
+		"end": 103.51,
+		"text": "to"
+	  },
+	  {
+		"id": 224,
+		"start": 103.51,
+		"end": 103.67,
+		"text": "be"
+	  },
+	  {
+		"id": 225,
+		"start": 103.67,
+		"end": 104.41,
+		"text": "kind"
+	  },
+	  {
+		"id": 226,
+		"start": 104.41,
+		"end": 104.59,
+		"text": "to"
+	  },
+	  {
+		"id": 227,
+		"start": 104.59,
+		"end": 106.41,
+		"text": "it."
+	  },
+	  {
+		"id": 228,
+		"start": 106.41,
+		"end": 106.62,
+		"text": "And"
+	  },
+	  {
+		"id": 229,
+		"start": 106.62,
+		"end": 106.93,
+		"text": "that"
+	  },
+	  {
+		"id": 230,
+		"start": 106.93,
+		"end": 107.71,
+		"text": "observation"
+	  },
+	  {
+		"id": 231,
+		"start": 107.71,
+		"end": 108.1,
+		"text": "sparked"
+	  },
+	  {
+		"id": 232,
+		"start": 108.1,
+		"end": 108.18,
+		"text": "that"
+	  },
+	  {
+		"id": 233,
+		"start": 108.18,
+		"end": 109.13,
+		"text": "curiosity"
+	  },
+	  {
+		"id": 234,
+		"start": 109.13,
+		"end": 109.32,
+		"text": "that"
+	  },
+	  {
+		"id": 235,
+		"start": 109.32,
+		"end": 109.41,
+		"text": "I"
+	  },
+	  {
+		"id": 236,
+		"start": 109.41,
+		"end": 109.74,
+		"text": "spent"
+	  },
+	  {
+		"id": 237,
+		"start": 109.74,
+		"end": 109.81,
+		"text": "the"
+	  },
+	  {
+		"id": 238,
+		"start": 109.81,
+		"end": 110.27,
+		"text": "fat,"
+	  },
+	  {
+		"id": 239,
+		"start": 110.27,
+		"end": 110.36,
+		"text": "the"
+	  },
+	  {
+		"id": 240,
+		"start": 110.36,
+		"end": 110.75,
+		"text": "past"
+	  },
+	  {
+		"id": 241,
+		"start": 110.75,
+		"end": 111.28,
+		"text": "decade"
+	  },
+	  {
+		"id": 242,
+		"start": 111.28,
+		"end": 112.48,
+		"text": "pursuing"
+	  },
+	  {
+		"id": 243,
+		"start": 112.48,
+		"end": 112.93,
+		"text": "it."
+	  },
+	  {
+		"id": 244,
+		"start": 112.93,
+		"end": 113.18,
+		"text": "Why"
+	  },
+	  {
+		"id": 245,
+		"start": 113.18,
+		"end": 113.33,
+		"text": "did"
+	  },
+	  {
+		"id": 246,
+		"start": 113.33,
+		"end": 113.45,
+		"text": "they"
+	  },
+	  {
+		"id": 247,
+		"start": 113.45,
+		"end": 113.92,
+		"text": "comfort"
+	  },
+	  {
+		"id": 248,
+		"start": 113.92,
+		"end": 114.17,
+		"text": "this"
+	  },
+	  {
+		"id": 249,
+		"start": 114.17,
+		"end": 116.26,
+		"text": "robe."
+	  },
+	  {
+		"id": 250,
+		"start": 116.26,
+		"end": 116.48,
+		"text": "One"
+	  },
+	  {
+		"id": 251,
+		"start": 116.48,
+		"end": 116.57,
+		"text": "of"
+	  },
+	  {
+		"id": 252,
+		"start": 116.57,
+		"end": 116.65,
+		"text": "the"
+	  },
+	  {
+		"id": 253,
+		"start": 116.65,
+		"end": 116.87,
+		"text": "things"
+	  },
+	  {
+		"id": 254,
+		"start": 116.87,
+		"end": 116.93,
+		"text": "I"
+	  },
+	  {
+		"id": 255,
+		"start": 116.93,
+		"end": 117.57,
+		"text": "discovered"
+	  },
+	  {
+		"id": 256,
+		"start": 117.57,
+		"end": 117.77,
+		"text": "was"
+	  },
+	  {
+		"id": 257,
+		"start": 117.77,
+		"end": 118.45,
+		"text": "that"
+	  },
+	  {
+		"id": 258,
+		"start": 118.45,
+		"end": 118.61,
+		"text": "my"
+	  },
+	  {
+		"id": 259,
+		"start": 118.61,
+		"end": 119.2,
+		"text": "treatment"
+	  },
+	  {
+		"id": 260,
+		"start": 119.2,
+		"end": 119.26,
+		"text": "of"
+	  },
+	  {
+		"id": 261,
+		"start": 119.26,
+		"end": 119.45,
+		"text": "this"
+	  },
+	  {
+		"id": 262,
+		"start": 119.45,
+		"end": 119.8,
+		"text": "machine"
+	  },
+	  {
+		"id": 263,
+		"start": 119.8,
+		"end": 119.95,
+		"text": "was"
+	  },
+	  {
+		"id": 264,
+		"start": 119.95,
+		"end": 120.21,
+		"text": "more"
+	  },
+	  {
+		"id": 265,
+		"start": 120.21,
+		"end": 120.36,
+		"text": "than"
+	  },
+	  {
+		"id": 266,
+		"start": 120.36,
+		"end": 120.98,
+		"text": "just"
+	  },
+	  {
+		"id": 267,
+		"start": 120.98,
+		"end": 121.19,
+		"text": "an"
+	  },
+	  {
+		"id": 268,
+		"start": 121.19,
+		"end": 121.6,
+		"text": "awkward"
+	  },
+	  {
+		"id": 269,
+		"start": 121.6,
+		"end": 122.08,
+		"text": "moment"
+	  },
+	  {
+		"id": 270,
+		"start": 122.08,
+		"end": 122.16,
+		"text": "in"
+	  },
+	  {
+		"id": 271,
+		"start": 122.16,
+		"end": 122.3,
+		"text": "my"
+	  },
+	  {
+		"id": 272,
+		"start": 122.3,
+		"end": 122.62,
+		"text": "living"
+	  },
+	  {
+		"id": 273,
+		"start": 122.62,
+		"end": 123.45,
+		"text": "room"
+	  },
+	  {
+		"id": 274,
+		"start": 123.45,
+		"end": 123.74,
+		"text": "that"
+	  },
+	  {
+		"id": 275,
+		"start": 123.74,
+		"end": 123.81,
+		"text": "in"
+	  },
+	  {
+		"id": 276,
+		"start": 123.81,
+		"end": 123.95,
+		"text": "a"
+	  },
+	  {
+		"id": 277,
+		"start": 123.95,
+		"end": 124.45,
+		"text": "world"
+	  },
+	  {
+		"id": 278,
+		"start": 124.45,
+		"end": 124.64,
+		"text": "were"
+	  },
+	  {
+		"id": 279,
+		"start": 124.64,
+		"end": 125.46,
+		"text": "increasingly"
+	  },
+	  {
+		"id": 280,
+		"start": 125.46,
+		"end": 126.21,
+		"text": "integrating"
+	  },
+	  {
+		"id": 281,
+		"start": 126.21,
+		"end": 127.22,
+		"text": "robots"
+	  },
+	  {
+		"id": 282,
+		"start": 127.22,
+		"end": 127.57,
+		"text": "into"
+	  },
+	  {
+		"id": 283,
+		"start": 127.57,
+		"end": 127.66,
+		"text": "our"
+	  },
+	  {
+		"id": 284,
+		"start": 127.66,
+		"end": 128.85,
+		"text": "lives"
+	  },
+	  {
+		"id": 285,
+		"start": 128.85,
+		"end": 129.1,
+		"text": "and"
+	  },
+	  {
+		"id": 286,
+		"start": 129.1,
+		"end": 129.39,
+		"text": "things"
+	  },
+	  {
+		"id": 287,
+		"start": 129.39,
+		"end": 129.75,
+		"text": "like"
+	  }
+	],
+	"paragraphs": [
+	  {
+		"id": 0,
+		"start": 13.02,
+		"end": 24.2,
+		"speaker": "F_S12"
+	  },
+	  {
+		"id": 1,
+		"start": 24.2,
+		"end": 24.65,
+		"speaker": "U_UKN"
+	  },
+	  {
+		"id": 2,
+		"start": 24.65,
+		"end": 46.53,
+		"speaker": "F_S12"
+	  },
+	  {
+		"id": 3,
+		"start": 46.53,
+		"end": 46.9,
+		"speaker": "U_UKN"
+	  },
+	  {
+		"id": 4,
+		"start": 46.9,
+		"end": 55.22,
+		"speaker": "F_S12"
+	  },
+	  {
+		"id": 5,
+		"start": 55.22,
+		"end": 63.73,
+		"speaker": "F_S10"
+	  },
+	  {
+		"id": 6,
+		"start": 63.73,
+		"end": 64.73,
+		"speaker": "U_UKN"
+	  },
+	  {
+		"id": 7,
+		"start": 64.73,
+		"end": 109.81,
+		"speaker": "F_S10"
+	  },
+	  {
+		"id": 8,
+		"start": 109.81,
+		"end": 110.75,
+		"speaker": "U_UKN"
+	  },
+	  {
+		"id": 9,
+		"start": 110.75,
+		"end": 117.77,
+		"speaker": "F_S10"
+	  },
+	  {
+		"id": 10,
+		"start": 117.77,
+		"end": 118.45,
+		"speaker": "U_UKN"
+	  },
+	  {
+		"id": 11,
+		"start": 118.45,
+		"end": 139.25,
+		"speaker": "F_S10"
+	  },
+	  {
+		"id": 12,
+		"start": 139.25,
+		"end": 171.34,
+		"speaker": "F_S12"
+	  },
+	  {
+		"id": 13,
+		"start": 171.34,
+		"end": 175.1,
+		"speaker": "U_UKN"
+	  },
+	  {
+		"id": 14,
+		"start": 175.1,
+		"end": 202.96,
+		"speaker": "F_S12"
+	  },
+	  {
+		"id": 15,
+		"start": 202.96,
+		"end": 203.37,
+		"speaker": "U_UKN"
+	  },
+	  {
+		"id": 16,
+		"start": 203.37,
+		"end": 323.05,
+		"speaker": "F_S12"
+	  },
+	  {
+		"id": 17,
+		"start": 323.05,
+		"end": 335.97,
+		"speaker": "F_S10"
+	  },
+	  {
+		"id": 18,
+		"start": 335.97,
+		"end": 337.77,
+		"speaker": "U_UKN"
+	  },
+	  {
+		"id": 19,
+		"start": 337.77,
+		"end": 375.89,
+		"speaker": "F_S12"
+	  },
+	  {
+		"id": 20,
+		"start": 375.89,
+		"end": 377.34,
+		"speaker": "U_UKN"
+	  },
+	  {
+		"id": 21,
+		"start": 377.34,
+		"end": 392.3,
+		"speaker": "F_S12"
+	  },
+	  {
+		"id": 22,
+		"start": 392.3,
+		"end": 400.28,
+		"speaker": "F_S10"
+	  },
+	  {
+		"id": 23,
+		"start": 400.28,
+		"end": 405.04,
+		"speaker": "U_UKN"
+	  },
+	  {
+		"id": 24,
+		"start": 405.04,
+		"end": 410.45,
+		"speaker": "F_S10"
+	  },
+	  {
+		"id": 25,
+		"start": 410.45,
+		"end": 410.83,
+		"speaker": "U_UKN"
+	  },
+	  {
+		"id": 26,
+		"start": 410.83,
+		"end": 435.5,
+		"speaker": "F_S10"
+	  },
+	  {
+		"id": 27,
+		"start": 435.5,
+		"end": 485.24,
+		"speaker": "F_S12"
+	  },
+	  {
+		"id": 28,
+		"start": 485.24,
+		"end": 485.92,
+		"speaker": "U_UKN"
+	  },
+	  {
+		"id": 29,
+		"start": 485.92,
+		"end": 514.77,
+		"speaker": "F_S12"
+	  },
+	  {
+		"id": 30,
+		"start": 514.77,
+		"end": 516.52,
+		"speaker": "U_UKN"
+	  },
+	  {
+		"id": 31,
+		"start": 516.52,
+		"end": 536.02,
+		"speaker": "F_S12"
+	  },
+	  {
+		"id": 32,
+		"start": 536.02,
+		"end": 536.69,
+		"speaker": "U_UKN"
+	  },
+	  {
+		"id": 33,
+		"start": 536.69,
+		"end": 597.48,
+		"speaker": "F_S12"
+	  },
+	  {
+		"id": 34,
+		"start": 597.48,
+		"end": 631.55,
+		"speaker": "F_S10"
+	  },
+	  {
+		"id": 35,
+		"start": 631.55,
+		"end": 632.62,
+		"speaker": "U_UKN"
+	  },
+	  {
+		"id": 36,
+		"start": 632.62,
+		"end": 635,
+		"speaker": "F_S10"
+	  },
+	  {
+		"id": 37,
+		"start": 635,
+		"end": 635.42,
+		"speaker": "U_UKN"
+	  },
+	  {
+		"id": 38,
+		"start": 635.42,
+		"end": 642.67,
+		"speaker": "F_S10"
+	  },
+	  {
+		"id": 39,
+		"start": 642.67,
+		"end": 655.81,
+		"speaker": "F_S12"
+	  },
+	  {
+		"id": 40,
+		"start": 655.81,
+		"end": 657.22,
+		"speaker": "U_UKN"
+	  },
+	  {
+		"id": 41,
+		"start": 657.22,
+		"end": 702.17,
+		"speaker": "F_S10"
+	  },
+	  {
+		"id": 42,
+		"start": 702.17,
+		"end": 702.62,
+		"speaker": "U_UKN"
+	  },
+	  {
+		"id": 43,
+		"start": 702.62,
+		"end": 704.34,
+		"speaker": "F_S10"
+	  }
+	]
+  }

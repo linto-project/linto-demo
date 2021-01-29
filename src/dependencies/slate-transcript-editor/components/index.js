@@ -1,47 +1,15 @@
 import React, { useState, useEffect, useMemo, useCallback } from "react";
 import PropTypes from "prop-types";
-import path from "path";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Tooltip from "react-bootstrap/Tooltip";
-import OverlayTrigger from "react-bootstrap/OverlayTrigger";
-import { createEditor, Editor, Transforms } from "slate";
+import { createEditor, Transforms } from "slate";
 // https://docs.slatejs.org/walkthroughs/01-installing-slate
 // Import the Slate components and React plugin.
-import { Slate, Editable, withReact, ReactEditor } from "slate-react";
+import { Slate, Editable, withReact } from "slate-react";
 import { withHistory } from "slate-history";
 import convertDpeToSlate from "../util/dpe-to-slate";
-// import { Slate, Editable, withReact, ReactEditor } from 'slate-react';
-// import { withHistory } from 'slate-history';
-// import {
-//   faSave,
-//   faShare,
-//   faUndo,
-//   faSync,
-//   faInfoCircle,
-//   faICursor,
-//   faMehBlank,
-//   faPause,
-//   faMusic,
-//   faClosedCaptioning,
-// } from '@fortawesome/free-solid-svg-icons';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { shortTimecode } from '../util/timecode-converter';
-// import slateToText from '../util/export-adapters/txt';
-// import download from '../util/downlaod/index.js';
-// import convertDpeToSlate from '../util/dpe-to-slate';
-// import slateToDocx from '../util/export-adapters/docx';
-// // TODO: This should be moved in export utils
-// import insertTimecodesInline from '../util/inline-interval-timecodes';
-// import pluck from '../util/pluk';
-// import subtitlesGenerator from '../util/export-adapters/subtitles-generator/index.js';
-// import subtitlesExportOptionsList from '../util/export-adapters/subtitles-generator/list.js';
-import updateTimestamps, { converSlateToDpe } from "../util/update-timestamps";
-
 import { useGlobalContext } from "../../../components/Provider";
-
-const TOOTLIP_LONGER_DELAY = 2000;
 
 function isEmpty(obj) {
   return Object.keys(obj).length === 0;
@@ -51,7 +19,6 @@ export default function SlateTranscriptEditor(props) {
   const { Player, confDemo } = useGlobalContext();
   const { getTime } = Player;
 
-  // const typeAnnot = confDemo.getConf().typeAnnotationDialogue;
   const actLanguage = confDemo.getConf().actLanguage;
 
   const timeTemp = getTime();
@@ -67,35 +34,9 @@ export default function SlateTranscriptEditor(props) {
     typeof props.showSpeakers === "boolean" ? props.showSpeakers : true;
   const defaultShowTimecodesPreference =
     typeof props.showTimecodes === "boolean" ? props.showTimecodes : true;
-  // const [showSpeakers, setShowSpeakers] = useState(
-  //   defaultShowSpeakersPreference
-  // );
-  // const [showTimecodes, setShowTimecodes] = useState(
-  //   defaultShowTimecodesPreference
-  // );
 
   const [showSpeakers] = useState(defaultShowSpeakersPreference);
   const [showTimecodes] = useState(defaultShowTimecodesPreference);
-  // const defaultShowSpeakersPreference = typeof props.showSpeakers === 'boolean' ? props.showSpeakers : true;
-  // const defaultShowTimecodesPreference = typeof props.showTimecodes === 'boolean' ? props.showTimecodes : true;
-  // const [showSpeakers, setShowSpeakers] = useState(defaultShowSpeakersPreference);
-  // const [showTimecodes, setShowTimecodes] = useState(defaultShowTimecodesPreference);
-  // const [speakerOptions, setSpeakerOptions] = useState([]);
-  // const [showSpeakersCheatShet, setShowSpeakersCheatShet] = useState(false);
-  // const [saveTimer, setSaveTimer] = useState(null);
-  // const [isPauseWhiletyping, setIsPauseWhiletyping] = useState(false);
-  // const [isProcessing, setIsProcessing] = useState(false);
-  // // used isContentModified to avoid unecessarily run alignment if the slate value contnet has not been modified by the user since
-  // // last save or alignment
-  // const [isContentModified, setIsContentIsModified] = useState(false);
-
-  // useEffect(() => {
-  //   if (isProcessing) {
-  //     document.body.style.cursor = 'wait';
-  //   } else {
-  //     document.body.style.cursor = 'default';
-  //   }
-  // }, [isProcessing]);
 
   useEffect(() => {
     if (props.transcriptData) {
@@ -132,39 +73,6 @@ export default function SlateTranscriptEditor(props) {
     // eslint-disable-next-line
   }, [props.transcriptDataLive]);
 
-  // useEffect(() => {
-  //   const getUniqueSpeakers = pluck("speaker");
-  //   const uniqueSpeakers = getUniqueSpeakers(value);
-  //   setSpeakerOptions(uniqueSpeakers);
-  // }, [showSpeakersCheatShet]);
-
-  // useEffect(() => {
-  // Update the document title using the browser API
-  // if (mediaRef && mediaRef.current) {
-  // setDuration(mediaRef.current.duration);
-  // mediaRef.current.addEventListener("timeupdate", handleTimeUpdated);
-  // }
-  // return function cleanup() {
-  // removeEventListener
-  // mediaRef.current.removeEventListener("timeupdate", handleTimeUpdated);
-  // };
-  // }, []);
-
-  // useEffect(() => {
-  // Update the document title using the browser API
-  // if (mediaRef && mediaRef.current) {
-  // Not working
-  // setDuration(mediaRef.current.duration);
-  // if (
-  // mediaRef.current.duration >=
-  // MAX_DURATION_FOR_PERFORMANCE_OPTIMIZATION_IN_SECONDS
-  // ) {
-  // setShowSpeakers(false);
-  // showTimecodes(false);
-  // }
-  // }
-  // }, [mediaRef]);
-
   const handleTimeUpdated = (time) => {
     setCurrentTime(time);
     // TODO: setting duration here as a workaround
@@ -180,113 +88,105 @@ export default function SlateTranscriptEditor(props) {
     }
   }, []);
 
-  const renderLeaf = useCallback(
-    ({ attributes, children, leaf }) => {
-      return (
-        <span
-          onDoubleClick={handleTimedTextClick}
-          className={"timecode text"}
-          data-start={children.props.parent.start}
-          data-previous-timings={children.props.parent.previousTimings}
-          title={children.props.parent.start}
-          {...attributes}
-        >
-          {children}
+  const renderLeaf = ({ attributes, children, leaf }) => {
+    // console.log(attributes);
+    // console.log(children);
+    // console.log(leaf);
+    // const colorRandom = "#" + Math.floor(Math.random() * 16777215).toString(16);
+    // return leaf.text;
+    // console.log(colorRandom);
 
-          {/* <Row>
-            <Col xs={actLanguage ? 7 : 12}> {children}</Col>
-            {actLanguage && <Col xs={4}>{children.props.parent.actDialog}</Col>}
-          </Row> */}
-        </span>
+    let text = leaf.text;
+    if (!leaf.text.includes("'")) {
+      text += " ";
+    }
+    // return <span style={{ color: colorRandom }}>{text}</span>;
+    return <span style={{ color: leaf.color }}>{text}</span>;
+  };
+
+  const TimedTextElement = useCallback(
+    (props) => {
+      const textLg = 6;
+      const textXl = 7;
+      return (
+        <Row {...props.attributes}>
+          {showTimecodes && (
+            <Col
+              contentEditable={false}
+              // xs={3}
+              sm={2}
+              md={4}
+              lg={3}
+              xl={2}
+              className={"p-t-2 text-truncate"}
+            >
+              <code
+                contentEditable={false}
+                style={{ cursor: "pointer" }}
+                className={"timecode text-muted unselectable"}
+                onClick={handleTimedTextClick}
+                title={props.element.startTimecode}
+                data-start={props.element.start}
+              >
+                {props.element.startTimecode}
+              </code>
+            </Col>
+          )}
+          {showSpeakers && (
+            <Col
+              contentEditable={false}
+              // xs={3}
+              sm={10}
+              md={8}
+              lg={3}
+              xl={3}
+              className={"p-t-2 text-truncate"}
+            >
+              <span
+                contentEditable={false}
+                className={"text-truncate text-muted unselectable"}
+                style={{
+                  cursor: "pointer",
+                  width: "100%",
+                  textTransform: "uppercase",
+                }}
+                // title={props.element.speaker.toUpperCase()}
+                title={props.element.speaker}
+                // onClick={handleSetSpeakerName.bind(this, props.element)}
+              >
+                {" "}
+                {props.element.speaker}
+              </span>
+            </Col>
+          )}
+
+          <Col
+            xs={12}
+            sm={12}
+            md={12}
+            lg={textLg}
+            xl={textXl}
+            className={"p-t-2 mx-auto"}
+          >
+            <Row>
+              <Col xs={!actLanguage ? 12 : 9}>
+                <span
+                  className={"timecode text"}
+                  data-start={props.element.start}
+                  data-previous-timings={props.element.previousTimings}
+                  title={props.element.start}
+                >
+                  {props.children}
+                </span>
+              </Col>
+              {actLanguage && <Col xs={3}> </Col>}
+            </Row>
+          </Col>
+        </Row>
       );
     },
-    [actLanguage]
+    [actLanguage, showTimecodes, showSpeakers]
   );
-
-  const TimedTextElement = (props) => {
-    let textLg = 12;
-    let textXl = 12;
-    // if (!showSpeakers && !showTimecodes) {
-    //   textLg = 12;
-    //   textXl = 12;
-    // } else if (showSpeakers && !showTimecodes) {
-    //   textLg = 9;
-    //   textXl = 9;
-    // } else if (!showSpeakers && showTimecodes) {
-    //   textLg = 9;
-    //   textXl = 10;
-    // } else
-    if (showSpeakers && showTimecodes) {
-      textLg = 6;
-      textXl = 7;
-    }
-
-    return (
-      <Row {...props.attributes}>
-        {showTimecodes && (
-          <Col
-            contentEditable={false}
-            xs={4}
-            sm={2}
-            md={4}
-            lg={3}
-            xl={2}
-            className={"p-t-2 text-truncate"}
-          >
-            <code
-              contentEditable={false}
-              style={{ cursor: "pointer" }}
-              className={"timecode text-muted unselectable"}
-              onClick={handleTimedTextClick}
-              title={props.element.startTimecode}
-              data-start={props.element.start}
-            >
-              {props.element.startTimecode}
-            </code>
-          </Col>
-        )}
-        {showSpeakers && (
-          <Col
-            contentEditable={false}
-            xs={8}
-            sm={10}
-            md={8}
-            lg={3}
-            xl={3}
-            className={"p-t-2 text-truncate"}
-          >
-            <span
-              contentEditable={false}
-              className={"text-truncate text-muted unselectable"}
-              style={{
-                cursor: "pointer",
-                width: "100%",
-                textTransform: "uppercase",
-              }}
-              // title={props.element.speaker.toUpperCase()}
-              title={props.element.speaker}
-              // onClick={handleSetSpeakerName.bind(this, props.element)}
-            >
-              {" "}
-              {props.element.speaker}
-            </span>
-          </Col>
-        )}
-
-        <Col
-          xs={12}
-          sm={12}
-          md={12}
-          lg={textLg}
-          xl={textXl}
-          // xs={2}
-          className={"p-t-2 mx-auto"}
-        >
-          {props.children}
-        </Col>
-      </Row>
-    );
-  };
 
   const DefaultElement = (props) => {
     return <p {...props.attributes}>{props.children}</p>;
@@ -311,26 +211,6 @@ export default function SlateTranscriptEditor(props) {
       }
     }
   };
-
-  const renderMark = (props, editor, next) => {
-    const { children, mark, attributes } = props;
-    console.log("hello : ");
-    console.log(mark.type);
-    switch (mark.type) {
-      case "bold":
-        return <strong {...attributes}>{children}</strong>;
-      case "italic":
-        return <em {...attributes}>{children}</em>;
-      case "underline":
-        return <u {...attributes}>{children}</u>;
-      default:
-        return next();
-    }
-  };
-
-  // const handleInsertMusicNote = ()=>{
-  //   Transforms.insertText(editor, '♫'); // or ♪
-  // }
 
   /**
    * See explanation in `src/utils/dpe-to-slate/index.js` for how this function works with css injection
@@ -358,30 +238,15 @@ export default function SlateTranscriptEditor(props) {
     return stringlistOfTimesUpToCurrentTimeInt;
   };
 
-  const getMediaType = () => {
-    const clipExt = path.extname(props.mediaUrl);
-    let tmpMediaType = props.mediaType ? props.mediaType : "video";
-    if (
-      clipExt === ".wav" ||
-      clipExt === ".mp3" ||
-      clipExt === ".m4a" ||
-      clipExt === ".flac" ||
-      clipExt === ".aiff"
-    ) {
-      tmpMediaType = "audio";
-    }
-    return tmpMediaType;
-  };
-
   return (
     <Container
-      fluid
       style={{
         backgroundColor: "#fff",
         paddingTop: "1em",
         marginLeft: "auto",
         marginRight: "auto",
         justifyContent: "center",
+        border: "none",
       }}
     >
       {/* <style scoped>
@@ -398,7 +263,7 @@ export default function SlateTranscriptEditor(props) {
         {`  .timecode[data-previous-timings*="${generatePreviousTimingsUpToCurrent(
           parseInt(currentTime)
         )}"]{
-                color:  #c8c8c8 !important;
+              opacity:  0.1 !important;
             }`}
       </style>
       <style scoped>
@@ -407,6 +272,7 @@ export default function SlateTranscriptEditor(props) {
                 background: #f9f9f9;
                 box-shadow: 0 0 10px #ccc;
                 height: 40vh;
+                width: 100%;
                 overflow: auto;
                 justify-content: center,
               }
@@ -431,74 +297,33 @@ export default function SlateTranscriptEditor(props) {
               }
               `}
       </style>
-      {props.showTitle ? (
-        <OverlayTrigger
-          delay={TOOTLIP_LONGER_DELAY}
-          placement={"bottom"}
-          overlay={<Tooltip id="tooltip-disabled"> {props.title}</Tooltip>}
-        >
-          <h3 className={"text-truncate text-left"}>
-            <small className="text-muted">{props.title}</small>
-          </h3>
-        </OverlayTrigger>
-      ) : null}
-      <Row
-        style={{
-          justifyContent: "center",
-        }}
-      >
-        <Col
-          xs={{ span: 12, order: 3 }}
-          sm={
-            getMediaType() === "audio"
-              ? { span: 10, order: 2, offset: 1 }
-              : { span: 7, order: 2 }
-          }
-          md={
-            getMediaType() === "audio"
-              ? { span: 10, order: 2, offset: 1 }
-              : { span: 7, order: 2 }
-          }
-          lg={
-            getMediaType() === "audio"
-              ? { span: 8, order: 2, offset: 2 }
-              : { span: 8, order: 2 }
-          }
-          xl={
-            getMediaType() === "audio"
-              ? { span: 8, order: 2, offset: 2 }
-              : { span: 7, order: 2 }
-          }
-        >
-          {value.length !== 0 ? (
-            <>
-              <section className="editor-wrapper-container">
-                <Slate
-                  editor={editor}
-                  value={value}
-                  onChange={(value) => {
-                    if (props.handleAutoSaveChanges) {
-                      props.handleAutoSaveChanges(value);
-                    }
-                    return setValue(value);
-                  }}
-                >
-                  <Editable
-                    readOnly={true}
-                    renderElement={renderElement}
-                    renderLeaf={renderLeaf}
-                    renderMark={renderMark}
-                  />
-                </Slate>
-              </section>
-            </>
-          ) : (
-            <section className="text-center">
-              <i className="text-center">Loading...</i>
-            </section>
-          )}
-        </Col>
-      </Row>
+
+      {value.length !== 0 ? (
+        <>
+          <section className="editor-wrapper-container">
+            <Slate
+              editor={editor}
+              value={value}
+              onChange={(value) => {
+                if (props.handleAutoSaveChanges) {
+                  props.handleAutoSaveChanges(value);
+                }
+                return setValue(value);
+              }}
+            >
+              <Editable
+                readOnly={true}
+                renderElement={renderElement}
+                renderLeaf={renderLeaf}
+              />
+            </Slate>
+          </section>
+        </>
+      ) : (
+        <section className="text-center">
+          <i className="text-center">Loading...</i>
+        </section>
+      )}
     </Container>
   );
 }
