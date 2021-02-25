@@ -104,6 +104,11 @@ export const ContextProvider = ({ children }) => {
     console.log(conf);
   }, [conf]);
 
+  useEffect(() => {
+    // console.log("Time  : ");
+    // console.log(player);
+  }, [player]);
+
   return (
     <GlobalContext.Provider value={state}>{children}</GlobalContext.Provider>
   );

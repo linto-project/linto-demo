@@ -21,11 +21,12 @@ export default function SlateTranscriptEditor(props) {
 
   const actLanguage = confDemo.getConf().actLanguage;
 
-  const timeTemp = 1000000;
-  // const timeTemp = getTime();
+  // const timeTemp = 1000000;
+  const timeTemp = getTime();
   useEffect(() => {
     // Add little offset to componsate react hook delay
-    handleTimeUpdated(timeTemp + 1);
+    const test = getTime();
+    handleTimeUpdated(test + 1);
   }, [timeTemp]);
 
   const [currentTime, setCurrentTime] = useState(0);

@@ -35,7 +35,7 @@ const formWaveSurferOptions = (ref, timelineRef) => ({
   normalize: true,
 
   // Use the PeakCac he to improve rendering speed of large waveforms.
-  partialRender: true,
+  // partialRender: true,
 });
 
 export default function Waveform({
@@ -83,12 +83,6 @@ export default function Waveform({
       setDurationSec(wavesurfer.current.getCurrentTime());
     });
 
-    // Interaction with audio
-    wavesurfer.current.on("interaction", function() {
-      // console.log("Interaction");
-      setSynch(true);
-    });
-
     // Audioprocess: fire continously when audio is playing
     wavesurfer.current.on("audioprocess", function() {
       setTime(wavesurfer.current.getCurrentTime());
@@ -103,16 +97,25 @@ export default function Waveform({
       setAudioLoaded(true);
     });
 
+    wavesurfer.current.on("seek", function() {
+      console.log("seek");
+      setDurationSec(wavesurfer.current.getCurrentTime());
+      setTime(wavesurfer.current.getCurrentTime());
+    });
+
     return () => wavesurfer.current.destroy();
     // eslint-disable-next-line
   }, [url]);
 
-  useEffect(() => {
-    setDurationSec(wavesurfer.current.getCurrentTime());
-    setTime(wavesurfer.current.getCurrentTime());
-    setSynch(false);
-    // eslint-disable-next-line
-  }, [synch]);
+  // useEffect(() => {
+  //   console.log("current time : ");
+  //   console.log(wavesurfer);
+  //   console.log(wavesurfer.current.getCurrentTime());
+  //   setDurationSec(wavesurfer.current.getCurrentTime());
+  //   setTime(wavesurfer.current.getCurrentTime());
+  //   setSynch(false);
+  //   // eslint-disable-next-line
+  // }, [synch]);
 
   useEffect(() => {
     wavesurfer.current.zoom(zoom || 1);
