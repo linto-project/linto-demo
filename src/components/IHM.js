@@ -39,8 +39,8 @@ const IHM = () => {
 
   const setterConf = getSetterConf("seuilLocuteur");
 
-  const colorIconsSP2 = getConf().locuteurActif ? "" : "disabled";
-  const colorIconsSP5 = getConf().transcript ? "" : "disabled";
+  const colorIconsSP2 = getConf().locuteurActif ? "action" : "disabled";
+  const colorIconsSP5 = getConf().transcript ? "action" : "disabled";
 
   return (
     <div>
@@ -72,7 +72,7 @@ const IHM = () => {
           </Grid>
         </AccordionSummary>
         {/* AMI */
-        File.getReunionName() === "AMI" && (
+        File.getReunionName() === "TEMPO" && (
           <AccordionDetails>
             <Grid
               spacing={2}
@@ -186,51 +186,54 @@ const IHM = () => {
           </Grid>
         </AccordionDetails>
       </Accordion>
-      <Accordion defaultExpanded={true}>
-        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-          <FormControlLabel
-            onClick={(event) => event.stopPropagation()}
-            onFocus={(event) => event.stopPropagation()}
-            checked={getConf().transcript}
-            name="transcript"
-            onChange={(e) => setConf(e)}
-            control={<Switch color="primary" />}
-            label="Transcription"
-          />
-        </AccordionSummary>
-        <AccordionDetails>
-          <Grid container direction="column" spacing={2}>
-            <Grid item>
-              <CustomSelect
-                icon={<PersonOutlineIcon color={colorIconsSP5} />}
-                disabled={!getConf().transcript}
-                value={getConf().typeannotation}
-                onChange={(e) => {
-                  getSetterConf("typeAnnotationDialogue")(e.target.value);
-                }}
-                id="Type d'annotatione"
-                name="typeAnnotationDialogue"
-                // aria-labelledby="select"
-                title={"Type d'annotations"}
-              >
-                <option value="ML">Machine Learning</option>
-                <option value="VT">Vérité Terrain</option>
-              </CustomSelect>
+
+      {File.getReunionName() === "Linto" && (
+        <Accordion defaultExpanded={true}>
+          <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+            <FormControlLabel
+              onClick={(event) => event.stopPropagation()}
+              onFocus={(event) => event.stopPropagation()}
+              checked={getConf().transcript}
+              name="transcript"
+              onChange={(e) => setConf(e)}
+              control={<Switch color="primary" />}
+              label="Transcription"
+            />
+          </AccordionSummary>
+          <AccordionDetails>
+            <Grid container direction="column" spacing={2}>
+              <Grid item>
+                <CustomSelect
+                  icon={<PersonOutlineIcon color={colorIconsSP5} />}
+                  disabled={!getConf().transcript}
+                  value={getConf().typeannotation}
+                  onChange={(e) => {
+                    getSetterConf("typeAnnotationDialogue")(e.target.value);
+                  }}
+                  id="Type d'annotatione"
+                  name="typeAnnotationDialogue"
+                  // aria-labelledby="select"
+                  title={"Type d'annotations"}
+                >
+                  <option value="ML">Machine Learning</option>
+                  <option value="VT">Vérité Terrain</option>
+                </CustomSelect>
+              </Grid>
+              <Grid item>
+                <CustomSwitch
+                  disabled={!getConf().transcript}
+                  checked={getConf().actLanguage}
+                  name="actLanguage"
+                  onChange={(e) => setConf(e)}
+                  icon={<RecordVoiceOverIcon color={colorIconsSP5} />}
+                >
+                  Actes de language
+                </CustomSwitch>
+              </Grid>
             </Grid>
-            <Grid item>
-              <CustomSwitch
-                disabled={!getConf().transcript}
-                checked={getConf().actLanguage}
-                name="actLanguage"
-                onChange={(e) => setConf(e)}
-                icon={<RecordVoiceOverIcon color={colorIconsSP5} />}
-              >
-                Actes de language
-              </CustomSwitch>
-            </Grid>
-          </Grid>
-        </AccordionDetails>
-      </Accordion>
+          </AccordionDetails>
+        </Accordion>
+      )}
     </div>
   );
 };

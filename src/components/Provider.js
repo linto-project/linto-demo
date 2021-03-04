@@ -99,15 +99,15 @@ export const ContextProvider = ({ children }) => {
     });
   }, [fileName, reunionName]);
 
-  useEffect(() => {
-    console.log("conf : ");
-    console.log(conf);
-  }, [conf]);
+  // useEffect(() => {
+  //   console.log("conf : ");
+  //   console.log(conf);
+  // }, [conf]);
 
-  useEffect(() => {
-    // console.log("Time  : ");
-    // console.log(player);
-  }, [player]);
+  // useEffect(() => {
+  // console.log("Time  : ");
+  // console.log(player);
+  // }, [player]);
 
   return (
     <GlobalContext.Provider value={state}>{children}</GlobalContext.Provider>

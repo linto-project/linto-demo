@@ -11,9 +11,6 @@ import { useGlobalContext } from "./Provider";
 
 const formWaveSurferOptions = (ref, timelineRef) => ({
   container: ref,
-  waveColor: "#eee",
-  progressColor: "#e1bee7",
-  cursorColor: "#ce93d8",
   waveColor: "#757575",
   progressColor: "#424242",
   cursorColor: "#424242",
@@ -60,7 +57,6 @@ export default function Waveform({
   setAudioLoaded(true);
 
   useEffect(() => {
-    console.log("new isntance");
     setAudioLoaded(false);
     // setPlay(false);
     const options = formWaveSurferOptions(
@@ -70,16 +66,8 @@ export default function Waveform({
     wavesurfer.current = WaveSurfer.create(options);
     wavesurfer.current.load(url);
 
-    // Pausing audio
-    wavesurfer.current.on("pause", function() {
-      console.log("Pause");
-      // setIsPlaying(false);
-    });
-
     // Playing audio
     wavesurfer.current.on("play", function() {
-      console.log("Play");
-      // setIsPlaying(true);
       setDurationSec(wavesurfer.current.getCurrentTime());
     });
 
@@ -89,7 +77,6 @@ export default function Waveform({
     });
 
     wavesurfer.current.on("waveform-ready", function() {
-      // console.log("ready");
       if (wavesurfer.current) {
         wavesurfer.current.setVolume(volume);
       }
@@ -98,7 +85,6 @@ export default function Waveform({
     });
 
     wavesurfer.current.on("seek", function() {
-      console.log("seek");
       setDurationSec(wavesurfer.current.getCurrentTime());
       setTime(wavesurfer.current.getCurrentTime());
     });
@@ -106,16 +92,6 @@ export default function Waveform({
     return () => wavesurfer.current.destroy();
     // eslint-disable-next-line
   }, [url]);
-
-  // useEffect(() => {
-  //   console.log("current time : ");
-  //   console.log(wavesurfer);
-  //   console.log(wavesurfer.current.getCurrentTime());
-  //   setDurationSec(wavesurfer.current.getCurrentTime());
-  //   setTime(wavesurfer.current.getCurrentTime());
-  //   setSynch(false);
-  //   // eslint-disable-next-line
-  // }, [synch]);
 
   useEffect(() => {
     wavesurfer.current.zoom(zoom || 1);
@@ -127,10 +103,6 @@ export default function Waveform({
 
   useEffect(() => {
     if (play !== wavesurfer.current.isPlaying()) {
-      console.log("Play and after IsPlaying");
-      console.log(play);
-
-      console.log(wavesurfer.current.isPlaying());
       wavesurfer.current.playPause();
     }
   }, [play]);
@@ -155,7 +127,6 @@ export default function Waveform({
   }, [valueLocuteur]);
 
   const fakeRegion = () => {
-    console.log("Duration of clip : " + wavesurfer.current.getDuration());
     let list = [];
     let increment = 1;
     for (var i = 0; i <= wavesurfer.current.getDuration(); i = i + increment) {
@@ -172,7 +143,6 @@ export default function Waveform({
     if (getConf().map) {
       list.map((o) => handleAddRegionSimple(o));
     }
-    console.log(list);
   };
 
   const handleAddRegionSimple = (analyse) => {

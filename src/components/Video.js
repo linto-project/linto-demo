@@ -132,7 +132,7 @@ const Video = ({ url, isPlaying, durationSec, setVideoLoaded }) => {
       ></canvas>
       <video
         key={url}
-        preload
+        preload={"true"}
         ref={videoRef}
         width="1280"
         height="640"

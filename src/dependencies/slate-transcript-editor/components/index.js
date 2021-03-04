@@ -3,9 +3,7 @@ import PropTypes from "prop-types";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import { createEditor, Transforms } from "slate";
-// https://docs.slatejs.org/walkthroughs/01-installing-slate
-// Import the Slate components and React plugin.
+import { createEditor } from "slate";
 import { Slate, Editable, withReact } from "slate-react";
 import { withHistory } from "slate-history";
 import convertDpeToSlate from "../util/dpe-to-slate";
@@ -21,12 +19,12 @@ export default function SlateTranscriptEditor(props) {
 
   const actLanguage = confDemo.getConf().actLanguage;
 
-  // const timeTemp = 1000000;
   const timeTemp = getTime();
   useEffect(() => {
     // Add little offset to componsate react hook delay
     const test = getTime();
     handleTimeUpdated(test + 1);
+    // eslint-disable-next-line
   }, [timeTemp]);
 
   const [currentTime, setCurrentTime] = useState(0);
@@ -48,31 +46,6 @@ export default function SlateTranscriptEditor(props) {
     // eslint-disable-next-line
   }, []);
 
-  // handles interim results for worrking with a Live STT
-  // useEffect(() => {
-  //   if (props.transcriptDataLive) {
-  //     const nodes = convertDpeToSlate(props.transcriptDataLive);
-  //     // if the user is selecting the / typing the text
-  //     // Transforms.insertNodes would insert the node at seleciton point
-  //     // instead we check if they are in the editor
-  //     if (editor.selection) {
-  //       // get the position of the last node
-  //       const positionLastNode = [editor.children.length];
-  //       // insert the new nodes at the end of the document
-  //       Transforms.insertNodes(editor, nodes, {
-  //         at: positionLastNode,
-  //       });
-  //     }
-  //     // use not having selection in the editor allows us to also handle the initial use case
-  //     // where the might be no initial results
-  //     else {
-  //       // if there is no selection the default for insertNodes is to add the nodes at the end
-  //       Transforms.insertNodes(editor, nodes);
-  //     }
-  //   }
-  //   // eslint-disable-next-line
-  // }, [props.transcriptDataLive]);
-
   const handleTimeUpdated = (time) => {
     setCurrentTime(time);
     // TODO: setting duration here as a workaround
@@ -89,18 +62,10 @@ export default function SlateTranscriptEditor(props) {
   }, []);
 
   const renderLeaf = ({ attributes, children, leaf }) => {
-    // console.log(attributes);
-    // console.log(children);
-    // console.log(leaf);
-    // const colorRandom = "#" + Math.floor(Math.random() * 16777215).toString(16);
-    // return leaf.text;
-    // console.log(colorRandom);
-
     let text = leaf.text;
     if (!leaf.text.includes("'")) {
       text += " ";
     }
-    // return <span style={{ color: colorRandom }}>{text}</span>;
 
     return <span style={{ color: leaf.color }}>{text}</span>;
   };
@@ -331,7 +296,6 @@ export default function SlateTranscriptEditor(props) {
 
 SlateTranscriptEditor.propTypes = {
   transcriptData: PropTypes.object.isRequired,
-  mediaUrl: PropTypes.string.isRequired,
   handleSaveEditor: PropTypes.func,
   handleAutoSaveChanges: PropTypes.func,
   autoSaveContentType: PropTypes.string,

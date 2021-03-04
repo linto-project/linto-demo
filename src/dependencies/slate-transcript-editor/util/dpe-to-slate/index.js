@@ -86,40 +86,13 @@ const convertDpeToSlate = (transcript) => {
   const { words, paragraphs, acte } = transcript;
 
   const checkActe = (word, actes) => {
-    // console.log("test Acte : ");
     const t = actes.filter(
       (acte) => acte.start <= word.start && acte.end >= word.end
     );
-    // console.log(t);
-    // console.log(parseInt(t[0].id, 10));
-    // console.log(typeof parseInt(t[0].id, 10));
-    // console.log(generateColor(parseInt(t[0].id, 10)));
-    // return t.length === 1 ? generateColor(t[0].id) : "#ffff00";
-    // return t.length == 1 ? "#00ff00" : "#ffff00";
     return t[0].id;
   };
 
-  // const generateText = (paragraph, words, acte) =>
-  //   words
-  //     .filter(
-  //       (word) => word.start >= paragraph.start && word.end <= paragraph.end
-  //     )
-  //     .map((w) => ({
-  //       text: w.text,
-  //       color: checkActe(w, acte),
-  //     }));
-
   const generateText = (paragraph, words, actes) => {
-    // const concernedActe = actes.filter(
-    //   (acte) =>
-    //     (paragraph.start <= acte.end && acte.end <= paragraph.end) ||
-    //     (paragraph.start <= acte.start && acte.start <= paragraph.end) ||
-    //     (paragraph.start => acte.start && )
-    // );
-
-    // console.log("acte");
-    // console.log(concernedActe);
-
     const dic = words
       .filter(
         (word) => word.start >= paragraph.start && word.end <= paragraph.end
@@ -130,30 +103,22 @@ const convertDpeToSlate = (transcript) => {
       }));
 
     const set = new Set(dic.map(({ id }) => id));
-    console.log("test cc");
     const liste = [];
     set.forEach((uniqueId) =>
       liste.push({
         text: dic
-          .filter((item) => item.id == uniqueId)
+          .filter((item) => item.id === uniqueId)
           .map((w) => w.text)
           .join(" "),
         id: uniqueId,
         color: generateColor(uniqueId),
       })
     );
-    // const test = dic.filter((item) => item.id == 3);
-    // console.log(set);
-
-    console.log(liste);
     return liste;
   };
 
-  // const checkActOfDialog = (actOfDialog) => (actOfDialog ? actOfDialog : " ");
-
   return paragraphs.map((paragraph) => ({
     speaker: paragraph.speaker,
-    // actDialog: checkActOfDialog(paragraph.actdialog),
 
     start: paragraph.start,
     previousTimings: generatePreviousTimingsUpToCurrent(
