@@ -62,12 +62,14 @@ export default function SlateTranscriptEditor(props) {
   }, []);
 
   const renderLeaf = ({ attributes, children, leaf }) => {
+    // let text = " " + leaf.text;
     let text = leaf.text;
-    if (!leaf.text.includes("'")) {
+    if (!leaf.text[0] !== "'") {
       text += " ";
     }
 
-    return <span style={{ color: leaf.color }}>{text}</span>;
+    const couleur = actLanguage ? leaf.color : "#6c757d";
+    return <span style={{ color: couleur }}>{text}</span>;
   };
 
   const TimedTextElement = useCallback(
@@ -135,7 +137,8 @@ export default function SlateTranscriptEditor(props) {
             className={"p-t-2 mx-auto"}
           >
             <Row>
-              <Col xs={!actLanguage ? 12 : 9}>
+              {/* <Col xs={!actLanguage ? 12 : 9}> */}
+              <Col xs={12}>
                 <span
                   className={"timecode text"}
                   data-start={props.element.start}
@@ -145,12 +148,13 @@ export default function SlateTranscriptEditor(props) {
                   {props.children}
                 </span>
               </Col>
-              {actLanguage && <Col xs={3}> </Col>}
+              {/* {actLanguage && <Col xs={3}> </Col>} */}
             </Row>
           </Col>
         </Row>
       );
     },
+    // eslint-disable-next-line
     [actLanguage, showTimecodes, showSpeakers]
   );
 

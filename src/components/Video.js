@@ -30,10 +30,10 @@ const Video = ({ url, isPlaying, durationSec, setVideoLoaded }) => {
     setState((state) => state + 1);
 
     const importJson = async () => {
-      // const dataML = await import("../data/finalML.json");
-      const dataML = await import("../data/detections.json");
-      // const dataVT = await import("../data/finalAnnoted.json");
-      const dataVT = await import("../data/detections.json");
+      const dataML = await import("../data/finalML.json");
+      // const dataML = await import("../data/detections.json");
+      const dataVT = await import("../data/finalAnnoted.json");
+      // const dataVT = await import("../data/detections.json");
       setDataML(dataML);
       setDataVT(dataVT);
     };
@@ -87,17 +87,20 @@ const Video = ({ url, isPlaying, durationSec, setVideoLoaded }) => {
       canva.current.getContext("2d", { alpha: false }).strokeRect(x, y, w, h);
     };
 
-    const drawFPS = (timeVideo) => {
-      canva.current.getContext("2d", { alpha: false }).font = "40px Arial";
-      canva.current
-        .getContext("2d", { alpha: false })
-        .fillText("Frame : " + Math.round(timeVideo * fpsVideo), 10, 50);
-    };
+    // const drawFPS = (timeVideo) => {
+    //   canva.current.getContext("2d", { alpha: false }).font = "40px Arial";
+    //   canva.current
+    //     .getContext("2d", { alpha: false })
+    //     .fillText("Frame : " + Math.round(timeVideo * fpsVideo), 10, 50);
+    // };
 
     const interval = setInterval(() => {
       drawImage();
-      const frame = Math.round(videoRef.current.currentTime * fpsVideo);
-      drawFPS(videoRef.current.currentTime);
+      // Offset RAP 1
+      const offset = 10 * 60 * fpsVideo + 45 * fpsVideo;
+      const frame =
+        Math.round(videoRef.current.currentTime * fpsVideo) + offset;
+      // drawFPS(videoRef.current.currentTime);
 
       if (locuteurActif) {
         if (typeAnnot === "ML" || typeAnnot === "MLVT") {

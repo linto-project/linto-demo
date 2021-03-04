@@ -102,8 +102,7 @@ const VideoAudio = ({ framerate }) => {
         <Grid item>
           {File.getReunionName() === "Linto" && (
             <Video
-              // url={"/video/" + File.getName() + ".webm"}
-              url={"/video-ignore/Meeting4.webm"}
+              url={"/video/linto/RAP1-Blur-1-6min-16min.m4v"}
               durationSec={durationSec}
               isPlaying={Player.getPlaying()}
               setVideoLoaded={setVideoLoaded}
@@ -123,7 +122,13 @@ const VideoAudio = ({ framerate }) => {
         <Grid item>
           <div id="waveform">
             <WaveSurfer
-              url={"/audio/" + File.getName() + ".wav"}
+              url={
+                "/audio/" +
+                File.getReunionName() +
+                "/" +
+                File.getName() +
+                ".wav"
+              }
               // url={"/video-ignore/meeting_RAP_4.wav"}
               zoom={zoom}
               synch={synch}

@@ -3,8 +3,10 @@ import Grid from "@material-ui/core/Grid";
 
 import SlateTranscriptEditor from "../dependencies/slate-transcript-editor/index.js";
 import "bootstrap-css-only";
-import ML from "../sample-data/converted.json";
-import VT from "../sample-data/converted.json";
+// import ML from "../sample-data/converted.json";
+// import VT from "../sample-data/converted.json";
+import VT from "../data/SP5/rap1.json";
+import ML from "../data/SP5/rap1.json";
 import { useGlobalContext } from "./Provider";
 // const DEMO_MEDIA_URL_KATE =
 //   "https://download.ted.com/talks/KateDarling_2018S-950k.mp4";
