@@ -2,6 +2,7 @@ import "./VideoAudio.css";
 import { useState, useEffect } from "react";
 import Video from "./Video";
 import VideoAMI from "./VideoAmi";
+import VideoGestes from "./VideoGestes";
 import WaveSurfer from "./Waveform";
 
 import Grid from "@material-ui/core/Grid";
@@ -103,6 +104,15 @@ const VideoAudio = ({ framerate }) => {
           {File.getReunionName() === "Linto" && (
             <Video
               url={"/video/linto/RAP1-Blur-1-6min-16min.webm"}
+              durationSec={durationSec}
+              isPlaying={Player.getPlaying()}
+              setVideoLoaded={setVideoLoaded}
+            />
+          )}
+
+          {File.getReunionName() === "Gestes" && (
+            <VideoGestes
+              url={"/video/Gestes/Original.webm"}
               durationSec={durationSec}
               isPlaying={Player.getPlaying()}
               setVideoLoaded={setVideoLoaded}

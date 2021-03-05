@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import "./Video.css";
 
-import colors from "../data/colors";
+import colors from "../data/colorsGestes";
 import { useGlobalContext } from "./Provider";
 
 const Video = ({ url, isPlaying, durationSec, setVideoLoaded }) => {
@@ -30,8 +30,10 @@ const Video = ({ url, isPlaying, durationSec, setVideoLoaded }) => {
     setState((state) => state + 1);
 
     const importJson = async () => {
-      const dataML = await import("../data/finalML.json");
-      const dataVT = await import("../data/finalAnnoted.json");
+      const dataML = await import("../data/gestes/detections.json");
+      // const dataML = await import("../data/detections.json");
+      const dataVT = await import("../data/gestes/detections_vt.json");
+      // const dataVT = await import("../data/detections.json");
       setDataML(dataML);
       setDataVT(dataVT);
     };
@@ -61,26 +63,51 @@ const Video = ({ url, isPlaying, durationSec, setVideoLoaded }) => {
       canva.current.getContext("2d", { alpha: false }).lineWidth = 2;
       if (typeAnnot === "MLVT") {
         canva.current.getContext("2d", { alpha: false }).strokeStyle = "red";
+        canva.current.getContext("2d", { alpha: false }).fillStyle = "red";
         canva.current.getContext("2d", { alpha: false }).setLineDash([5, 5]);
       } else {
         canva.current.getContext("2d", { alpha: false }).strokeStyle =
           colors[label];
+        canva.current.getContext("2d", { alpha: false }).fillStyle =
+          colors[label];
         canva.current.getContext("2d", { alpha: false }).setLineDash([]);
       }
       canva.current.getContext("2d", { alpha: false }).strokeRect(x, y, w, h);
+      if (label !== "Person") {
+        canva.current.getContext("2d", { alpha: false }).font = "20px Arial";
+        if (typeAnnot !== "MLVT")
+          canva.current
+            .getContext("2d", { alpha: 0.5 })
+            .fillText(label, x + w + 10, y);
+        else {
+          canva.current
+            .getContext("2d", { alpha: 0.5 })
+            .fillText(label, x + w + 10, y + h);
+        }
+      }
     };
 
     const drawRectangleCorrected = (x, y, w, h, label, typeAnnot) => {
       canva.current.getContext("2d", { alpha: false }).lineWidth = 2;
       if (typeAnnot === "MLVT") {
         canva.current.getContext("2d", { alpha: false }).strokeStyle = "green";
+        canva.current.getContext("2d", { alpha: false }).fillStyle = "green";
         canva.current
           .getContext("2d", { alpha: false })
           .setLineDash([0, 5, 5, 0]);
       } else {
         canva.current.getContext("2d", { alpha: false }).strokeStyle =
           colors[label];
+        canva.current.getContext("2d", { alpha: false }).fillStyle =
+          colors[label];
         canva.current.getContext("2d", { alpha: false }).setLineDash([]);
+      }
+
+      if (label !== "Person") {
+        canva.current.getContext("2d", { alpha: false }).font = "20px Arial";
+        canva.current
+          .getContext("2d", { alpha: 0.5 })
+          .fillText(label, x + w + 10, y);
       }
       canva.current.getContext("2d", { alpha: false }).strokeRect(x, y, w, h);
     };
@@ -88,18 +115,18 @@ const Video = ({ url, isPlaying, durationSec, setVideoLoaded }) => {
     const interval = setInterval(() => {
       drawImage();
       // Offset RAP 1
-      const offset = 10 * 60 * fpsVideo + 45 * fpsVideo;
+      const offset = 0;
       const frame =
         Math.round(videoRef.current.currentTime * fpsVideo) + offset;
       // drawFPS(videoRef.current.currentTime);
 
-      if (locuteurActif) {
+      if (frame < 366 && locuteurActif) {
         if (typeAnnot === "ML" || typeAnnot === "MLVT") {
           dataML[frame].map((o) =>
             drawRectangleML(o.x, o.y, o.width, o.height, o.label, typeAnnot)
           );
         }
-        if (frame > 1428 && (typeAnnot === "VT" || typeAnnot === "MLVT")) {
+        if (typeAnnot === "VT" || typeAnnot === "MLVT") {
           dataVT[frame].map((o) =>
             drawRectangleCorrected(
               o.x,

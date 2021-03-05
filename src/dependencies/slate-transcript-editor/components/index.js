@@ -92,7 +92,7 @@ export default function SlateTranscriptEditor(props) {
                 contentEditable={false}
                 style={{ cursor: "pointer" }}
                 className={"timecode text-muted unselectable"}
-                onClick={handleTimedTextClick}
+                // onClick={handleTimedTextClick}
                 title={props.element.startTimecode}
                 data-start={props.element.start}
               >

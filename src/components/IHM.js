@@ -42,6 +42,18 @@ const IHM = () => {
   const colorIconsSP2 = getConf().locuteurActif ? "action" : "disabled";
   const colorIconsSP5 = getConf().transcript ? "action" : "disabled";
 
+  const nameVolet = () => {
+    if (File.getReunionName() === "AMI") {
+      return "Locuteur actif";
+    }
+    if (File.getReunionName() === "Linto") {
+      return "Signature audio-vidéo";
+    }
+    if (File.getReunionName() === "Gestes") {
+      return "Reconnaissance de gestes";
+    }
+  };
+
   return (
     <div>
       <Accordion defaultExpanded={true}>
@@ -71,7 +83,7 @@ const IHM = () => {
             </Grid>
           </Grid>
         </AccordionSummary>
-        {/* AMI */
+        {/* AMI tempo for demo */
         File.getReunionName() === "TEMPO" && (
           <AccordionDetails>
             <Grid
@@ -116,12 +128,12 @@ const IHM = () => {
             name="locuteurActif"
             onChange={(e) => setConf(e)}
             control={<Switch color="primary" />}
-            label="Locuteur actif"
+            label={nameVolet()}
           />
         </AccordionSummary>
         <AccordionDetails>
           <Grid container direction="column" spacing={2}>
-            {File.getReunionName() === "Linto" && (
+            {File.getReunionName() !== "AMI" && (
               <Grid item>
                 <CustomSelect
                   icon={<PersonOutlineIcon color={colorIconsSP2} />}
@@ -142,23 +154,25 @@ const IHM = () => {
               </Grid>
             )}
 
-            <Grid item>
-              <CustomeSlider
-                id="Seuil-affichage"
-                name="seuilLocuteur"
-                disabled={!getConf().locuteurActif}
-                value={getConf().seuilLocuteur}
-                onChange={setterConf}
-                // aria-labelledby="continuous-slider"
-                min={0}
-                max={1}
-                step={0.01}
-                icon={<CropFree color={colorIconsSP2} />}
-                valueLabelDisplay="auto"
-              >
-                Seuil de confiance
-              </CustomeSlider>
-            </Grid>
+            {File.getReunionName() !== "Gestes" && (
+              <Grid item>
+                <CustomeSlider
+                  id="Seuil-affichage"
+                  name="seuilLocuteur"
+                  disabled={!getConf().locuteurActif}
+                  value={getConf().seuilLocuteur}
+                  onChange={setterConf}
+                  // aria-labelledby="continuous-slider"
+                  min={0}
+                  max={1}
+                  step={0.01}
+                  icon={<CropFree color={colorIconsSP2} />}
+                  valueLabelDisplay="auto"
+                >
+                  Seuil de confiance
+                </CustomeSlider>
+              </Grid>
+            )}
             {File.getReunionName() === "AMI" && (
               <Grid item>
                 <CustomSwitch
@@ -172,17 +186,19 @@ const IHM = () => {
                 </CustomSwitch>
               </Grid>
             )}
-            <Grid item>
-              <CustomSwitch
-                disabled={!getConf().locuteurActif}
-                checked={getConf().annotation}
-                name="annotation"
-                onChange={(e) => setConf(e)}
-                icon={<GraphicEqOutlinedIcon color={colorIconsSP2} />}
-              >
-                Annotations Timeline
-              </CustomSwitch>
-            </Grid>
+            {File.getReunionName() !== "Gestes" && (
+              <Grid item>
+                <CustomSwitch
+                  disabled={!getConf().locuteurActif}
+                  checked={getConf().annotation}
+                  name="annotation"
+                  onChange={(e) => setConf(e)}
+                  icon={<GraphicEqOutlinedIcon color={colorIconsSP2} />}
+                >
+                  Annotations Timeline
+                </CustomSwitch>
+              </Grid>
+            )}
           </Grid>
         </AccordionDetails>
       </Accordion>
