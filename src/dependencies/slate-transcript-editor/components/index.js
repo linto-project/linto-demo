@@ -162,25 +162,25 @@ export default function SlateTranscriptEditor(props) {
     return <p {...props.attributes}>{props.children}</p>;
   };
 
-  const handleTimedTextClick = (e) => {
-    if (e.target.classList.contains("timecode")) {
-      // eslint-disable-next-line
-      const start = e.target.dataset.start;
-      // if (mediaRef && mediaRef.current) {
-      //   mediaRef.current.currentTime = parseInt(start);
-      //   mediaRef.current.play();
-      // }
-    } else if (e.target.dataset.slateString) {
-      if (e.target.parentNode.dataset.start) {
-        // eslint-disable-next-line
-        const start = e.target.parentNode.dataset.start;
-        // if (mediaRef && mediaRef.current && start) {
-        //   mediaRef.current.currentTime = parseInt(start);
-        //   mediaRef.current.play();
-        // }
-      }
-    }
-  };
+  // const handleTimedTextClick = (e) => {
+  //   if (e.target.classList.contains("timecode")) {
+  //     // eslint-disable-next-line
+  //     const start = e.target.dataset.start;
+  //     // if (mediaRef && mediaRef.current) {
+  //     //   mediaRef.current.currentTime = parseInt(start);
+  //     //   mediaRef.current.play();
+  //     // }
+  //   } else if (e.target.dataset.slateString) {
+  //     if (e.target.parentNode.dataset.start) {
+  //       // eslint-disable-next-line
+  //       const start = e.target.parentNode.dataset.start;
+  //       // if (mediaRef && mediaRef.current && start) {
+  //       //   mediaRef.current.currentTime = parseInt(start);
+  //       //   mediaRef.current.play();
+  //       // }
+  //     }
+  //   }
+  // };
 
   /**
    * See explanation in `src/utils/dpe-to-slate/index.js` for how this function works with css injection

@@ -59,7 +59,7 @@ const Video = ({ url, isPlaying, durationSec, setVideoLoaded }) => {
   const locuteurActif = confDemo.getConf().locuteurActif;
 
   useEffect(() => {
-    const drawRectangleML = (x, y, w, h, label, typeAnnot) => {
+    const drawRectangleML = (x, y, w, h, label, typeAnnot, score) => {
       canva.current.getContext("2d", { alpha: false }).lineWidth = 2;
       if (typeAnnot === "MLVT") {
         canva.current.getContext("2d", { alpha: false }).strokeStyle = "red";
@@ -78,11 +78,11 @@ const Video = ({ url, isPlaying, durationSec, setVideoLoaded }) => {
         if (typeAnnot !== "MLVT")
           canva.current
             .getContext("2d", { alpha: 0.5 })
-            .fillText(label, x + w + 10, y);
+            .fillText(label + ": " + score.toString(), x + w + 10, y);
         else {
           canva.current
             .getContext("2d", { alpha: 0.5 })
-            .fillText(label, x + w + 10, y + h);
+            .fillText(label + ": " + score.toString(), x + w + 10, y + h);
         }
       }
     };
@@ -123,7 +123,15 @@ const Video = ({ url, isPlaying, durationSec, setVideoLoaded }) => {
       if (frame < 366 && locuteurActif) {
         if (typeAnnot === "ML" || typeAnnot === "MLVT") {
           dataML[frame].map((o) =>
-            drawRectangleML(o.x, o.y, o.width, o.height, o.label, typeAnnot)
+            drawRectangleML(
+              o.x,
+              o.y,
+              o.width,
+              o.height,
+              o.label,
+              typeAnnot,
+              o.score
+            )
           );
         }
         if (typeAnnot === "VT" || typeAnnot === "MLVT") {
