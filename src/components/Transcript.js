@@ -5,8 +5,8 @@ import SlateTranscriptEditor from "../dependencies/slate-transcript-editor/index
 import "bootstrap-css-only";
 // import ML from "../sample-data/converted.json";
 // import VT from "../sample-data/converted.json";
-import VT from "../data/SP5/rap1.json";
-import ML from "../data/SP5/rap1.json";
+import VT from "../data/SP5/rap1_VT.json";
+import ML from "../data/SP5/rap1_id_decale.json";
 import { useGlobalContext } from "./Provider";
 // const DEMO_MEDIA_URL_KATE =
 //   "https://download.ted.com/talks/KateDarling_2018S-950k.mp4";
