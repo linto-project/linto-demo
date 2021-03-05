@@ -19,7 +19,7 @@ export const ContextProvider = ({ children }) => {
     annotation: false,
     typeAnnotationLocuteur: "ML",
     seuilLocuteur: 0.0,
-    transcript: true,
+    transcript: false,
     actLanguage: false,
     typeAnnotationDialogue: "ML",
   });
@@ -95,7 +95,7 @@ export const ContextProvider = ({ children }) => {
       seuilLocuteur: 0.0,
       typeAnnotationLocuteur: "ML",
       typeAnnotationDialogue: "ML",
-      transcript: true,
+      transcript: false,
     });
   }, [fileName, reunionName]);
 
