@@ -14,8 +14,6 @@ Visualisateur, basé react, crée dans le cadre du projet Linto pour illustrer l
 
 ## - [Composants](./doc/Composants.md)
 
-## - [Ajouter un corpus / changer le démonstrateur](./doc/Architecture.md)
-
 <br>
 
 # Contact information

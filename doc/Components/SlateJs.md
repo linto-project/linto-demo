@@ -4,9 +4,13 @@
 
 Composant modifié issue de [Slate Js](https://github.com/pietrop/slate-transcript-editor).
 
+Composant dans `Transcript.js`, qui utilise un la librairie modifiée dans `dependencies` .
+
 Permets l'affichage des transcripts et actes de dialogues dans le transcript.
 
-Script pour générer les fichiers json à utiliser (python):
+Synchronisé avec wavesurfer.
+
+## Script pour générer les fichiers json à utiliser (python):
 
 ```python
 listeWords = []
