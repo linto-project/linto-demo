@@ -47,14 +47,98 @@ const { getAnnot } = Annotation;
 
 Lecteur vidéo pour le corpus Linto (`Video.js`) et le corpus Gestes (`VideoGestes.js`). Les deux sont très similaires dans leur construction.
 
-L
+Un lecteur vidéo html 5 est joue la vidéo en étant `hidden` (caché).
+
+La frame de la vidéo est prise et copier sur un canva. Le numéro de frame courante est calculé via la position (en seconde) du lecteur vidéo \* le nombre de fps de la vidéo.
+
+Les rectangles associées au bounding box des Json (importés via un lazy import, pour ne pas prendre trop de bande passante à la connexion sur le site) sont dessinées.
 
 **Format des annotations vidéos:**
 
-## Utilisation
+```
+{
+    "0": [
+        {
+            "x": 380,
+            "y": 309,
+            "width": 37,
+            "height": 73,
+            "points": [
+                [
+                    380,
+                    309
+                ],
+                [
+                    380,
+                    346
+                ],
+                [
+                    453,
+                    309
+                ],
+                [
+                    453,
+                    346
+                ]
+            ],
+            "center": [
+                416.5,
+                327.5
+            ],
+            "label": 4,
+            "score": 0.7860917448997498
+        },
+        {
+            "x": 529,
+            "y": 288,
+            "width": 148,
+            "height": 155,
+            "points": [
+                [
+                    529,
+                    288
+                ],
+                [
+                    529,
+                    436
+                ],
+                [
+                    684,
+                    288
+                ],
+                [
+                    684,
+                    436
+                ]
+            ],
+            "center": [
+                606.5,
+                362.0
+            ],
+            "label": 2,
+            "score": 0.9799479246139526
+        }
+    ],
+    "1": [
+        ...
+    ]
+}
+
+```
 
 <br>
 
+## Utilisation
+
 ```javascript
+
+// Lecteur audio en fonction du corpus
+
 import { useGlobalContext } from "./Provider";
+const { File } = useGlobalContext();
+
+{File.getReunionName() === "Linto" && (
+    ...
+)}
+
 ```
