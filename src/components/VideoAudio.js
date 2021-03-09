@@ -2,6 +2,7 @@ import "./VideoAudio.css";
 import { useState, useEffect } from "react";
 import Video from "./Video";
 import VideoAMI from "./VideoAmi";
+import VideoGestes from "./VideoGestes";
 import WaveSurfer from "./Waveform";
 
 import Grid from "@material-ui/core/Grid";
@@ -20,6 +21,12 @@ import { useGlobalContext } from "./Provider";
 
 import { makeStyles, createStyles } from "@material-ui/core/styles";
 
+import { TranscriptReadOnly } from "./Transcript";
+// you need to import bootstrap separatly
+import "bootstrap-css-only";
+
+// Use style to over ride Z-index of backdrop
+// (Otherwise, its zIndex is lower than video.)
 const useStyles = makeStyles(() =>
   createStyles({
     root: {
@@ -29,12 +36,7 @@ const useStyles = makeStyles(() =>
 );
 
 const VideoAudio = ({ framerate }) => {
-  // console.log("framerate  : " + framerate);
-
   const [durationSec, setDurationSec] = useState([]);
-  // const [isPlaying, setIsPlaying] = useState([]);
-  // const [frame, setFrame] = useState([]);
-  // const [play, setPlay] = useState(false);
   const [synch, setSynch] = useState(false);
   const [volume, setVolume] = useState(0.5);
   const [zoom, setZoom] = useState(5);
@@ -57,24 +59,10 @@ const VideoAudio = ({ framerate }) => {
     // setPlay(false);
   }, [nameFile]);
 
-  // useEffect(() => {
-  //   // console.log("current State : " + isPlaying);
-  // }, [isPlaying]);
-
-  // useEffect(() => {
-  //   // console.log("current timestamp : " + durationSec);
-  //   setFrame(Math.round(durationSec * 25));
-  // }, [durationSec]);
-
   useEffect(() => {
     audioLoaded && videoLoaded ? setPlayDisabled(false) : setPlayDisabled(true);
     audioLoaded && videoLoaded ? setOpen(false) : setOpen(true);
   }, [audioLoaded, videoLoaded]);
-
-  // useEffect(() => {
-  //   console.log("change to is Playing : ");
-  //   console.log(Player.getPlaying());
-  // }, [Player.getPlaying()]);
 
   // Rename: toggle play/pause
   const handlePlayPause = () => {
@@ -83,17 +71,10 @@ const VideoAudio = ({ framerate }) => {
     }
   };
 
-  // const test = () => {
-  //   console.log("triggered once ");
-  // };
-
   const classes = useStyles();
 
   return (
     <div className="demo">
-      {/* @to do:
-        Modifiy  d backdrop for skeleton (material)
-      */}
       <Backdrop className={classes.root} open={open} onClick={handleClose}>
         <Grid
           container
@@ -122,8 +103,16 @@ const VideoAudio = ({ framerate }) => {
         <Grid item>
           {File.getReunionName() === "Linto" && (
             <Video
-              // url={"/video/" + File.getName() + ".webm"}
-              url={"/video-ignore/Meeting_Rap_1.webm"}
+              url={"/video/linto/RAP1-Blur-1-6min-16min.webm"}
+              durationSec={durationSec}
+              isPlaying={Player.getPlaying()}
+              setVideoLoaded={setVideoLoaded}
+            />
+          )}
+
+          {File.getReunionName() === "Gestes" && (
+            <VideoGestes
+              url={"/video/Gestes/Original.webm"}
               durationSec={durationSec}
               isPlaying={Player.getPlaying()}
               setVideoLoaded={setVideoLoaded}
@@ -137,12 +126,20 @@ const VideoAudio = ({ framerate }) => {
               setVideoLoaded={setVideoLoaded}
             />
           )}
+          {File.getReunionName() === "Linto" && <TranscriptReadOnly />}
         </Grid>
 
         <Grid item>
           <div id="waveform">
             <WaveSurfer
-              url={"/audio/" + File.getName() + ".wav"}
+              url={
+                "/audio/" +
+                File.getReunionName() +
+                "/" +
+                File.getName() +
+                ".wav"
+              }
+              // url={"/video-ignore/meeting_RAP_4.wav"}
               zoom={zoom}
               synch={synch}
               setSynch={setSynch}
@@ -190,7 +187,7 @@ const VideoAudio = ({ framerate }) => {
                   value={volume}
                   onChange={setVolume}
                   aria-labelledby="continuous-slider"
-                  min={0}
+                  min={0.01}
                   max={1}
                   step={0.01}
                   icon={<VolumeUp />}

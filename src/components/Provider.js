@@ -5,7 +5,7 @@ export const useGlobalContext = () => useContext(GlobalContext);
 
 export const ContextProvider = ({ children }) => {
   const [fileName, setfilename] = useState("0-5min");
-  const [reunionName, setreunionName] = useState("AMI");
+  const [reunionName, setreunionName] = useState("Linto");
   const [annot, setannot] = useState([]);
   const [playing, setplaying] = useState(false);
 
@@ -17,8 +17,11 @@ export const ContextProvider = ({ children }) => {
     locuteurActif: false,
     map: false,
     annotation: false,
-    typeannotation: "ML",
+    typeAnnotationLocuteur: "ML",
     seuilLocuteur: 0.0,
+    transcript: false,
+    actLanguage: false,
+    typeAnnotationDialogue: "ML",
   });
 
   // Rename: file
@@ -90,14 +93,11 @@ export const ContextProvider = ({ children }) => {
       map: false,
       annotation: false,
       seuilLocuteur: 0.0,
-      typeannotation: "ML",
+      typeAnnotationLocuteur: "ML",
+      typeAnnotationDialogue: "ML",
+      transcript: false,
     });
   }, [fileName, reunionName]);
-
-  useEffect(() => {
-    console.log("conf : ");
-    console.log(conf);
-  }, [conf]);
 
   return (
     <GlobalContext.Provider value={state}>{children}</GlobalContext.Provider>

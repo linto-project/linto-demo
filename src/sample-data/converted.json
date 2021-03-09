@@ -1,0 +1,2954 @@
+{
+  "words": [
+    {
+      "id": 0,
+      "start": 37.74,
+      "end": 37.76,
+      "text": "qu'"
+    },
+    {
+      "id": 1,
+      "start": 37.77,
+      "end": 37.79,
+      "text": "est"
+    },
+    {
+      "id": 2,
+      "start": 37.8,
+      "end": 37.83,
+      "text": "ce"
+    },
+    {
+      "id": 3,
+      "start": 37.88,
+      "end": 38.02,
+      "text": "qui"
+    },
+    {
+      "id": 4,
+      "start": 38.03,
+      "end": 38.09,
+      "text": "se"
+    },
+    {
+      "id": 5,
+      "start": 38.1,
+      "end": 38.27,
+      "text": "passe"
+    },
+    {
+      "id": 6,
+      "start": 39.25,
+      "end": 39.35,
+      "text": "non"
+    },
+    {
+      "id": 7,
+      "start": 39.36,
+      "end": 39.48,
+      "text": "j'"
+    },
+    {
+      "id": 8,
+      "start": 39.49,
+      "end": 39.64,
+      "text": "\u00e9tais"
+    },
+    {
+      "id": 9,
+      "start": 39.65,
+      "end": 39.75,
+      "text": "en"
+    },
+    {
+      "id": 10,
+      "start": 39.76,
+      "end": 39.87,
+      "text": "train"
+    },
+    {
+      "id": 11,
+      "start": 39.88,
+      "end": 39.99,
+      "text": "de"
+    },
+    {
+      "id": 12,
+      "start": 40.0,
+      "end": 40.25,
+      "text": "voir"
+    },
+    {
+      "id": 13,
+      "start": 40.26,
+      "end": 40.52,
+      "text": "ce"
+    },
+    {
+      "id": 14,
+      "start": 40.73,
+      "end": 40.76,
+      "text": "qu'"
+    },
+    {
+      "id": 15,
+      "start": 40.77,
+      "end": 40.83,
+      "text": "il"
+    },
+    {
+      "id": 16,
+      "start": 40.84,
+      "end": 40.9,
+      "text": "m'"
+    },
+    {
+      "id": 17,
+      "start": 40.91,
+      "end": 41.06,
+      "text": "avait"
+    },
+    {
+      "id": 18,
+      "start": 41.07,
+      "end": 41.37,
+      "text": "envoy\u00e9"
+    },
+    {
+      "id": 19,
+      "start": 41.38,
+      "end": 41.59,
+      "text": "ce"
+    },
+    {
+      "id": 20,
+      "start": 43.2,
+      "end": 43.39,
+      "text": "matin"
+    },
+    {
+      "id": 21,
+      "start": 43.78,
+      "end": 43.96,
+      "text": "parce"
+    },
+    {
+      "id": 22,
+      "start": 44.03,
+      "end": 44.2,
+      "text": "que"
+    },
+    {
+      "id": 23,
+      "start": 44.21,
+      "end": 44.35,
+      "text": "euh"
+    },
+    {
+      "id": 24,
+      "start": 44.36,
+      "end": 44.58,
+      "text": "en"
+    },
+    {
+      "id": 25,
+      "start": 44.59,
+      "end": 44.83,
+      "text": "fait"
+    },
+    {
+      "id": 26,
+      "start": 44.84,
+      "end": 45.02,
+      "text": "l\u00e0"
+    },
+    {
+      "id": 27,
+      "start": 45.03,
+      "end": 45.23,
+      "text": "il"
+    },
+    {
+      "id": 28,
+      "start": 45.24,
+      "end": 45.35,
+      "text": "va"
+    },
+    {
+      "id": 29,
+      "start": 45.7,
+      "end": 45.86,
+      "text": "en"
+    },
+    {
+      "id": 30,
+      "start": 45.87,
+      "end": 46.23,
+      "text": "parler"
+    },
+    {
+      "id": 31,
+      "start": 46.24,
+      "end": 46.26,
+      "text": "un"
+    },
+    {
+      "id": 32,
+      "start": 46.27,
+      "end": 46.59,
+      "text": "peu"
+    },
+    {
+      "id": 33,
+      "start": 47.18,
+      "end": 47.31,
+      "text": "mais"
+    },
+    {
+      "id": 34,
+      "start": 47.32,
+      "end": 47.48,
+      "text": "du"
+    },
+    {
+      "id": 35,
+      "start": 47.49,
+      "end": 47.64,
+      "text": "coup"
+    },
+    {
+      "id": 36,
+      "start": 47.65,
+      "end": 47.79,
+      "text": "la"
+    },
+    {
+      "id": 37,
+      "start": 47.8,
+      "end": 48.68,
+      "text": "perplexit\u00e9"
+    },
+    {
+      "id": 38,
+      "start": 48.69,
+      "end": 48.9,
+      "text": "euh"
+    },
+    {
+      "id": 39,
+      "start": 49.59,
+      "end": 49.77,
+      "text": "on"
+    },
+    {
+      "id": 40,
+      "start": 49.78,
+      "end": 50.08,
+      "text": "a"
+    },
+    {
+      "id": 41,
+      "start": 50.75,
+      "end": 50.89,
+      "text": "on"
+    },
+    {
+      "id": 42,
+      "start": 50.9,
+      "end": 51.17,
+      "text": "a"
+    },
+    {
+      "id": 43,
+      "start": 51.3,
+      "end": 51.41,
+      "text": "un"
+    },
+    {
+      "id": 44,
+      "start": 51.79,
+      "end": 52.12,
+      "text": "moins"
+    },
+    {
+      "id": 45,
+      "start": 52.13,
+      "end": 52.64,
+      "text": "meilleur"
+    },
+    {
+      "id": 46,
+      "start": 53.11,
+      "end": 53.35,
+      "text": "euh"
+    },
+    {
+      "id": 47,
+      "start": 53.36,
+      "end": 54.2,
+      "text": "perplexit\u00e9"
+    },
+    {
+      "id": 48,
+      "start": 54.21,
+      "end": 54.37,
+      "text": "par"
+    },
+    {
+      "id": 49,
+      "start": 54.38,
+      "end": 54.7,
+      "text": "exemple"
+    },
+    {
+      "id": 50,
+      "start": 54.71,
+      "end": 54.83,
+      "text": "on"
+    },
+    {
+      "id": 51,
+      "start": 54.84,
+      "end": 54.86,
+      "text": "a"
+    },
+    {
+      "id": 52,
+      "start": 54.95,
+      "end": 55.14,
+      "text": "un"
+    },
+    {
+      "id": 53,
+      "start": 55.15,
+      "end": 55.35,
+      "text": "moins"
+    },
+    {
+      "id": 54,
+      "start": 55.36,
+      "end": 55.86,
+      "text": "meilleur"
+    },
+    {
+      "id": 55,
+      "start": 55.92,
+      "end": 56.0,
+      "text": "\u00e7a"
+    },
+    {
+      "id": 56,
+      "start": 55.97,
+      "end": 56.87,
+      "text": "ouais"
+    },
+    {
+      "id": 57,
+      "start": 56.01,
+      "end": 56.07,
+      "text": "veut"
+    },
+    {
+      "id": 58,
+      "start": 56.08,
+      "end": 56.24,
+      "text": "dire"
+    },
+    {
+      "id": 59,
+      "start": 56.25,
+      "end": 56.3,
+      "text": "un"
+    },
+    {
+      "id": 60,
+      "start": 56.31,
+      "end": 56.43,
+      "text": "plus"
+    },
+    {
+      "id": 61,
+      "start": 56.44,
+      "end": 56.87,
+      "text": "mauvais"
+    },
+    {
+      "id": 62,
+      "start": 57.42,
+      "end": 57.6,
+      "text": "plus"
+    },
+    {
+      "id": 63,
+      "start": 57.71,
+      "end": 58.0,
+      "text": "mauvais"
+    },
+    {
+      "id": 64,
+      "start": 58.25,
+      "end": 58.27,
+      "text": "un"
+    },
+    {
+      "id": 65,
+      "start": 58.42,
+      "end": 58.61,
+      "text": "plus"
+    },
+    {
+      "id": 66,
+      "start": 58.62,
+      "end": 59.01,
+      "text": "mauvais"
+    },
+    {
+      "id": 67,
+      "start": 59.32,
+      "end": 59.37,
+      "text": "hum"
+    },
+    {
+      "id": 68,
+      "start": 59.38,
+      "end": 59.51,
+      "text": "hum"
+    },
+    {
+      "id": 69,
+      "start": 60.17,
+      "end": 60.32,
+      "text": "mais"
+    },
+    {
+      "id": 70,
+      "start": 60.33,
+      "end": 60.43,
+      "text": "du"
+    },
+    {
+      "id": 71,
+      "start": 60.44,
+      "end": 60.55,
+      "text": "coup"
+    },
+    {
+      "id": 72,
+      "start": 60.56,
+      "end": 60.65,
+      "text": "la"
+    },
+    {
+      "id": 73,
+      "start": 60.66,
+      "end": 61.2,
+      "text": "perplexit\u00e9"
+    },
+    {
+      "id": 74,
+      "start": 61.21,
+      "end": 61.27,
+      "text": "elle"
+    },
+    {
+      "id": 75,
+      "start": 61.28,
+      "end": 61.36,
+      "text": "est"
+    },
+    {
+      "id": 76,
+      "start": 61.37,
+      "end": 61.73,
+      "text": "calcul\u00e9e"
+    },
+    {
+      "id": 77,
+      "start": 61.74,
+      "end": 62.08,
+      "text": "sur"
+    },
+    {
+      "id": 78,
+      "start": 62.09,
+      "end": 62.29,
+      "text": "euh"
+    },
+    {
+      "id": 79,
+      "start": 62.3,
+      "end": 62.37,
+      "text": "le"
+    },
+    {
+      "id": 80,
+      "start": 62.38,
+      "end": 62.6,
+      "text": "nombre"
+    },
+    {
+      "id": 81,
+      "start": 62.61,
+      "end": 62.68,
+      "text": "de"
+    },
+    {
+      "id": 82,
+      "start": 62.69,
+      "end": 63.25,
+      "text": "vocabulaires"
+    },
+    {
+      "id": 83,
+      "start": 63.51,
+      "end": 63.58,
+      "text": "on"
+    },
+    {
+      "id": 84,
+      "start": 63.59,
+      "end": 63.64,
+      "text": "a"
+    },
+    {
+      "id": 85,
+      "start": 63.65,
+      "end": 63.86,
+      "text": "300"
+    },
+    {
+      "id": 86,
+      "start": 63.87,
+      "end": 64.3,
+      "text": "000"
+    },
+    {
+      "id": 87,
+      "start": 64.31,
+      "end": 64.35,
+      "text": "\u00e0"
+    },
+    {
+      "id": 88,
+      "start": 64.36,
+      "end": 64.45,
+      "text": "la"
+    },
+    {
+      "id": 89,
+      "start": 64.46,
+      "end": 64.71,
+      "text": "place"
+    },
+    {
+      "id": 90,
+      "start": 64.97,
+      "end": 65.23,
+      "text": "ouais"
+    },
+    {
+      "id": 91,
+      "start": 65.29,
+      "end": 65.34,
+      "text": "il"
+    },
+    {
+      "id": 92,
+      "start": 65.35,
+      "end": 65.63,
+      "text": "arrive"
+    },
+    {
+      "id": 93,
+      "start": 65.64,
+      "end": 65.7,
+      "text": "\u00e0"
+    },
+    {
+      "id": 94,
+      "start": 65.71,
+      "end": 66.05,
+      "text": "avoir"
+    },
+    {
+      "id": 95,
+      "start": 66.18,
+      "end": 66.3,
+      "text": "12"
+    },
+    {
+      "id": 96,
+      "start": 66.38,
+      "end": 66.77,
+      "text": "%"
+    },
+    {
+      "id": 97,
+      "start": 66.78,
+      "end": 66.82,
+      "text": "ou"
+    },
+    {
+      "id": 98,
+      "start": 66.83,
+      "end": 66.92,
+      "text": "un"
+    },
+    {
+      "id": 99,
+      "start": 66.93,
+      "end": 67.07,
+      "text": "truc"
+    },
+    {
+      "id": 100,
+      "start": 67.19,
+      "end": 67.38,
+      "text": "comme"
+    },
+    {
+      "id": 101,
+      "start": 67.39,
+      "end": 67.54,
+      "text": "\u00e7a"
+    },
+    {
+      "id": 102,
+      "start": 67.83,
+      "end": 67.91,
+      "text": "enfin"
+    },
+    {
+      "id": 103,
+      "start": 67.96,
+      "end": 68.08,
+      "text": "on"
+    },
+    {
+      "id": 104,
+      "start": 68.09,
+      "end": 68.31,
+      "text": "arrive"
+    },
+    {
+      "id": 105,
+      "start": 68.32,
+      "end": 68.35,
+      "text": "\u00e0"
+    },
+    {
+      "id": 106,
+      "start": 68.4,
+      "end": 68.71,
+      "text": "descendre"
+    },
+    {
+      "id": 107,
+      "start": 69.32,
+      "end": 69.44,
+      "text": "donc"
+    },
+    {
+      "id": 108,
+      "start": 69.45,
+      "end": 69.59,
+      "text": "du"
+    },
+    {
+      "id": 109,
+      "start": 69.6,
+      "end": 69.81,
+      "text": "coup"
+    },
+    {
+      "id": 110,
+      "start": 69.85,
+      "end": 69.91,
+      "text": "bon"
+    },
+    {
+      "id": 111,
+      "start": 70.51,
+      "end": 70.74,
+      "text": "attends"
+    },
+    {
+      "id": 112,
+      "start": 70.75,
+      "end": 70.95,
+      "text": "12"
+    },
+    {
+      "id": 113,
+      "start": 71.03,
+      "end": 71.3,
+      "text": "%"
+    },
+    {
+      "id": 114,
+      "start": 71.31,
+      "end": 71.36,
+      "text": "de"
+    },
+    {
+      "id": 115,
+      "start": 71.37,
+      "end": 71.54,
+      "text": "quoi"
+    },
+    {
+      "id": 116,
+      "start": 72.02,
+      "end": 72.22,
+      "text": "de"
+    },
+    {
+      "id": 117,
+      "start": 72.23,
+      "end": 72.46,
+      "text": "word"
+    },
+    {
+      "id": 118,
+      "start": 72.47,
+      "end": 72.68,
+      "text": "error"
+    },
+    {
+      "id": 119,
+      "start": 72.74,
+      "end": 72.9,
+      "text": "rate"
+    },
+    {
+      "id": 120,
+      "start": 73.58,
+      "end": 73.79,
+      "text": "ah"
+    },
+    {
+      "id": 121,
+      "start": 74.0,
+      "end": 74.16,
+      "text": "du"
+    },
+    {
+      "id": 122,
+      "start": 74.17,
+      "end": 74.23,
+      "text": "coup"
+    },
+    {
+      "id": 123,
+      "start": 74.3,
+      "end": 74.4,
+      "text": "la"
+    },
+    {
+      "id": 124,
+      "start": 74.41,
+      "end": 74.99,
+      "text": "perplexit\u00e9"
+    },
+    {
+      "id": 125,
+      "start": 75.0,
+      "end": 75.05,
+      "text": "est"
+    },
+    {
+      "id": 126,
+      "start": 75.06,
+      "end": 75.22,
+      "text": "moins"
+    },
+    {
+      "id": 127,
+      "start": 75.23,
+      "end": 75.52,
+      "text": "bonne"
+    },
+    {
+      "id": 128,
+      "start": 75.71,
+      "end": 76.07,
+      "text": "mais"
+    },
+    {
+      "id": 129,
+      "start": 76.34,
+      "end": 76.53,
+      "text": "le"
+    },
+    {
+      "id": 130,
+      "start": 76.54,
+      "end": 76.77,
+      "text": "word"
+    },
+    {
+      "id": 131,
+      "start": 76.78,
+      "end": 77.05,
+      "text": "error"
+    },
+    {
+      "id": 132,
+      "start": 77.06,
+      "end": 77.22,
+      "text": "rate"
+    },
+    {
+      "id": 133,
+      "start": 77.33,
+      "end": 77.61,
+      "text": "euh"
+    },
+    {
+      "id": 134,
+      "start": 77.62,
+      "end": 78.01,
+      "text": "progresse"
+    },
+    {
+      "id": 135,
+      "start": 78.54,
+      "end": 78.84,
+      "text": "voil\u00e0"
+    },
+    {
+      "id": 136,
+      "start": 79.09,
+      "end": 79.64,
+      "text": "c'"
+    },
+    {
+      "id": 137,
+      "start": 79.15,
+      "end": 79.38,
+      "text": "et"
+    },
+    {
+      "id": 138,
+      "start": 79.39,
+      "end": 79.56,
+      "text": "le"
+    },
+    {
+      "id": 139,
+      "start": 79.57,
+      "end": 79.67,
+      "text": "la"
+    },
+    {
+      "id": 140,
+      "start": 79.73,
+      "end": 80.17,
+      "text": "formule"
+    },
+    {
+      "id": 141,
+      "start": 80.43,
+      "end": 80.53,
+      "text": "la"
+    },
+    {
+      "id": 142,
+      "start": 80.54,
+      "end": 80.95,
+      "text": "formule"
+    },
+    {
+      "id": 143,
+      "start": 80.96,
+      "end": 81.08,
+      "text": "de"
+    },
+    {
+      "id": 144,
+      "start": 81.09,
+      "end": 81.81,
+      "text": "perplexit\u00e9"
+    },
+    {
+      "id": 145,
+      "start": 81.37,
+      "end": 81.92,
+      "text": "qui"
+    },
+    {
+      "id": 146,
+      "start": 81.82,
+      "end": 81.93,
+      "text": "du"
+    },
+    {
+      "id": 147,
+      "start": 82.01,
+      "end": 82.14,
+      "text": "coup"
+    },
+    {
+      "id": 148,
+      "start": 82.15,
+      "end": 82.51,
+      "text": "elle"
+    },
+    {
+      "id": 149,
+      "start": 83.16,
+      "end": 83.38,
+      "text": "est"
+    },
+    {
+      "id": 150,
+      "start": 83.39,
+      "end": 83.95,
+      "text": "comparable"
+    },
+    {
+      "id": 151,
+      "start": 84.08,
+      "end": 84.57,
+      "text": "uniquement"
+    },
+    {
+      "id": 152,
+      "start": 84.08,
+      "end": 85.56,
+      "text": "est"
+    },
+    {
+      "id": 153,
+      "start": 84.64,
+      "end": 84.73,
+      "text": "quand"
+    },
+    {
+      "id": 154,
+      "start": 84.79,
+      "end": 84.83,
+      "text": "t'"
+    },
+    {
+      "id": 155,
+      "start": 84.84,
+      "end": 84.89,
+      "text": "as"
+    },
+    {
+      "id": 156,
+      "start": 84.9,
+      "end": 85.02,
+      "text": "le"
+    },
+    {
+      "id": 157,
+      "start": 85.03,
+      "end": 85.56,
+      "text": "m\u00eame"
+    },
+    {
+      "id": 158,
+      "start": 86.51,
+      "end": 86.57,
+      "text": "les"
+    },
+    {
+      "id": 159,
+      "start": 86.58,
+      "end": 86.68,
+      "text": "m\u00eames"
+    },
+    {
+      "id": 160,
+      "start": 86.69,
+      "end": 87.15,
+      "text": "vocables"
+    },
+    {
+      "id": 161,
+      "start": 88.2,
+      "end": 88.44,
+      "text": "enfin"
+    },
+    {
+      "id": 162,
+      "start": 88.21,
+      "end": 88.7,
+      "text": "euhum"
+    },
+    {
+      "id": 163,
+      "start": 88.45,
+      "end": 88.7,
+      "text": "le"
+    },
+    {
+      "id": 164,
+      "start": 88.71,
+      "end": 88.79,
+      "text": "m\u00eame"
+    },
+    {
+      "id": 165,
+      "start": 88.8,
+      "end": 89.25,
+      "text": "nombre"
+    },
+    {
+      "id": 166,
+      "start": 88.82,
+      "end": 89.04,
+      "text": "bon"
+    },
+    {
+      "id": 167,
+      "start": 89.1,
+      "end": 89.21,
+      "text": "on"
+    },
+    {
+      "id": 168,
+      "start": 89.22,
+      "end": 89.57,
+      "text": "va"
+    },
+    {
+      "id": 169,
+      "start": 89.26,
+      "end": 89.37,
+      "text": "de"
+    },
+    {
+      "id": 170,
+      "start": 89.38,
+      "end": 90.7,
+      "text": "vocabulaires"
+    },
+    {
+      "id": 171,
+      "start": 89.58,
+      "end": 89.87,
+      "text": "en"
+    },
+    {
+      "id": 172,
+      "start": 89.88,
+      "end": 90.68,
+      "text": "discuter"
+    },
+    {
+      "id": 173,
+      "start": 91.45,
+      "end": 91.99,
+      "text": "12"
+    },
+    {
+      "id": 174,
+      "start": 91.58,
+      "end": 92.2,
+      "text": "huhum"
+    },
+    {
+      "id": 175,
+      "start": 92.0,
+      "end": 92.25,
+      "text": "%"
+    },
+    {
+      "id": 176,
+      "start": 93.11,
+      "end": 93.3,
+      "text": "12"
+    },
+    {
+      "id": 177,
+      "start": 93.31,
+      "end": 93.48,
+      "text": "et"
+    },
+    {
+      "id": 178,
+      "start": 93.49,
+      "end": 93.75,
+      "text": "quelques"
+    },
+    {
+      "id": 179,
+      "start": 93.76,
+      "end": 93.9,
+      "text": "ouais"
+    },
+    {
+      "id": 180,
+      "start": 94.34,
+      "end": 94.36,
+      "text": "c'"
+    },
+    {
+      "id": 181,
+      "start": 94.57,
+      "end": 94.92,
+      "text": "est"
+    },
+    {
+      "id": 182,
+      "start": 94.93,
+      "end": 95.09,
+      "text": "quoi"
+    },
+    {
+      "id": 183,
+      "start": 95.1,
+      "end": 95.16,
+      "text": "quand"
+    },
+    {
+      "id": 184,
+      "start": 95.17,
+      "end": 95.33,
+      "text": "vous"
+    },
+    {
+      "id": 185,
+      "start": 95.34,
+      "end": 95.53,
+      "text": "avez"
+    },
+    {
+      "id": 186,
+      "start": 95.54,
+      "end": 95.62,
+      "text": "fait"
+    },
+    {
+      "id": 187,
+      "start": 95.67,
+      "end": 95.77,
+      "text": "quoi"
+    },
+    {
+      "id": 188,
+      "start": 96.74,
+      "end": 97.49,
+      "text": "et"
+    },
+    {
+      "id": 189,
+      "start": 97.5,
+      "end": 97.54,
+      "text": "euh"
+    },
+    {
+      "id": 190,
+      "start": 97.55,
+      "end": 97.77,
+      "text": "quand"
+    },
+    {
+      "id": 191,
+      "start": 97.78,
+      "end": 97.91,
+      "text": "on"
+    },
+    {
+      "id": 192,
+      "start": 97.92,
+      "end": 98.04,
+      "text": "lui"
+    },
+    {
+      "id": 193,
+      "start": 98.05,
+      "end": 98.1,
+      "text": "a"
+    },
+    {
+      "id": 194,
+      "start": 98.11,
+      "end": 98.27,
+      "text": "dit"
+    },
+    {
+      "id": 195,
+      "start": 98.28,
+      "end": 98.55,
+      "text": "prend"
+    },
+    {
+      "id": 196,
+      "start": 98.61,
+      "end": 98.76,
+      "text": "tout"
+    },
+    {
+      "id": 197,
+      "start": 98.77,
+      "end": 98.99,
+      "text": "le"
+    },
+    {
+      "id": 198,
+      "start": 99.0,
+      "end": 99.35,
+      "text": "mod\u00e8le"
+    },
+    {
+      "id": 199,
+      "start": 99.36,
+      "end": 99.44,
+      "text": "de"
+    },
+    {
+      "id": 200,
+      "start": 99.45,
+      "end": 99.85,
+      "text": "langage"
+    },
+    {
+      "id": 201,
+      "start": 99.96,
+      "end": 100.25,
+      "text": "sans"
+    },
+    {
+      "id": 202,
+      "start": 100.52,
+      "end": 100.91,
+      "text": "sans"
+    },
+    {
+      "id": 203,
+      "start": 101.26,
+      "end": 101.53,
+      "text": "puisqu'"
+    },
+    {
+      "id": 204,
+      "start": 101.54,
+      "end": 101.61,
+      "text": "il"
+    },
+    {
+      "id": 205,
+      "start": 101.62,
+      "end": 101.93,
+      "text": "faisait"
+    },
+    {
+      "id": 206,
+      "start": 101.94,
+      "end": 102.05,
+      "text": "du"
+    },
+    {
+      "id": 207,
+      "start": 102.1,
+      "end": 102.58,
+      "text": "pruning"
+    },
+    {
+      "id": 208,
+      "start": 102.59,
+      "end": 102.73,
+      "text": "des"
+    },
+    {
+      "id": 209,
+      "start": 102.74,
+      "end": 103.05,
+      "text": "trucs"
+    },
+    {
+      "id": 210,
+      "start": 103.06,
+      "end": 103.26,
+      "text": "des"
+    },
+    {
+      "id": 211,
+      "start": 103.27,
+      "end": 103.36,
+      "text": "des"
+    },
+    {
+      "id": 212,
+      "start": 103.45,
+      "end": 103.69,
+      "text": "enfin"
+    },
+    {
+      "id": 213,
+      "start": 103.7,
+      "end": 103.78,
+      "text": "il"
+    },
+    {
+      "id": 214,
+      "start": 103.79,
+      "end": 104.09,
+      "text": "faisait"
+    },
+    {
+      "id": 215,
+      "start": 104.1,
+      "end": 104.38,
+      "text": "des"
+    },
+    {
+      "id": 216,
+      "start": 106.44,
+      "end": 107.08,
+      "text": "disons"
+    },
+    {
+      "id": 217,
+      "start": 107.09,
+      "end": 107.58,
+      "text": "des"
+    },
+    {
+      "id": 218,
+      "start": 107.99,
+      "end": 108.04,
+      "text": "elle"
+    },
+    {
+      "id": 219,
+      "start": 108.05,
+      "end": 108.23,
+      "text": "fait"
+    },
+    {
+      "id": 220,
+      "start": 108.24,
+      "end": 108.39,
+      "text": "quelle"
+    },
+    {
+      "id": 221,
+      "start": 108.4,
+      "end": 108.6,
+      "text": "taille"
+    },
+    {
+      "id": 222,
+      "start": 108.61,
+      "end": 108.65,
+      "text": "le"
+    },
+    {
+      "id": 223,
+      "start": 108.89,
+      "end": 109.03,
+      "text": "mod\u00e8le"
+    },
+    {
+      "id": 224,
+      "start": 109.16,
+      "end": 109.26,
+      "text": "il"
+    },
+    {
+      "id": 225,
+      "start": 109.27,
+      "end": 109.35,
+      "text": "fait"
+    },
+    {
+      "id": 226,
+      "start": 109.36,
+      "end": 109.49,
+      "text": "2"
+    },
+    {
+      "id": 227,
+      "start": 109.5,
+      "end": 109.73,
+      "text": "gigas"
+    },
+    {
+      "id": 228,
+      "start": 110.63,
+      "end": 110.75,
+      "text": "ah"
+    },
+    {
+      "id": 229,
+      "start": 110.76,
+      "end": 111.03,
+      "text": "sans"
+    },
+    {
+      "id": 230,
+      "start": 111.04,
+      "end": 111.43,
+      "text": "pruning"
+    },
+    {
+      "id": 231,
+      "start": 111.44,
+      "end": 111.49,
+      "text": "il"
+    },
+    {
+      "id": 232,
+      "start": 111.5,
+      "end": 111.64,
+      "text": "fait"
+    },
+    {
+      "id": 233,
+      "start": 111.65,
+      "end": 111.75,
+      "text": "2"
+    },
+    {
+      "id": 234,
+      "start": 111.76,
+      "end": 112.1,
+      "text": "gigas"
+    },
+    {
+      "id": 235,
+      "start": 112.22,
+      "end": 112.37,
+      "text": "ouais"
+    },
+    {
+      "id": 236,
+      "start": 112.87,
+      "end": 112.99,
+      "text": "ah"
+    },
+    {
+      "id": 237,
+      "start": 113.0,
+      "end": 113.07,
+      "text": "mais"
+    },
+    {
+      "id": 238,
+      "start": 113.08,
+      "end": 113.15,
+      "text": "c'"
+    },
+    {
+      "id": 239,
+      "start": 113.16,
+      "end": 113.21,
+      "text": "est"
+    },
+    {
+      "id": 240,
+      "start": 113.22,
+      "end": 113.45,
+      "text": "13"
+    },
+    {
+      "id": 241,
+      "start": 113.49,
+      "end": 113.87,
+      "text": "%"
+    },
+    {
+      "id": 242,
+      "start": 113.88,
+      "end": 114.45,
+      "text": "12"
+    },
+    {
+      "id": 243,
+      "start": 114.46,
+      "end": 115.23,
+      "text": "95"
+    },
+    {
+      "id": 244,
+      "start": 115.55,
+      "end": 115.75,
+      "text": "ouais"
+    },
+    {
+      "id": 245,
+      "start": 115.9,
+      "end": 116.1,
+      "text": "truc"
+    },
+    {
+      "id": 246,
+      "start": 116.11,
+      "end": 116.23,
+      "text": "comme"
+    },
+    {
+      "id": 247,
+      "start": 116.24,
+      "end": 116.48,
+      "text": "\u00e7a"
+    },
+    {
+      "id": 248,
+      "start": 117.26,
+      "end": 117.6,
+      "text": "mais"
+    },
+    {
+      "id": 249,
+      "start": 117.64,
+      "end": 117.88,
+      "text": "mais"
+    },
+    {
+      "id": 250,
+      "start": 118.54,
+      "end": 118.6,
+      "text": "\u00e7a"
+    },
+    {
+      "id": 251,
+      "start": 118.61,
+      "end": 118.65,
+      "text": "me"
+    },
+    {
+      "id": 252,
+      "start": 118.66,
+      "end": 119.07,
+      "text": "rappelle"
+    },
+    {
+      "id": 253,
+      "start": 118.89,
+      "end": 120.37,
+      "text": "mais"
+    },
+    {
+      "id": 254,
+      "start": 119.08,
+      "end": 119.46,
+      "text": "les"
+    },
+    {
+      "id": 255,
+      "start": 119.47,
+      "end": 119.58,
+      "text": "tu"
+    },
+    {
+      "id": 256,
+      "start": 119.59,
+      "end": 119.8,
+      "text": "ach\u00e8tes"
+    },
+    {
+      "id": 257,
+      "start": 119.81,
+      "end": 119.91,
+      "text": "des"
+    },
+    {
+      "id": 258,
+      "start": 119.92,
+      "end": 120.16,
+      "text": "choses"
+    },
+    {
+      "id": 259,
+      "start": 120.25,
+      "end": 120.76,
+      "text": "0"
+    },
+    {
+      "id": 260,
+      "start": 120.82,
+      "end": 121.62,
+      "text": "99"
+    },
+    {
+      "id": 261,
+      "start": 121.63,
+      "end": 122.18,
+      "text": "%"
+    },
+    {
+      "id": 262,
+      "start": 122.31,
+      "end": 122.33,
+      "text": "euh"
+    },
+    {
+      "id": 263,
+      "start": 122.33,
+      "end": 122.33,
+      "text": "0"
+    },
+    {
+      "id": 264,
+      "start": 122.34,
+      "end": 122.74,
+      "text": "99"
+    },
+    {
+      "id": 265,
+      "start": 122.34,
+      "end": 123.19,
+      "text": "19"
+    },
+    {
+      "id": 266,
+      "start": 122.75,
+      "end": 122.87,
+      "text": "euros"
+    },
+    {
+      "id": 267,
+      "start": 122.88,
+      "end": 123.1,
+      "text": "mais"
+    },
+    {
+      "id": 268,
+      "start": 123.11,
+      "end": 123.16,
+      "text": "c'"
+    },
+    {
+      "id": 269,
+      "start": 123.17,
+      "end": 123.28,
+      "text": "est"
+    },
+    {
+      "id": 270,
+      "start": 123.29,
+      "end": 123.46,
+      "text": "1"
+    },
+    {
+      "id": 271,
+      "start": 123.36,
+      "end": 123.58,
+      "text": "euros"
+    },
+    {
+      "id": 272,
+      "start": 123.47,
+      "end": 123.58,
+      "text": "euros"
+    },
+    {
+      "id": 273,
+      "start": 123.77,
+      "end": 123.82,
+      "text": "hum"
+    },
+    {
+      "id": 274,
+      "start": 124.07,
+      "end": 124.12,
+      "text": "mais"
+    },
+    {
+      "id": 275,
+      "start": 124.13,
+      "end": 124.15,
+      "text": "c'"
+    },
+    {
+      "id": 276,
+      "start": 124.23,
+      "end": 124.25,
+      "text": "est"
+    },
+    {
+      "id": 277,
+      "start": 124.24,
+      "end": 124.62,
+      "text": "non"
+    },
+    {
+      "id": 278,
+      "start": 124.32,
+      "end": 124.81,
+      "text": "1"
+    },
+    {
+      "id": 279,
+      "start": 124.71,
+      "end": 124.94,
+      "text": "non"
+    },
+    {
+      "id": 280,
+      "start": 124.82,
+      "end": 125.49,
+      "text": "euros"
+    },
+    {
+      "id": 281,
+      "start": 125.1,
+      "end": 125.49,
+      "text": "mais"
+    },
+    {
+      "id": 282,
+      "start": 126.31,
+      "end": 126.55,
+      "text": "oauis"
+    },
+    {
+      "id": 283,
+      "start": 127.07,
+      "end": 127.15,
+      "text": "c'"
+    },
+    {
+      "id": 284,
+      "start": 127.16,
+      "end": 127.31,
+      "text": "est"
+    },
+    {
+      "id": 285,
+      "start": 127.32,
+      "end": 127.36,
+      "text": "d'"
+    },
+    {
+      "id": 286,
+      "start": 127.37,
+      "end": 127.39,
+      "text": "l'"
+    },
+    {
+      "id": 287,
+      "start": 127.4,
+      "end": 127.69,
+      "text": "arnaque"
+    },
+    {
+      "id": 288,
+      "start": 127.9,
+      "end": 128.35,
+      "text": "mais"
+    },
+    {
+      "id": 289,
+      "start": 128.36,
+      "end": 128.54,
+      "text": "mais"
+    },
+    {
+      "id": 290,
+      "start": 128.55,
+      "end": 128.73,
+      "text": "celui"
+    },
+    {
+      "id": 291,
+      "start": 128.74,
+      "end": 128.89,
+      "text": "-l\u00e0"
+    },
+    {
+      "id": 292,
+      "start": 128.9,
+      "end": 129.0,
+      "text": "c'"
+    },
+    {
+      "id": 293,
+      "start": 129.01,
+      "end": 129.2,
+      "text": "est"
+    },
+    {
+      "id": 294,
+      "start": 129.21,
+      "end": 129.32,
+      "text": "c'"
+    },
+    {
+      "id": 295,
+      "start": 129.33,
+      "end": 129.39,
+      "text": "est"
+    },
+    {
+      "id": 296,
+      "start": 129.4,
+      "end": 129.64,
+      "text": "pas"
+    },
+    {
+      "id": 297,
+      "start": 129.65,
+      "end": 129.85,
+      "text": "le"
+    },
+    {
+      "id": 298,
+      "start": 129.86,
+      "end": 130.05,
+      "text": "le"
+    },
+    {
+      "id": 299,
+      "start": 130.06,
+      "end": 130.56,
+      "text": "dernier"
+    },
+    {
+      "id": 300,
+      "start": 130.57,
+      "end": 130.6,
+      "text": "euh"
+    },
+    {
+      "id": 301,
+      "start": 130.69,
+      "end": 130.96,
+      "text": "ah"
+    },
+    {
+      "id": 302,
+      "start": 131.07,
+      "end": 131.28,
+      "text": "ok"
+    },
+    {
+      "id": 303,
+      "start": 131.5,
+      "end": 131.68,
+      "text": "il"
+    },
+    {
+      "id": 304,
+      "start": 131.69,
+      "end": 131.91,
+      "text": "a"
+    },
+    {
+      "id": 305,
+      "start": 131.92,
+      "end": 132.28,
+      "text": "il"
+    },
+    {
+      "id": 306,
+      "start": 132.29,
+      "end": 132.4,
+      "text": "y"
+    },
+    {
+      "id": 307,
+      "start": 132.41,
+      "end": 132.46,
+      "text": "a"
+    },
+    {
+      "id": 308,
+      "start": 132.47,
+      "end": 132.52,
+      "text": "d'"
+    },
+    {
+      "id": 309,
+      "start": 132.53,
+      "end": 133.02,
+      "text": "autres"
+    },
+    {
+      "id": 310,
+      "start": 133.09,
+      "end": 133.12,
+      "text": "euh"
+    },
+    {
+      "id": 311,
+      "start": 133.41,
+      "end": 133.45,
+      "text": "d'"
+    },
+    {
+      "id": 312,
+      "start": 133.46,
+      "end": 133.69,
+      "text": "accord"
+    },
+    {
+      "id": 313,
+      "start": 138.94,
+      "end": 139.18,
+      "text": "mais"
+    },
+    {
+      "id": 314,
+      "start": 139.19,
+      "end": 139.36,
+      "text": "du"
+    },
+    {
+      "id": 315,
+      "start": 139.45,
+      "end": 139.64,
+      "text": "coup"
+    },
+    {
+      "id": 316,
+      "start": 139.65,
+      "end": 139.72,
+      "text": "bon"
+    },
+    {
+      "id": 317,
+      "start": 141.32,
+      "end": 141.46,
+      "text": "oauis"
+    },
+    {
+      "id": 318,
+      "start": 142.37,
+      "end": 142.82,
+      "text": "attends"
+    },
+    {
+      "id": 319,
+      "start": 144.25,
+      "end": 144.87,
+      "text": "vas"
+    },
+    {
+      "id": 320,
+      "start": 144.88,
+      "end": 144.97,
+      "text": "y"
+    },
+    {
+      "id": 321,
+      "start": 144.98,
+      "end": 145.61,
+      "text": "parles"
+    },
+    {
+      "id": 322,
+      "start": 145.77,
+      "end": 146.03,
+      "text": "oui"
+    },
+    {
+      "id": 323,
+      "start": 146.31,
+      "end": 146.36,
+      "text": "\u00e7a"
+    },
+    {
+      "id": 324,
+      "start": 146.56,
+      "end": 146.66,
+      "text": "m'"
+    },
+    {
+      "id": 325,
+      "start": 146.7,
+      "end": 147.25,
+      "text": "nerve"
+    },
+    {
+      "id": 326,
+      "start": 147.36,
+      "end": 147.62,
+      "text": "vas"
+    },
+    {
+      "id": 327,
+      "start": 147.67,
+      "end": 148.0,
+      "text": "y"
+    },
+    {
+      "id": 328,
+      "start": 148.62,
+      "end": 149.09,
+      "text": "bonjour"
+    },
+    {
+      "id": 329,
+      "start": 149.24,
+      "end": 149.49,
+      "text": "bonjour"
+    },
+    {
+      "id": 330,
+      "start": 150.36,
+      "end": 150.43,
+      "text": "vous"
+    },
+    {
+      "id": 331,
+      "start": 150.44,
+      "end": 150.52,
+      "text": "nous"
+    },
+    {
+      "id": 332,
+      "start": 150.53,
+      "end": 151.04,
+      "text": "voyez"
+    },
+    {
+      "id": 333,
+      "start": 151.23,
+      "end": 151.37,
+      "text": "oui"
+    },
+    {
+      "id": 334,
+      "start": 151.46,
+      "end": 151.53,
+      "text": "oui"
+    },
+    {
+      "id": 335,
+      "start": 151.71,
+      "end": 151.73,
+      "text": "on"
+    },
+    {
+      "id": 336,
+      "start": 151.74,
+      "end": 151.87,
+      "text": "vous"
+    },
+    {
+      "id": 337,
+      "start": 151.88,
+      "end": 152.05,
+      "text": "voit"
+    },
+    {
+      "id": 338,
+      "start": 152.06,
+      "end": 152.32,
+      "text": "mais"
+    },
+    {
+      "id": 339,
+      "start": 152.33,
+      "end": 152.55,
+      "text": "vous"
+    },
+    {
+      "id": 340,
+      "start": 152.83,
+      "end": 153.1,
+      "text": "vous"
+    },
+    {
+      "id": 341,
+      "start": 153.4,
+      "end": 153.69,
+      "text": "voyez"
+    },
+    {
+      "id": 342,
+      "start": 153.91,
+      "end": 153.98,
+      "text": "nos"
+    },
+    {
+      "id": 343,
+      "start": 154.03,
+      "end": 154.34,
+      "text": "pieds"
+    },
+    {
+      "id": 344,
+      "start": 154.35,
+      "end": 154.7,
+      "text": "d\u00e9sol\u00e9"
+    },
+    {
+      "id": 345,
+      "start": 154.95,
+      "end": 155.24,
+      "text": "parce"
+    },
+    {
+      "id": 346,
+      "start": 155.87,
+      "end": 155.89,
+      "text": "qu'"
+    },
+    {
+      "id": 347,
+      "start": 156.23,
+      "end": 156.29,
+      "text": "on"
+    },
+    {
+      "id": 348,
+      "start": 156.36,
+      "end": 157.0,
+      "text": "coucou"
+    },
+    {
+      "id": 349,
+      "start": 156.4,
+      "end": 156.8,
+      "text": "n'"
+    },
+    {
+      "id": 350,
+      "start": 156.89,
+      "end": 157.01,
+      "text": "a"
+    },
+    {
+      "id": 351,
+      "start": 157.02,
+      "end": 157.17,
+      "text": "pas"
+    },
+    {
+      "id": 352,
+      "start": 157.18,
+      "end": 157.41,
+      "text": "la"
+    },
+    {
+      "id": 353,
+      "start": 157.42,
+      "end": 157.54,
+      "text": "la"
+    },
+    {
+      "id": 354,
+      "start": 157.55,
+      "end": 157.98,
+      "text": "webcam"
+    },
+    {
+      "id": 355,
+      "start": 159.15,
+      "end": 159.31,
+      "text": "tu"
+    },
+    {
+      "id": 356,
+      "start": 159.32,
+      "end": 159.47,
+      "text": "nous"
+    },
+    {
+      "id": 357,
+      "start": 159.48,
+      "end": 159.8,
+      "text": "entends"
+    },
+    {
+      "id": 358,
+      "start": 159.51,
+      "end": 160.21,
+      "text": "enchant\u00e9"
+    },
+    {
+      "id": 359,
+      "start": 159.94,
+      "end": 160.08,
+      "text": "l\u00e0"
+    },
+    {
+      "id": 360,
+      "start": 161.6,
+      "end": 162.42,
+      "text": "enchant\u00e9"
+    },
+    {
+      "id": 361,
+      "start": 164.84,
+      "end": 165.28,
+      "text": "ouais"
+    },
+    {
+      "id": 362,
+      "start": 165.29,
+      "end": 165.34,
+      "text": "mais"
+    },
+    {
+      "id": 363,
+      "start": 165.35,
+      "end": 165.45,
+      "text": "bon"
+    },
+    {
+      "id": 364,
+      "start": 170.67,
+      "end": 171.03,
+      "text": "tu"
+    },
+    {
+      "id": 365,
+      "start": 171.04,
+      "end": 171.23,
+      "text": "tu"
+    },
+    {
+      "id": 366,
+      "start": 171.24,
+      "end": 171.39,
+      "text": "nous"
+    },
+    {
+      "id": 367,
+      "start": 171.4,
+      "end": 172.11,
+      "text": "entends"
+    },
+    {
+      "id": 368,
+      "start": 172.12,
+      "end": 172.16,
+      "text": "euh"
+    },
+    {
+      "id": 369,
+      "start": 172.45,
+      "end": 173.07,
+      "text": "samir"
+    },
+    {
+      "id": 370,
+      "start": 176.66,
+      "end": 176.73,
+      "text": "mais"
+    },
+    {
+      "id": 371,
+      "start": 176.74,
+      "end": 176.76,
+      "text": "qu'"
+    },
+    {
+      "id": 372,
+      "start": 176.77,
+      "end": 176.94,
+      "text": "est"
+    },
+    {
+      "id": 373,
+      "start": 176.95,
+      "end": 176.97,
+      "text": "-ce"
+    },
+    {
+      "id": 374,
+      "start": 176.98,
+      "end": 177.0,
+      "text": "qu'"
+    },
+    {
+      "id": 375,
+      "start": 177.01,
+      "end": 177.13,
+      "text": "ils"
+    },
+    {
+      "id": 376,
+      "start": 177.14,
+      "end": 177.31,
+      "text": "font"
+    },
+    {
+      "id": 377,
+      "start": 177.94,
+      "end": 177.97,
+      "text": "je"
+    },
+    {
+      "id": 378,
+      "start": 178.48,
+      "end": 178.53,
+      "text": "sais"
+    },
+    {
+      "id": 379,
+      "start": 178.54,
+      "end": 178.7,
+      "text": "pas"
+    },
+    {
+      "id": 380,
+      "start": 178.71,
+      "end": 178.78,
+      "text": "s'"
+    },
+    {
+      "id": 381,
+      "start": 178.79,
+      "end": 178.94,
+      "text": "il"
+    },
+    {
+      "id": 382,
+      "start": 178.95,
+      "end": 179.27,
+      "text": "nous"
+    },
+    {
+      "id": 383,
+      "start": 179.28,
+      "end": 179.6,
+      "text": "entend"
+    },
+    {
+      "id": 384,
+      "start": 179.61,
+      "end": 179.67,
+      "text": "l\u00e0"
+    }
+  ],
+  "paragraphs": [
+    {
+      "id": 0,
+      "start": 37.74,
+      "end": 38.27,
+      "speaker": "Jean-Pierre"
+    },
+    {
+      "id": 1,
+      "start": 39.25,
+      "end": 54.86,
+      "speaker": "Abdel"
+    },
+    {
+      "id": 2,
+      "start": 54.95,
+      "end": 56.0,
+      "speaker": "Jean-Pierre"
+    },
+    {
+      "id": 3,
+      "start": 55.97,
+      "end": 56.87,
+      "speaker": "Abdel"
+    },
+    {
+      "id": 4,
+      "start": 56.01,
+      "end": 56.87,
+      "speaker": "Jean-Pierre"
+    },
+    {
+      "id": 5,
+      "start": 57.42,
+      "end": 59.01,
+      "speaker": "Abdel"
+    },
+    {
+      "id": 6,
+      "start": 59.32,
+      "end": 59.51,
+      "speaker": "Jean-Pierre"
+    },
+    {
+      "id": 7,
+      "start": 60.17,
+      "end": 64.71,
+      "speaker": "Abdel"
+    },
+    {
+      "id": 8,
+      "start": 64.97,
+      "end": 65.23,
+      "speaker": "Jean-Pierre"
+    },
+    {
+      "id": 9,
+      "start": 65.29,
+      "end": 69.91,
+      "speaker": "Abdel"
+    },
+    {
+      "id": 10,
+      "start": 70.51,
+      "end": 71.54,
+      "speaker": "Jean-Pierre"
+    },
+    {
+      "id": 11,
+      "start": 72.02,
+      "end": 72.9,
+      "speaker": "Abdel"
+    },
+    {
+      "id": 12,
+      "start": 73.58,
+      "end": 78.01,
+      "speaker": "Jean-Pierre"
+    },
+    {
+      "id": 13,
+      "start": 78.54,
+      "end": 78.84,
+      "speaker": "Abdel"
+    },
+    {
+      "id": 14,
+      "start": 79.09,
+      "end": 79.64,
+      "speaker": "Jean-Pierre"
+    },
+    {
+      "id": 15,
+      "start": 79.15,
+      "end": 81.81,
+      "speaker": "Abdel"
+    },
+    {
+      "id": 16,
+      "start": 81.37,
+      "end": 81.92,
+      "speaker": "Jean-Pierre"
+    },
+    {
+      "id": 17,
+      "start": 81.82,
+      "end": 84.57,
+      "speaker": "Abdel"
+    },
+    {
+      "id": 18,
+      "start": 84.08,
+      "end": 85.56,
+      "speaker": "Jean-Pierre"
+    },
+    {
+      "id": 19,
+      "start": 84.64,
+      "end": 88.44,
+      "speaker": "Abdel"
+    },
+    {
+      "id": 20,
+      "start": 88.21,
+      "end": 88.7,
+      "speaker": "Jean-Pierre"
+    },
+    {
+      "id": 21,
+      "start": 88.45,
+      "end": 89.25,
+      "speaker": "Abdel"
+    },
+    {
+      "id": 22,
+      "start": 88.82,
+      "end": 89.57,
+      "speaker": "Jean-Pierre"
+    },
+    {
+      "id": 23,
+      "start": 89.26,
+      "end": 90.7,
+      "speaker": "Abdel"
+    },
+    {
+      "id": 24,
+      "start": 89.58,
+      "end": 90.68,
+      "speaker": "Jean-Pierre"
+    },
+    {
+      "id": 25,
+      "start": 91.45,
+      "end": 91.99,
+      "speaker": "Amine"
+    },
+    {
+      "id": 26,
+      "start": 91.58,
+      "end": 92.2,
+      "speaker": "Jean-Pierre"
+    },
+    {
+      "id": 27,
+      "start": 92.0,
+      "end": 92.25,
+      "speaker": "Amine"
+    },
+    {
+      "id": 28,
+      "start": 93.11,
+      "end": 93.9,
+      "speaker": "Abdel"
+    },
+    {
+      "id": 29,
+      "start": 94.34,
+      "end": 95.77,
+      "speaker": "Amine"
+    },
+    {
+      "id": 30,
+      "start": 96.74,
+      "end": 107.58,
+      "speaker": "Abdel"
+    },
+    {
+      "id": 31,
+      "start": 107.99,
+      "end": 109.03,
+      "speaker": "Amine"
+    },
+    {
+      "id": 32,
+      "start": 109.16,
+      "end": 109.73,
+      "speaker": "Abdel"
+    },
+    {
+      "id": 33,
+      "start": 110.63,
+      "end": 112.1,
+      "speaker": "Amine"
+    },
+    {
+      "id": 34,
+      "start": 112.22,
+      "end": 112.37,
+      "speaker": "Abdel"
+    },
+    {
+      "id": 35,
+      "start": 112.87,
+      "end": 115.23,
+      "speaker": "Amine"
+    },
+    {
+      "id": 36,
+      "start": 115.55,
+      "end": 117.88,
+      "speaker": "Abdel"
+    },
+    {
+      "id": 37,
+      "start": 118.54,
+      "end": 119.07,
+      "speaker": "Amine"
+    },
+    {
+      "id": 38,
+      "start": 118.89,
+      "end": 120.37,
+      "speaker": "Jean-Pierre"
+    },
+    {
+      "id": 39,
+      "start": 119.08,
+      "end": 122.74,
+      "speaker": "Amine"
+    },
+    {
+      "id": 40,
+      "start": 122.34,
+      "end": 123.19,
+      "speaker": "Abdel"
+    },
+    {
+      "id": 41,
+      "start": 122.75,
+      "end": 123.46,
+      "speaker": "Amine"
+    },
+    {
+      "id": 42,
+      "start": 123.36,
+      "end": 123.58,
+      "speaker": "Abdel"
+    },
+    {
+      "id": 43,
+      "start": 123.47,
+      "end": 123.58,
+      "speaker": "Amine"
+    },
+    {
+      "id": 44,
+      "start": 123.77,
+      "end": 123.82,
+      "speaker": "Abdel"
+    },
+    {
+      "id": 45,
+      "start": 124.07,
+      "end": 124.25,
+      "speaker": "Amine"
+    },
+    {
+      "id": 46,
+      "start": 124.24,
+      "end": 124.62,
+      "speaker": "Abdel"
+    },
+    {
+      "id": 47,
+      "start": 124.32,
+      "end": 124.81,
+      "speaker": "Amine"
+    },
+    {
+      "id": 48,
+      "start": 124.71,
+      "end": 124.94,
+      "speaker": "Abdel"
+    },
+    {
+      "id": 49,
+      "start": 124.82,
+      "end": 125.49,
+      "speaker": "Amine"
+    },
+    {
+      "id": 50,
+      "start": 125.1,
+      "end": 126.55,
+      "speaker": "Abdel"
+    },
+    {
+      "id": 51,
+      "start": 127.07,
+      "end": 127.69,
+      "speaker": "Amine"
+    },
+    {
+      "id": 52,
+      "start": 127.9,
+      "end": 130.6,
+      "speaker": "Abdel"
+    },
+    {
+      "id": 53,
+      "start": 130.69,
+      "end": 131.28,
+      "speaker": "Amine"
+    },
+    {
+      "id": 54,
+      "start": 131.5,
+      "end": 133.12,
+      "speaker": "Abdel"
+    },
+    {
+      "id": 55,
+      "start": 133.41,
+      "end": 133.69,
+      "speaker": "Amine"
+    },
+    {
+      "id": 56,
+      "start": 138.94,
+      "end": 145.61,
+      "speaker": "Abdel"
+    },
+    {
+      "id": 57,
+      "start": 145.77,
+      "end": 147.25,
+      "speaker": "Samir"
+    },
+    {
+      "id": 58,
+      "start": 147.36,
+      "end": 149.09,
+      "speaker": "Abdel"
+    },
+    {
+      "id": 59,
+      "start": 149.24,
+      "end": 149.49,
+      "speaker": "Jean-Pierre"
+    },
+    {
+      "id": 60,
+      "start": 150.36,
+      "end": 151.04,
+      "speaker": "Samir"
+    },
+    {
+      "id": 61,
+      "start": 151.23,
+      "end": 156.29,
+      "speaker": "Jean-Pierre"
+    },
+    {
+      "id": 62,
+      "start": 156.36,
+      "end": 157.0,
+      "speaker": "Abdel"
+    },
+    {
+      "id": 63,
+      "start": 156.4,
+      "end": 157.98,
+      "speaker": "Jean-Pierre"
+    },
+    {
+      "id": 64,
+      "start": 159.15,
+      "end": 159.8,
+      "speaker": "Abdel"
+    },
+    {
+      "id": 65,
+      "start": 159.51,
+      "end": 160.21,
+      "speaker": "Ilyes"
+    },
+    {
+      "id": 66,
+      "start": 159.94,
+      "end": 160.08,
+      "speaker": "Abdel"
+    },
+    {
+      "id": 67,
+      "start": 161.6,
+      "end": 162.42,
+      "speaker": "Samir"
+    },
+    {
+      "id": 68,
+      "start": 164.84,
+      "end": 165.45,
+      "speaker": "Ilyes"
+    },
+    {
+      "id": 69,
+      "start": 170.67,
+      "end": 173.07,
+      "speaker": "Abdel"
+    },
+    {
+      "id": 70,
+      "start": 176.66,
+      "end": 177.31,
+      "speaker": "Jean-Pierre"
+    }
+  ],
+  "acte": [
+    {
+      "start": 37.74,
+      "end": 39.25,
+      "type": "NaN",
+      "id": 0
+    },
+    {
+      "start": 39.25,
+      "end": 43.78,
+      "type": "NaN",
+      "id": 1
+    },
+    {
+      "start": 43.78,
+      "end": 44.36,
+      "type": "NaN",
+      "id": 2
+    },
+    {
+      "start": 44.36,
+      "end": 47.18,
+      "type": "NaN",
+      "id": 3
+    },
+    {
+      "start": 47.18,
+      "end": 49.59,
+      "type": "NaN",
+      "id": 4
+    },
+    {
+      "start": 49.59,
+      "end": 50.75,
+      "type": "NaN",
+      "id": 5
+    },
+    {
+      "start": 50.75,
+      "end": 54.71,
+      "type": "NaN",
+      "id": 6
+    },
+    {
+      "start": 54.71,
+      "end": 60.17,
+      "type": "NaN",
+      "id": 7
+    },
+    {
+      "start": 60.17,
+      "end": 63.51,
+      "type": "NaN",
+      "id": 8
+    },
+    {
+      "start": 63.51,
+      "end": 67.83,
+      "type": "NaN",
+      "id": 9
+    },
+    {
+      "start": 67.83,
+      "end": 67.96,
+      "type": "NaN",
+      "id": 10
+    },
+    {
+      "start": 67.96,
+      "end": 69.32,
+      "type": "NaN",
+      "id": 11
+    },
+    {
+      "start": 69.32,
+      "end": 70.51,
+      "type": "NaN",
+      "id": 12
+    },
+    {
+      "start": 70.51,
+      "end": 73.58,
+      "type": "NaN",
+      "id": 13
+    },
+    {
+      "start": 73.58,
+      "end": 75.71,
+      "type": "NaN",
+      "id": 14
+    },
+    {
+      "start": 75.71,
+      "end": 93.11,
+      "type": "NaN",
+      "id": 15
+    },
+    {
+      "start": 93.11,
+      "end": 93.31,
+      "type": "NaN",
+      "id": 16
+    },
+    {
+      "start": 93.31,
+      "end": 94.34,
+      "type": "NaN",
+      "id": 17
+    },
+    {
+      "start": 94.34,
+      "end": 96.74,
+      "type": "NaN",
+      "id": 18
+    },
+    {
+      "start": 96.74,
+      "end": 103.45,
+      "type": "NaN",
+      "id": 19
+    },
+    {
+      "start": 103.45,
+      "end": 110.63,
+      "type": "NaN",
+      "id": 20
+    },
+    {
+      "start": 110.63,
+      "end": 112.87,
+      "type": "NaN",
+      "id": 21
+    },
+    {
+      "start": 112.87,
+      "end": 113.0,
+      "type": "NaN",
+      "id": 22
+    },
+    {
+      "start": 113.0,
+      "end": 117.26,
+      "type": "NaN",
+      "id": 23
+    },
+    {
+      "start": 117.26,
+      "end": 127.9,
+      "type": "NaN",
+      "id": 24
+    },
+    {
+      "start": 127.9,
+      "end": 133.41,
+      "type": "NaN",
+      "id": 25
+    },
+    {
+      "start": 133.41,
+      "end": 138.94,
+      "type": "NaN",
+      "id": 26
+    },
+    {
+      "start": 138.94,
+      "end": 141.32,
+      "type": "NaN",
+      "id": 27
+    },
+    {
+      "start": 141.32,
+      "end": 144.25,
+      "type": "NaN",
+      "id": 28
+    },
+    {
+      "start": 144.25,
+      "end": 145.77,
+      "type": "NaN",
+      "id": 29
+    },
+    {
+      "start": 145.77,
+      "end": 150.36,
+      "type": "NaN",
+      "id": 30
+    },
+    {
+      "start": 150.36,
+      "end": 165.29,
+      "type": "NaN",
+      "id": 31
+    },
+    {
+      "start": 165.29,
+      "end": 170.67,
+      "type": "NaN",
+      "id": 32
+    },
+    {
+      "start": 170.67,
+      "end": 176.66,
+      "type": "NaN",
+      "id": 33
+    },
+    {
+      "start": 176.66,
+      "end": 181.57,
+      "type": "NaN",
+      "id": 34
+    }
+  ]
+}

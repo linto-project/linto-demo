@@ -1,0 +1,2906 @@
+{
+  "words": [
+    {
+      "id": 0,
+      "start": 0.91,
+      "end": 1.21,
+      "text": "euh"
+    },
+    {
+      "id": 1,
+      "start": 1.22,
+      "end": 1.74,
+      "text": "bonjour"
+    },
+    {
+      "id": 2,
+      "start": 1.75,
+      "end": 2.14,
+      "text": "abdel"
+    },
+    {
+      "id": 3,
+      "start": 2.94,
+      "end": 3.34,
+      "text": "abdel"
+    },
+    {
+      "id": 4,
+      "start": 3.35,
+      "end": 3.37,
+      "text": "euh"
+    },
+    {
+      "id": 5,
+      "start": 3.43,
+      "end": 3.83,
+      "text": "abdel"
+    },
+    {
+      "id": 6,
+      "start": 3.84,
+      "end": 4.32,
+      "text": "bonjour"
+    },
+    {
+      "id": 7,
+      "start": 4.33,
+      "end": 4.68,
+      "text": "euh"
+    },
+    {
+      "id": 8,
+      "start": 4.69,
+      "end": 5.1,
+      "text": "samir"
+    },
+    {
+      "id": 9,
+      "start": 5.98,
+      "end": 6.24,
+      "text": "bonjour"
+    },
+    {
+      "id": 10,
+      "start": 6.25,
+      "end": 6.3,
+      "text": "jean"
+    },
+    {
+      "id": 11,
+      "start": 6.31,
+      "end": 6.5,
+      "text": "-pierre"
+    },
+    {
+      "id": 12,
+      "start": 6.93,
+      "end": 7.48,
+      "text": "bonjour"
+    },
+    {
+      "id": 13,
+      "start": 8.97,
+      "end": 9.81,
+      "text": "euh"
+    },
+    {
+      "id": 14,
+      "start": 10.32,
+      "end": 10.81,
+      "text": "ok"
+    },
+    {
+      "id": 15,
+      "start": 11.3,
+      "end": 11.67,
+      "text": "euh"
+    },
+    {
+      "id": 16,
+      "start": 12.01,
+      "end": 12.41,
+      "text": "donc"
+    },
+    {
+      "id": 17,
+      "start": 12.42,
+      "end": 12.69,
+      "text": "euh"
+    },
+    {
+      "id": 18,
+      "start": 12.7,
+      "end": 12.77,
+      "text": "bon"
+    },
+    {
+      "id": 19,
+      "start": 12.78,
+      "end": 12.96,
+      "text": "je"
+    },
+    {
+      "id": 20,
+      "start": 12.97,
+      "end": 12.99,
+      "text": "ne"
+    },
+    {
+      "id": 21,
+      "start": 13.0,
+      "end": 13.08,
+      "text": "sais"
+    },
+    {
+      "id": 22,
+      "start": 13.09,
+      "end": 13.22,
+      "text": "pas"
+    },
+    {
+      "id": 23,
+      "start": 13.23,
+      "end": 13.59,
+      "text": "voyons"
+    },
+    {
+      "id": 24,
+      "start": 14.38,
+      "end": 14.57,
+      "text": "l\u00e0"
+    },
+    {
+      "id": 25,
+      "start": 14.65,
+      "end": 14.88,
+      "text": "le"
+    },
+    {
+      "id": 26,
+      "start": 15.21,
+      "end": 15.38,
+      "text": "juste"
+    },
+    {
+      "id": 27,
+      "start": 15.39,
+      "end": 15.55,
+      "text": "pour"
+    },
+    {
+      "id": 28,
+      "start": 15.56,
+      "end": 15.68,
+      "text": "te"
+    },
+    {
+      "id": 29,
+      "start": 15.69,
+      "end": 15.83,
+      "text": "dire"
+    },
+    {
+      "id": 30,
+      "start": 15.84,
+      "end": 15.95,
+      "text": "la"
+    },
+    {
+      "id": 31,
+      "start": 15.96,
+      "end": 16.15,
+      "text": "semaine"
+    },
+    {
+      "id": 32,
+      "start": 16.16,
+      "end": 16.58,
+      "text": "derni\u00e8re"
+    },
+    {
+      "id": 33,
+      "start": 16.59,
+      "end": 16.88,
+      "text": "\u00e7a"
+    },
+    {
+      "id": 34,
+      "start": 17.2,
+      "end": 17.28,
+      "text": "l'"
+    },
+    {
+      "id": 35,
+      "start": 17.29,
+      "end": 17.85,
+      "text": "enregistrement"
+    },
+    {
+      "id": 36,
+      "start": 17.86,
+      "end": 17.89,
+      "text": "n'"
+    },
+    {
+      "id": 37,
+      "start": 17.9,
+      "end": 17.95,
+      "text": "a"
+    },
+    {
+      "id": 38,
+      "start": 17.96,
+      "end": 18.05,
+      "text": "pas"
+    },
+    {
+      "id": 39,
+      "start": 18.06,
+      "end": 18.69,
+      "text": "fonctionn\u00e9"
+    },
+    {
+      "id": 40,
+      "start": 20.07,
+      "end": 20.23,
+      "text": "ah"
+    },
+    {
+      "id": 41,
+      "start": 20.45,
+      "end": 20.85,
+      "text": "donc"
+    },
+    {
+      "id": 42,
+      "start": 20.86,
+      "end": 21.22,
+      "text": "euh"
+    },
+    {
+      "id": 43,
+      "start": 21.61,
+      "end": 21.79,
+      "text": "\u00e7a"
+    },
+    {
+      "id": 44,
+      "start": 21.8,
+      "end": 21.84,
+      "text": "n'"
+    },
+    {
+      "id": 45,
+      "start": 21.85,
+      "end": 21.93,
+      "text": "a"
+    },
+    {
+      "id": 46,
+      "start": 21.94,
+      "end": 22.18,
+      "text": "pas"
+    },
+    {
+      "id": 47,
+      "start": 22.19,
+      "end": 23.01,
+      "text": "enregistr\u00e9"
+    },
+    {
+      "id": 48,
+      "start": 23.65,
+      "end": 23.87,
+      "text": "donc"
+    },
+    {
+      "id": 49,
+      "start": 23.88,
+      "end": 23.94,
+      "text": "on"
+    },
+    {
+      "id": 50,
+      "start": 23.95,
+      "end": 24.15,
+      "text": "va"
+    },
+    {
+      "id": 51,
+      "start": 24.16,
+      "end": 24.43,
+      "text": "reco"
+    },
+    {
+      "id": 52,
+      "start": 25.11,
+      "end": 25.45,
+      "text": "aujourd'hui"
+    },
+    {
+      "id": 53,
+      "start": 25.46,
+      "end": 25.7,
+      "text": "on"
+    },
+    {
+      "id": 54,
+      "start": 25.71,
+      "end": 26.11,
+      "text": "recommence"
+    },
+    {
+      "id": 55,
+      "start": 26.12,
+      "end": 26.25,
+      "text": "le"
+    },
+    {
+      "id": 56,
+      "start": 26.26,
+      "end": 26.73,
+      "text": "m\u00eame"
+    },
+    {
+      "id": 57,
+      "start": 27.31,
+      "end": 27.6,
+      "text": "euh"
+    },
+    {
+      "id": 58,
+      "start": 27.61,
+      "end": 27.78,
+      "text": "euh"
+    },
+    {
+      "id": 59,
+      "start": 27.79,
+      "end": 27.95,
+      "text": "le"
+    },
+    {
+      "id": 60,
+      "start": 27.96,
+      "end": 28.19,
+      "text": "m\u00eame"
+    },
+    {
+      "id": 61,
+      "start": 28.2,
+      "end": 28.82,
+      "text": "sc\u00e9nario"
+    },
+    {
+      "id": 62,
+      "start": 28.83,
+      "end": 28.85,
+      "text": "euh"
+    },
+    {
+      "id": 63,
+      "start": 29.78,
+      "end": 30.73,
+      "text": "avec"
+    },
+    {
+      "id": 64,
+      "start": 30.74,
+      "end": 31.07,
+      "text": "euh"
+    },
+    {
+      "id": 65,
+      "start": 32.33,
+      "end": 32.73,
+      "text": "avec"
+    },
+    {
+      "id": 66,
+      "start": 32.74,
+      "end": 33.03,
+      "text": "euh"
+    },
+    {
+      "id": 67,
+      "start": 33.04,
+      "end": 33.32,
+      "text": "le"
+    },
+    {
+      "id": 68,
+      "start": 33.33,
+      "end": 33.8,
+      "text": "l"
+    },
+    {
+      "id": 69,
+      "start": 33.81,
+      "end": 33.94,
+      "text": "on"
+    },
+    {
+      "id": 70,
+      "start": 33.95,
+      "end": 34.03,
+      "text": "se"
+    },
+    {
+      "id": 71,
+      "start": 34.04,
+      "end": 34.42,
+      "text": "pr\u00e9sente"
+    },
+    {
+      "id": 72,
+      "start": 34.43,
+      "end": 34.51,
+      "text": "au"
+    },
+    {
+      "id": 73,
+      "start": 34.52,
+      "end": 35.29,
+      "text": "d\u00e9but"
+    },
+    {
+      "id": 74,
+      "start": 35.3,
+      "end": 35.6,
+      "text": "euh"
+    },
+    {
+      "id": 75,
+      "start": 36.14,
+      "end": 36.63,
+      "text": "euh"
+    },
+    {
+      "id": 76,
+      "start": 37.32,
+      "end": 37.55,
+      "text": "je"
+    },
+    {
+      "id": 77,
+      "start": 37.56,
+      "end": 38.47,
+      "text": "rappelle"
+    },
+    {
+      "id": 78,
+      "start": 38.61,
+      "end": 38.63,
+      "text": "euh"
+    },
+    {
+      "id": 79,
+      "start": 39.48,
+      "end": 39.53,
+      "text": "euh"
+    },
+    {
+      "id": 80,
+      "start": 39.54,
+      "end": 39.67,
+      "text": "l'"
+    },
+    {
+      "id": 81,
+      "start": 39.68,
+      "end": 39.96,
+      "text": "ordre"
+    },
+    {
+      "id": 82,
+      "start": 39.97,
+      "end": 40.04,
+      "text": "du"
+    },
+    {
+      "id": 83,
+      "start": 40.05,
+      "end": 40.63,
+      "text": "jour"
+    },
+    {
+      "id": 84,
+      "start": 40.64,
+      "end": 41.31,
+      "text": "ensuite"
+    },
+    {
+      "id": 85,
+      "start": 41.65,
+      "end": 42.31,
+      "text": "ensuite"
+    },
+    {
+      "id": 86,
+      "start": 42.32,
+      "end": 42.85,
+      "text": "chacun"
+    },
+    {
+      "id": 87,
+      "start": 42.86,
+      "end": 43.23,
+      "text": "chacun"
+    },
+    {
+      "id": 88,
+      "start": 43.24,
+      "end": 43.58,
+      "text": "passe"
+    },
+    {
+      "id": 89,
+      "start": 43.59,
+      "end": 43.81,
+      "text": "donc"
+    },
+    {
+      "id": 90,
+      "start": 43.82,
+      "end": 43.97,
+      "text": "on"
+    },
+    {
+      "id": 91,
+      "start": 44.06,
+      "end": 44.38,
+      "text": "commence"
+    },
+    {
+      "id": 92,
+      "start": 44.44,
+      "end": 44.69,
+      "text": "par"
+    },
+    {
+      "id": 93,
+      "start": 44.7,
+      "end": 44.75,
+      "text": "euh"
+    },
+    {
+      "id": 94,
+      "start": 45.33,
+      "end": 45.63,
+      "text": "par"
+    },
+    {
+      "id": 95,
+      "start": 45.64,
+      "end": 46.35,
+      "text": "euh"
+    },
+    {
+      "id": 96,
+      "start": 46.36,
+      "end": 46.69,
+      "text": "par"
+    },
+    {
+      "id": 97,
+      "start": 46.7,
+      "end": 47.3,
+      "text": "abdel"
+    },
+    {
+      "id": 98,
+      "start": 48.0,
+      "end": 48.47,
+      "text": "euh"
+    },
+    {
+      "id": 99,
+      "start": 48.87,
+      "end": 49.21,
+      "text": "ilyes"
+    },
+    {
+      "id": 100,
+      "start": 49.26,
+      "end": 49.63,
+      "text": "et"
+    },
+    {
+      "id": 101,
+      "start": 50.15,
+      "end": 50.55,
+      "text": "et"
+    },
+    {
+      "id": 102,
+      "start": 50.56,
+      "end": 50.67,
+      "text": "puis"
+    },
+    {
+      "id": 103,
+      "start": 50.68,
+      "end": 50.82,
+      "text": "et"
+    },
+    {
+      "id": 104,
+      "start": 50.83,
+      "end": 51.39,
+      "text": "puis"
+    },
+    {
+      "id": 105,
+      "start": 51.51,
+      "end": 52.02,
+      "text": "toi"
+    },
+    {
+      "id": 106,
+      "start": 52.03,
+      "end": 52.13,
+      "text": "euh"
+    },
+    {
+      "id": 107,
+      "start": 52.21,
+      "end": 52.67,
+      "text": "samir"
+    },
+    {
+      "id": 108,
+      "start": 52.68,
+      "end": 52.85,
+      "text": "si"
+    },
+    {
+      "id": 109,
+      "start": 52.86,
+      "end": 53.36,
+      "text": "jamais"
+    },
+    {
+      "id": 110,
+      "start": 53.86,
+      "end": 54.03,
+      "text": "on"
+    },
+    {
+      "id": 111,
+      "start": 54.04,
+      "end": 54.13,
+      "text": "a"
+    },
+    {
+      "id": 112,
+      "start": 54.14,
+      "end": 54.78,
+      "text": "d\u00e9pass\u00e9"
+    },
+    {
+      "id": 113,
+      "start": 54.79,
+      "end": 55.14,
+      "text": "le"
+    },
+    {
+      "id": 114,
+      "start": 55.15,
+      "end": 55.64,
+      "text": "le"
+    },
+    {
+      "id": 115,
+      "start": 56.41,
+      "end": 56.95,
+      "text": "hum"
+    },
+    {
+      "id": 116,
+      "start": 57.64,
+      "end": 57.85,
+      "text": "si"
+    },
+    {
+      "id": 117,
+      "start": 57.86,
+      "end": 58.34,
+      "text": "jamais"
+    },
+    {
+      "id": 118,
+      "start": 58.35,
+      "end": 59.22,
+      "text": "abdel"
+    },
+    {
+      "id": 119,
+      "start": 59.42,
+      "end": 59.67,
+      "text": "et"
+    },
+    {
+      "id": 120,
+      "start": 59.68,
+      "end": 60.1,
+      "text": "ilyes"
+    },
+    {
+      "id": 121,
+      "start": 60.17,
+      "end": 60.3,
+      "text": "ont"
+    },
+    {
+      "id": 122,
+      "start": 60.31,
+      "end": 60.92,
+      "text": "d\u00e9pass\u00e9"
+    },
+    {
+      "id": 123,
+      "start": 61.29,
+      "end": 61.44,
+      "text": "le"
+    },
+    {
+      "id": 124,
+      "start": 61.45,
+      "end": 61.8,
+      "text": "volume"
+    },
+    {
+      "id": 125,
+      "start": 61.81,
+      "end": 62.69,
+      "text": "horaire"
+    },
+    {
+      "id": 126,
+      "start": 63.48,
+      "end": 63.5,
+      "text": "euh"
+    },
+    {
+      "id": 127,
+      "start": 63.51,
+      "end": 63.53,
+      "text": "euh"
+    },
+    {
+      "id": 128,
+      "start": 63.54,
+      "end": 63.99,
+      "text": "choisi"
+    },
+    {
+      "id": 129,
+      "start": 64.0,
+      "end": 64.08,
+      "text": "\u00e0"
+    },
+    {
+      "id": 130,
+      "start": 64.09,
+      "end": 64.13,
+      "text": "ce"
+    },
+    {
+      "id": 131,
+      "start": 64.14,
+      "end": 64.34,
+      "text": "moment"
+    },
+    {
+      "id": 132,
+      "start": 64.35,
+      "end": 64.58,
+      "text": "-l\u00e0"
+    },
+    {
+      "id": 133,
+      "start": 64.92,
+      "end": 65.2,
+      "text": "on"
+    },
+    {
+      "id": 134,
+      "start": 66.37,
+      "end": 66.74,
+      "text": "on"
+    },
+    {
+      "id": 135,
+      "start": 66.75,
+      "end": 67.06,
+      "text": "on"
+    },
+    {
+      "id": 136,
+      "start": 67.15,
+      "end": 67.26,
+      "text": "on"
+    },
+    {
+      "id": 137,
+      "start": 67.27,
+      "end": 67.29,
+      "text": "te"
+    },
+    {
+      "id": 138,
+      "start": 67.3,
+      "end": 67.75,
+      "text": "prendra"
+    },
+    {
+      "id": 139,
+      "start": 67.76,
+      "end": 67.99,
+      "text": "apr\u00e8s"
+    },
+    {
+      "id": 140,
+      "start": 68.0,
+      "end": 68.03,
+      "text": "d'"
+    },
+    {
+      "id": 141,
+      "start": 68.04,
+      "end": 68.41,
+      "text": "accord"
+    },
+    {
+      "id": 142,
+      "start": 69.12,
+      "end": 69.39,
+      "text": "ok"
+    },
+    {
+      "id": 143,
+      "start": 69.57,
+      "end": 69.77,
+      "text": "hein"
+    },
+    {
+      "id": 144,
+      "start": 70.23,
+      "end": 70.37,
+      "text": "hum"
+    },
+    {
+      "id": 145,
+      "start": 70.64,
+      "end": 70.66,
+      "text": "c'"
+    },
+    {
+      "id": 146,
+      "start": 70.67,
+      "end": 70.69,
+      "text": "est"
+    },
+    {
+      "id": 147,
+      "start": 70.7,
+      "end": 70.72,
+      "text": "ce"
+    },
+    {
+      "id": 148,
+      "start": 70.73,
+      "end": 70.75,
+      "text": "qu'"
+    },
+    {
+      "id": 149,
+      "start": 70.76,
+      "end": 70.78,
+      "text": "on"
+    },
+    {
+      "id": 150,
+      "start": 70.79,
+      "end": 70.9,
+      "text": "avait"
+    },
+    {
+      "id": 151,
+      "start": 70.91,
+      "end": 71.01,
+      "text": "dit"
+    },
+    {
+      "id": 152,
+      "start": 71.02,
+      "end": 71.05,
+      "text": "l'"
+    },
+    {
+      "id": 153,
+      "start": 71.06,
+      "end": 71.25,
+      "text": "autre"
+    },
+    {
+      "id": 154,
+      "start": 71.26,
+      "end": 71.45,
+      "text": "fois"
+    },
+    {
+      "id": 155,
+      "start": 71.46,
+      "end": 71.49,
+      "text": "et"
+    },
+    {
+      "id": 156,
+      "start": 71.5,
+      "end": 71.59,
+      "text": "puis"
+    },
+    {
+      "id": 157,
+      "start": 71.6,
+      "end": 71.66,
+      "text": "en"
+    },
+    {
+      "id": 158,
+      "start": 71.67,
+      "end": 71.75,
+      "text": "fin"
+    },
+    {
+      "id": 159,
+      "start": 71.76,
+      "end": 71.82,
+      "text": "de"
+    },
+    {
+      "id": 160,
+      "start": 71.83,
+      "end": 72.06,
+      "text": "compte"
+    },
+    {
+      "id": 161,
+      "start": 72.21,
+      "end": 72.33,
+      "text": "\u00e7a"
+    },
+    {
+      "id": 162,
+      "start": 72.34,
+      "end": 72.48,
+      "text": "avait"
+    },
+    {
+      "id": 163,
+      "start": 72.49,
+      "end": 72.66,
+      "text": "tr\u00e8s"
+    },
+    {
+      "id": 164,
+      "start": 72.67,
+      "end": 72.9,
+      "text": "bien"
+    },
+    {
+      "id": 165,
+      "start": 73.09,
+      "end": 73.25,
+      "text": "tr\u00e8s"
+    },
+    {
+      "id": 166,
+      "start": 73.26,
+      "end": 73.42,
+      "text": "bien"
+    },
+    {
+      "id": 167,
+      "start": 73.52,
+      "end": 73.8,
+      "text": "tenu"
+    },
+    {
+      "id": 168,
+      "start": 73.91,
+      "end": 73.98,
+      "text": "vous"
+    },
+    {
+      "id": 169,
+      "start": 73.99,
+      "end": 74.1,
+      "text": "savez"
+    },
+    {
+      "id": 170,
+      "start": 74.11,
+      "end": 74.35,
+      "text": "pourquoi"
+    },
+    {
+      "id": 171,
+      "start": 74.36,
+      "end": 74.42,
+      "text": "\u00e7a"
+    },
+    {
+      "id": 172,
+      "start": 74.43,
+      "end": 74.47,
+      "text": "n'"
+    },
+    {
+      "id": 173,
+      "start": 74.48,
+      "end": 74.58,
+      "text": "a"
+    },
+    {
+      "id": 174,
+      "start": 74.59,
+      "end": 74.84,
+      "text": "pas"
+    },
+    {
+      "id": 175,
+      "start": 74.85,
+      "end": 75.19,
+      "text": "fonctionn\u00e9"
+    },
+    {
+      "id": 176,
+      "start": 75.2,
+      "end": 75.24,
+      "text": "l'"
+    },
+    {
+      "id": 177,
+      "start": 75.25,
+      "end": 75.75,
+      "text": "enregistrement"
+    },
+    {
+      "id": 178,
+      "start": 76.22,
+      "end": 76.26,
+      "text": "un"
+    },
+    {
+      "id": 179,
+      "start": 76.27,
+      "end": 76.6,
+      "text": "probl\u00e8me"
+    },
+    {
+      "id": 180,
+      "start": 76.61,
+      "end": 77.24,
+      "text": "technique"
+    },
+    {
+      "id": 181,
+      "start": 77.4,
+      "end": 77.87,
+      "text": "li\u00e9"
+    },
+    {
+      "id": 182,
+      "start": 77.88,
+      "end": 78.26,
+      "text": "\u00e0"
+    },
+    {
+      "id": 183,
+      "start": 79.66,
+      "end": 79.89,
+      "text": "li\u00e9"
+    },
+    {
+      "id": 184,
+      "start": 79.9,
+      "end": 79.98,
+      "text": "au"
+    },
+    {
+      "id": 185,
+      "start": 79.99,
+      "end": 80.77,
+      "text": "dispositif"
+    },
+    {
+      "id": 186,
+      "start": 80.78,
+      "end": 81.28,
+      "text": "euh"
+    },
+    {
+      "id": 187,
+      "start": 81.34,
+      "end": 81.47,
+      "text": "euh"
+    },
+    {
+      "id": 188,
+      "start": 82.25,
+      "end": 83.5,
+      "text": "mat\u00e9riel"
+    },
+    {
+      "id": 189,
+      "start": 84.56,
+      "end": 84.77,
+      "text": "ok"
+    },
+    {
+      "id": 190,
+      "start": 84.84,
+      "end": 84.94,
+      "text": "en"
+    },
+    {
+      "id": 191,
+      "start": 84.95,
+      "end": 85.18,
+      "text": "fait"
+    },
+    {
+      "id": 192,
+      "start": 85.19,
+      "end": 85.46,
+      "text": "euh"
+    },
+    {
+      "id": 193,
+      "start": 85.9,
+      "end": 86.2,
+      "text": "euh"
+    },
+    {
+      "id": 194,
+      "start": 86.21,
+      "end": 86.37,
+      "text": "de"
+    },
+    {
+      "id": 195,
+      "start": 86.38,
+      "end": 86.71,
+      "text": "brancher"
+    },
+    {
+      "id": 196,
+      "start": 86.72,
+      "end": 86.82,
+      "text": "la"
+    },
+    {
+      "id": 197,
+      "start": 86.83,
+      "end": 87.04,
+      "text": "ca"
+    },
+    {
+      "id": 198,
+      "start": 87.38,
+      "end": 87.49,
+      "text": "il"
+    },
+    {
+      "id": 199,
+      "start": 87.5,
+      "end": 87.83,
+      "text": "y"
+    },
+    {
+      "id": 200,
+      "start": 87.84,
+      "end": 87.9,
+      "text": "a"
+    },
+    {
+      "id": 201,
+      "start": 88.55,
+      "end": 89.31,
+      "text": "apparemment"
+    },
+    {
+      "id": 202,
+      "start": 89.32,
+      "end": 89.48,
+      "text": "eu"
+    },
+    {
+      "id": 203,
+      "start": 89.53,
+      "end": 89.61,
+      "text": "je"
+    },
+    {
+      "id": 204,
+      "start": 89.62,
+      "end": 89.73,
+      "text": "sais"
+    },
+    {
+      "id": 205,
+      "start": 89.74,
+      "end": 89.87,
+      "text": "pas"
+    },
+    {
+      "id": 206,
+      "start": 90.19,
+      "end": 90.42,
+      "text": "un"
+    },
+    {
+      "id": 207,
+      "start": 90.43,
+      "end": 90.83,
+      "text": "probl\u00e8me"
+    },
+    {
+      "id": 208,
+      "start": 90.84,
+      "end": 91.14,
+      "text": "avec"
+    },
+    {
+      "id": 209,
+      "start": 91.15,
+      "end": 91.38,
+      "text": "les"
+    },
+    {
+      "id": 210,
+      "start": 91.78,
+      "end": 92.1,
+      "text": "les"
+    },
+    {
+      "id": 211,
+      "start": 92.11,
+      "end": 92.4,
+      "text": "les"
+    },
+    {
+      "id": 212,
+      "start": 92.41,
+      "end": 92.63,
+      "text": "les"
+    },
+    {
+      "id": 213,
+      "start": 92.64,
+      "end": 93.1,
+      "text": "branchements"
+    },
+    {
+      "id": 214,
+      "start": 93.11,
+      "end": 93.31,
+      "text": "sur"
+    },
+    {
+      "id": 215,
+      "start": 93.32,
+      "end": 93.62,
+      "text": "le"
+    },
+    {
+      "id": 216,
+      "start": 93.63,
+      "end": 93.84,
+      "text": "sur"
+    },
+    {
+      "id": 217,
+      "start": 93.85,
+      "end": 93.98,
+      "text": "le"
+    },
+    {
+      "id": 218,
+      "start": 93.99,
+      "end": 94.58,
+      "text": "linto"
+    },
+    {
+      "id": 219,
+      "start": 94.59,
+      "end": 94.7,
+      "text": "et"
+    },
+    {
+      "id": 220,
+      "start": 95.43,
+      "end": 95.65,
+      "text": "et"
+    },
+    {
+      "id": 221,
+      "start": 95.66,
+      "end": 95.8,
+      "text": "euh"
+    },
+    {
+      "id": 222,
+      "start": 95.81,
+      "end": 95.95,
+      "text": "la"
+    },
+    {
+      "id": 223,
+      "start": 95.96,
+      "end": 96.48,
+      "text": "consommation"
+    },
+    {
+      "id": 224,
+      "start": 96.49,
+      "end": 96.53,
+      "text": "d'"
+    },
+    {
+      "id": 225,
+      "start": 96.54,
+      "end": 97.14,
+      "text": "\u00e9nergie"
+    },
+    {
+      "id": 226,
+      "start": 98.33,
+      "end": 98.35,
+      "text": "d'"
+    },
+    {
+      "id": 227,
+      "start": 98.36,
+      "end": 98.59,
+      "text": "accord"
+    },
+    {
+      "id": 228,
+      "start": 99.24,
+      "end": 99.61,
+      "text": "et"
+    },
+    {
+      "id": 229,
+      "start": 99.62,
+      "end": 99.86,
+      "text": "bon"
+    },
+    {
+      "id": 230,
+      "start": 99.87,
+      "end": 99.98,
+      "text": "je"
+    },
+    {
+      "id": 231,
+      "start": 99.99,
+      "end": 100.01,
+      "text": "ne"
+    },
+    {
+      "id": 232,
+      "start": 100.02,
+      "end": 100.12,
+      "text": "sais"
+    },
+    {
+      "id": 233,
+      "start": 100.13,
+      "end": 100.28,
+      "text": "pas"
+    },
+    {
+      "id": 234,
+      "start": 100.36,
+      "end": 100.7,
+      "text": "si"
+    },
+    {
+      "id": 235,
+      "start": 100.71,
+      "end": 100.9,
+      "text": "l\u00e0"
+    },
+    {
+      "id": 236,
+      "start": 100.91,
+      "end": 101.06,
+      "text": "ils"
+    },
+    {
+      "id": 237,
+      "start": 101.07,
+      "end": 101.25,
+      "text": "disent"
+    },
+    {
+      "id": 238,
+      "start": 101.83,
+      "end": 101.92,
+      "text": "ils"
+    },
+    {
+      "id": 239,
+      "start": 102.01,
+      "end": 102.21,
+      "text": "semblent"
+    },
+    {
+      "id": 240,
+      "start": 102.22,
+      "end": 102.46,
+      "text": "avoir"
+    },
+    {
+      "id": 241,
+      "start": 102.47,
+      "end": 102.74,
+      "text": "r\u00e9solu"
+    },
+    {
+      "id": 242,
+      "start": 102.75,
+      "end": 102.79,
+      "text": "le"
+    },
+    {
+      "id": 243,
+      "start": 102.8,
+      "end": 103.29,
+      "text": "probl\u00e8me"
+    },
+    {
+      "id": 244,
+      "start": 103.3,
+      "end": 103.62,
+      "text": "donc"
+    },
+    {
+      "id": 245,
+      "start": 103.63,
+      "end": 103.88,
+      "text": "euh"
+    },
+    {
+      "id": 246,
+      "start": 104.92,
+      "end": 105.72,
+      "text": "euh"
+    },
+    {
+      "id": 247,
+      "start": 105.99,
+      "end": 106.38,
+      "text": "esp\u00e9rons"
+    },
+    {
+      "id": 248,
+      "start": 106.78,
+      "end": 106.98,
+      "text": "voil\u00e0"
+    },
+    {
+      "id": 249,
+      "start": 107.2,
+      "end": 107.28,
+      "text": "et"
+    },
+    {
+      "id": 250,
+      "start": 107.29,
+      "end": 107.78,
+      "text": "apr\u00e8s"
+    },
+    {
+      "id": 251,
+      "start": 107.79,
+      "end": 107.81,
+      "text": "\u00e0"
+    },
+    {
+      "id": 252,
+      "start": 107.82,
+      "end": 107.92,
+      "text": "la"
+    },
+    {
+      "id": 253,
+      "start": 107.93,
+      "end": 108.1,
+      "text": "fin"
+    },
+    {
+      "id": 254,
+      "start": 108.11,
+      "end": 108.23,
+      "text": "on"
+    },
+    {
+      "id": 255,
+      "start": 108.24,
+      "end": 108.41,
+      "text": "fait"
+    },
+    {
+      "id": 256,
+      "start": 108.42,
+      "end": 108.65,
+      "text": "la"
+    },
+    {
+      "id": 257,
+      "start": 109.15,
+      "end": 109.53,
+      "text": "le"
+    },
+    {
+      "id": 258,
+      "start": 109.54,
+      "end": 110.13,
+      "text": "on"
+    },
+    {
+      "id": 259,
+      "start": 110.93,
+      "end": 111.18,
+      "text": "fixe"
+    },
+    {
+      "id": 260,
+      "start": 111.19,
+      "end": 111.47,
+      "text": "la"
+    },
+    {
+      "id": 261,
+      "start": 111.48,
+      "end": 111.73,
+      "text": "la"
+    },
+    {
+      "id": 262,
+      "start": 111.74,
+      "end": 111.87,
+      "text": "la"
+    },
+    {
+      "id": 263,
+      "start": 111.88,
+      "end": 112.19,
+      "text": "prochaine"
+    },
+    {
+      "id": 264,
+      "start": 112.2,
+      "end": 112.72,
+      "text": "r\u00e9union"
+    },
+    {
+      "id": 265,
+      "start": 112.87,
+      "end": 113.04,
+      "text": "et"
+    },
+    {
+      "id": 266,
+      "start": 113.05,
+      "end": 113.2,
+      "text": "on"
+    },
+    {
+      "id": 267,
+      "start": 113.25,
+      "end": 113.33,
+      "text": "fait"
+    },
+    {
+      "id": 268,
+      "start": 113.34,
+      "end": 113.47,
+      "text": "le"
+    },
+    {
+      "id": 269,
+      "start": 113.48,
+      "end": 114.3,
+      "text": "vote"
+    },
+    {
+      "id": 270,
+      "start": 114.42,
+      "end": 114.45,
+      "text": "euh"
+    },
+    {
+      "id": 271,
+      "start": 114.96,
+      "end": 115.12,
+      "text": "comme"
+    },
+    {
+      "id": 272,
+      "start": 115.13,
+      "end": 115.22,
+      "text": "la"
+    },
+    {
+      "id": 273,
+      "start": 115.23,
+      "end": 115.48,
+      "text": "derni\u00e8re"
+    },
+    {
+      "id": 274,
+      "start": 115.49,
+      "end": 115.63,
+      "text": "fois"
+    },
+    {
+      "id": 275,
+      "start": 116.37,
+      "end": 116.53,
+      "text": "ok"
+    },
+    {
+      "id": 276,
+      "start": 116.59,
+      "end": 116.83,
+      "text": "ok"
+    },
+    {
+      "id": 277,
+      "start": 117.6,
+      "end": 117.74,
+      "text": "et"
+    },
+    {
+      "id": 278,
+      "start": 117.75,
+      "end": 117.87,
+      "text": "on"
+    },
+    {
+      "id": 279,
+      "start": 117.88,
+      "end": 118.7,
+      "text": "vote"
+    },
+    {
+      "id": 280,
+      "start": 118.71,
+      "end": 118.73,
+      "text": "euh"
+    },
+    {
+      "id": 281,
+      "start": 120.19,
+      "end": 120.49,
+      "text": "comment"
+    },
+    {
+      "id": 282,
+      "start": 120.5,
+      "end": 120.67,
+      "text": "parce"
+    },
+    {
+      "id": 283,
+      "start": 120.71,
+      "end": 120.73,
+      "text": "qu'"
+    },
+    {
+      "id": 284,
+      "start": 120.74,
+      "end": 120.88,
+      "text": "on"
+    },
+    {
+      "id": 285,
+      "start": 120.89,
+      "end": 120.97,
+      "text": "est"
+    },
+    {
+      "id": 286,
+      "start": 120.98,
+      "end": 121.21,
+      "text": "quatre"
+    },
+    {
+      "id": 287,
+      "start": 121.22,
+      "end": 121.31,
+      "text": "l\u00e0"
+    },
+    {
+      "id": 288,
+      "start": 128.29,
+      "end": 128.61,
+      "text": "amine"
+    },
+    {
+      "id": 289,
+      "start": 128.65,
+      "end": 128.85,
+      "text": "il"
+    },
+    {
+      "id": 290,
+      "start": 128.86,
+      "end": 128.9,
+      "text": "est"
+    },
+    {
+      "id": 291,
+      "start": 129.01,
+      "end": 129.52,
+      "text": "amine"
+    },
+    {
+      "id": 292,
+      "start": 129.56,
+      "end": 129.59,
+      "text": "euh"
+    },
+    {
+      "id": 293,
+      "start": 129.8,
+      "end": 130.44,
+      "text": "amine"
+    },
+    {
+      "id": 294,
+      "start": 130.45,
+      "end": 130.48,
+      "text": "m'"
+    },
+    {
+      "id": 295,
+      "start": 130.49,
+      "end": 130.52,
+      "text": "a"
+    },
+    {
+      "id": 296,
+      "start": 130.53,
+      "end": 130.84,
+      "text": "donn\u00e9"
+    },
+    {
+      "id": 297,
+      "start": 130.85,
+      "end": 131.13,
+      "text": "son"
+    },
+    {
+      "id": 298,
+      "start": 131.14,
+      "end": 131.27,
+      "text": "sa"
+    },
+    {
+      "id": 299,
+      "start": 131.28,
+      "end": 131.87,
+      "text": "procuration"
+    },
+    {
+      "id": 300,
+      "start": 133.19,
+      "end": 133.53,
+      "text": "ok"
+    },
+    {
+      "id": 301,
+      "start": 135.12,
+      "end": 135.84,
+      "text": "euh"
+    },
+    {
+      "id": 302,
+      "start": 135.85,
+      "end": 136.8,
+      "text": "on"
+    },
+    {
+      "id": 303,
+      "start": 136.81,
+      "end": 136.91,
+      "text": "y"
+    },
+    {
+      "id": 304,
+      "start": 138.83,
+      "end": 139.45,
+      "text": "va"
+    },
+    {
+      "id": 305,
+      "start": 139.46,
+      "end": 139.49,
+      "text": "euh"
+    },
+    {
+      "id": 306,
+      "start": 139.5,
+      "end": 139.8,
+      "text": "donc"
+    },
+    {
+      "id": 307,
+      "start": 139.81,
+      "end": 140.1,
+      "text": "euh"
+    },
+    {
+      "id": 308,
+      "start": 140.11,
+      "end": 140.6,
+      "text": "linto"
+    },
+    {
+      "id": 309,
+      "start": 140.61,
+      "end": 141.02,
+      "text": "d\u00e9marre"
+    },
+    {
+      "id": 310,
+      "start": 141.03,
+      "end": 141.12,
+      "text": "la"
+    },
+    {
+      "id": 311,
+      "start": 141.13,
+      "end": 141.52,
+      "text": "r\u00e9union"
+    },
+    {
+      "id": 312,
+      "start": 143.94,
+      "end": 144.64,
+      "text": "euh"
+    },
+    {
+      "id": 313,
+      "start": 144.65,
+      "end": 145.42,
+      "text": "donc"
+    },
+    {
+      "id": 314,
+      "start": 145.43,
+      "end": 146.26,
+      "text": "euh"
+    },
+    {
+      "id": 315,
+      "start": 146.27,
+      "end": 147.6,
+      "text": "bonjour"
+    },
+    {
+      "id": 316,
+      "start": 147.61,
+      "end": 147.8,
+      "text": "euh"
+    },
+    {
+      "id": 317,
+      "start": 147.81,
+      "end": 147.95,
+      "text": "je"
+    },
+    {
+      "id": 318,
+      "start": 147.96,
+      "end": 148.38,
+      "text": "suis"
+    },
+    {
+      "id": 319,
+      "start": 148.39,
+      "end": 148.59,
+      "text": "euh"
+    },
+    {
+      "id": 320,
+      "start": 148.6,
+      "end": 148.75,
+      "text": "jean"
+    },
+    {
+      "id": 321,
+      "start": 148.76,
+      "end": 148.94,
+      "text": "-pierre"
+    },
+    {
+      "id": 322,
+      "start": 148.95,
+      "end": 149.22,
+      "text": "lorr\u00e9"
+    },
+    {
+      "id": 323,
+      "start": 149.23,
+      "end": 149.34,
+      "text": "je"
+    },
+    {
+      "id": 324,
+      "start": 149.47,
+      "end": 149.63,
+      "text": "suis"
+    },
+    {
+      "id": 325,
+      "start": 149.68,
+      "end": 149.89,
+      "text": "donc"
+    },
+    {
+      "id": 326,
+      "start": 149.95,
+      "end": 150.1,
+      "text": "le"
+    },
+    {
+      "id": 327,
+      "start": 150.66,
+      "end": 151.47,
+      "text": "le"
+    },
+    {
+      "id": 328,
+      "start": 151.48,
+      "end": 152.86,
+      "text": "responsable"
+    },
+    {
+      "id": 329,
+      "start": 152.87,
+      "end": 152.89,
+      "text": "euh"
+    },
+    {
+      "id": 330,
+      "start": 153.01,
+      "end": 153.11,
+      "text": "r"
+    },
+    {
+      "id": 331,
+      "start": 153.22,
+      "end": 153.31,
+      "text": "et"
+    },
+    {
+      "id": 332,
+      "start": 153.32,
+      "end": 153.61,
+      "text": "d"
+    },
+    {
+      "id": 333,
+      "start": 154.11,
+      "end": 154.42,
+      "text": "et"
+    },
+    {
+      "id": 334,
+      "start": 154.43,
+      "end": 154.93,
+      "text": "euh"
+    },
+    {
+      "id": 335,
+      "start": 154.94,
+      "end": 155.25,
+      "text": "donc"
+    },
+    {
+      "id": 336,
+      "start": 155.51,
+      "end": 155.72,
+      "text": "euh"
+    },
+    {
+      "id": 337,
+      "start": 155.73,
+      "end": 156.5,
+      "text": "aujourd'hui"
+    },
+    {
+      "id": 338,
+      "start": 156.51,
+      "end": 156.69,
+      "text": "on"
+    },
+    {
+      "id": 339,
+      "start": 156.7,
+      "end": 157.17,
+      "text": "anime"
+    },
+    {
+      "id": 340,
+      "start": 157.22,
+      "end": 157.24,
+      "text": "euh"
+    },
+    {
+      "id": 341,
+      "start": 157.25,
+      "end": 157.27,
+      "text": "euh"
+    },
+    {
+      "id": 342,
+      "start": 157.83,
+      "end": 158.34,
+      "text": "une"
+    },
+    {
+      "id": 343,
+      "start": 158.4,
+      "end": 158.93,
+      "text": "une"
+    },
+    {
+      "id": 344,
+      "start": 158.94,
+      "end": 159.29,
+      "text": "r\u00e9union"
+    },
+    {
+      "id": 345,
+      "start": 159.3,
+      "end": 159.53,
+      "text": "autour"
+    },
+    {
+      "id": 346,
+      "start": 159.54,
+      "end": 159.71,
+      "text": "de"
+    },
+    {
+      "id": 347,
+      "start": 159.72,
+      "end": 160.12,
+      "text": "la"
+    },
+    {
+      "id": 348,
+      "start": 160.13,
+      "end": 160.21,
+      "text": "l'"
+    },
+    {
+      "id": 349,
+      "start": 160.22,
+      "end": 160.97,
+      "text": "avancement"
+    },
+    {
+      "id": 350,
+      "start": 161.5,
+      "end": 161.88,
+      "text": "de"
+    },
+    {
+      "id": 351,
+      "start": 161.89,
+      "end": 161.93,
+      "text": "l'"
+    },
+    {
+      "id": 352,
+      "start": 161.94,
+      "end": 162.36,
+      "text": "outil"
+    },
+    {
+      "id": 353,
+      "start": 162.37,
+      "end": 162.51,
+      "text": "de"
+    },
+    {
+      "id": 354,
+      "start": 162.52,
+      "end": 163.16,
+      "text": "reconnaissance"
+    },
+    {
+      "id": 355,
+      "start": 163.17,
+      "end": 163.58,
+      "text": "de"
+    },
+    {
+      "id": 356,
+      "start": 163.64,
+      "end": 163.76,
+      "text": "de"
+    },
+    {
+      "id": 357,
+      "start": 163.77,
+      "end": 163.87,
+      "text": "la"
+    },
+    {
+      "id": 358,
+      "start": 163.88,
+      "end": 164.15,
+      "text": "parole"
+    },
+    {
+      "id": 359,
+      "start": 165.8,
+      "end": 165.9,
+      "text": "ah"
+    },
+    {
+      "id": 360,
+      "start": 165.91,
+      "end": 166.18,
+      "text": "donc"
+    },
+    {
+      "id": 361,
+      "start": 166.19,
+      "end": 166.28,
+      "text": "euh"
+    },
+    {
+      "id": 362,
+      "start": 166.29,
+      "end": 166.46,
+      "text": "je"
+    },
+    {
+      "id": 363,
+      "start": 166.47,
+      "end": 167.55,
+      "text": "laisse"
+    },
+    {
+      "id": 364,
+      "start": 167.56,
+      "end": 167.59,
+      "text": "euh"
+    },
+    {
+      "id": 365,
+      "start": 167.6,
+      "end": 168.31,
+      "text": "la"
+    },
+    {
+      "id": 366,
+      "start": 168.32,
+      "end": 168.61,
+      "text": "parole"
+    },
+    {
+      "id": 367,
+      "start": 168.62,
+      "end": 168.65,
+      "text": "\u00e0"
+    },
+    {
+      "id": 368,
+      "start": 168.73,
+      "end": 168.96,
+      "text": "chacun"
+    },
+    {
+      "id": 369,
+      "start": 169.16,
+      "end": 169.49,
+      "text": "donc"
+    },
+    {
+      "id": 370,
+      "start": 169.5,
+      "end": 169.62,
+      "text": "en"
+    },
+    {
+      "id": 371,
+      "start": 169.63,
+      "end": 170.08,
+      "text": "commen\u00e7ant"
+    },
+    {
+      "id": 372,
+      "start": 170.09,
+      "end": 170.25,
+      "text": "par"
+    },
+    {
+      "id": 373,
+      "start": 170.26,
+      "end": 170.52,
+      "text": "abdel"
+    },
+    {
+      "id": 374,
+      "start": 170.58,
+      "end": 171.0,
+      "text": "pour"
+    },
+    {
+      "id": 375,
+      "start": 171.01,
+      "end": 171.05,
+      "text": "euh"
+    },
+    {
+      "id": 376,
+      "start": 171.84,
+      "end": 171.95,
+      "text": "pour"
+    },
+    {
+      "id": 377,
+      "start": 171.96,
+      "end": 172.12,
+      "text": "se"
+    },
+    {
+      "id": 378,
+      "start": 172.13,
+      "end": 172.85,
+      "text": "pr\u00e9senter"
+    },
+    {
+      "id": 379,
+      "start": 174.8,
+      "end": 175.08,
+      "text": "bonjour"
+    },
+    {
+      "id": 380,
+      "start": 175.09,
+      "end": 175.19,
+      "text": "tout"
+    },
+    {
+      "id": 381,
+      "start": 175.2,
+      "end": 175.25,
+      "text": "le"
+    },
+    {
+      "id": 382,
+      "start": 175.26,
+      "end": 175.61,
+      "text": "monde"
+    },
+    {
+      "id": 383,
+      "start": 175.62,
+      "end": 175.82,
+      "text": "donc"
+    },
+    {
+      "id": 384,
+      "start": 175.87,
+      "end": 176.24,
+      "text": "euh"
+    },
+    {
+      "id": 385,
+      "start": 176.25,
+      "end": 176.47,
+      "text": "je"
+    },
+    {
+      "id": 386,
+      "start": 176.48,
+      "end": 176.53,
+      "text": "m'"
+    },
+    {
+      "id": 387,
+      "start": 176.54,
+      "end": 177.07,
+      "text": "appelle"
+    },
+    {
+      "id": 388,
+      "start": 177.08,
+      "end": 177.13,
+      "text": "euh"
+    },
+    {
+      "id": 389,
+      "start": 177.14,
+      "end": 177.58,
+      "text": "abdel"
+    },
+    {
+      "id": 390,
+      "start": 177.59,
+      "end": 177.91,
+      "text": "heba"
+    },
+    {
+      "id": 391,
+      "start": 178.08,
+      "end": 178.37,
+      "text": "euh"
+    },
+    {
+      "id": 392,
+      "start": 178.38,
+      "end": 178.56,
+      "text": "je"
+    },
+    {
+      "id": 393,
+      "start": 178.73,
+      "end": 178.94,
+      "text": "je"
+    },
+    {
+      "id": 394,
+      "start": 178.95,
+      "end": 179.2,
+      "text": "suis"
+    },
+    {
+      "id": 395,
+      "start": 179.21,
+      "end": 180.03,
+      "text": "doctorant"
+    }
+  ],
+  "paragraphs": [
+    {
+      "id": 0,
+      "start": 0.91,
+      "end": 2.14,
+      "speaker": "Jean-Pierre"
+    },
+    {
+      "id": 1,
+      "start": 2.94,
+      "end": 3.37,
+      "speaker": "Abdel"
+    },
+    {
+      "id": 2,
+      "start": 3.43,
+      "end": 5.1,
+      "speaker": "Jean-Pierre"
+    },
+    {
+      "id": 3,
+      "start": 5.98,
+      "end": 6.5,
+      "speaker": "Samir"
+    },
+    {
+      "id": 4,
+      "start": 6.93,
+      "end": 7.48,
+      "speaker": "Ilyes"
+    },
+    {
+      "id": 5,
+      "start": 8.97,
+      "end": 18.69,
+      "speaker": "Jean-Pierre"
+    },
+    {
+      "id": 6,
+      "start": 20.07,
+      "end": 20.23,
+      "speaker": "Samir"
+    },
+    {
+      "id": 7,
+      "start": 20.45,
+      "end": 68.41,
+      "speaker": "Jean-Pierre"
+    },
+    {
+      "id": 8,
+      "start": 69.12,
+      "end": 69.39,
+      "speaker": "Samir"
+    },
+    {
+      "id": 9,
+      "start": 69.57,
+      "end": 69.77,
+      "speaker": "Jean-Pierre"
+    },
+    {
+      "id": 10,
+      "start": 70.23,
+      "end": 70.37,
+      "speaker": "Samir"
+    },
+    {
+      "id": 11,
+      "start": 70.64,
+      "end": 73.8,
+      "speaker": "Jean-Pierre"
+    },
+    {
+      "id": 12,
+      "start": 73.91,
+      "end": 75.75,
+      "speaker": "Samir"
+    },
+    {
+      "id": 13,
+      "start": 76.22,
+      "end": 83.5,
+      "speaker": "Jean-Pierre"
+    },
+    {
+      "id": 14,
+      "start": 84.56,
+      "end": 84.77,
+      "speaker": "Samir"
+    },
+    {
+      "id": 15,
+      "start": 84.84,
+      "end": 97.14,
+      "speaker": "Jean-Pierre"
+    },
+    {
+      "id": 16,
+      "start": 98.33,
+      "end": 98.59,
+      "speaker": "Samir"
+    },
+    {
+      "id": 17,
+      "start": 99.24,
+      "end": 116.53,
+      "speaker": "Jean-Pierre"
+    },
+    {
+      "id": 18,
+      "start": 116.59,
+      "end": 116.83,
+      "speaker": "Samir"
+    },
+    {
+      "id": 19,
+      "start": 117.6,
+      "end": 128.9,
+      "speaker": "Abdel"
+    },
+    {
+      "id": 20,
+      "start": 129.01,
+      "end": 172.85,
+      "speaker": "Jean-Pierre"
+    }
+  ],
+  "acte": [
+    {
+      "start": 0.91,
+      "end": 2.94,
+      "type": "NaN",
+      "id": 0
+    },
+    {
+      "start": 2.94,
+      "end": 3.43,
+      "type": "NaN",
+      "id": 1
+    },
+    {
+      "start": 3.43,
+      "end": 5.98,
+      "type": "NaN",
+      "id": 2
+    },
+    {
+      "start": 5.98,
+      "end": 6.93,
+      "type": "NaN",
+      "id": 3
+    },
+    {
+      "start": 6.93,
+      "end": 8.97,
+      "type": "NaN",
+      "id": 4
+    },
+    {
+      "start": 8.97,
+      "end": 10.32,
+      "type": "NaN",
+      "id": 5
+    },
+    {
+      "start": 10.32,
+      "end": 12.01,
+      "type": "NaN",
+      "id": 6
+    },
+    {
+      "start": 12.01,
+      "end": 20.07,
+      "type": "NaN",
+      "id": 7
+    },
+    {
+      "start": 20.07,
+      "end": 20.45,
+      "type": "NaN",
+      "id": 8
+    },
+    {
+      "start": 20.45,
+      "end": 23.65,
+      "type": "NaN",
+      "id": 9
+    },
+    {
+      "start": 23.65,
+      "end": 25.11,
+      "type": "NaN",
+      "id": 10
+    },
+    {
+      "start": 25.11,
+      "end": 25.46,
+      "type": "NaN",
+      "id": 11
+    },
+    {
+      "start": 25.46,
+      "end": 32.33,
+      "type": "NaN",
+      "id": 12
+    },
+    {
+      "start": 32.33,
+      "end": 33.81,
+      "type": "NaN",
+      "id": 13
+    },
+    {
+      "start": 33.81,
+      "end": 40.64,
+      "type": "NaN",
+      "id": 14
+    },
+    {
+      "start": 40.64,
+      "end": 43.59,
+      "type": "NaN",
+      "id": 15
+    },
+    {
+      "start": 43.59,
+      "end": 57.64,
+      "type": "NaN",
+      "id": 16
+    },
+    {
+      "start": 57.64,
+      "end": 59.42,
+      "type": "NaN",
+      "id": 17
+    },
+    {
+      "start": 59.42,
+      "end": 63.48,
+      "type": "NaN",
+      "id": 18
+    },
+    {
+      "start": 63.48,
+      "end": 69.12,
+      "type": "NaN",
+      "id": 19
+    },
+    {
+      "start": 69.12,
+      "end": 69.57,
+      "type": "NaN",
+      "id": 20
+    },
+    {
+      "start": 69.57,
+      "end": 70.23,
+      "type": "NaN",
+      "id": 21
+    },
+    {
+      "start": 70.23,
+      "end": 70.64,
+      "type": "NaN",
+      "id": 22
+    },
+    {
+      "start": 70.64,
+      "end": 71.46,
+      "type": "NaN",
+      "id": 23
+    },
+    {
+      "start": 71.46,
+      "end": 72.21,
+      "type": "NaN",
+      "id": 24
+    },
+    {
+      "start": 72.21,
+      "end": 73.91,
+      "type": "NaN",
+      "id": 25
+    },
+    {
+      "start": 73.91,
+      "end": 76.22,
+      "type": "NaN",
+      "id": 26
+    },
+    {
+      "start": 76.22,
+      "end": 84.56,
+      "type": "NaN",
+      "id": 27
+    },
+    {
+      "start": 84.56,
+      "end": 84.84,
+      "type": "NaN",
+      "id": 28
+    },
+    {
+      "start": 84.84,
+      "end": 87.38,
+      "type": "NaN",
+      "id": 29
+    },
+    {
+      "start": 87.38,
+      "end": 98.33,
+      "type": "NaN",
+      "id": 30
+    },
+    {
+      "start": 98.33,
+      "end": 99.24,
+      "type": "NaN",
+      "id": 31
+    },
+    {
+      "start": 99.24,
+      "end": 101.83,
+      "type": "NaN",
+      "id": 32
+    },
+    {
+      "start": 101.83,
+      "end": 103.3,
+      "type": "NaN",
+      "id": 33
+    },
+    {
+      "start": 103.3,
+      "end": 107.2,
+      "type": "NaN",
+      "id": 34
+    },
+    {
+      "start": 107.2,
+      "end": 108.11,
+      "type": "NaN",
+      "id": 35
+    },
+    {
+      "start": 108.11,
+      "end": 112.87,
+      "type": "NaN",
+      "id": 36
+    },
+    {
+      "start": 112.87,
+      "end": 114.96,
+      "type": "NaN",
+      "id": 37
+    },
+    {
+      "start": 114.96,
+      "end": 116.37,
+      "type": "NaN",
+      "id": 38
+    },
+    {
+      "start": 116.37,
+      "end": 116.59,
+      "type": "NaN",
+      "id": 39
+    },
+    {
+      "start": 116.59,
+      "end": 117.6,
+      "type": "NaN",
+      "id": 40
+    },
+    {
+      "start": 117.6,
+      "end": 120.19,
+      "type": "NaN",
+      "id": 41
+    },
+    {
+      "start": 120.19,
+      "end": 120.5,
+      "type": "NaN",
+      "id": 42
+    },
+    {
+      "start": 120.5,
+      "end": 128.65,
+      "type": "NaN",
+      "id": 43
+    },
+    {
+      "start": 128.65,
+      "end": 129.01,
+      "type": "NaN",
+      "id": 44
+    },
+    {
+      "start": 129.01,
+      "end": 130.45,
+      "type": "NaN",
+      "id": 45
+    },
+    {
+      "start": 130.45,
+      "end": 133.19,
+      "type": "NaN",
+      "id": 46
+    },
+    {
+      "start": 133.19,
+      "end": 135.85,
+      "type": "NaN",
+      "id": 47
+    },
+    {
+      "start": 135.85,
+      "end": 139.5,
+      "type": "NaN",
+      "id": 48
+    },
+    {
+      "start": 139.5,
+      "end": 144.65,
+      "type": "NaN",
+      "id": 49
+    },
+    {
+      "start": 144.65,
+      "end": 147.81,
+      "type": "NaN",
+      "id": 50
+    },
+    {
+      "start": 147.81,
+      "end": 149.23,
+      "type": "NaN",
+      "id": 51
+    },
+    {
+      "start": 149.23,
+      "end": 149.68,
+      "type": "NaN",
+      "id": 52
+    },
+    {
+      "start": 149.68,
+      "end": 153.22,
+      "type": "NaN",
+      "id": 53
+    },
+    {
+      "start": 153.22,
+      "end": 154.11,
+      "type": "NaN",
+      "id": 54
+    },
+    {
+      "start": 154.11,
+      "end": 154.94,
+      "type": "NaN",
+      "id": 55
+    },
+    {
+      "start": 154.94,
+      "end": 156.51,
+      "type": "NaN",
+      "id": 56
+    },
+    {
+      "start": 156.51,
+      "end": 165.8,
+      "type": "NaN",
+      "id": 57
+    },
+    {
+      "start": 165.8,
+      "end": 165.91,
+      "type": "NaN",
+      "id": 58
+    },
+    {
+      "start": 165.91,
+      "end": 166.29,
+      "type": "NaN",
+      "id": 59
+    },
+    {
+      "start": 166.29,
+      "end": 169.16,
+      "type": "NaN",
+      "id": 60
+    },
+    {
+      "start": 169.16,
+      "end": 171.84,
+      "type": "NaN",
+      "id": 61
+    },
+    {
+      "start": 171.84,
+      "end": 174.8,
+      "type": "NaN",
+      "id": 62
+    },
+    {
+      "start": 174.8,
+      "end": 175.62,
+      "type": "NaN",
+      "id": 63
+    },
+    {
+      "start": 175.62,
+      "end": 178.38,
+      "type": "NaN",
+      "id": 64
+    },
+    {
+      "start": 178.38,
+      "end": 182.91,
+      "type": "NaN",
+      "id": 65
+    }
+  ]
+}
