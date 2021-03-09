@@ -35,8 +35,6 @@ const IHM = () => {
   const { setName, setReunionName, getReunionName } = File;
   const { setConf, getSetterConf, getConf } = confDemo;
 
-  // const [state, setState] = useState(0);
-
   const setterConf = getSetterConf("seuilLocuteur");
 
   const colorIconsSP2 = getConf().locuteurActif ? "action" : "disabled";

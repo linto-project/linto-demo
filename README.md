@@ -2,19 +2,17 @@
 
 Visualisateur, basé react, crée dans le cadre du projet Linto pour illustrer les travaux de SP2.
 
-<br>
-
 ![Animation corpus linto](./doc/images/readme.gif)
 
 # Sommaire
 
 ## - [Contexte](./doc/Contexte.md)
 
-## - [Utilisation](./doc/utilisation.md)
+## - [Utilisation](./doc/Utilisation.md)
 
 ## - [Architecture](./doc/Architecture.md)
 
-## - [Composants](./doc/Architecture.md)
+## - [Composants](./doc/Composants.md)
 
 ## - [Ajouter un corpus / changer le démonstrateur](./doc/Architecture.md)
 
@@ -22,6 +20,6 @@ Visualisateur, basé react, crée dans le cadre du projet Linto pour illustrer l
 
 # Contact information
 
-Fait avec ❤️ par [Gautier Arcin](https://www.linkedin.com/in/gautier-arcin-309405145/)
+Fait avec ❤️ par Gautier Arcin.
 
-Mail: gautierarcin at gmail.com
+Mail: gautierarcin at irit.fr / gautierarcin at gmail.com
