@@ -103,7 +103,7 @@ with open(file_out, "w", encoding="utf-8") as outfile:
 
 Exemples de fichiers en entrée:
 
-- [ Texte ]([./R1_aligned.txt)
+- [ Texte ](./R1_aligned.txt)
 - [ Actes ](./R1_acte.txt)
 
 <br>

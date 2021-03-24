@@ -8,14 +8,16 @@ import ExploreIcon from "@material-ui/icons/ExploreOutlined";
 import GraphicEqOutlinedIcon from "@material-ui/icons/GraphicEqOutlined";
 import PersonOutlineIcon from "@material-ui/icons/RecentActorsOutlined";
 import RecordVoiceOverIcon from "@material-ui/icons/RecordVoiceOverOutlined";
+import KeyboardVoiceIcon from "@material-ui/icons/KeyboardVoice";
 
 import Button from "./Button";
 
-import CustomeSlider from "./CustomSlider";
+// import CustomeSlider from "./CustomSlider";
+
 import CustomSwitch from "./CustomSwitch";
 import CustomSelect from "./CustomSelect";
 
-import CropFree from "@material-ui/icons/CropFree";
+// import CropFree from "@material-ui/icons/CropFree";
 import FolderOpenOutlined from "@material-ui/icons/FolderOpenOutlined";
 
 import InputLabel from "@material-ui/core/InputLabel";
@@ -35,7 +37,7 @@ const IHM = () => {
   const { setName, setReunionName, getReunionName } = File;
   const { setConf, getSetterConf, getConf } = confDemo;
 
-  const setterConf = getSetterConf("seuilLocuteur");
+  // const setterConf = getSetterConf("seuilLocuteur");
 
   const colorIconsSP2 = getConf().locuteurActif ? "action" : "disabled";
   const colorIconsSP5 = getConf().transcript ? "action" : "disabled";
@@ -73,7 +75,7 @@ const IHM = () => {
                     setReunionName(e.target.value);
                   }}
                 >
-                  <option value="AMI">AMI</option>
+                  {/* <option value="AMI">AMI</option> */}
                   <option value="Linto">Linto</option>
                   <option value="Gestes">Gestes</option>
                 </NativeSelect>
@@ -152,7 +154,7 @@ const IHM = () => {
               </Grid>
             )}
 
-            {File.getReunionName() !== "Gestes" && (
+            {/* {File.getReunionName() !== "Gestes" && (
               <Grid item>
                 <CustomeSlider
                   id="Seuil-affichage"
@@ -170,7 +172,7 @@ const IHM = () => {
                   Seuil de confiance
                 </CustomeSlider>
               </Grid>
-            )}
+            )} */}
             {File.getReunionName() === "AMI" && (
               <Grid item>
                 <CustomSwitch
@@ -195,6 +197,25 @@ const IHM = () => {
                 >
                   Annotations Timeline
                 </CustomSwitch>
+              </Grid>
+            )}
+            {File.getReunionName() === "Linto" && (
+              <Grid item>
+                <CustomSelect
+                  icon={<RecordVoiceOverIcon color={colorIconsSP2} />}
+                  disabled={!getConf().annotation}
+                  value={getConf().typeAnnotationSignature}
+                  onChange={(e) => {
+                    getSetterConf("typeAnnotationSignature")(e.target.value);
+                  }}
+                  id="Type d'annotatione"
+                  name="typeAnnotationLocuteur"
+                  // aria-labelledby="select"
+                  title={"Type d'annotations Timeline"}
+                >
+                  <option value="ML">Machine Learning</option>
+                  <option value="VT">Vérité Terrain</option>
+                </CustomSelect>
               </Grid>
             )}
           </Grid>
@@ -239,7 +260,7 @@ const IHM = () => {
                   checked={getConf().actLanguage}
                   name="actLanguage"
                   onChange={(e) => setConf(e)}
-                  icon={<RecordVoiceOverIcon color={colorIconsSP5} />}
+                  icon={<KeyboardVoiceIcon color={colorIconsSP5} />}
                 >
                   Actes de language
                 </CustomSwitch>

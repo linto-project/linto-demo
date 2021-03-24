@@ -5,7 +5,10 @@ import WaveSurfer from "wavesurfer.js";
 import TimelinePlugin from "wavesurfer.js/dist/plugin/wavesurfer.timeline.min.js";
 import RegionPlugin from "wavesurfer.js/dist/plugin/wavesurfer.regions.min.js";
 
-import colors from "../data/colors";
+// import colors from "../data/colors";
+import colorsPerson from "../data/colorsPerson";
+
+import annotAudio from "../data/Linto/audio.json";
 
 import { useGlobalContext } from "./Provider";
 
@@ -65,6 +68,7 @@ export default function Waveform({
     );
     wavesurfer.current = WaveSurfer.create(options);
     wavesurfer.current.load(url);
+    generateRegion();
 
     // Playing audio
     wavesurfer.current.on("play", function() {
@@ -80,7 +84,6 @@ export default function Waveform({
       if (wavesurfer.current) {
         wavesurfer.current.setVolume(volume);
       }
-      fakeRegion();
       setAudioLoaded(true);
     });
 
@@ -108,55 +111,76 @@ export default function Waveform({
   }, [play]);
 
   const changeTimeline = getConf().annotation && getConf().locuteurActif;
-  useEffect(() => {
-    if (changeTimeline) {
-      getAnnot().map((o) => handleAddRegionSimple(o));
-    } else {
-      wavesurfer.current.clearRegions();
-    }
-    // eslint-disable-next-line
-  }, [changeTimeline]);
+  const timelineAnnot = getConf().typeAnnotationSignature;
 
   const valueLocuteur = getConf().seuilLocuteur;
   useEffect(() => {
     if (changeTimeline) {
       wavesurfer.current.clearRegions();
-      getAnnot().map((o) => handleAddRegionSimple(o));
+      console.log(getAnnot());
+      console.log(typeof getAnnot());
+
+      // Object.entries(getAnnot()).map((k, v) =>
+      //   console.log("key " + k + ", value : " + v)
+      // );
+      const annot = getAnnot();
+      for (const key in annot) {
+        if (annot.hasOwnProperty(key)) {
+          var temp = key.split("_");
+          // const beginTime = 6 * 60 + 2;
+          // Don't ask me how the offset has been calculated, it's complicated
+          // const beginTime = 10 * 60 + 45 - 285.03 + 4 + 1.5;
+          const beginTime = 10 * 60 + 45 - 285.03 + 5.5;
+          const endTime = beginTime + wavesurfer.current.getDuration();
+
+          if (
+            !(parseFloat(temp[0]) > endTime || parseFloat(temp[1]) < beginTime)
+          ) {
+            // Getting speaker
+            const analyse = annot[key];
+            let minValue = 10000;
+            let minSpeak = "";
+            let spkVT = "";
+            for (const keySpeak in analyse) {
+              console.log(keySpeak + " -> " + analyse[keySpeak]["pred"]);
+              if (minValue > parseFloat(analyse[keySpeak]["pred"])) {
+                minValue = parseFloat(analyse[keySpeak]["pred"]);
+                minSpeak = keySpeak;
+              }
+              if (parseInt(analyse[keySpeak]["VT"]) === 1) {
+                console.log("cc");
+                spkVT = keySpeak;
+              }
+            }
+            console.log("Min speaker : " + minSpeak);
+            wavesurfer.current.addRegion({
+              start: parseFloat(temp[0]) - beginTime,
+              end: parseFloat(temp[1]) - beginTime,
+              // color: colorsPerson[minSpeak],
+              color:
+                timelineAnnot !== "ML"
+                  ? colorsPerson[spkVT]
+                  : colorsPerson[minSpeak],
+              drag: false,
+              resize: false,
+            });
+
+            console.log("");
+          }
+        }
+      }
+      console.log(getAnnot["0"]);
+      // getAnnot.map((o) => handleAddRegion(o));
+    } else {
+      wavesurfer.current.clearRegions();
     }
     // eslint-disable-next-line
-  }, [valueLocuteur]);
+  }, [valueLocuteur, changeTimeline, timelineAnnot]);
 
-  const fakeRegion = () => {
-    let list = [];
-    let increment = 1;
-    for (var i = 0; i <= wavesurfer.current.getDuration(); i = i + increment) {
-      increment = Math.random() * (5 - 1) + 1;
-      let listItem = {};
-      listItem["start"] = i;
-      listItem["end"] = i + increment;
-      const cosCalculate = Math.abs(Math.cos(i));
-      listItem["confidence"] = cosCalculate;
-      listItem["label"] = (Math.floor(Math.random() * (6 - 0)) + 0).toString();
-      list.push(listItem);
-    }
-    setAnnot(list);
-    if (getConf().map) {
-      list.map((o) => handleAddRegionSimple(o));
-    }
-  };
-
-  const handleAddRegionSimple = (analyse) => {
-    if (analyse.label < 4) {
-      if (analyse.confidence > valueLocuteur) {
-        wavesurfer.current.addRegion({
-          start: analyse.start,
-          end: analyse.end,
-          color: colors[analyse.label],
-          drag: false,
-          resize: false,
-        });
-      }
-    }
+  const generateRegion = () => {
+    setAnnot(annotAudio);
+    console.log("Annot:");
+    console.log(annotAudio);
   };
 
   return (
