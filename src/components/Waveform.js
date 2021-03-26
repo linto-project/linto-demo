@@ -9,6 +9,7 @@ import RegionPlugin from "wavesurfer.js/dist/plugin/wavesurfer.regions.min.js";
 import colorsPerson from "../data/colorsPerson";
 
 import annotAudio from "../data/Linto/audio.json";
+import annotAudioAMI from "../data/Linto/ami2.json";
 
 import { useGlobalContext } from "./Provider";
 
@@ -52,10 +53,11 @@ export default function Waveform({
   const timelineRef = useRef(null);
   const wavesurfer = useRef(null);
 
-  const { confDemo, Annotation, Player } = useGlobalContext();
+  const { confDemo, File, Annotation, Player } = useGlobalContext();
   const { getConf } = confDemo;
   const { setAnnot, getAnnot } = Annotation;
   const { setTime } = Player;
+  const { getReunionName } = File;
 
   setAudioLoaded(true);
 
@@ -113,6 +115,8 @@ export default function Waveform({
   const changeTimeline = getConf().annotation && getConf().locuteurActif;
   const timelineAnnot = getConf().typeAnnotationSignature;
 
+  const name = getReunionName();
+
   const valueLocuteur = getConf().seuilLocuteur;
   useEffect(() => {
     if (changeTimeline) {
@@ -130,7 +134,11 @@ export default function Waveform({
           // const beginTime = 6 * 60 + 2;
           // Don't ask me how the offset has been calculated, it's complicated
           // const beginTime = 10 * 60 + 45 - 285.03 + 4 + 1.5;
-          const beginTime = 10 * 60 + 45 - 285.03 + 5.5;
+          let beginTime = 0;
+          name === "Linto"
+            ? (beginTime = 10 * 60 + 45 - 285.03 + 4 + 1.5)
+            : (beginTime = 0);
+          //const beginTime = 10 * 60 + 45 - 285.03 + 5.5;
           const endTime = beginTime + wavesurfer.current.getDuration();
 
           if (
@@ -175,12 +183,10 @@ export default function Waveform({
       wavesurfer.current.clearRegions();
     }
     // eslint-disable-next-line
-  }, [valueLocuteur, changeTimeline, timelineAnnot]);
+  }, [valueLocuteur, changeTimeline, timelineAnnot, name]);
 
   const generateRegion = () => {
-    setAnnot(annotAudio);
-    console.log("Annot:");
-    console.log(annotAudio);
+    name === "Linto" ? setAnnot(annotAudio) : setAnnot(annotAudioAMI);
   };
 
   return (
