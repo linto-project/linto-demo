@@ -94,6 +94,7 @@ export const ContextProvider = ({ children }) => {
       annotation: false,
       seuilLocuteur: 0.0,
       typeAnnotationLocuteur: "ML",
+      typeAnnotationSignature: "ML",
       typeAnnotationDialogue: "ML",
       transcript: false,
     });
