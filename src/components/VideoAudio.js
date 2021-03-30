@@ -103,7 +103,7 @@ const VideoAudio = ({ framerate }) => {
         <Grid item>
           {File.getReunionName() === "Linto" && (
             <Video
-              url={"/video/linto/RAP1-Blur-1-6min-16min.webm"}
+              url={"/video/linto/RAP1-37m45s-42m45s.webm"}
               durationSec={durationSec}
               isPlaying={Player.getPlaying()}
               setVideoLoaded={setVideoLoaded}

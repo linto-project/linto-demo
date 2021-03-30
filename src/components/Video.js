@@ -88,7 +88,7 @@ const Video = ({ url, isPlaying, durationSec, setVideoLoaded }) => {
     const interval = setInterval(() => {
       drawImage();
       // Offset RAP 1
-      const offset = 10 * 60 * fpsVideo + 45 * fpsVideo;
+      const offset = (37 * 60 + 45) * fpsVideo;
       const frame =
         Math.round(videoRef.current.currentTime * fpsVideo) + offset || 1;
       // drawFPS(videoRef.current.currentTime);

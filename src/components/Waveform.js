@@ -106,6 +106,11 @@ export default function Waveform({
     wavesurfer.current.setVolume(volume || 1);
   }, [volume]);
 
+  const annot = getAnnot();
+  useEffect(() => {
+    console.log(annot);
+  }, [annot]);
+
   useEffect(() => {
     if (play !== wavesurfer.current.isPlaying()) {
       wavesurfer.current.playPause();
@@ -121,8 +126,8 @@ export default function Waveform({
   useEffect(() => {
     if (changeTimeline) {
       wavesurfer.current.clearRegions();
-      console.log(getAnnot());
-      console.log(typeof getAnnot());
+      // console.log(getAnnot());
+      // console.log(typeof getAnnot());
 
       // Object.entries(getAnnot()).map((k, v) =>
       //   console.log("key " + k + ", value : " + v)
@@ -132,31 +137,34 @@ export default function Waveform({
         if (annot.hasOwnProperty(key)) {
           var temp = key.split("_");
 
-          const beginTime =
-            name === "linto" ? 10 * 60 + 45 - 285.03 + 4 + 1.5 : 0;
+          const beginTime = name === "Linto" ? 33 * 60 + 11 : 0;
 
           const endTime = beginTime + wavesurfer.current.getDuration();
+
+          console.log("begin time : " + beginTime);
+          console.log("end time : " + endTime);
 
           if (
             !(parseFloat(temp[0]) > endTime || parseFloat(temp[1]) < beginTime)
           ) {
             // Getting speaker
+            console.log(parseFloat(temp[0]) + " -> " + parseFloat(temp[1]));
             const analyse = annot[key];
             let minValue = 10000;
             let minSpeak = "";
             let spkVT = "";
             for (const keySpeak in analyse) {
-              console.log(keySpeak + " -> " + analyse[keySpeak]["pred"]);
+              // console.log(keySpeak + " -> " + analyse[keySpeak]["pred"]);
               if (minValue > parseFloat(analyse[keySpeak]["pred"])) {
                 minValue = parseFloat(analyse[keySpeak]["pred"]);
                 minSpeak = keySpeak;
               }
               if (parseInt(analyse[keySpeak]["VT"]) === 1) {
-                console.log("cc");
+                // console.log("cc");
                 spkVT = keySpeak;
               }
             }
-            console.log("Min speaker : " + minSpeak);
+            // console.log("Min speaker : " + minSpeak);
             wavesurfer.current.addRegion({
               start: parseFloat(temp[0]) - beginTime,
               end: parseFloat(temp[1]) - beginTime,
@@ -169,11 +177,11 @@ export default function Waveform({
               resize: false,
             });
 
-            console.log("");
+            // console.log("");
           }
         }
       }
-      console.log(getAnnot["0"]);
+      // console.log(getAnnot["0"]);
       // getAnnot.map((o) => handleAddRegion(o));
     } else {
       wavesurfer.current.clearRegions();
