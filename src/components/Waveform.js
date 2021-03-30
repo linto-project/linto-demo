@@ -131,14 +131,10 @@ export default function Waveform({
       for (const key in annot) {
         if (annot.hasOwnProperty(key)) {
           var temp = key.split("_");
-          // const beginTime = 6 * 60 + 2;
-          // Don't ask me how the offset has been calculated, it's complicated
-          // const beginTime = 10 * 60 + 45 - 285.03 + 4 + 1.5;
-          let beginTime = 0;
-          name === "Linto"
-            ? (beginTime = 10 * 60 + 45 - 285.03 + 4 + 1.5)
-            : (beginTime = 0);
-          //const beginTime = 10 * 60 + 45 - 285.03 + 5.5;
+
+          const beginTime =
+            name === "linto" ? 10 * 60 + 45 - 285.03 + 4 + 1.5 : 0;
+
           const endTime = beginTime + wavesurfer.current.getDuration();
 
           if (
