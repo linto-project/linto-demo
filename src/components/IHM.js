@@ -8,14 +8,16 @@ import ExploreIcon from "@material-ui/icons/ExploreOutlined";
 import GraphicEqOutlinedIcon from "@material-ui/icons/GraphicEqOutlined";
 import PersonOutlineIcon from "@material-ui/icons/RecentActorsOutlined";
 import RecordVoiceOverIcon from "@material-ui/icons/RecordVoiceOverOutlined";
+import KeyboardVoiceIcon from "@material-ui/icons/KeyboardVoice";
 
 import Button from "./Button";
 
-import CustomeSlider from "./CustomSlider";
+// import CustomeSlider from "./CustomSlider";
+
 import CustomSwitch from "./CustomSwitch";
 import CustomSelect from "./CustomSelect";
 
-import CropFree from "@material-ui/icons/CropFree";
+// import CropFree from "@material-ui/icons/CropFree";
 import FolderOpenOutlined from "@material-ui/icons/FolderOpenOutlined";
 
 import InputLabel from "@material-ui/core/InputLabel";
@@ -35,7 +37,7 @@ const IHM = () => {
   const { setName, setReunionName, getReunionName } = File;
   const { setConf, getSetterConf, getConf } = confDemo;
 
-  const setterConf = getSetterConf("seuilLocuteur");
+  // const setterConf = getSetterConf("seuilLocuteur");
 
   const colorIconsSP2 = getConf().locuteurActif ? "action" : "disabled";
   const colorIconsSP5 = getConf().transcript ? "action" : "disabled";
@@ -51,6 +53,21 @@ const IHM = () => {
       return "Reconnaissance de gestes";
     }
   };
+
+  // const getDescription = () => {
+  //   if (File.getReunionName() === "AMI") {
+  //     return "Detection de locuteur actif [Madrigal et al., 2020]"
+  //   }
+  //   if (File.getReunionName() === "Linto") {
+  //     return "Signature audio-vidéo";
+  //   }
+  //   if (File.getReunionName() === "Gestes") {
+  //     return "Reconnaissance de gestes";
+  //   }
+  //   if (File.getReunionName() === "Laas") {
+  //     return "Reconnaissance de gestes";
+  //   }
+  // };
 
   return (
     <div>
@@ -76,6 +93,7 @@ const IHM = () => {
                   <option value="AMI">AMI</option>
                   <option value="Linto">Linto</option>
                   <option value="Gestes">Gestes</option>
+                  <option value="Laas">Laas</option>
                 </NativeSelect>
               </FormControl>
             </Grid>
@@ -117,42 +135,43 @@ const IHM = () => {
           </AccordionDetails>
         )}
       </Accordion>
-      <Accordion defaultExpanded={true}>
-        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-          <FormControlLabel
-            onClick={(event) => event.stopPropagation()}
-            onFocus={(event) => event.stopPropagation()}
-            checked={getConf().locuteurActif}
-            name="locuteurActif"
-            onChange={(e) => setConf(e)}
-            control={<Switch color="primary" />}
-            label={nameVolet()}
-          />
-        </AccordionSummary>
-        <AccordionDetails>
-          <Grid container direction="column" spacing={2}>
-            {File.getReunionName() !== "AMI" && (
-              <Grid item>
-                <CustomSelect
-                  icon={<PersonOutlineIcon color={colorIconsSP2} />}
-                  disabled={!getConf().locuteurActif}
-                  value={getConf().typeAnnotationLocuteur}
-                  onChange={(e) => {
-                    getSetterConf("typeAnnotationLocuteur")(e.target.value);
-                  }}
-                  id="Type d'annotatione"
-                  name="typeAnnotationLocuteur"
-                  // aria-labelledby="select"
-                  title={"Type d'annotations"}
-                >
-                  <option value="ML">Machine Learning</option>
-                  <option value="VT">Vérité Terrain</option>
-                  <option value="MLVT">Les deux</option>
-                </CustomSelect>
-              </Grid>
-            )}
+      {File.getReunionName() !== "Laas" && (
+        <Accordion defaultExpanded={true}>
+          <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+            <FormControlLabel
+              onClick={(event) => event.stopPropagation()}
+              onFocus={(event) => event.stopPropagation()}
+              checked={getConf().locuteurActif}
+              name="locuteurActif"
+              onChange={(e) => setConf(e)}
+              control={<Switch color="primary" />}
+              label={nameVolet()}
+            />
+          </AccordionSummary>
+          <AccordionDetails>
+            <Grid container direction="column" spacing={2}>
+              {File.getReunionName() !== "AMI" && (
+                <Grid item>
+                  <CustomSelect
+                    icon={<PersonOutlineIcon color={colorIconsSP2} />}
+                    disabled={!getConf().locuteurActif}
+                    value={getConf().typeAnnotationLocuteur}
+                    onChange={(e) => {
+                      getSetterConf("typeAnnotationLocuteur")(e.target.value);
+                    }}
+                    id="Type d'annotatione"
+                    name="typeAnnotationLocuteur"
+                    // aria-labelledby="select"
+                    title={"Type d'annotations"}
+                  >
+                    <option value="ML">Machine Learning</option>
+                    <option value="VT">Vérité Terrain</option>
+                    <option value="MLVT">Les deux</option>
+                  </CustomSelect>
+                </Grid>
+              )}
 
-            {File.getReunionName() !== "Gestes" && (
+              {/* {File.getReunionName() !== "Gestes" && (
               <Grid item>
                 <CustomeSlider
                   id="Seuil-affichage"
@@ -170,36 +189,56 @@ const IHM = () => {
                   Seuil de confiance
                 </CustomeSlider>
               </Grid>
-            )}
-            {File.getReunionName() === "AMI" && (
-              <Grid item>
-                <CustomSwitch
-                  disabled={!getConf().locuteurActif}
-                  checked={getConf().map}
-                  name="map"
-                  onChange={(e) => setConf(e)}
-                  icon={<ExploreIcon color={colorIconsSP2} />}
-                >
-                  Map
-                </CustomSwitch>
-              </Grid>
-            )}
-            {File.getReunionName() !== "Gestes" && (
-              <Grid item>
-                <CustomSwitch
-                  disabled={!getConf().locuteurActif}
-                  checked={getConf().annotation}
-                  name="annotation"
-                  onChange={(e) => setConf(e)}
-                  icon={<GraphicEqOutlinedIcon color={colorIconsSP2} />}
-                >
-                  Annotations Timeline
-                </CustomSwitch>
-              </Grid>
-            )}
-          </Grid>
-        </AccordionDetails>
-      </Accordion>
+            )} */}
+              {File.getReunionName() === "AMI" && (
+                <Grid item>
+                  <CustomSwitch
+                    disabled={!getConf().locuteurActif}
+                    checked={getConf().map}
+                    name="map"
+                    onChange={(e) => setConf(e)}
+                    icon={<ExploreIcon color={colorIconsSP2} />}
+                  >
+                    Map
+                  </CustomSwitch>
+                </Grid>
+              )}
+              {File.getReunionName() !== "Gestes" && (
+                <Grid item>
+                  <CustomSwitch
+                    disabled={!getConf().locuteurActif}
+                    checked={getConf().annotation}
+                    name="annotation"
+                    onChange={(e) => setConf(e)}
+                    icon={<GraphicEqOutlinedIcon color={colorIconsSP2} />}
+                  >
+                    Annotations Timeline
+                  </CustomSwitch>
+                </Grid>
+              )}
+              {File.getReunionName() === "Linto" && (
+                <Grid item>
+                  <CustomSelect
+                    icon={<RecordVoiceOverIcon color={colorIconsSP2} />}
+                    disabled={!getConf().annotation}
+                    value={getConf().typeAnnotationSignature}
+                    onChange={(e) => {
+                      getSetterConf("typeAnnotationSignature")(e.target.value);
+                    }}
+                    id="Type d'annotatione"
+                    name="typeAnnotationLocuteur"
+                    // aria-labelledby="select"
+                    title={"Type d'annotations Timeline"}
+                  >
+                    <option value="ML">Machine Learning</option>
+                    <option value="VT">Vérité Terrain</option>
+                  </CustomSelect>
+                </Grid>
+              )}
+            </Grid>
+          </AccordionDetails>
+        </Accordion>
+      )}
 
       {File.getReunionName() === "Linto" && (
         <Accordion defaultExpanded={true}>
@@ -239,7 +278,7 @@ const IHM = () => {
                   checked={getConf().actLanguage}
                   name="actLanguage"
                   onChange={(e) => setConf(e)}
-                  icon={<RecordVoiceOverIcon color={colorIconsSP5} />}
+                  icon={<KeyboardVoiceIcon color={colorIconsSP5} />}
                 >
                   Actes de language
                 </CustomSwitch>

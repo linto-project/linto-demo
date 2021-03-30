@@ -117,7 +117,7 @@ const Video = ({ url, isPlaying, durationSec, setVideoLoaded }) => {
       // Offset RAP 1
       const offset = 0;
       const frame =
-        Math.round(videoRef.current.currentTime * fpsVideo) + offset;
+        Math.round(videoRef.current.currentTime * fpsVideo) + offset || 1;
       // drawFPS(videoRef.current.currentTime);
 
       if (frame < 366 && locuteurActif) {
