@@ -5,8 +5,9 @@ import SlateTranscriptEditor from "../dependencies/slate-transcript-editor/index
 import "bootstrap-css-only";
 // import ML from "../sample-data/converted.json";
 // import VT from "../sample-data/converted.json";
-import VT from "../data/SP5/rap1_VT.json";
-import ML from "../data/SP5/rap1_id_decale.json";
+import VT from "../data/SP5/rap1_actes_dialogues_VT_t_converted.json";
+// import ML from "../data/SP5/rap1_id_decale.json";
+import ML from "../data/SP5/rap1_actes_dialogues_t_converted.json";
 import { useGlobalContext } from "./Provider";
 // const DEMO_MEDIA_URL_KATE =
 //   "https://download.ted.com/talks/KateDarling_2018S-950k.mp4";

@@ -12,27 +12,30 @@ const VideoAMI = ({ url, isPlaying, durationSec, setVideoLoaded }) => {
   const { getTime } = Player;
   const { getConf } = confDemo;
 
-  const [selection, setSelection] = useState([true, false, false, false]);
-
-  const valueLocuteur = getConf().seuilLocuteur;
-  const checkElement = (e) => {
-    if (time > e.start && time < e.end && e.label < 4) {
-      console.log(
-        "time : " + time + ", start : " + e.start + ", end : " + e.end
-      );
-
-      if (e.confidence > valueLocuteur) {
-        let arraytempo = [false, false, false, false];
-        arraytempo[e.label] = true;
-        setSelection([...arraytempo]);
-      }
-    }
+  const spkConv = {
+    spkA: 0,
+    spkB: 3,
+    spkC: 1,
+    spkD: 2,
   };
+
+  const [selection, setSelection] = useState([true, false, false, false]);
 
   const time = getTime();
   useEffect(() => {
     setSelection([false, false, false, false]);
-    getAnnot().map((e) => checkElement(e));
+    for (const key in getAnnot()) {
+      const temp = key.split("_");
+      const begin = parseFloat(temp[0]);
+      const end = parseFloat(temp[1]);
+      if (time > begin && time < end) {
+        const spkName = Object.keys(getAnnot()[key])[0];
+
+        let arraytempo = [false, false, false, false];
+        arraytempo[spkConv[spkName]] = true;
+        setSelection(arraytempo);
+      }
+    }
 
     // eslint-disable-next-line
   }, [time]);

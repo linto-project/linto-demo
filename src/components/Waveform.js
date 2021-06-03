@@ -5,7 +5,11 @@ import WaveSurfer from "wavesurfer.js";
 import TimelinePlugin from "wavesurfer.js/dist/plugin/wavesurfer.timeline.min.js";
 import RegionPlugin from "wavesurfer.js/dist/plugin/wavesurfer.regions.min.js";
 
-import colors from "../data/colors";
+// import colors from "../data/colors";
+import colorsPerson from "../data/colorsPerson";
+
+import annotAudio from "../data/Linto/audio.json";
+import annotAudioAMI from "../data/Linto/ami2.json";
 
 import { useGlobalContext } from "./Provider";
 
@@ -49,10 +53,11 @@ export default function Waveform({
   const timelineRef = useRef(null);
   const wavesurfer = useRef(null);
 
-  const { confDemo, Annotation, Player } = useGlobalContext();
+  const { confDemo, File, Annotation, Player } = useGlobalContext();
   const { getConf } = confDemo;
   const { setAnnot, getAnnot } = Annotation;
   const { setTime } = Player;
+  const { getReunionName } = File;
 
   setAudioLoaded(true);
 
@@ -65,6 +70,7 @@ export default function Waveform({
     );
     wavesurfer.current = WaveSurfer.create(options);
     wavesurfer.current.load(url);
+    generateRegion();
 
     // Playing audio
     wavesurfer.current.on("play", function() {
@@ -80,7 +86,6 @@ export default function Waveform({
       if (wavesurfer.current) {
         wavesurfer.current.setVolume(volume);
       }
-      fakeRegion();
       setAudioLoaded(true);
     });
 
@@ -101,6 +106,11 @@ export default function Waveform({
     wavesurfer.current.setVolume(volume || 1);
   }, [volume]);
 
+  const annot = getAnnot();
+  useEffect(() => {
+    console.log(annot);
+  }, [annot]);
+
   useEffect(() => {
     if (play !== wavesurfer.current.isPlaying()) {
       wavesurfer.current.playPause();
@@ -108,55 +118,79 @@ export default function Waveform({
   }, [play]);
 
   const changeTimeline = getConf().annotation && getConf().locuteurActif;
-  useEffect(() => {
-    if (changeTimeline) {
-      getAnnot().map((o) => handleAddRegionSimple(o));
-    } else {
-      wavesurfer.current.clearRegions();
-    }
-    // eslint-disable-next-line
-  }, [changeTimeline]);
+  const timelineAnnot = getConf().typeAnnotationSignature;
+
+  const name = getReunionName();
 
   const valueLocuteur = getConf().seuilLocuteur;
   useEffect(() => {
     if (changeTimeline) {
       wavesurfer.current.clearRegions();
-      getAnnot().map((o) => handleAddRegionSimple(o));
+      // console.log(getAnnot());
+      // console.log(typeof getAnnot());
+
+      // Object.entries(getAnnot()).map((k, v) =>
+      //   console.log("key " + k + ", value : " + v)
+      // );
+      const annot = getAnnot();
+      for (const key in annot) {
+        if (annot.hasOwnProperty(key)) {
+          var temp = key.split("_");
+
+          const beginTime = name === "Linto" ? 33 * 60 + 11 : 0;
+
+          const endTime = beginTime + wavesurfer.current.getDuration();
+
+          console.log("begin time : " + beginTime);
+          console.log("end time : " + endTime);
+
+          if (
+            !(parseFloat(temp[0]) > endTime || parseFloat(temp[1]) < beginTime)
+          ) {
+            // Getting speaker
+            console.log(parseFloat(temp[0]) + " -> " + parseFloat(temp[1]));
+            const analyse = annot[key];
+            let minValue = 10000;
+            let minSpeak = "";
+            let spkVT = "";
+            for (const keySpeak in analyse) {
+              // console.log(keySpeak + " -> " + analyse[keySpeak]["pred"]);
+              if (minValue > parseFloat(analyse[keySpeak]["pred"])) {
+                minValue = parseFloat(analyse[keySpeak]["pred"]);
+                minSpeak = keySpeak;
+              }
+              if (parseInt(analyse[keySpeak]["VT"]) === 1) {
+                // console.log("cc");
+                spkVT = keySpeak;
+              }
+            }
+            // console.log("Min speaker : " + minSpeak);
+            wavesurfer.current.addRegion({
+              start: parseFloat(temp[0]) - beginTime,
+              end: parseFloat(temp[1]) - beginTime,
+              // color: colorsPerson[minSpeak],
+              color:
+                timelineAnnot !== "ML"
+                  ? colorsPerson[spkVT]
+                  : colorsPerson[minSpeak],
+              drag: false,
+              resize: false,
+            });
+
+            // console.log("");
+          }
+        }
+      }
+      // console.log(getAnnot["0"]);
+      // getAnnot.map((o) => handleAddRegion(o));
+    } else {
+      wavesurfer.current.clearRegions();
     }
     // eslint-disable-next-line
-  }, [valueLocuteur]);
+  }, [valueLocuteur, changeTimeline, timelineAnnot, name]);
 
-  const fakeRegion = () => {
-    let list = [];
-    let increment = 1;
-    for (var i = 0; i <= wavesurfer.current.getDuration(); i = i + increment) {
-      increment = Math.random() * (5 - 1) + 1;
-      let listItem = {};
-      listItem["start"] = i;
-      listItem["end"] = i + increment;
-      const cosCalculate = Math.abs(Math.cos(i));
-      listItem["confidence"] = cosCalculate;
-      listItem["label"] = (Math.floor(Math.random() * (6 - 0)) + 0).toString();
-      list.push(listItem);
-    }
-    setAnnot(list);
-    if (getConf().map) {
-      list.map((o) => handleAddRegionSimple(o));
-    }
-  };
-
-  const handleAddRegionSimple = (analyse) => {
-    if (analyse.label < 4) {
-      if (analyse.confidence > valueLocuteur) {
-        wavesurfer.current.addRegion({
-          start: analyse.start,
-          end: analyse.end,
-          color: colors[analyse.label],
-          drag: false,
-          resize: false,
-        });
-      }
-    }
+  const generateRegion = () => {
+    name === "Linto" ? setAnnot(annotAudio) : setAnnot(annotAudioAMI);
   };
 
   return (
