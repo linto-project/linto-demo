@@ -30,8 +30,10 @@ const Video = ({ url, isPlaying, durationSec, setVideoLoaded }) => {
     setState((state) => state + 1);
 
     const importJson = async () => {
-      const dataML = await import("../data/finalML.json");
-      const dataVT = await import("../data/finalAnnoted.json");
+      // const dataML = await import("../data/finalML.json");
+      // const dataVT = await import("../data/finalAnnoted.json");
+      const dataML = await import("../data/finalML_minimized.json");
+      const dataVT = await import("../data/finalAnnoted_minimized.json");
       setDataML(dataML);
       setDataVT(dataVT);
     };
@@ -52,6 +54,13 @@ const Video = ({ url, isPlaying, durationSec, setVideoLoaded }) => {
       .getContext("2d", { alpha: false })
       .drawImage(videoRef.current, 0, 0, width, height);
   };
+
+  // const drawFPS = (frame) => {
+  //   canva.current.getContext("2d", { alpha: false }).strokeStyle = "red";
+  //   canva.current
+  //     .getContext("2d", { alpha: false })
+  //     .fillText("Frame : " + frame, 100, 100, 100);
+  // };
 
   const typeAnnot = confDemo.getConf().typeAnnotationLocuteur;
   const locuteurActif = confDemo.getConf().locuteurActif;
@@ -91,7 +100,7 @@ const Video = ({ url, isPlaying, durationSec, setVideoLoaded }) => {
       const offset = (37 * 60 + 45) * fpsVideo;
       const frame =
         Math.round(videoRef.current.currentTime * fpsVideo) + offset || 1;
-      // drawFPS(videoRef.current.currentTime);
+      // drawFPS(frame);
 
       if (locuteurActif) {
         if (typeAnnot === "ML" || typeAnnot === "MLVT") {
