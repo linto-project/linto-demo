@@ -71,8 +71,8 @@ const IHM = () => {
 
   return (
     <div>
-      <Accordion defaultExpanded={true}>
-        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+      <Accordion defaultExpanded={false} expanded={false}>
+        <AccordionSummary>
           <Grid spacing={3} alignItems="center" container>
             <Grid item>
               <FolderOpenOutlined />
@@ -99,41 +99,43 @@ const IHM = () => {
             </Grid>
           </Grid>
         </AccordionSummary>
-        {/* AMI tempo for demo */
-        File.getReunionName() === "TEMPO" && (
-          <AccordionDetails>
-            <Grid
-              spacing={2}
-              container
-              direction="column"
-              justify="center"
-              alignItems="center"
-            >
-              <Grid item>
-                <Button
-                  style={{ width: "200px" }}
-                  onClick={() => setName("0-5min")}
-                  selected={File.getName() === "0-5min"}
-                  IHM={true}
-                  variant="outlined"
-                >
-                  Ouverture
-                </Button>
+        {
+          /* AMI tempo for demo */
+          File.getReunionName() === "TEMPO" && (
+            <AccordionDetails>
+              <Grid
+                spacing={2}
+                container
+                direction="column"
+                justify="center"
+                alignItems="center"
+              >
+                <Grid item>
+                  <Button
+                    style={{ width: "200px" }}
+                    onClick={() => setName("0-5min")}
+                    selected={File.getName() === "0-5min"}
+                    IHM={true}
+                    variant="outlined"
+                  >
+                    Ouverture
+                  </Button>
+                </Grid>
+                <Grid item>
+                  <Button
+                    style={{ width: "200px" }}
+                    onClick={() => setName("20-25min")}
+                    selected={File.getName() === "20-25min"}
+                    IHM={true}
+                    variant="outlined"
+                  >
+                    Tour de Table
+                  </Button>
+                </Grid>
               </Grid>
-              <Grid item>
-                <Button
-                  style={{ width: "200px" }}
-                  onClick={() => setName("20-25min")}
-                  selected={File.getName() === "20-25min"}
-                  IHM={true}
-                  variant="outlined"
-                >
-                  Tour de Table
-                </Button>
-              </Grid>
-            </Grid>
-          </AccordionDetails>
-        )}
+            </AccordionDetails>
+          )
+        }
       </Accordion>
       {File.getReunionName() !== "Laas" && (
         <Accordion defaultExpanded={true}>
