@@ -91,9 +91,9 @@ const IHM = () => {
                   }}
                 >
                   <option value="AMI">AMI</option>
+                  <option value="Laas">Laas</option>
                   <option value="Linto">Linto</option>
                   <option value="Gestes">Gestes</option>
-                  <option value="Laas">Laas</option>
                 </NativeSelect>
               </FormControl>
             </Grid>
